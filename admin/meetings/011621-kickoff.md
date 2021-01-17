@@ -3,27 +3,25 @@ Time: January 16, 2021 8:00 PM - 9:30 PM
 
 Location: Discord #lounge voice chat (Note: to be held in Zoom in future)
 
-#### Attendance:
+### Attendance:
 Elizabeth Morris, 
 Ellie Huo, 
 Jason Wong, 
 Sicong Duan, 
 Wilson Low, 
 
-#### Unattendance:
+### Unattendance:
 Elliot Kim, 
 Eric Pham, 
 Nathan Kim, 
 Zane Calini, 
 
-### Discussion:
-
-#### Meeting Planning/Outline
+### Meeting Planning/Outline
 - Rundown of the week’s assignments
 - Tundown of week’s progress
 - Breakdown of who is going to work on what
 
-#### Future Meeting Minutes Outline
+### Future Meeting Minutes Outline
 - Team number / team name
 - Type of meeting held
 - Which members are present / absent
@@ -36,28 +34,28 @@ Zane Calini,
 - When the meeting finished
 
 
-#### Team Page
+### Team Page
 - Make in Markdown (unless objected to by unattending members)
 	- Thought: Easier and cleaner to casually maintain than html
 
-#### Team Video
+### Team Video
 - Shoot mini individual video clips to stitch together of each member
 - Potentially delay editing until roles are defined
 - Group Photo (end of video)
 
-#### Role Selection
+### Role Selection
 - Write up list of potential roles to sign onto
 
-#### Organization
+### Organization
 - Have everyone download the Slack desktop/mobile app for communication
 - Stick to using Zoom and Slack only in future
 - Zoom for Meetings, Slack for Communication
 - Set up beginnings of contract in Slack
 
-#### Team Working Agreement
+### Team Working Agreement
 - Initial document created and tentatively filled out
 
-#### Team Name [Nonexhaustive]
+### Team Name [Nonexhaustive]
 - Names have never been so hard
 - *32
 - Freeze Team
@@ -65,19 +63,19 @@ Zane Calini,
 - Spl/ce (ice pun)
 - To be further discussed and voted on in Slack
 
-#### Team Brand [Nonexhaustive]
+### Team Brand [Nonexhaustive]
 - Clock in, clock out
 - Go with the flow
 - To be further discussed and voted on in Slack
 
-#### Team Values
+### Team Values
 - Time
 - Communication
 - Accountability
 - Innovation
 - To be further discussed and voted on in Slack
 
-#### To-dos
+## To-dos
 - Everyone: Upload ~15 sec video to google drive by Mon 11:59pm
 - Ellie: Edit video by Tues 11:59pm
 - Jason + Liz: Make the general info for wiki page
