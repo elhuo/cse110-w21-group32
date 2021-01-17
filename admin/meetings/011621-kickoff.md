@@ -26,7 +26,6 @@ Zane Calini
 #### Team Page
 - Make in Markdown (unless objected to by unattending members)
 	- Thought: Easier and cleaner to casually maintain than html
-- 
 
 #### Team Video
 - Shoot mini individual video clips to stitch together of each member
@@ -63,3 +62,4 @@ Zane Calini
 - Communication
 - Accountability
 - Innovation
+- To be further discussed and voted on in Slack
