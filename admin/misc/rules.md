@@ -39,7 +39,7 @@ Creation 1/16/21; Revised 1/17/21
    <td>Email</td>
   </tr>
   <tr>
-   <td></td>
+   <td>Assistant Organizer/Software Dev</td>
    <td>Elizabeth Morris</td>
    <td>emmorris@ucsd.edu</td>
   </tr>
