@@ -44,7 +44,7 @@ Creation 1/16/21; Revised 1/17/21
    <td>emmorris@ucsd.edu</td>
   </tr>
   <tr>
-   <td></td>
+   <td>Project Manager/Software Dev</td>
    <td>Ellie Huo</td>
    <td>elhuo@ucsd.edu</td>
   </tr>
