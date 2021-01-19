@@ -2,7 +2,7 @@ Team Working Agreement (WIP)
 
 Winter 2021
 
-Creation 1/16/21; Revised 1/17/21
+Creation 1/16/21; Revised 1/19/21
 
 
 
@@ -69,9 +69,9 @@ Creation 1/16/21; Revised 1/17/21
    <td>e9pham@ucsd.edu</td>
   </tr>
   <tr>
-   <td></td>
-   <td></td>
-   <td></td>
+   <td>Software Dev</td>
+   <td>Nathan Kim</td>
+   <td>n5kim@ucsd.edu</td>
   </tr>
   <tr>
    <td></td>
@@ -125,5 +125,5 @@ Creation 1/16/21; Revised 1/17/21
 
 8. **Team Signature**
 
-
+Nathan Sungmin Kim
 __________________________________________
