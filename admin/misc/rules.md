@@ -14,10 +14,10 @@ Creation 1/16/21; Revised 1/17/21
     Manager - Chad Hayen, Thomas Powell
 
 
-    Team Name - ?  [Post/Vote on suggestions in Slack; see current suggestions at end of Doc]
+    Team Name - Spl/ice
+    
 
-
-    Team Brand - ? [Post/Vote on suggestions in Slack; see current suggestions at end of Doc]
+    Team Brand - Never freeze up
 
 
     Team Values - Time, Communication, Accountability, Users, Quality, Synergy, Innovation
@@ -125,39 +125,5 @@ Creation 1/16/21; Revised 1/17/21
 
 8. **Team Signature**
 
-    
 
-
-## Team Name/Brand Ideas:
-
-- Incorperating Team Number(32):
-
-    ice puns/freezing references (water freezes at 32 degree farenheit)
-    
-    - *32
-    - Sight/Sub/Super Zero
-    - Spl/ice
-    	- Team brand: Never freeze in your progress/work
-
-- Incorperating the project name (Pomodero Timer):
-
-    time, timer, schedule, work, pomodoro puns
-    
-    - PomPom
-    - TimeBreak
-    - Pomo Dora (pomodoro + dora the explorer)
-	- Team brand: We dora, so you can pomo
-    - Poro(a creature in League: mysterious, magical, and much-loved creatures)
-    	- Team brand: clocking in
-
-
-- Misc:
-
-	- Nuclear Artists
-	- Gem Sound
-	- Firewatch
-	- Space Feather
-	- Deer Hook
-	- Split Transition
-	- Craft Money
-	- Popular Thought
+__________________________________________
