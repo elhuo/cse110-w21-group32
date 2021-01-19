@@ -17,7 +17,7 @@ Creation 1/16/21; Revised 1/17/21
     Team Name - Spl/ice
     
 
-    Team Brand - Never freeze up
+    Team Brand - Never freeze up in your work/progress
 
 
     Team Values - Time, Communication, Accountability, Users, Quality, Synergy, Innovation
