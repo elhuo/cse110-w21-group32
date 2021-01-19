@@ -64,9 +64,9 @@ Creation 1/16/21; Revised 1/17/21
    <td>s1duan@ucsd.edu</td>
   </tr>
   <tr>
-   <td></td>
-   <td></td>
-   <td></td>
+   <td>Frontend</td>
+   <td>Eric Pham</td>
+   <td>e9pham@ucsd.edu</td>
   </tr>
   <tr>
    <td></td>
