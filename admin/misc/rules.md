@@ -74,9 +74,9 @@ Creation 1/16/21; Revised 1/19/21
    <td>n5kim@ucsd.edu</td>
   </tr>
   <tr>
-   <td></td>
-   <td></td>
-   <td></td>
+   <td>UI Designer/Software Dev</td> 
+   <td>Zane Calini</td>
+   <td>zcalini@ucsd.edu</td>
   </tr>
   <tr>
    <td></td>
