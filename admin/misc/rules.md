@@ -79,9 +79,9 @@ Creation 1/16/21; Revised 1/19/21
    <td>zcalini@ucsd.edu</td>
   </tr>
   <tr>
-   <td></td>
-   <td></td>
-   <td></td>
+   <td>Project Manager/Software Architect</td>
+   <td>Elliot Kim</td>
+   <td>edkim@ucsd.edu</td>
   </tr>
 </table>
 
