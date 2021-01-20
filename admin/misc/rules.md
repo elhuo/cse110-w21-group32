@@ -54,7 +54,7 @@ Creation 1/16/21; Revised 1/19/21
    <td>jpwong@ucsd.edu</td>
   </tr>
   <tr>
-   <td></td>
+   <td>Software Dev</td>
    <td>Wilson Low</td>
    <td>wilow@ucsd.edu</td>
   </tr>
