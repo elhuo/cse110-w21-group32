@@ -59,7 +59,7 @@ Creation 1/16/21; Revised 1/19/21
    <td>wilow@ucsd.edu</td>
   </tr>
   <tr>
-   <td></td>
+   <td>Software Dev/QA</td>
    <td>Sicong Duan</td>
    <td>s1duan@ucsd.edu</td>
   </tr>
