@@ -25,13 +25,6 @@ Creation 1/16/21; Revised 1/19/21
 
 ### Team member info:
 
-*   Software Developer 
-*   Software Architect
-*   Quality Assurance (Unit Testing)
-*   UI Designer
-*   Project Manager
-
-
 <table>
   <tr>
    <td>Role(s)</td>
@@ -125,5 +118,4 @@ Creation 1/16/21; Revised 1/19/21
 
 8. **Team Signature**
 
-Nathan Sungmin Kim
 __________________________________________
