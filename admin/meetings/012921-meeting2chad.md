@@ -1,5 +1,17 @@
 # Week 4 Meeting
-## Specifics of Design So Far
+
+#### Time: January 29, 2021 2:00 PM - 3:00PM
+
+### Brainstorming meeting
+
+#### Location: Zoom
+#### Team 32: Spl\ice
+##### Attendance:
+Elizabeth Morris, Ellie Huo, Jason Wong, Sicong Duan, Wilson Low, Elliot Kim, Zane Calini, Nathan Kim, Eric Pham
+
+##### Unattendance:
+N/A
+
 ### Main Frame
 - What problem are we solving, essential features, additional features, everything on the Miro board
 
@@ -36,4 +48,14 @@
 - WE HAVE NO TIME!! (basically)
 - We might only finish our MVP
 
-### Do Market Repo
+### Market Repo
+- What features would you really use?
+- What feathers can we feasibly implement?
+- What is our reasoning for adding whatever extra features?
+- Market research
+
+## ToDo:
+- Market research: explore existing apps and websites.
+  - What works? What doesn't?
+- Flesh out brainstorming docs
+  - Split up to assign brainstorming 
