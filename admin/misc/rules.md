@@ -95,27 +95,48 @@ Creation 1/16/21; Revised 1/19/21
 3. **Scheduling Meetings**
 
     The team will agree, at the end of each weekly general meeting, to set any meetings and agenda needed before the next meeting and beyond if possible. Team members will take turns to send out a reminder of the meeting with an agenda within eight hours after the weekly meeting 
+    
+4. **Standup Meeting**
+    Daily Weekday Standups
+    - Members present/absent
+    - What have you been working on?
+    - What are you planning to work on?
+    - Any blockers? 
 
-4. **General Responsibilities**
+
+5. **General Responsibilities**
 
     All members will stay on top of their assigned tasks and communicate if they are in need of assistance or are otherwise unable to complete their task.
+    - Weekly Meeting Attendance
+    - Daily Stand Up Meeting (Later Weeks)
+    - Meet the Expectations of Communication
+  
 
-5. **Specific Team Member Responsibilities (Optional)**
+6. **Specific Team Member Responsibilities (Optional)**
 
-    - Software Developer (possible split into frontend/backend)
+    - Software Developer (possible split into frontend/backend): 
+      - General development of the project
     - Software Architect
-    - Quality Assurance (Unit Testing)
+      - Design layout and interaction of the files and parts
+    - Quality Assurance (Unit Testing): 
+      - People who wrote the code should test it and then expand to the rest of the team to test
     - UI Designer
+      - Design UI interface
     - Project Manager
+      - Plan roadmap and timeline and delegates worklaod to team members and mediates work and assignments
+    - Organizer
+      - Reminders and coordinate with team members about their tasks
 
-6. **Conflict Resolution**
+7. **Conflict Resolution**
 
     If a team member is not fulfilling their responsibilities, the team agrees to communicate with that team member to help with any challenges that this member is facing before bringing the issue to the staff.
+    If someone can't do their tasks, they have to communicate within the slack channel to the team and project managers to resolve the issue.
+    If someone doesn't do their tasks or fails to communicate then we will confront them and communicate or if serious then involve staff. 
 
-7. **Expectations of Faculty and GTA’s**
+8. **Expectations of Faculty and GTA’s**
 
     If a team member fails to live up to this agreement, the situation may be reported to the staff and staff will be available to meet with teams to resolve issues so that there will be a completed assignment turned in.
 
-8. **Team Signature**
+9. **Team Signature**
 
 __________________________________________
