@@ -43,9 +43,46 @@ Nobody
 - Project Roadmap
   - Steps to designing the timer
   - Basic timeline for our goals
-
-
+  
 ### Future roadmap:
  - People who can attend the 9am meeting:
    - Elliot, Zane, Eric, Elizabeth, Jason, Wilson, Nathan
  - Talk with Chad, get feedback and stuff
+  
+  
+#### Time: January 30, 2021 4:00 PM - 5:00PM
+
+### Brainstorm Meeting 2
+
+#### Location: Zoom
+#### Team 32: Spl\ice
+##### Attendance:
+Elizabeth Morris, Ellie Huo, Jason Wong, Sicong Duan, Wilson Low, Zane Calini, Nathan Kim, Eric Pham, Elliot Kim
+
+##### Unattendance:
+Nobody
+
+### Meeting Outline
+- Make problem more specific to students
+  - Homework/studying for test
+  - Good study habits
+- Work on improving personas
+  - Try creating personas that would fit our target audience
+  - Types of students such as freshman who doesn't know how to study
+  - Write user personas about us/people we know for a more real persona
+- Use Cases
+  - What cases will our users use the pomodoro timer in?
+  - Doing homework, studying for tests, finishing work/extracurricular tasks
+  - Focusing/staying on task
+  - Balancing workload
+- Market Research
+  - Use other pomodoro apps to figure out what works and what doesn't
+  - Do not use pause button
+  - Should be simple and not need a tutorial
+  - We looked at various timers and gave our opinions on them
+- Tie back user stuff to features
+- User Stories
+  - Specific situations that the timer would be needed for
+  - Features should relate to the user stories
+  - Color code user stories that relate to the features 
+- Brainstorming should be good enough for turnin
