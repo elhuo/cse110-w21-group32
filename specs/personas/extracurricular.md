@@ -25,8 +25,8 @@ He grew up in a middle class family in San Diego and was active in multiple club
 - Breakdancing
 
 ## Technological Ability
-Barry is extremely efficient at creating software and can code in binary. He prefers learning practical computer science topics rather than theoretical topics. He has a lot of experience with Linux and Windows, including with the terminal.
+Barry is beyond comfortable using technologiy and is extremely efficient at creating software and can code in binary. He prefers learning practical computer science topics rather than theoretical topics. He has a lot of experience with Linux and Windows, including with the terminal.
 
 ## Devices used
 - Laptop (Windows, Linux)
-- iPhone
+- iPhone 12
