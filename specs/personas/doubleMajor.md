@@ -29,3 +29,8 @@ Amber knows how to use a computer effectively, but primarily for schoolwork. She
 ## Devices used
 - Windows Laptop
 - Samsung Phone
+
+## User Stories
+- As a double-major, I want the time spreadout of a pomodoro time to try out new simple ways to focus and study for long periods of time, as well as divide my work.
+- As a busy student, I want breaks while working to make more time for myself and have fun with my hobbies while still being productive.
+- As a senior, I want a set period of interrupted work to prepare for the transition from being a student to working a full-time job.
