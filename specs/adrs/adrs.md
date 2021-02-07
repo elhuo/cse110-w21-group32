@@ -35,7 +35,7 @@
 * C4 Decisions:
   -Created provisional containers and components (as opposed to those set in stone) to have an idea of any features we want to follow through with given we have the time to do so 
   
-  * Interface Design Decisions
+* Interface Design Decisions
    - Set the colors of the different stages
    - Deleted the background color change option 2/6/2021
 
