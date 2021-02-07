@@ -30,3 +30,8 @@ Barry is beyond comfortable using technologiy and is extremely efficient at crea
 ## Devices used
 - Laptop (Windows, Linux)
 - iPhone 12
+
+## User Stories
+- As a student organization officer, I want to start a pomodoro timer to set a period of time dedicated to working on tasks with my team.
+- As an student, I want to be able to stop a pomodoro timer in case my roommate wants me to do something urgently.
+- As an intern, I want to a steady pomodoro schedule to keep my productivity consistent while still having breaks.
