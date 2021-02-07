@@ -31,3 +31,8 @@ Tim knows how to use a computer effectively, but he mainly uses the computer to 
 ## Devices used
 - Macbook Pro
 - iPhone 11
+
+## User Stories
+- As a freshman, I want a pomodoro work schedule so that I can fix my study habits and bring up my GPA.
+- As a pre-med student, I want to divide my work into pomos so that I can focus on studying for classes and apply to volunteer at hospitals without getting overwhelmed.
+- As a gamer, I want to have longer breaks between completed pomos so that I can play for a long enough time without getting too worried about the timer going off soon.
