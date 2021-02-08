@@ -1,5 +1,5 @@
 # Prepatory Meeting for Pitch w/Chad
-Time: February 7, 2021 3:30 PM
+Time: February 7, 2021 3:30-4:00 PM
 
 Location: Zoom
 
