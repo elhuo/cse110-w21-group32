@@ -7,20 +7,31 @@ jobs:
     name: Run linters
     runs-on: ubuntu-latest
 
-    steps:
+     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
       # Install your linters here
+        
+      # ESLint must be in `package.json`
+      - name: Install Node.js dependencies
+        run: npm install
+
       - name: Lint Action
         uses: wearerequired/lint-action@v1.7.0
 
       - name: Run linters
         uses: wearerequired/lint-action@v1
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           # Enable your linters here
           #javascript
           eslint: true
           #css
           stylelint: true
+          
