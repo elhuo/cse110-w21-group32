@@ -18,7 +18,7 @@ jobs:
       - name: Run linters
         uses: wearerequired/lint-action@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.LINT_TOKEN }}
           # Enable your linters here
           #javascript
           eslint: true
