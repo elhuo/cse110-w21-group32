@@ -1,4 +1,4 @@
-- name: JSDoc Action
+name: JSDoc Action
   uses: andstor/jsdoc-action@v1.2.0
   with:
     source_dir: ./source
