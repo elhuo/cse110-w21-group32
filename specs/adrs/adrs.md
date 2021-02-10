@@ -3,27 +3,38 @@
 
 ## Essential Features MVP - MVP Sprint 1
 * start button 
-  ``` begins the session``` 
+  ``` Begins the session. Button is disabled after clicked so that only the stop button may be pressed``` 
 * stop button
- ``` Ends the session, does not pause```
+ ``` Ends the session, does not pause, pressing stop will reset the time. Button is disabled after clicked so that only the start button may be pressed```
 * Time
- ``` Contains the countdown of the current pomodoro stage(15min). Shows the user how much time is left for each stage```
-* Break
- ``` Every 4 pomos you get a longbreak(15), after each individual pomo you receive a short break(5min)```
+ ``` Contains the countdown of the current pomodoro stage(25min/15min/5min) in a 00:00 format. Shows the user how much time is left for each stage```
 * Help Button
  ``` This is a static mockup page. Includes basic explaination of the pomodoro features as well as the summary of the benefits of using a pomodoro ```
+ - Reason: to state the benefits and a simple how to use the pomodoro timer
 * Three tabs
- ``` to change between the three stages: Pomo, Short Break, Long Break ```
+ ``` to change between the three stages: Pomo, Short Break, Long Break. The three stages are switched *automatically* when the current stage's timer goes to 00:00 and the tab of whatever stage you are on is highlighted. ```
+ - Reason: Indicate what stage the user is in
+  * Break
+ ``` Every four pomos you get a longbreak(15min), after each individual pomo that is not the fourth pomo you receive a short break(5min)```
+ 
+ ``` After a break, you have to press start again to start another pomo```
  
  ## Essential Add-ons -MVP Sprint 2
  * Browser Notification
- ``` Includes and alert popup and sound to accomodate when the pomo is finished.```
+ ``` Sound alert to notify when the pomo is finished.```
+ - Reason: users probably won't be on the page of the pomodoro timer so the sound alert will notify them that we are switching stages
  * Settings
  ``` Adjusting the volume of the Browser Notification```
+  - Reason: users will want to adjust the volume of their notification sound depending on their own preferences
  
 ## Add-ons - Stretch Sprint
  * Settings
-  ```change time amount per stage, change notification sound (dropdown similar to lab)```
+  ```change time amount per stage (dropdown), change notification sound (dropdown similar to lab)```
+  - Reason: customizing time amount per stage 
+  
+## Possible Add-ons
+  * Adding a user log-in database
+    - Reason: Track user tasks and completed pomos; this ties in with the concept of gamification and the sense of accomplishment from completing pomos and being able to plan own time when seeing task list.
     
  
  ## Decisions
@@ -38,5 +49,21 @@
 * Interface Design Decisions
    - Set the colors of the different stages
    - Deleted the background color change option 2/6/2021
+     - No need to complicate the background color change since users won't even be looking at this page all the time
+   
+* Pipeline Decisions
+Outline: Lint -> Commit -> Build -> Test -> Deploy
+
+### Linting:
+- Install VSCode extensions on every individual’s VSCode environment and run locally:
+  - VSCode Extensions:
+
+ESLint: JS
+
+LintHTML: HTML
+
+CSS Formatter: CSS
+
+We could not get the automated linting in Github Actions to work but we decided on using VSCode extensions (the three above). Everyone on the team will install these extensions locally and will use them for formatting and linting.
 
  
