@@ -1,5 +1,5 @@
 # Troopr Assistant Check-In
-Time: February 5, 2021
+Time: February 6, 2021
 
 Location: Slack; #daily-standup
 
