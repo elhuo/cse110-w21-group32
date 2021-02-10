@@ -91,7 +91,21 @@ We could not get the automated linting in Github Actions to work but we decided 
 ### Best Practices
 
 * CSS Best Practices
- - 
+ - Use flexible/relative units
+ - Avoid overriding
+ - Formatting:
+   - Include a space between the selector(s) and the opening curly brace.
+   - Always include a semi-colon at the end of the last declaration, even though it isn't strictly necessary.
+   - Put the closing curly brace on a new line.
+   - In each declaration, put a space after the separating colon, but not before.
+   - Use 2 spaces for code indentation.
+ - Favor longhand rules over terse shorthand
+ - Use double quotes around values
+ - CSS comments, comment sections through ```/*----Section Name-----*/```
+ - Don't use !important
+ - Don't use ID selectors
+ 
+ 
 * JS Best Practices
   - Avoid Global Variables
   - Always Declare Local Variables
