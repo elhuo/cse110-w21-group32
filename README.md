@@ -2,4 +2,4 @@
 
 ## Project Page:
 
-https://emmorris1100.github.io/cse110-w21-group32/
+https://emmorris.github.io/cse110-w21-group32/source/index.html
