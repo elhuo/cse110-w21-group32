@@ -1,0 +1,12 @@
+name: JS Docs
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build
+      uses: andstor/jsdoc-action@v1
+      with:
+        source_dir: ./src
+        recurse: true
+        output_dir: ./out
