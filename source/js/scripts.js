@@ -16,7 +16,8 @@ start.addEventListener("click", startTimer);
 stop.addEventListener("click", stopTime);
 
 /**
- * test
+ * @return null
+ * @params test
  */
 function startTimer() {
     button[1].disabled = true;
