@@ -1,0 +1,81 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Fits page to viewport */
+html {
+    height: 100%;
+}
+
+/* === Universal page content formatting === */
+body {
+    padding: 1em;
+    min-height: 90%;
+    background-color: #0087bd;
+    color: white;
+    font-family: "OpenSans", sans-serif;
+}
+
+button {
+    background-color: #b0e0E6;
+    border: transparent;
+    border-width: 5px;
+    padding: 15px 32px 15px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* === Header formatting === */
+.page-header {
+    display: flex;
+    justify-content: flex-end;
+    height: 7vh;
+}
+
+.justify-right {
+    margin-right: auto;
+}
+
+/* === Main timer body formatting === */
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 65vh;
+}
+
+.wrapper {
+    border-style: solid;
+    border-width: 1px;
+}
+
+#timer-wrapper {
+    width: 70vw;
+    min-width: 70vw;
+    overflow: hidden;
+}
+
+#tab-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* === Timer formatting === */
+#clock-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#countdown {
+    font-size: 10vw;
+}
+
+@media only screen and (max-height: 600px) {
+    main {
+        height: 80vh;
+    }
+}
