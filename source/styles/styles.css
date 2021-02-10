@@ -3,55 +3,41 @@
     margin: 0;
 }
 
+/* Fits page to viewport */
 html {
     height: 100%;
 }
 
+/* === Universal page content formatting === */
 body {
     padding: 1em;
     min-height: 90%;
+    background-color: #0087BD;
+    color: white;
+    font-family: "OpenSans", sans-serif;
 }
 
+button {
+    background-color: #B0E0E6;
+    border: transparent;
+    border-width: 5px;
+    padding: 15px 32px 15px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* === Header formatting === */
 .page-header {
     display: flex;
     justify-content: flex-end;
-    height: 5vh;
+    height: 7vh;
 }
 
 .justify-right {
     margin-right: auto;
 }
 
-.wrapper {
-    border-style: solid;
-    border-width: 1px;
-}
-
-#timer-wrapper {
-    width: 80vw;
-    min-width: 80vw;
-}
-
-#timer-wrapper * {
-    overflow:hidden;
-}
-
-#tab-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-#clock-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-#countdown {
-    font-size: 7em;
-    max-width: 70vh;
-}
-
+/* === Main timer body formatting === */
 main {
     display: flex;
     align-items: center;
@@ -60,20 +46,41 @@ main {
     height: 65vh;
 }
 
-@media only screen and (max-width: 600px) {
-    body {
-        background-color: lightblue;
-    }
+.wrapper {
+    border-style: solid;
+    border-width: 1px;
 }
 
-@media only screen and (max-width: 450px) {
-    body {
-        background-color: lightblue;
-    }
-    #countdown {
-        font-size: 6em;
-    }
+#timer-wrapper {
+    width: 70vw;
+    min-width: 70vw;
+    overflow: hidden;
 }
+
+#tab-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#tab-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+/* === Timer formatting === */
+#clock-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#countdown {
+    font-size: 10vw;
+}
+
 @media only screen and (max-height: 600px) {
     main {
         height: 80vh;
