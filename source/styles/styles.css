@@ -12,13 +12,13 @@ html {
 body {
     padding: 1em;
     min-height: 90%;
-    background-color: #0087BD;
+    background-color: #0087bd;
     color: white;
     font-family: "OpenSans", sans-serif;
 }
 
 button {
-    background-color: #B0E0E6;
+    background-color: #b0e0E6;
     border: transparent;
     border-width: 5px;
     padding: 15px 32px 15px;
@@ -62,13 +62,6 @@ main {
     flex-direction: row;
     justify-content: space-around;
 }
-
-#tab-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
 
 /* === Timer formatting === */
 #clock-wrapper {
