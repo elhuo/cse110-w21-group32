@@ -1,7 +1,14 @@
 # Meeting with Chad 2-5-2021
 
+# Checkin and Feedback with Chad:
+Time: February 5, 2021 3:30-4:00 PM
 
-Checkin and Feedback with Chad:
+Location: Zoom
+
+### Attendance:
+
+Elizabeth Morris, Ellie Huo, Jason Wong, Sicong Duan, Wilson Low, Elliot Kim, Nathan Kim, Zane Calini
+
 
 ## Splice
 Our Essential Features(MVP): Tasklist, Start button, Stop button, Tracking completed pomodoros in first sprint. 
