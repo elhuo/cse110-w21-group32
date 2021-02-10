@@ -3,11 +3,11 @@ Time: February 5, 2021
 
 Location: Slack; #daily-standup
 
-## Attendance:
+## Respondants:
 
 Elizabeth Morris, Ellie Huo, Jason Wong, Wilson Low, Elliot Kim, Eric Pham, Nathan Kim, Zane Calini
 
-## Unattendance:
+## No Response:
 Sicong Duan
 
 
