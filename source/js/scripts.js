@@ -15,6 +15,9 @@ start.addEventListener("click", startTimer);
 // POMO STAHP
 stop.addEventListener("click", stopTime);
 
+/**
+ * test
+ */
 function startTimer() {
     button[1].disabled = true;
     var startTime = Date.now();
