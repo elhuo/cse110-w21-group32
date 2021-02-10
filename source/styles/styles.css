@@ -10,6 +10,7 @@ html {
 
 /* === Universal page content formatting === */
 body {
+    background-color: rgb(105, 105, 243);
     padding: 1em;
     min-height: 90%;
     background-color: #0087bd;
@@ -52,9 +53,20 @@ main {
 }
 
 #timer-wrapper {
+<<<<<<< Updated upstream
     width: 70vw;
     min-width: 70vw;
     overflow: hidden;
+=======
+    border-color:white;
+    width: 80vw;
+    min-width: 80vw;
+}
+
+#timer-wrapper * {
+    border-color:white;
+    overflow:hidden;
+>>>>>>> Stashed changes
 }
 
 #tab-wrapper {
