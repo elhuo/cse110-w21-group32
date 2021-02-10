@@ -8,6 +8,6 @@ jobs:
     name: Codacy Analysis CLI
     steps:
       - name: Checkout code
-        uses: actions/checkout@main
+        uses: actions/checkout@master
       - name: Run codacy-analysis-cli
-        uses: codacy/codacy-analysis-cli-action@main
+        uses: codacy/codacy-analysis-cli-action@master
