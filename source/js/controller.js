@@ -9,6 +9,7 @@ var numPomos = 0;
 // value is 1 when timer is running, 0 when stopped
 var timerRunning = 0;
 
+// probably called by the buttons.js event listener for start
 function startTimer() {
     cycle = 0;
     numPomos = 0;
@@ -16,6 +17,7 @@ function startTimer() {
     // call timer start func
 }
 
+// probably called by the buttons.js event listener for stop
 function stopTimer() {
     cycle = 0;
     numPomos = 0;
