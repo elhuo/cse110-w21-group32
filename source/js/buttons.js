@@ -36,3 +36,18 @@ function stopTime() {
     clearInterval(timerBegins);
     button[1].disabled = false;
 }
+
+
+
+
+// listener for start button
+//      on "click"
+//          call function in controller
+//              function sets cycle to pomo (pomo started)
+//                  that function could call timer module with (time, running = 1)
+//
+// listener for stop button
+//      on "click"
+//          call function in controller
+//              function resets cycle
+//                  that function sets running = 0
