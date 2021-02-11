@@ -33,14 +33,22 @@ function changeCycles() {
     // set cycle to short break
     if (cycle == 0 && numPomos < 4) {
         cycle = 1;
+        // pass start time or cycle type to timer? timer("5:00")
     }
     // if current cycle is pomo and 4 pomos have occurred,
     // set cycle to long break and reset numPomos
     else if (cycle == 0 && numPomos == 4) {
         numPomos = 0;
         cycle = 2;
+        // pass start time or cycle type to timer? timer("15:00")
     }
     // after short and long breaks, return to pomo cycle
-    else if (cycle == 1)    cycle = 0;
-    else if (cycle == 2)    cycle = 0;
+    else if (cycle == 1) {
+        cycle = 0;
+        // pass start time or cycle type to timer? timer("25:00")
+    }
+    else if (cycle == 2) {
+        cycle = 0;
+        // pass start time or cycle type to timer? timer("25:00")
+    }
 }
