@@ -21,16 +21,16 @@ var start = document.getElementById("start-button");
 var stop = document.getElementById("stop-button");
 
 
-// POMO GO
+// POMO GO (start button clicked)
 start.addEventListener("click", function() {
-    startTimer;
+    startTimer;                     // Call start function in controller
     button[1].disabled = true;      // Disable start button
     button[2].disabled = false;     // Enable stop button
 });
 
-// POMO STAHP
+// POMO STAHP (stop button clicked)
 stop.addEventListener("click", function (){
-    stopTimer;
+    stopTimer;                      // Call stop function in controller
     button[2].disabled = true;      // Disable stop button
     button[1].disabled = false;     // Enable start button
 });
