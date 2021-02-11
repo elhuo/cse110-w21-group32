@@ -1,15 +1,19 @@
 name: JS Docs
-
 on: push
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Build
-        uses: andstor/jsdoc-action@v1
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Build
+      uses: andstor/jsdoc-action@v1
+      with:
+        source_dir: ./source
         recurse: true
+        output_dir: ./out
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_dir: ./out
