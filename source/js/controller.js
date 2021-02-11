@@ -1,3 +1,5 @@
+// import from timer.js
+
 // tracks the type of cycle
 // 0 = pomo, 1 = short break, 2 = long break
 var cycle = 0;
@@ -7,26 +9,29 @@ var cycle = 0;
 var numPomos = 0;
 
 // value is 1 when timer is running, 0 when stopped
-var timerRunning = 0;
+// might not need this
+// var timerRunning = 0;
 
 // probably called by the buttons.js event listener for start
 function startTimer() {
     cycle = 0;
     numPomos = 0;
-    timerRunning = 1;
-    // call timer start func
+    changeStyle();
+    // timerRunning = 1;
+    // call timer start func, needs to pass in current cycle? ex. timer(cycle)
 }
 
 // probably called by the buttons.js event listener for stop
 function stopTimer() {
     cycle = 0;
     numPomos = 0;
-    timerRunning = 0;
-    // call timer stop func 
+    changeStyle();
+    // timerRunning = 0;
+    // call timer stop func, needs to pass in current cycle? ex. timer(cycle)
 }
 
 // when timer countdown ends, call this function
-function changeCycles() {
+export function changeCycles() {
     // if current cycle is pomo, increment numPomos
     if (cycle == 0) numPomos++;
     // if current cycle is pomo and 4 pomos haven't occurred yet,
@@ -50,5 +55,31 @@ function changeCycles() {
     else if (cycle == 2) {
         cycle = 0;
         // pass start time or cycle type to timer? timer("25:00")
+    }
+    changeStyle();
+}
+
+// changes page style according to the current cycle
+function changeStyle() {
+    // change page style to fit pomo cycle
+    if (cycle == 0) {
+        document.body.style.backgroundColor = #0087bd;
+        document.getElementById("pomo-tab").style.border = "medium solid";
+        document.getElementById("short-break-tab").style.border = "none";
+        document.getElementById("long-break-tab").style.border = "none";
+    }
+    // change page style to fit short break cycle
+    if (cycle == 1) {
+        document.body.style.backgroundColor = "blue";
+        document.getElementById("pomo-tab").style.border = "none";
+        document.getElementById("short-break-tab").style.border = "medium solid";
+        document.getElementById("long-break-tab").style.border = "none";
+    }
+    // change page style to fit long break cycle
+    if (cycle == 2) {
+        document.body.style.backgroundColor = "purple";
+        document.getElementById("pomo-tab").style.border = "none";
+        document.getElementById("short-break-tab").style.border = "none";
+        document.getElementById("long-break-tab").style.border = "medium solid";
     }
 }
