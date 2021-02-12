@@ -1,12 +1,14 @@
 // true - timer is on; false - timer is off
-// NOTE - timer should be off by default, I have it set to true right now for testing purposes
-let start = true
+let start = false
 
 // duration of timer cycle in minutes (needs to be converted later in ms somewhere below) ; default 25min
 let duration = 24
 
 // The starting time of the timer
 var countDownStart = new Date().getTime();
+
+// REMOVE LATER!!!!! JUST TESTING RIGHT NOW
+startCountdown(24);
 
 // Updates the html timer display, if start = true
 setInterval(() => {
