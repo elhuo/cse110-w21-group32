@@ -1,14 +1,8 @@
-// Main timer component:
-//    variable that keeps track of time elapsed
-//    Function that changes the static html page (to be in sync with the actual timer)
-//    reset function, input time in minutes to count down
-//    when timer is finished, call method in controller (tbd)
-
 // true - timer is on; false - timer is off
 let start = true
 
 // duration of timer cycle in minutes (needs to be converted later in ms somewhere below) ; default 25min
-let duration = 0
+let duration = 24
 
 // The starting time of the timer
 var countDownStart = new Date().getTime();
@@ -20,7 +14,7 @@ setInterval(() => {
   }
 }, 1000);
 
-// starts timer
+// starts timer to set duration (NOTE: if you want a 25 min timer, set it to 24)
 function startCountdown(mins) {
   // enables countdown
   start = true;
@@ -38,10 +32,6 @@ function stopCountdown() {
   document.getElementById("countdown").innerHTML = "00:00";
 }
 
-// sets duration (given in minutes)
-function setCycle(mins) {
-  duration = mins
-}
 
 // Updates the html timer display
 function countdown() {
@@ -61,7 +51,7 @@ function countdown() {
     start = false;
     // TODO: Call stop function in controller
     // For now, I'm just displaying some sample text to see if this works
-    document.getElementById("countdown").innerHTML = "HAHAHAHA";
+    document.getElementById("countdown").innerHTML = "If you're reading this, it worked";
     return;
   }
 
@@ -87,6 +77,14 @@ function countdown() {
   document.getElementById("countdown").innerHTML = minutes + ":" + seconds;
 
 }
+
+
+// Main timer component:
+//    variable that keeps track of time elapsed
+//    Function that changes the static html page (to be in sync with the actual timer)
+//    reset function, input time in minutes to count down
+//    when timer is finished, call method in controller (tbd)
+
 
 
 // something something setInterval
