@@ -5,22 +5,37 @@
 //    when timer is finished, call method in controller (tbd)
 
 // true - timer is on; false - timer is off
-let start = false
+let start = true
 
 // duration of timer cycle in minutes (needs to be converted later in ms somewhere below) ; default 25min
-let duration = 25
+let duration = 0
 
-// current time remaining on timer cycle - may be merged with duration
-let timeRemaining
+// The starting time of the timer
+var countDownStart = new Date().getTime();
+
+// Updates the html timer display, if start = true
+setInterval(() => {
+  if (start){
+    countdown();
+  }
+}, 1000);
 
 // starts timer
-function startCountdown() {
+function startCountdown(mins) {
+  // enables countdown
   start = true;
+  // sets duration
+  duration = mins;
+  // displays initial countdown time
+  document.getElementById("countdown").innerHTML = (duration) + ":" + "59";
+  // Sets starting time of the timer
+  countDownStart = new Date().getTime();
 }
 
 // ends timer
 function stopCountdown() {
   start = false;
+  document.getElementById("countdown").innerHTML = "00:00";
 }
 
 // sets duration (given in minutes)
@@ -28,8 +43,51 @@ function setCycle(mins) {
   duration = mins
 }
 
-// if timeRemaining == 0
-//    call changeCycles() in controller
+// Updates the html timer display
+function countdown() {
+
+  // Get current time
+  var d = new Date().getTime();
+
+  // Calculate time elapsed from when countdown was started
+  var timeElapsed = d - countDownStart
+
+  // Calculate minutes and seconds from time elapsed
+  var minutes = Math.floor((timeElapsed % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((timeElapsed % (1000 * 60)) / 1000);
+
+  // If timer is over
+  if (minutes > duration) {
+    start = false;
+    // TODO: Call stop function in controller
+    // For now, I'm just displaying some sample text to see if this works
+    document.getElementById("countdown").innerHTML = "HAHAHAHA";
+    return;
+  }
+
+  // If single digit seconds, pad with a 0
+  if (59 - seconds <= 9) {
+    seconds = "0" + (59 - seconds);
+  }
+  // Otherwise, just convert to string without padding
+  else {
+    seconds = "" + (59 - seconds);
+  }
+
+  // If single digit minutes, pad with a 0
+  if (duration - minutes <= 10) {
+    minutes = "0" + (duration - minutes);
+  }
+  // Otherwise, just convert to string without padding
+  else{
+    minutes = "" + (duration - minutes);
+  }
+
+  // Update the display
+  document.getElementById("countdown").innerHTML = minutes + ":" + seconds;
+
+}
+
 
 // something something setInterval
 // https://www.w3schools.com/howto/howto_js_countdown.asp
