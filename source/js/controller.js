@@ -67,7 +67,7 @@ function changeCycles() {
 function changeStyle() {
     // change page style to fit pomo cycle
     if (cycle == 0) {
-        document.body.style.backgroundColor = #0087bd;
+        document.body.style.backgroundColor = "#0087bd";
         document.getElementById("pomo-tab").style.border = "medium solid";
         document.getElementById("short-break-tab").style.border = "none";
         document.getElementById("long-break-tab").style.border = "none";
