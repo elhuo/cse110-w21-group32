@@ -11,7 +11,7 @@ setInterval(() => {
   if (start){
     countdown();
   }
-}, 500);
+}, 500);  // Will refresh every 500 ms, sometimes setInterval isn't exact and it skips a second
 
 // starts timer to set duration (NOTE: if you want a 25 min timer, set it to 24)
 function startCountdown(mins) {
