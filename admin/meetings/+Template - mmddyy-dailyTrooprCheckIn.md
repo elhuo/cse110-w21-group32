@@ -1,5 +1,5 @@
 # Troopr Assistant Check-In
-Time: February , 2021
+Time: February dd, 2021
 
 Location: Slack; #daily-standup
 
@@ -8,7 +8,7 @@ Location: Slack; #daily-standup
 Elizabeth Morris, Ellie Huo, Jason Wong, Wilson Low, Eric Pham, Nathan Kim, Zane Calini, Elliot Kim, Sicong Duan
 
 ## Unattendance:
-
+N/A
 
 ###
 >
