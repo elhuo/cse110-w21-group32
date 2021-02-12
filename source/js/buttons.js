@@ -1,26 +1,29 @@
-// Import functions from controller.js and timer.js
-
 // button is used to disable the buttons 
 const button = document.querySelectorAll("button"); // 0 is help, 1 is start, 2 is stop
 
 // References to start and stop buttons
-var start = document.getElementById("start-button");
-var stop = document.getElementById("stop-button");
+var startButton = document.getElementById("start-button");
+var stopButton = document.getElementById("stop-button");
 
 
 // POMO GO (start button clicked)
-start.addEventListener("click", function() {
-    startTimer;                     // Call start function in controller
+startButton.addEventListener("click", function() {
+    startTimer();                   // Call start function in controller
     button[1].disabled = true;      // Disable start button
     button[2].disabled = false;     // Enable stop button
 });
 
+
+
+
 // POMO STAHP (stop button clicked)
-stop.addEventListener("click", function (){
-    stopTimer;                      // Call stop function in controller
+stopButton.addEventListener("click", function (){
+    stopTimer();                    // Call stop function in controller
     button[2].disabled = true;      // Disable stop button
     button[1].disabled = false;     // Enable start button
 });
+
+
 
 
 // listener for start button

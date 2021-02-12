@@ -3,19 +3,22 @@ let duration = 24                           // duration of timer cycle in minute
 var countDownStart = new Date().getTime();  // stores the starting time of the timer
 
 // REMOVE LATER!!!!! JUST TESTING RIGHT NOW
-startCountdown(24); 
+// startCountdown(24); 
 
 // Updates the html timer display, if start = true
+
 setInterval(() => {
   if (start){
     countdown();
   }
-}, 1000);
+}, 500);
 
 // starts timer to set duration (NOTE: if you want a 25 min timer, set it to 24)
 function startCountdown(mins) {
   start = true;     // Enables timer
   duration = mins;  // Sets timer duration
+  
+  if (duration < 10) {duration = "0" + duration;}
   // Display initial countdown time
   document.getElementById("countdown").innerHTML = (duration) + ":" + "59"; 
   // Set starting time of the timer
@@ -43,9 +46,8 @@ function countdown() {
   // If timer is over
   if (minutes > duration) {
     start = false;
-    // TODO: Call stop function in controller
-    // For now, I'm just displaying some sample text to see if this works
-    document.getElementById("countdown").innerHTML = "If you're reading this, it worked";
+    // Call stop function in controller
+    changeCycles();
     return;
   }
 
