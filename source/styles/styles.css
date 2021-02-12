@@ -44,7 +44,7 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 65vh;
+    height: 80vh;
 }
 
 .wrapper {
@@ -52,27 +52,25 @@ main {
     border-width: 1px;
 }
 
+.bottom-margin {
+    margin-bottom: 1em;
+    padding: .5em;
+}
+
 #timer-wrapper {
-<<<<<<< Updated upstream
     width: 70vw;
     min-width: 70vw;
     overflow: hidden;
-=======
-    border-color:white;
-    width: 80vw;
-    min-width: 80vw;
-}
-
-#timer-wrapper * {
-    border-color:white;
-    overflow:hidden;
->>>>>>> Stashed changes
 }
 
 #tab-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    margin: .2em auto;
+    min-width: 18em;
 }
 
 /* === Timer formatting === */
@@ -80,10 +78,39 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    border-width: 3px;
+    border-radius: 2px;
+    padding: 3em 0em;
+}
+
+#controls-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 3em;
+    width: 25em;
+    height: 4em;
+    justify-content: space-between;
 }
 
 #countdown {
     font-size: 10vw;
+}
+
+/* === Buttons === */
+#start-button {
+    background-image: url(../img/Start.png);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
+}
+
+#stop-button {
+    background-image: url(../img/Stop.png);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
 }
 
 @media only screen and (max-height: 600px) {
