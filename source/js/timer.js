@@ -1,4 +1,5 @@
 // true - timer is on; false - timer is off
+// NOTE - timer should be off by default, I have it set to true right now for testing purposes
 let start = true
 
 // duration of timer cycle in minutes (needs to be converted later in ms somewhere below) ; default 25min
