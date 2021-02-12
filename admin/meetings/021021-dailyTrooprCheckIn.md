@@ -8,7 +8,7 @@ Location: Slack; #daily-standup
 Elizabeth Morris, Ellie Huo, Jason Wong, Wilson Low, Eric Pham, Nathan Kim, Zane Calini, Elliot Kim, Sicong Duan
 
 ## Unattendance:
-
+N/A
 
 ### Eric Pham checked-in on  2021-02-10 at 11:00 AM, feeling :neutral_face:
 > What did you get done since last report?
