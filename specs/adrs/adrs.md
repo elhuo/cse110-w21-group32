@@ -120,3 +120,27 @@ We could not get the automated linting in Github Actions to work but we decided 
     - Use [] instead of new Array()
     - Use /()/ instead of new RegExp()
     - Use function (){} instead of new Function()
+    
+    
+    - Dev branch: writing code and testing your own code
+      - Every developer tests their own code using jest and pushes to the dev branch
+      - Comment and document your own code during the dev branch state
+      - Decisions made will be added to the ADR and every developer should stay updated with the ADR before they start developing
+    - Test branch: manual team code review
+    - Main branch: final merging and deployment
+
+* File Structure
+- ``` .
+├── media
+│   └── favicon.ico
+|   └── audio files
+├── index.html
+├── js
+│   └── scripts.js
+└── styles
+    └── styles.css ```
+    
+* Pull Requests
+- Every week during team meeting
+- Can split up code review portion to review different parts
+    
