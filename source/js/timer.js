@@ -1,14 +1,9 @@
-// true - timer is on; false - timer is off
-let start = false
-
-// duration of timer cycle in minutes (needs to be converted later in ms somewhere below) ; default 25min
-let duration = 24
-
-// The starting time of the timer
-var countDownStart = new Date().getTime();
+let start = false                           // true - timer is on; false - timer is off
+let duration = 24                           // duration of timer cycle in minutes (needs to be converted later in ms somewhere below) ; default 25min
+var countDownStart = new Date().getTime();  // stores the starting time of the timer
 
 // REMOVE LATER!!!!! JUST TESTING RIGHT NOW
-startCountdown(24);
+startCountdown(24); 
 
 // Updates the html timer display, if start = true
 setInterval(() => {
@@ -19,31 +14,27 @@ setInterval(() => {
 
 // starts timer to set duration (NOTE: if you want a 25 min timer, set it to 24)
 function startCountdown(mins) {
-  // enables countdown
-  start = true;
-  // sets duration
-  duration = mins;
-  // displays initial countdown time
-  document.getElementById("countdown").innerHTML = (duration) + ":" + "59";
-  // Sets starting time of the timer
-  countDownStart = new Date().getTime();
+  start = true;     // Enables timer
+  duration = mins;  // Sets timer duration
+  // Display initial countdown time
+  document.getElementById("countdown").innerHTML = (duration) + ":" + "59"; 
+  // Set starting time of the timer
+  countDownStart = new Date().getTime();                                    
 }
 
 // ends timer
 function stopCountdown() {
-  start = false;
-  document.getElementById("countdown").innerHTML = "00:00";
+  start = false;    // Disables timer
+  document.getElementById("countdown").innerHTML = "00:00";   // Sets timer display to 0:0
 }
 
 
 // Updates the html timer display
 function countdown() {
 
-  // Get current time
-  var d = new Date().getTime();
 
-  // Calculate time elapsed from when countdown was started
-  var timeElapsed = d - countDownStart
+  var d = new Date().getTime();          // Get current time
+  var timeElapsed = d - countDownStart;  // Calculate time elapsed from when countdown was started
 
   // Calculate minutes and seconds from time elapsed
   var minutes = Math.floor((timeElapsed % (1000 * 60 * 60)) / (1000 * 60));
