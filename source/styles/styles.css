@@ -113,7 +113,7 @@ main {
     height: 100%;
 }
 
-/* begin: styles for popup modal */
+/* === Help Popup Window Styling === */
 .modal{
     display: none;
     z-index: 1;
@@ -133,7 +133,6 @@ main {
     cursor: pointer;
 }
 
-/* end: styles for popup modal */
 @media only screen and (max-height: 600px) {
     main {
         height: 80vh;
