@@ -1,41 +1,44 @@
-// button is used to disable the buttons 
+// button is used to disable the buttons
 const button = document.querySelectorAll("button"); // 0 is help, 1 is start, 2 is stop
 
 // References to start and stop buttons
 var startButton = document.getElementById("start-button");
 var stopButton = document.getElementById("stop-button");
 
-
 // POMO GO (start button clicked)
-startButton.addEventListener("click", function() {
-    startTimer();                   // Call start function in controller
-    button[1].disabled = true;      // Disable start button
-    button[2].disabled = false;     // Enable stop button
+startButton.addEventListener("click", function () {
+  startTimer(); // Call start function in controller
+  button[1].disabled = true; // Disable start button
+  button[2].disabled = false; // Enable stop button
 });
 
-
-
-
 // POMO STAHP (stop button clicked)
-stopButton.addEventListener("click", function (){
-    stopTimer();                    // Call stop function in controller
-    button[2].disabled = true;      // Disable stop button
-    button[1].disabled = false;     // Enable start button
+stopButton.addEventListener("click", function () {
+  stopTimer(); // Call stop function in controller
+  button[2].disabled = true; // Disable stop button
+  button[1].disabled = false; // Enable start button
 });
 
 // help page button logics
-var modal = document.getElementById("myModal")
-var helpBtn = document.getElementById("help-button")
-var closeBtn = document.getElementsByClassName("close")[0]
+var modal = document.getElementById("myModal");
+var helpBtn = document.getElementById("help-button");
+var closeBtn = document.getElementsByClassName("close")[0];
+let shadow = document.getElementById("shadow");
 
-helpBtn.onclick = function() {
-    modal.classList.toggle("modal-show");
+function closePopup() {
+  modal.classList.remove("modal-show");
+  shadow.classList.remove("visible");
 }
 
-closeBtn.onclick = function() {
-    modal.classList.toggle("modal-show");
-;
-}
+helpBtn.onclick = function () {
+  modal.classList.toggle("modal-show");
+  shadow.classList.toggle("visible");
+};
+
+closeBtn.onclick = function () {
+  modal.classList.toggle("modal-show");
+  shadow.classList.toggle("visible");
+};
 
 // listener for start button
 //      on "click"

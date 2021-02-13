@@ -21,7 +21,6 @@
 
     <main class="page-main">
       <div class="none" id="timer-wrapper">
-
         <div class="wrapper bottom-margin" id="tab-wrapper">
           <p class="tab" id="pomo-tab">Pomo</p>
           <p class="tab" id="short-break-tab">Short Break</p>
@@ -31,7 +30,6 @@
         <div class="wrapper" id="clock-wrapper">
           <p class="countdown" id="countdown">00:00</p>
         </div>
-        
       </div>
 
       <div class="none" id="controls-wrapper">
@@ -39,10 +37,18 @@
         <button class="controls-button" id="stop-button"></button>
       </div>
 
+      <div class="shadow" id="shadow" onclick="closePopup()"></div>
       <div id="myModal" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
-          <p>The pomodoro timer helps you focus and improve your working efficiency</p>
+          <p>
+            The pomodoro timer helps you focus and improve your working
+            efficiency.
+          </p>
+          <p>
+            There should be a lot more stuff in this box, we definitely should
+            fill this in.
+          </p>
         </div>
       </div>
     </main>
