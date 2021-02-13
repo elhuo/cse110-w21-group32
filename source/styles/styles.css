@@ -115,12 +115,19 @@ main {
 
 /* === Help Popup Window Styling === */
 .modal{
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     z-index: 1;
     position: fixed;
     overflow: auto;
     background-color: #b0e0E6;
     color: black;
+    transition: all 0.2s;
+}
+
+.modal-show{
+    visibility: visible;
+    opacity: 1;
 }
 
 .modal-content{

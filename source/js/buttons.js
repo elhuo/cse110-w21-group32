@@ -29,11 +29,12 @@ var helpBtn = document.getElementById("help-button")
 var closeBtn = document.getElementsByClassName("close")[0]
 
 helpBtn.onclick = function() {
-    modal.style.display = "block";
+    modal.classList.toggle("modal-show");
 }
 
 closeBtn.onclick = function() {
-    modal.style.display = "none";
+    modal.classList.toggle("modal-show");
+;
 }
 
 // listener for start button
