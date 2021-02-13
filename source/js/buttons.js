@@ -23,8 +23,18 @@ stopButton.addEventListener("click", function (){
     button[1].disabled = false;     // Enable start button
 });
 
+// help page button logics
+var modal = document.getElementById("myModal")
+var helpBtn = document.getElementById("help-button")
+var closeBtn = document.getElementsByClassName("close")[0]
 
+helpBtn.onclick = function() {
+    modal.style.display = "block";
+}
 
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
 
 // listener for start button
 //      on "click"

@@ -113,6 +113,27 @@ main {
     height: 100%;
 }
 
+/* begin: styles for popup modal */
+.modal{
+    display: none;
+    z-index: 1;
+    position: fixed;
+    overflow: auto;
+    background-color: #b0e0E6;
+    color: black;
+}
+
+.modal-content{
+    padding: 20px;
+}
+
+.close:hover, .close:focus{
+    color:#000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* end: styles for popup modal */
 @media only screen and (max-height: 600px) {
     main {
         height: 80vh;
