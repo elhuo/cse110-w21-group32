@@ -25,16 +25,19 @@ var helpBtn = document.getElementById("help-button");
 var closeBtn = document.getElementsByClassName("close")[0];
 let shadow = document.getElementById("shadow");
 
+// Close popup and remove shadow
 function closePopup() {
   modal.classList.remove("modal-show");
   shadow.classList.remove("visible");
 }
 
+// Toggle popup on help button click
 helpBtn.onclick = function () {
   modal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
 
+// Toggle popup on close button click
 closeBtn.onclick = function () {
   modal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");

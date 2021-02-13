@@ -32,6 +32,7 @@ button {
     display: flex;
     justify-content: flex-end;
     height: 7vh;
+    padding: 1em 2em;
 }
 
 .justify-right {
@@ -44,7 +45,7 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 80vh;
+    height: 70vh;
 }
 
 .wrapper {
@@ -112,6 +113,15 @@ main {
     background-size: 100% 100%;
     height: 100%;
 }
+
+.help-button{
+    background-image: url(../img/help.png);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    outline: none;
+}
+
 
 /* === Help Popup Window Styling === */
 .modal{
