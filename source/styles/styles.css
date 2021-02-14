@@ -54,13 +54,13 @@ main {
     padding: .5em;
 }
 
-#timer-wrapper {
+.timer-wrapper {
     width: 70vw;
     min-width: 70vw;
     overflow: hidden;
 }
 
-#tab-wrapper {
+.tab-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -81,7 +81,7 @@ main {
 }
 
 /* === Timer formatting === */
-#clock-wrapper {
+.clock-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -90,7 +90,7 @@ main {
     padding: 3em 0em;
 }
 
-#controls-wrapper {
+.controls-wrapper {
     display: flex;
     align-items: center;
     margin-top: 3em;
@@ -99,12 +99,12 @@ main {
     justify-content: space-between;
 }
 
-#countdown {
+.countdown {
     font-size: 10vw;
 }
 
 /* === Buttons === */
-#start-button {
+.start-button {
     background-image: url(../img/Start.png);
     background-color: transparent;
     background-repeat: no-repeat;
@@ -113,7 +113,7 @@ main {
     width: 15%;
 }
 
-#stop-button {
+.stop-button {
     background-image: url(../img/Stop.png);
     background-color: transparent;
     background-repeat: no-repeat;
@@ -156,8 +156,6 @@ main {
     height: 75vh;
     width: 75vw;
     z-index: 100;
-    /* display: flex;
-    flex-direction: column; */
 }
 
 .shadow {
