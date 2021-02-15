@@ -69,6 +69,7 @@ function changeStyle() {
     if (cycle == 0) {
         document.body.style.backgroundColor = "#0087bd";
         document.getElementById("pomo-tab").style.border = "medium solid";
+        document.getElementById("pomo-tab").style.borderBottom = "none";
         document.getElementById("short-break-tab").style.border = "none";
         document.getElementById("long-break-tab").style.border = "none";
     }
@@ -77,6 +78,7 @@ function changeStyle() {
         document.body.style.backgroundColor = "blue";
         document.getElementById("pomo-tab").style.border = "none";
         document.getElementById("short-break-tab").style.border = "medium solid";
+        document.getElementById("short-break-tab").style.borderBottom = "none";
         document.getElementById("long-break-tab").style.border = "none";
     }
     // change page style to fit long break cycle
@@ -85,5 +87,6 @@ function changeStyle() {
         document.getElementById("pomo-tab").style.border = "none";
         document.getElementById("short-break-tab").style.border = "none";
         document.getElementById("long-break-tab").style.border = "medium solid";
+        document.getElementById("long-break-tab").style.borderBottom = "none";
     }
 }
