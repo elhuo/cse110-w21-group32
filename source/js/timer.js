@@ -2,18 +2,19 @@ let start = false                           // true - timer is on; false - timer
 let duration = 24                           // duration of timer cycle in minutes (needs to be converted later in ms somewhere below) ; default 25min
 var countDownStart = new Date().getTime();  // stores the starting time of the timer
 
-// REMOVE LATER!!!!! JUST TESTING RIGHT NOW
-// startCountdown(24); 
 
-// Updates the html timer display, if start = true
-
+// Updates the html timer display when timer is enabled
 setInterval(() => {
   if (start){
     countdown();
   }
-}, 500);  // Will refresh every 500 ms, sometimes setInterval isn't exact and it skips a second
+}, 500);  // Will refresh every 500 ms: sometimes setInterval isn't exact and may skip a second
 
-// starts timer to set duration (NOTE: if you want a 25 min timer, set it to 24)
+/**
+ * Starts the countdown
+ * @param {int} mins - The duration for the timer to run for. 
+ * Remember to subtract 1 minute (if you want a 25 min timer, set to 24)
+ */
 function startCountdown(mins) {
   start = true;     // Enables timer
   duration = mins;  // Sets timer duration
@@ -25,14 +26,18 @@ function startCountdown(mins) {
   countDownStart = new Date().getTime();                                    
 }
 
-// ends timer
+/**
+ * Ends the countdown
+ */
 function stopCountdown() {
   start = false;    // Disables timer
-  document.getElementById("countdown").innerHTML = "00:00";   // Sets timer display to 0:0
+  document.getElementById("countdown").innerHTML = "00:00";   // Sets timer display to 00:00
 }
 
 
-// Updates the html timer display
+/**
+ * Updates the time left on the timer, by subtracting the time elapsed from the initial time
+ */
 function countdown() {
 
   var d = new Date().getTime();          // Get current time
