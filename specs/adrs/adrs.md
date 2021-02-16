@@ -130,15 +130,18 @@ We could not get the automated linting in Github Actions to work but we decided 
     - Main branch: final merging and deployment
 
 * File Structure
-- ``` .
+``` .
 ├── media
 │   └── favicon.ico
 |   └── audio files
 ├── index.html
 ├── js
-│   └── scripts.js
+│   └── buttons.js
+│   └── controller.js
+│   └── timer.js
 └── styles
-    └── styles.css ```
+    └── styles.css
+```
     
 * Pull Requests
 - Every week during team meeting
