@@ -73,6 +73,7 @@ We could not get the automated linting in Github Actions to work but we decided 
   - We will be pushing code into the dev branch and then test and then finally the deploy stage which is main branch.
 
 - Build:
+  - Make feature branches(can make pull requests easier)
   - Pull Requests:
     -  User review of documentation and code quality using automated tool [Codacy](https://www.codacy.com/product). Codacy generates feedback on our pull requests for code quality.
 
