@@ -11,34 +11,73 @@
     <title>Spl/ice Pomodoro</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <script src="js/scripts.js" defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <header class="page-header" id="page-header">
       <h1 class="logo justify-right" id="logo">Spl/ice</h1>
-      <button class="help-button" id="help-button">HELP</button>
+      <button class="help-button" id="help-button"></button>
     </header>
 
     <main class="page-main">
-      <div class="wrapper" id="timer-wrapper">
-
-        <div class="wrapper" id="tab-wrapper">
+      <div class="timer-wrapper" id="timer-wrapper">
+        <div class="wrapper tab-wrapper" id="tab-wrapper">
           <p class="tab" id="pomo-tab">Pomo</p>
           <p class="tab" id="short-break-tab">Short Break</p>
           <p class="tab" id="long-break-tab">Long Break</p>
         </div>
 
-        <div class="wrapper" id="clock-wrapper">
+        <div class="wrapper clock-wrapper" id="clock-wrapper">
           <p class="countdown" id="countdown">00:00</p>
         </div>
-        
       </div>
 
-      <div class="wrapper" id="controls-wrapper">
-        <button class="controls-button" id="start-button">START</button>
-        <button class="controls-button" id="stop-button">STOP</button>
+      <div class="controls-wrapper" id="controls-wrapper">
+        <button class="controls-button start-button" id="start-button"></button>
+        <button class="controls-button stop-button" id="stop-button"></button>
+      </div>
+
+      <div class="shadow" id="shadow" onclick="closePopup()"></div>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>
+            Spl/ice Pomodoro is a pomodoro timer catered for students. Work with
+            the timer and prevent yourself from freezing up when studying and
+            working!
+          </p>
+          <h3>What is the Pomodoro Technique?</h3>
+          <p>
+            The Pomodoro Technique increases work productivity by dividing work
+            into "pomodoros", units comprised of a 25 minutes of work and 5
+            minutes of break. After 4 "pomodoros", you get a longer 30 minute
+            break.
+          </p>
+          <h3>How To Properly Pomodoro</h3>
+          <p>
+            When the "pomo" tab is active, do everything in your power to remove
+            all distractions and focus on your work. You'll find that most
+            distractions can be put off until a break time. If you have to break
+            focus and do something else, press the "stop" button. The pomodoro
+            will not be completed.
+          </p>
+          <p>
+            After 25 minutes of work, stop what you're doing. Don't try to finish
+            something up, your time of work is done. Take a break. You deserve
+            it. Take your mind off of your work. Scroll through your phone, walk
+            around. This break time is essential for staying focused during each 
+            "pomo"
+          </p>
+        </div>
       </div>
     </main>
+    <script src="js/timer.js" type="text/javascript"></script>
+    <script src="js/controller.js" type="text/javascript"></script>
+    <script src="js/buttons.js" type="text/javascript"></script>
   </body>
 </html>

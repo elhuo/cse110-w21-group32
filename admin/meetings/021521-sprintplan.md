@@ -22,7 +22,6 @@ Elizabeth Morris, Ellie Huo, Jason Wong, Sicong Duan, Wilson Low, Elliot Kim, Er
 3. JS Docs
 
 - Push everything that has been tested to Test branch for code review in team meeting
-1. We just merged the dev branch to the test branch
 
 - MVP Sprint week 2 planning
-1. We want everyone to inidicate what thing issue they are working on
+1. We just merged the dev branch to the test branch
