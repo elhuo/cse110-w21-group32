@@ -23,13 +23,17 @@ stopButton.addEventListener("click", function () {
 
 // help page button logics
 var modal = document.getElementById("myModal");
+var settingsModal = document.getElementById("settings-modal");
 var helpBtn = document.getElementById("help-button");
-var closeBtn = document.getElementsByClassName("close")[0];
+var settingsBtn = document.getElementById("settings-button");
+var closeBtn = document.getElementById("help-close");
+var settingsCloseBtn = document.getElementById("settings-close");
 let shadow = document.getElementById("shadow");
 
 // Close popup and remove shadow
 function closePopup() {
   modal.classList.remove("modal-show");
+  settingsModal.classList.remove("modal-show");
   shadow.classList.remove("visible");
 }
 
@@ -45,6 +49,17 @@ closeBtn.onclick = function () {
   shadow.classList.toggle("visible");
 };
 
+// Toggle popup on settings button click
+settingsBtn.onclick = function () {
+  settingsModal.classList.toggle("modal-show");
+  shadow.classList.toggle("visible");
+};
+
+// Toggle popup on close button click
+settingsCloseBtn.onclick = function () {
+  settingsModal.classList.toggle("modal-show");
+  shadow.classList.toggle("visible");
+};
 // listener for start button
 //      on "click"
 //          call function in controller
