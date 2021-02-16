@@ -1,5 +1,5 @@
 // tracks the type of cycle
-// 0 = pomo, 1 = short break, 2 = long break
+// 0 = pomo, 1 = short break, 2 = long break, 3 = timer stopped
 var cycle = 0;
 
 // tracks the number of completed pomos to know when to long break
@@ -13,7 +13,7 @@ const sBreakTime = 4;
 // 15 - 1 minutes to pass in to startCountdown for long break cycle
 const lBreakTime = 14;
 
-// probably called by the buttons.js event listener for start
+// Called by the buttons.js event listener for start
 function startTimer() {
     cycle = 0;
     numPomos = 0;
@@ -21,9 +21,9 @@ function startTimer() {
     startCountdown(pomoTime);
 }
 
-// probably called by the buttons.js event listener for stop
+// Called by the buttons.js event listener for stop
 function stopTimer() {
-    cycle = 0;
+    cycle = 3;
     numPomos = 0;
     changeStyle();
     stopCountdown();
@@ -86,6 +86,16 @@ function changeStyle() {
         document.body.style.backgroundColor = "purple";
         document.getElementById("pomo-tab").style.border = "none";
         document.getElementById("short-break-tab").style.border = "none";
+        document.getElementById("long-break-tab").style.border = "medium solid";
+        document.getElementById("long-break-tab").style.borderBottom = "none";
+    }
+    // change page style to fit timer stopped
+    if (cycle == 3) {
+        document.body.style.backgroundColor = "#0087bd";
+        document.getElementById("pomo-tab").style.border = "medium solid";
+        document.getElementById("pomo-tab").style.borderBottom = "none";
+        document.getElementById("short-break-tab").style.border = "medium solid";
+        document.getElementById("short-break-tab").style.borderBottom = "none";
         document.getElementById("long-break-tab").style.border = "medium solid";
         document.getElementById("long-break-tab").style.borderBottom = "none";
     }

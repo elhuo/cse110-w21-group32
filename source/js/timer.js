@@ -35,7 +35,6 @@ function stopCountdown() {
 // Updates the html timer display
 function countdown() {
 
-
   var d = new Date().getTime();          // Get current time
   var timeElapsed = d - countDownStart;  // Calculate time elapsed from when countdown was started
 

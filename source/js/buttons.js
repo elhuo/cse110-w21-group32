@@ -4,19 +4,21 @@ const button = document.querySelectorAll("button"); // 0 is help, 1 is start, 2 
 // References to start and stop buttons
 var startButton = document.getElementById("start-button");
 var stopButton = document.getElementById("stop-button");
+stopButton.disabled = true;     // Stop button disabled by default
+
 
 // POMO GO (start button clicked)
 startButton.addEventListener("click", function () {
   startTimer(); // Call start function in controller
-  button[1].disabled = true; // Disable start button
-  button[2].disabled = false; // Enable stop button
+  startButton.disabled = true;  // Disable start button
+  stopButton.disabled = false;  // Enable stop button
 });
 
 // POMO STAHP (stop button clicked)
 stopButton.addEventListener("click", function () {
   stopTimer(); // Call stop function in controller
-  button[2].disabled = true; // Disable stop button
-  button[1].disabled = false; // Enable start button
+  stopButton.disabled = true;   // Disable stop button
+  startButton.disabled = false; // Enable start button
 });
 
 // help page button logics
