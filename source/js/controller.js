@@ -21,7 +21,7 @@ var cycle = 0;
 var numPomos = 0;
 
 /** (25 - 1) minutes to pass in to startCountdown for pomodoro cycle. */
-const pomoTime = 24;
+var pomoTime = 24;
 /** (5 - 1) minutes to pass in to startCountdown for short break cycle. */
 const sBreakTime = 4;
 /** (15 - 1) minutes to pass in to startCountdown for long break cycle. */

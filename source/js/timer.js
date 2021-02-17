@@ -1,7 +1,8 @@
 let start = false                           // true - timer is on; false - timer is off
-let duration = 24                           // duration of timer cycle in minutes (needs to be converted later in ms somewhere below) ; default 25min
+let duration;                          // duration of timer cycle in minutes (needs to be converted later in ms somewhere below) ; default 25min
 var countDownStart = new Date().getTime();  // stores the starting time of the timer
 
+var pomoSound = document.getElementById("pomo-sound");
 
 // Updates the html timer display when timer is enabled
 setInterval(() => {
@@ -50,6 +51,7 @@ function countdown() {
   // If timer is over
   if (minutes > duration) {
     start = false;
+    pomoSound.play();
     // Call stop function in controller
     changeCycles();
     return;
