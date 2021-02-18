@@ -76,7 +76,7 @@ main {
     border: 2px solid;
     border-bottom: none;
     padding: 1em;
-    flex: 1 1 0px;
+    flex: 0 1 0px;
     text-align: center;
     border-radius: 1em 1em 0em 0em;
     font-size: 1em;
