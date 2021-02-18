@@ -58,7 +58,7 @@ main {
 .timer-wrapper {
     width: 70vw;
     min-width: 70vw;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .tab-wrapper {
