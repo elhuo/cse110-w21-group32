@@ -163,12 +163,7 @@ main {
     cursor: pointer;
 }
 
-button:hover {
-    outline: solid;
-}
-
 .settings-button:hover {
-    outline: none;
     transform:rotate(30deg)
 }
 
