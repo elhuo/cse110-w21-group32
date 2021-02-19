@@ -119,6 +119,11 @@ main {
 }
 
 /* === Buttons === */
+button:disabled {
+    filter: brightness(80%);
+    cursor: auto;
+}
+
 .start-button {
     background-image: url(../img/Start.png);
     background-color: transparent;
