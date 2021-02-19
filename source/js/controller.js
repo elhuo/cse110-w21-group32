@@ -58,9 +58,6 @@ function stopTimer() {
  */
 function changeCycles() {
 
-    /* Play sound */
-    pomoSound.play();
-
     /** If current cycle is pomo, increment numPomos. */
     if (cycle == 0) numPomos++;
     
