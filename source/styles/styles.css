@@ -10,7 +10,6 @@ html {
 
 /* === Universal page content formatting === */
 body {
-    /*background-color: rgb(105, 105, 243);*/
     padding: 1em;
     min-height: 90%;
     background-color: #0087bd;
