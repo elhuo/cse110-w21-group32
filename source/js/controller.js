@@ -109,7 +109,7 @@ function changeStyle() {
     }
     /** Change page style to fit short break cycle. */
     if (cycle == 1) {
-        document.body.style.backgroundColor = "blue";
+        document.body.style.backgroundColor = "#333399";
         document.getElementById("pomo-tab").style.border = "none";
         document.getElementById("short-break-tab").style.border = "medium solid";
         document.getElementById("short-break-tab").style.borderBottom = "none";
@@ -117,7 +117,7 @@ function changeStyle() {
     }
     /** Change page style to fit long break cycle. */
     if (cycle == 2) {
-        document.body.style.backgroundColor = "purple";
+        document.body.style.backgroundColor = "#663399";
         document.getElementById("pomo-tab").style.border = "none";
         document.getElementById("short-break-tab").style.border = "none";
         document.getElementById("long-break-tab").style.border = "medium solid";
