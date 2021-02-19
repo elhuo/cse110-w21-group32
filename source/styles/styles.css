@@ -146,8 +146,8 @@ main {
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 75px;
-    width: 75px;
+    height: 60px;
+    width: 60px;
     outline: none;
     cursor: pointer;
 }
@@ -161,6 +161,15 @@ main {
     width: 75px;
     outline: none;
     cursor: pointer;
+}
+
+button:hover {
+    outline: solid;
+}
+
+.settings-button:hover {
+    outline: none;
+    transform:rotate(30deg)
 }
 
 /* === Volume Image === */
