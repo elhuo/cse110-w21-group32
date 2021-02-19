@@ -130,6 +130,14 @@ main {
     cursor: pointer;
 }
 
+.start-button:hover:enabled {
+    filter: brightness(80%);
+}
+
+.start-button:active:enabled {
+    filter: brightness(60%);
+}
+
 .stop-button {
     background-image: url(../img/Stop.png);
     background-color: transparent;
@@ -139,6 +147,14 @@ main {
     width: 15%;
     outline: none;
     cursor: pointer;
+}
+
+.stop-button:hover:enabled {
+    filter: brightness(80%);
+}
+
+.stop-button:active:enabled {
+    filter: brightness(60%);
 }
 
 .help-button{
@@ -152,6 +168,14 @@ main {
     cursor: pointer;
 }
 
+.help-button:hover:enabled {
+    filter: brightness(80%);
+}
+
+.help-button:active:enabled {
+    filter: brightness(60%);
+}
+
 .settings-button {
     background-image: url(../img/settings.png);
     background-color: transparent;
@@ -163,8 +187,12 @@ main {
     cursor: pointer;
 }
 
-.settings-button:hover {
+.settings-button:hover:enabled {
     transform:rotate(30deg)
+}
+
+.settings-button:active:enabled {
+    filter: brightness(60%);
 }
 
 /* === Volume Image === */
