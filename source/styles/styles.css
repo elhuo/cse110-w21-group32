@@ -10,7 +10,6 @@ html {
 
 /* === Universal page content formatting === */
 body {
-    background-color: rgb(105, 105, 243);
     padding: 1em;
     min-height: 90%;
     background-color: #0087bd;
@@ -22,6 +21,12 @@ button {
     background-color: #b0e0E6;
     border: transparent;
     text-align: center;
+}
+
+@media only screen and (max-height: 600px) {
+    main {
+        height: 80vh;
+    }
 }
 
 /* === Header formatting === */
@@ -165,6 +170,7 @@ main {
     z-index: 100;
     font-size: 1.5em;
     word-wrap: break-word;
+    line-height: 150%;
 }
 
 .modal-content p, h3 {
@@ -200,10 +206,4 @@ main {
     color:#000;
     text-decoration: none;
     cursor: pointer;
-}
-
-@media only screen and (max-height: 600px) {
-    main {
-        height: 80vh;
-    }
 }
