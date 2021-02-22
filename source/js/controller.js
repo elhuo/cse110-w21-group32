@@ -135,9 +135,43 @@ function changeStyle() {
     }
 }
 
+/**
+ * Sets the current cycle
+ * @param {int} cycle_ - The value to set for the current cycle. 
+ */
+function setCycle(cycle_) {
+    cycle = cycle_;
+}
+
+/**
+ * Returns the current cycle
+ * @returns {int} cycle - The current cycle. 
+ */
+function getCycle() {
+    return cycle;
+}
+
+/**
+ * Sets the current number of Pomos 
+ * @param {int} numPomos_ - The value to set for the current number of Pomos. 
+ */
+function setNumPomos(numPomos_) {
+    numPomos = numPomos_;
+}
+
+/**
+ * Returns the current number of Pomos 
+ * @returns {int} numPomos - The current number of Pomos. 
+ */
+function getNumPomos() {
+    return numPomos;
+}
+
 /** export functions and varialbes for test file */
-exports.cycle = cycle;
-exports.numPomos = numPomos;
+exports.setCycle = setCycle;
+exports.getCycle = getCycle;
+exports.setNumPomos = setNumPomos;
+exports.getNumPomos = getNumPomos;
 exports.startTimer = startTimer;
 exports.stopTimer = stopTimer;
 exports.changeCycles = changeCycles;
