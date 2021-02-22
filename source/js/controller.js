@@ -134,3 +134,11 @@ function changeStyle() {
         document.getElementById("long-break-tab").style.borderBottom = "none";
     }
 }
+
+/** export functions and varialbes for test file */
+exports.cycle = cycle;
+exports.numPomos = numPomos;
+exports.startTimer = startTimer;
+exports.stopTimer = stopTimer;
+exports.changeCycles = changeCycles;
+exports.changeStyle = changeStyle;
