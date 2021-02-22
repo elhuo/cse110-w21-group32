@@ -59,7 +59,7 @@ function stopTimer() {
 function changeCycles() {
     /** If current cycle is pomo, increment numPomos. */
     if (cycle == 0) numPomos++;
-    
+
     /** 
      * If current cycle is pomo and 4 pomos haven't occurred yet,
      * set cycle to short break.
@@ -68,7 +68,7 @@ function changeCycles() {
         cycle = 1;
         startCountdown(sBreakTime);
     }
-    
+
     /**
      * If current cycle is pomo and 4 pomos have occurred,
      * set cycle to long break and reset numPomos.
@@ -78,7 +78,7 @@ function changeCycles() {
         cycle = 2;
         startCountdown(lBreakTime);
     }
-    
+
     /** When short and long breaks end, return to pomo cycle. */
     else if (cycle == 1) {
         cycle = 0;
@@ -88,7 +88,7 @@ function changeCycles() {
         cycle = 0;
         startCountdown(pomoTime);
     }
-    
+
     /** Change page style according to new cycle. */
     changeStyle();
 }
@@ -134,3 +134,11 @@ function changeStyle() {
         document.getElementById("long-break-tab").style.borderBottom = "none";
     }
 }
+
+/** export functions and varialbes for test file */
+exports.cycle = cycle;
+exports.numPomos = numPomos;
+exports.startTimer = startTimer;
+exports.stopTimer = stopTimer;
+exports.changeCycles = changeCycles;
+exports.changeStyle = changeStyle;

@@ -5,7 +5,7 @@ var countDownStart = new Date().getTime();  // stores the starting time of the t
 
 // Updates the html timer display when timer is enabled
 setInterval(() => {
-  if (start){
+  if (start) {
     countdown();
   }
 }, 500);  // Will refresh every 500 ms: sometimes setInterval isn't exact and may skip a second
@@ -18,12 +18,12 @@ setInterval(() => {
 function startCountdown(mins) {
   start = true;     // Enables timer
   duration = mins;  // Sets timer duration
-  
-  if (duration < 10) {duration = "0" + duration;}
+
+  if (duration < 10) { duration = "0" + duration; }
   // Display initial countdown time
-  document.getElementById("countdown").innerHTML = (duration) + ":" + "59"; 
+  document.getElementById("countdown").innerHTML = (duration) + ":" + "59";
   // Set starting time of the timer
-  countDownStart = new Date().getTime();                                    
+  countDownStart = new Date().getTime();
 }
 
 /**
@@ -69,7 +69,7 @@ function countdown() {
     minutes = "0" + (duration - minutes);
   }
   // Otherwise, just convert to string without padding
-  else{
+  else {
     minutes = "" + (duration - minutes);
   }
 
@@ -78,15 +78,5 @@ function countdown() {
 
 }
 
-
-// Main timer component:
-//    variable that keeps track of time elapsed
-//    Function that changes the static html page (to be in sync with the actual timer)
-//    reset function, input time in minutes to count down
-//    when timer is finished, call method in controller (tbd)
-
-
-
-// something something setInterval
-// https://www.w3schools.com/howto/howto_js_countdown.asp
-// https://www.w3schools.com/jsref/met_win_setinterval.asp
+exports.startCountdown = startCountdown;
+exports.stopCountdown = stopCountdown;
