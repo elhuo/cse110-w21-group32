@@ -77,6 +77,3 @@ function countdown() {
   document.getElementById("countdown").innerHTML = minutes + ":" + seconds;
 
 }
-
-exports.startCountdown = startCountdown;
-exports.stopCountdown = stopCountdown;
