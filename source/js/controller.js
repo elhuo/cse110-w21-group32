@@ -57,6 +57,7 @@ function stopTimer() {
  * calls changeStyle to change the CSS to match the new cycle.
  */
 function changeCycles() {
+
     /** If current cycle is pomo, increment numPomos. */
     if (cycle == 0) numPomos++;
     
