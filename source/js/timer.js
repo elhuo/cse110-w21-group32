@@ -67,7 +67,7 @@ function countdown() {
   }
 
   // If single digit minutes, pad with a 0
-  if (duration - minutes <= 10) {
+  if (duration - minutes < 10) {
     minutes = "0" + (duration - minutes);
   }
   // Otherwise, just convert to string without padding
