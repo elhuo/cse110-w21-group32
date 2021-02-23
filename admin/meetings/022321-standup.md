@@ -40,11 +40,11 @@ Zane
 
 ### Jason
 > What did you get done since last report?
-- 
+- Not much
 > What's planned for tomorrow?
-- 
+- All the assignments due today
 > Blockers?
-- 
+- Didn't know we had assignments due today
 
 ### Stephen
 > What did you get done since last report?
