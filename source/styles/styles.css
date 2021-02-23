@@ -288,6 +288,15 @@ button:disabled {
     cursor: pointer;
 }
 
+select{
+    margin: 50px;
+    width: 150px;
+    padding: 5px 35px 5px 5px;
+    font-size: 16px;
+    border: 1px solid black;
+    height: 34px;
+    background-color: #b0e0E6;
+}
 @media only screen and (max-height: 600px) {
     main {
         height: 80vh;

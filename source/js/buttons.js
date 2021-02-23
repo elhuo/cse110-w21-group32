@@ -83,6 +83,20 @@ volumeSlider.onclick = function() {
   pomoSound.volume = volumeSlider.value/100;
 };
 
+const nameSrcMap = {
+  "party-horn": "./audio/party-horn.mp3", 
+  "air-horn": "./audio/air-horn.mp3" 
+}
+var soundChoices = document.getElementById("volume-sound");
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelector('#volume-sound').onchange = function(){
+    let soundSelected = soundChoices.value;
+    let audioElem = document.getElementById("pomo-sound");
+    audioElem.src = nameSrcMap[soundSelected];
+    console.log(audioElem.src)
+  }
+})
+
 // Toggle popup on close button click
 settingsCloseBtn.onclick = function () {
   settingsModal.classList.toggle("modal-show");
