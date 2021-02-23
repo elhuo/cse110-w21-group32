@@ -1,4 +1,4 @@
-# Wednesday Zoom Standup
+# Thursday Zoom Standup
 Time: February 18, 2021 
 
 Location: Zoom
