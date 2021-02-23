@@ -83,6 +83,7 @@ volumeSlider.onclick = function() {
   pomoSound.volume = volumeSlider.value/100;
 };
 
+// Audio source select drop down menu
 const nameSrcMap = {
   "party-horn": "./audio/party-horn.mp3", 
   "air-horn": "./audio/air-horn.mp3" 
@@ -96,6 +97,12 @@ document.addEventListener('DOMContentLoaded', function(){
     console.log(audioElem.src)
   }
 })
+
+// button that play the alert sound so the user can pre-hear the volume and sound
+var playButton = document.getElementById("play-sound")
+playButton.onclick = function(){
+  document.getElementById("pomo-sound").play();
+}
 
 // Toggle popup on close button click
 settingsCloseBtn.onclick = function () {

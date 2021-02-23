@@ -297,6 +297,18 @@ select{
     height: 34px;
     background-color: #b0e0E6;
 }
+
+#play-sound{
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid black;
+}
+
+#play-sound:hover:enabled{
+    filter: brightness(80%);
+}
+
 @media only screen and (max-height: 600px) {
     main {
         height: 80vh;
