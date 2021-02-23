@@ -23,5 +23,5 @@ Elizabeth Morris, Ellie Huo, Jason Wong, Sicong Duan, Wilson Low, Elliot Kim, Er
 
 - Push everything that has been tested to Test branch for code review in team meeting
 
-
 - MVP Sprint week 2 planning
+1. We just merged the dev branch to the test branch

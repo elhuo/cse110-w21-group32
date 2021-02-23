@@ -60,7 +60,7 @@ function changeCycles() {
 
     /** If current cycle is pomo, increment numPomos. */
     if (cycle == 0) numPomos++;
-    
+
     /** 
      * If current cycle is pomo and 4 pomos haven't occurred yet,
      * set cycle to short break.
@@ -69,7 +69,7 @@ function changeCycles() {
         cycle = 1;
         startCountdown(sBreakTime);
     }
-    
+
     /**
      * If current cycle is pomo and 4 pomos have occurred,
      * set cycle to long break and reset numPomos.
@@ -79,7 +79,7 @@ function changeCycles() {
         cycle = 2;
         startCountdown(lBreakTime);
     }
-    
+
     /** When short and long breaks end, return to pomo cycle. */
     else if (cycle == 1) {
         cycle = 0;
@@ -89,7 +89,7 @@ function changeCycles() {
         cycle = 0;
         startCountdown(pomoTime);
     }
-    
+
     /** Change page style according to new cycle. */
     changeStyle();
 }
@@ -110,7 +110,7 @@ function changeStyle() {
     }
     /** Change page style to fit short break cycle. */
     if (cycle == 1) {
-        document.body.style.backgroundColor = "blue";
+        document.body.style.backgroundColor = "#333399";
         document.getElementById("pomo-tab").style.border = "none";
         document.getElementById("short-break-tab").style.border = "medium solid";
         document.getElementById("short-break-tab").style.borderBottom = "none";
@@ -118,7 +118,7 @@ function changeStyle() {
     }
     /** Change page style to fit long break cycle. */
     if (cycle == 2) {
-        document.body.style.backgroundColor = "purple";
+        document.body.style.backgroundColor = "#663399";
         document.getElementById("pomo-tab").style.border = "none";
         document.getElementById("short-break-tab").style.border = "none";
         document.getElementById("long-break-tab").style.border = "medium solid";
@@ -135,3 +135,45 @@ function changeStyle() {
         document.getElementById("long-break-tab").style.borderBottom = "none";
     }
 }
+
+/**
+ * Sets the current cycle
+ * @param {int} cycle_ - The value to set for the current cycle. 
+ */
+function setCycle(cycle_) {
+    cycle = cycle_;
+}
+
+/**
+ * Returns the current cycle
+ * @returns {int} cycle - The current cycle. 
+ */
+function getCycle() {
+    return cycle;
+}
+
+/**
+ * Sets the current number of Pomos 
+ * @param {int} numPomos_ - The value to set for the current number of Pomos. 
+ */
+function setNumPomos(numPomos_) {
+    numPomos = numPomos_;
+}
+
+/**
+ * Returns the current number of Pomos 
+ * @returns {int} numPomos - The current number of Pomos. 
+ */
+function getNumPomos() {
+    return numPomos;
+}
+
+/** export functions and varialbes for test file */
+exports.setCycle = setCycle;
+exports.getCycle = getCycle;
+exports.setNumPomos = setNumPomos;
+exports.getNumPomos = getNumPomos;
+exports.startTimer = startTimer;
+exports.stopTimer = stopTimer;
+exports.changeCycles = changeCycles;
+exports.changeStyle = changeStyle;
