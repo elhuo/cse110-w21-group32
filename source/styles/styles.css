@@ -10,18 +10,33 @@ html {
 
 /* === Universal page content formatting === */
 body {
-    background-color: rgb(105, 105, 243);
-    padding: 1em;
-    min-height: 90%;
     background-color: #0087bd;
     color: white;
+    padding: 1em;
+    min-height: 90%;
     font-family: "OpenSans", sans-serif;
+}
+
+@media only screen and (max-height: 600px) {
+    main {
+        height: 80vh;
+    }
 }
 
 button {
     background-color: #b0e0E6;
     border: transparent;
     text-align: center;
+}
+
+select{
+    margin: 50px;
+    width: 150px;
+    padding: 5px 35px 5px 5px;
+    font-size: 16px;
+    border: 1px solid black;
+    height: 34px;
+    background-color: #b0e0E6;
 }
 
 /* === Header formatting === */
@@ -201,7 +216,7 @@ button:disabled {
 }
 
 /* === Volume Image === */
-#volume-image {
+.volume-image {
     justify-self: center;
     justify-self: flex-start;
     padding-right: 20px;
@@ -209,12 +224,12 @@ button:disabled {
 }
 
 /* === Volume Slider === */
-#volume-slider {
+.volume-slider {
     grid-area: slider;
     width: 50%;
     justify-self: left;
 }
-#volume-grid-container {
+.volume-grid-container {
     position:absolute;
     column-gap: 10px;
     grid-template-areas:
@@ -275,6 +290,7 @@ button:disabled {
     opacity: 1;
 }
 
+/* === Universal formatting for popup close buttons === */
 .close {
     position: absolute;
     right: .5em;
@@ -288,29 +304,14 @@ button:disabled {
     cursor: pointer;
 }
 
-select{
-    margin: 50px;
-    width: 150px;
-    padding: 5px 35px 5px 5px;
-    font-size: 16px;
-    border: 1px solid black;
-    height: 34px;
-    background-color: #b0e0E6;
-}
-
-#play-sound{
+/* === Play sound formatting === */
+.play-sound{
     padding: 15px 32px;
     text-align: center;
     font-size: 16px;
     border: 1px solid black;
 }
 
-#play-sound:hover:enabled{
+.play-sound:hover:enabled{
     filter: brightness(80%);
-}
-
-@media only screen and (max-height: 600px) {
-    main {
-        height: 80vh;
-    }
 }
