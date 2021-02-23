@@ -28,7 +28,6 @@ const volume_level_1 = 0;
 
 // Sound of finishing a pomodoro
 var pomoSound = document.getElementById("pomo-sound");
-pomoSound.volume = volumeSlider.value/100;
 var volumeImg = document.getElementById("volume-image");
 
 // help page button logics
@@ -67,6 +66,7 @@ settingsBtn.onclick = function () {
 };
 
 // Adjust volume level
+pomoSound.volume = volumeSlider.value/100;
 volumeSlider.onclick = function() {
   let val = volumeSlider.value;
   if( val > volume_level_3 ) {
