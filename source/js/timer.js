@@ -78,7 +78,28 @@ function countdown() {
 
 }
 
+function getStart(){
+  return start;
+}
 
+function getDuration(){
+  return duration; 
+}
+
+/**
+ * Sets the current duration
+ * @param {int} duration_ - The value to set for the duration. 
+ */
+function setDuration(duration_) {
+  duration = duration_;
+}
+
+exports.startCountdown = startCountdown;
+exports.stopCountdown = stopCountdown;
+exports.countdown = countdown;
+exports.getStart = getStart;
+exports.setDuration = setDuration;
+exports.getDuration = getDuration;
 // Main timer component:
 //    variable that keeps track of time elapsed
 //    Function that changes the static html page (to be in sync with the actual timer)
