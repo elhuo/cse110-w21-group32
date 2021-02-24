@@ -65,7 +65,7 @@ Fig 1. the final page after my teammates added more contents and styles
 ![](Get_Set_Export.png)
 - Added get/set methods for local variables in controller.js 
 - Added export statements for controller.js
-![](Controller_Test.png)
+![Testing Demo](test_demo.gif)
 - Wrote unit tests for controller.js including documentation for tests
 
 
