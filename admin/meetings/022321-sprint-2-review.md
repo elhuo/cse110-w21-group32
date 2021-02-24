@@ -12,6 +12,7 @@ Unattendence: Zane(had work)
 
 ### Elizabeth Morris
 - Helped with pipeline outlining and setup. Created initial pipeline diagram.
+  ![Pipeline Diagram](PipelineDiagram.png)
 - Cleaned up, read through, and formatted base CSS code following Eric's initial implementations
 - Switched id to class selectors where needed
 - Minor tweaks to CSS on base page and popups (both help and settings)
@@ -70,7 +71,7 @@ Fig 1. the final page after my teammates added more contents and styles
 
 
 ### Elliot Kim
-- Wrote most of the Javascript code for Timer.js: Created the actual countdown functionality as well as implementing functions for starting the timer, setting the timer, and calling functions in controller.js when the timer runs out.
+- Wrote most of the Javascript code for Timer.js: Created the actual countdown functionality as well as implementing functions for starting the timer, setting the timer, resetting the timer, and calling functions in controller.js when the timer runs out.
 - Wrote JSDocs function headers for Timer.js
 - Wrote event listeners for the buttons in Buttons.js: start/stop buttons call their respective functions in controller.js to start/stop the timer logic
 - Changed default volume of the Pomodoro to 50
