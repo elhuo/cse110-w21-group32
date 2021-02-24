@@ -23,12 +23,6 @@ body {
     }
 }
 
-button {
-    background-color: #b0e0E6;
-    border: transparent;
-    text-align: center;
-}
-
 select{
     margin: 50px;
     width: 150px;
@@ -139,15 +133,42 @@ button:disabled {
     cursor: auto;
 }
 
-.start-button {
-    background-image: url(../img/Start.png);
+button {
     background-color: transparent;
     background-repeat: no-repeat;
+    border: transparent;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+}
+
+.top-control-buttons {
+    background-size: contain;
+    height: 60px;
+    width: 60px;
+}
+
+.help-button{
+    background-image: url(../img/help.png);
+}
+
+.help-button:hover:enabled {
+    filter: brightness(80%);
+}
+
+.settings-button {
+    background-image: url(../img/settings.png);
+}
+
+.settings-button:hover:enabled {
+    transform:rotate(30deg)
+}
+
+.start-button {
+    background-image: url(../img/Start.png);
     background-size: 100% 100%;
     height: 100%;
     width: 15%;
-    outline: none;
-    cursor: pointer;
 }
 
 .start-button:hover:enabled {
@@ -160,13 +181,9 @@ button:disabled {
 
 .stop-button {
     background-image: url(../img/Stop.png);
-    background-color: transparent;
-    background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 100%;                                                                                           
     width: 15%;
-    outline: none;
-    cursor: pointer;
 }
 
 .stop-button:hover:enabled {
@@ -177,41 +194,11 @@ button:disabled {
     filter: brightness(60%);
 }
 
-.help-button{
-    background-image: url(../img/help.png);
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 60px;
-    width: 60px;
-    outline: none;
-    cursor: pointer;
-}
-
-.help-button:hover:enabled {
-    filter: brightness(80%);
-}
-
-.help-button:active:enabled {
+.settings-button:active:enabled {
     filter: brightness(60%);
 }
 
-.settings-button {
-    background-image: url(../img/settings.png);
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 75px;
-    width: 75px;
-    outline: none;
-    cursor: pointer;
-}
-
-.settings-button:hover:enabled {
-    transform:rotate(30deg)
-}
-
-.settings-button:active:enabled {
+.help-button:active:enabled {
     filter: brightness(60%);
 }
 
