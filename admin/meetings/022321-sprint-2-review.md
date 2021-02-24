@@ -28,6 +28,7 @@ Unattendence: Zane(had work)
 - Debugging formatting for smaller windows sizes
 
 ### Jason Wong
+![Javascript Demo](js_demo.gif)
 - Wrote the majority of the javascript code for the pomodoro controller in controller.js
 - The controller mainly sets up the logic for the pomodoro cycles, which is basically knowing
   when to switch to pomodoro, short break, or long break.
