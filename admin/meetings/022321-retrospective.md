@@ -10,12 +10,14 @@
 
 ![avg]()
 
-Overall, the overall team mood is good. Most team members agreed on how they felt about all these factors. Team members felt most strongly that they were able to have autonomy over their own work. 
+
+
+Overall, the overall team mood is good. Most team members agreed on how they felt about all these factors. Team members felt most strongly that they were able to have autonomy over their own work. Team members also felt like they w
 
 ### Mad, Sad, Glad
 The main things that we agreed about is that we are all facing issues with staying motivated and that
 we all agree that the team is working well together. Some other things that were voted on was that
- 
+our lack of knowledge was resulting in some difficulties with assignments, 
 
 What to do:
 Make sure to note high points and keep artifacts from your retrospective for your sprint planning and to include in your Status Video which is a separate assignment.  
