@@ -79,6 +79,8 @@ Fig 1. the final page after my teammates added more contents and styles
 
 
 ### Elliot Kim
+![](timerp1.PNG)
+![](timerp2.PNG)
 - Wrote most of the Javascript code for Timer.js: Created the actual countdown functionality as well as implementing functions for starting the timer, setting the timer, resetting the timer, and calling functions in controller.js when the timer runs out.
 - Wrote JSDocs function headers for Timer.js
 - Wrote event listeners for the buttons in Buttons.js: start/stop buttons call their respective functions in controller.js to start/stop the timer logic
