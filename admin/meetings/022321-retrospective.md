@@ -31,13 +31,3 @@ In response to our mad, sad, and glad points, we came up with some action points
 *  We need to set more deadlines to keeps things more clear and to avoid pushing things off until the very end.
 
 
-
-What to do:
-Make sure to note high points and keep artifacts from your retrospective for your sprint planning and to include in your Status Video which is a separate assignment.  
-
-Important Note:  You must perform your retrospective meeting BEFORE you start your next sprint and after you have done your sprint review meeting. 
-
-
-
-ake sure to note high points and keep artifacts from your retrospective for your sprint planning
-
