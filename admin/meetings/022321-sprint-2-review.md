@@ -38,7 +38,9 @@ Unattendence: Zane(had work)
 - Wrote/updated documentation for buttons.js and controller.js to make them more like JSDoc format
 
 ### Nathan Kim
-![someimg]()
+![](volumehtml.PNG)
+![](volumecss.PNG)
+![](volumejs.PNG)
 - HTMl for volume-grid-container.
 - HTML/CSS for Settings button.
 - Javascript to play audio when adjusting the volume slider.
