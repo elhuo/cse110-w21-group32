@@ -5,6 +5,7 @@ Unattendence: Zane(had work)
 
 ### Ellie
 - Organize github issues
+![Github Issues](githubIssues.png)
 - Organize sprint sub tasks based on priority and workload
 - Build the pipelines specifically the wiki page and jest and helped on the other ones
 - Update the adr as we went along
