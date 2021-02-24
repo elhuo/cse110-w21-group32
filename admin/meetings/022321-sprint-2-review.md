@@ -88,6 +88,8 @@ Fig 1. the final page after my teammates added more contents and styles
 
 
 ### Zane Calini
+![](tabs.PNG)
+![](timertest.PNG)
 - Worked on the basic html interface including the timer, 3 stage tabs, and help button
 - Worked on CSS of the interface esp making the page responsive to window resizing
 - Worked and minorly helped on start/stop buttons JS in terms of when the buttons can be used
