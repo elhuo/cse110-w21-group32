@@ -12,7 +12,7 @@ Unattendence: Zane(had work)
 
 ### Elizabeth Morris
 - Helped with pipeline outlining and setup. Created initial pipeline diagram.
-  ![Pipeline Diagram](PipelineDiagram.png)
+  ![Pipeline Diagram](PipelineDiagram.jpg)
 - Cleaned up, read through, and formatted base CSS code following Eric's initial implementations
 - Switched id to class selectors where needed
 - Minor tweaks to CSS on base page and popups (both help and settings)
