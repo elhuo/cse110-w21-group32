@@ -23,16 +23,6 @@ body {
     }
 }
 
-select{
-    margin: 50px;
-    width: 150px;
-    padding: 5px 35px 5px 5px;
-    font-size: 16px;
-    border: 1px solid black;
-    height: 34px;
-    background-color: #b0e0E6;
-}
-
 /* === Header formatting === */
 .page-header {
     display: flex;
@@ -127,7 +117,7 @@ main {
     font-size: 10vw;
 }
 
-/* === Buttons === */
+/* === Button Styling === */
 button:disabled {
     filter: brightness(80%);
     cursor: auto;
@@ -142,6 +132,15 @@ button {
     cursor: pointer;
 }
 
+button:active:enabled {
+    filter: brightness(60%);
+}
+
+.help-button:hover:enabled, .control-buttons:hover:enabled {
+    filter: brightness(80%);
+}
+
+/*      === Top Control Buttons Specific Styling ===     */
 .top-control-buttons {
     background-size: contain;
     height: 60px;
@@ -152,10 +151,6 @@ button {
     background-image: url(../img/help.png);
 }
 
-.help-button:hover:enabled {
-    filter: brightness(80%);
-}
-
 .settings-button {
     background-image: url(../img/settings.png);
 }
@@ -164,42 +159,19 @@ button {
     transform:rotate(30deg)
 }
 
-.start-button {
-    background-image: url(../img/Start.png);
+/*      === Stop Start Button Specific Styling ===       */
+.control-buttons {
     background-size: 100% 100%;
     height: 100%;
     width: 15%;
 }
 
-.start-button:hover:enabled {
-    filter: brightness(80%);
-}
-
-.start-button:active:enabled {
-    filter: brightness(60%);
+.start-button {
+    background-image: url(../img/Start.png);
 }
 
 .stop-button {
     background-image: url(../img/Stop.png);
-    background-size: 100% 100%;
-    height: 100%;                                                                                           
-    width: 15%;
-}
-
-.stop-button:hover:enabled {
-    filter: brightness(80%);
-}
-
-.stop-button:active:enabled {
-    filter: brightness(60%);
-}
-
-.settings-button:active:enabled {
-    filter: brightness(60%);
-}
-
-.help-button:active:enabled {
-    filter: brightness(60%);
 }
 
 /* === Volume Image === */
@@ -301,4 +273,14 @@ button {
 
 .play-sound:hover:enabled{
     filter: brightness(80%);
+}
+
+select{
+    margin: 50px;
+    width: 150px;
+    padding: 5px 35px 5px 5px;
+    font-size: 16px;
+    border: 1px solid black;
+    height: 34px;
+    background-color: #b0e0E6;
 }
