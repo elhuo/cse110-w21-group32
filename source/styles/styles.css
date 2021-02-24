@@ -61,7 +61,6 @@ main {
 .timer-wrapper {
     width: 70vw;
     min-width: 70vw;
-    /*overflow: hidden;*/
 }
 
 .tab-wrapper {
@@ -104,7 +103,6 @@ main {
     display: flex;
     position: unset;
     justify-content: center;
-    /*align-items: center;*/
     margin-top: 4vh;
     width: 25vw;
     height: 7vh;
