@@ -16,7 +16,7 @@ Unattendence: Zane(had work)
 - Cleaned up, read through, and formatted base CSS code following Eric's initial implementations
 - Switched id to class selectors where needed
 - Minor tweaks to CSS on base page and popups (both help and settings)
-![id-to-selectors](id_to_class_selectors_sample.png)
+<!-- ![id-to-selectors](id_to_class_selectors_sample.png) -->
 
 ### Eric Pham
 ![Popup Demo](popup.gif)
