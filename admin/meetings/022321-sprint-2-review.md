@@ -14,7 +14,7 @@ Unattendence: Zane(had work)
 - Cleaned up, read through, and formatted base CSS code following Eric's initial implementations
 - Switched id to class selectors where needed
 - Minor tweaks to CSS on base page and popups (both help and settings)
-![](id_to_class_selectors_sample.png)
+![id-to-selectors](id_to_class_selectors_sample.png)
 
 ### Eric Pham
 ![Popup Demo](popup.gif)
@@ -72,7 +72,8 @@ Fig 1. the final page after my teammates added more contents and styles
 - Wrote JSDocs function headers for Timer.js
 - Wrote event listeners for the buttons in Buttons.js: start/stop buttons call their respective functions in controller.js to start/stop the timer logic
 - Changed default volume of the Pomodoro to 50
-- Fixed bug where background color 
+- Fixed bug where tabs wouldn't reset when timer stopped
+- Fixed bug where color wouldn't change when timer stopped
 
 
 ### Zane Calini
