@@ -25,8 +25,19 @@ sad that there were sometimes scheduling issues for meetings.
 ### Outstanding Action Items
 ![](outstanding-action-items.PNG)
 In response to our mad, sad, and glad points, we came up with some action points to implement next sprint:
-- In response to a point that said that someone felt like they were not contributing enough, we suggested to check Github for issues that are open or talk to sub-teams that might need help to self-assign tasks, talk to member if you want to do their task or help them with it. 
-- In response to the meeting scheduling issues, we decided to have members who can't come to send in any necessary info and to let the team know beforehand.
-- In response to the issues with communication, we thought that we should seek more clarification from Chad, send useful links in chat, and do the lab earlier.
-- In response to motivation issues, we decided to set team deadlines.
+* In response to a point that said that someone felt like they were not contributing enough, we suggested to check Github for issues that are open or talk to sub-teams that might need help to self-assign tasks, talk to member if you want to do their task or help them with it. 
+*  Some team members are not able to make it to the meetings so to compensate for this we will have those who cannot come, send their necessary work or contribution to one of the members and to let the rest of the team know in advance.
+*  We need to ask our mentor Chad for more advice on specific topics that we may be stuck on in order to complete the task that we are assigned. Also for those of us that have already finished a task that others are having difficulty with, sending useful resources that helped them complete that task will allow the rest of the team to catch up in speed.
+*  We need to set more deadlines to keeps things more clear and to avoid pushing things off until the very end.
+
+
+
+What to do:
+Make sure to note high points and keep artifacts from your retrospective for your sprint planning and to include in your Status Video which is a separate assignment.  
+
+Important Note:  You must perform your retrospective meeting BEFORE you start your next sprint and after you have done your sprint review meeting. 
+
+
+
+ake sure to note high points and keep artifacts from your retrospective for your sprint planning
 
