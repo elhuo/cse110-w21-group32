@@ -33,6 +33,7 @@ function startCountdown(mins) {
 function stopCountdown() {
   start = false;    // Disables timer
   document.getElementById("countdown").innerHTML = "00:00";   // Sets timer display to 00:00
+  document.getElementById("title").innerHTML = "Spl/ice";
 }
 
 
@@ -78,6 +79,13 @@ function countdown() {
   // Update the display
   document.getElementById("countdown").innerHTML = minutes + ":" + seconds;
 
+  // Update the title
+  if (minutes == "00"){
+    document.getElementById("title").innerHTML = "Spl/ice   " + seconds + "sec";
+  }
+  else if (seconds == "59"){
+    document.getElementById("title").innerHTML = "Spl/ice   " + (parseInt(minutes) + 1) + "min";
+  }
 }
 
 exports.startCountdown = startCountdown;

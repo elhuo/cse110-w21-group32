@@ -8,7 +8,7 @@
       content="A Pomodoro timer made by Team 32: Splice for CSE 110, a Software Engineering course at UC San Diego."
     />
 
-    <title>Spl/ice Pomodoro</title>
+    <title id="title">Spl/ice</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -25,8 +25,8 @@
     <header class="page-header" id="page-header">
       <h1 class="logo justify-right" id="logo">Spl/ice</h1>
       <div class="top-right-controls-wrapper">
-        <button class="settings-button" id="settings-button"></button>
-        <button class="help-button" id="help-button"></button>
+        <button class="top-control-buttons fade-on-hover settings-button" id="settings-button"></button>
+        <button class="top-control-buttons help-button" id="help-button"></button>
       </div>
     </header>
 
@@ -44,8 +44,8 @@
       </div>
 
       <div class="controls-wrapper" id="controls-wrapper">
-        <button class="controls-button start-button" id="start-button"></button>
-        <button class="controls-button stop-button" id="stop-button"></button>
+        <button class="control-buttons start-button" id="start-button"></button>
+        <button class="control-buttons stop-button" id="stop-button"></button>
       </div>
 
       <div class="shadow" id="shadow" onclick="closePopup()"></div>
@@ -83,14 +83,22 @@
         <div class="modal-content">
           <span id = "settings-close" class="close">&times;</span>
           <h3>Settings</h3>
-
-          <div id="volume-grid-container">
-            <img id="volume-image" src="./img/volume-level-3.svg"
+            <div id="volume-sound-container">
+            <label>Choose your alert sound</label>
+            <select name="volume-sound" id="volume-sound">
+              <option value="party-horn">Party Horn</option>
+              <option value="air-horn">Air Horn</option>
+            </select>
+          </div>
+          
+          <div class="volume-grid-container" id="volume-grid-container">
+            <img class="volume-image" id="volume-image" src="./img/volume-level-3.svg"
               alt="Max Volume">
-            <input id="volume-slider" name="volume-slider" type="range" min="0" max="100"
-              value="100">
+            <input class="volume-slider" id="volume-slider" name="volume-slider" type="range" min="0" max="100"
+              value="50">
           </div>
 
+          <button class="play-sound" id="play-sound">Play Me!</button>
         </div>
       </div>
     </main>
