@@ -10,11 +10,19 @@ html {
 
 /* === Universal page content formatting === */
 body {
+    padding: 1em;
+    min-height: 90%;
     background-color: #0087bd;
     color: white;
     padding: 1em;
     min-height: 90%;
     font-family: "OpenSans", sans-serif;
+}
+
+@media only screen and (max-height: 600px) {
+    main {
+        height: 80vh;
+    }
 }
 
 @media only screen and (max-height: 600px) {
@@ -222,6 +230,7 @@ button:active:enabled {
     z-index: 100;
     font-size: 1.5em;
     word-wrap: break-word;
+    line-height: 150%;
 }
 
 .modal-content p, h3 {

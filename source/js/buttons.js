@@ -157,3 +157,4 @@ settingsCloseBtn.onclick = function () {
 //          call function in controller
 //              function resets cycle
 //                  that function sets running = 0
+
