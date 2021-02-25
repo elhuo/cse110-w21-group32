@@ -63,7 +63,7 @@ main {
 .timer-wrapper {
     width: 70vw;
     min-width: 70vw;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .tab-wrapper {
@@ -81,7 +81,7 @@ main {
     border: 2px solid;
     border-bottom: none;
     padding: 1em;
-    flex: 1 1 0px;
+    flex: 0 1 0px;
     text-align: center;
     border-radius: 1em 1em 0em 0em;
     font-size: 1em;
@@ -97,6 +97,14 @@ main {
     border-radius: 2px;
     margin-top: 0em;
     padding: 3em 0em;
+}
+
+
+.top-right-controls-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 2em;
 }
 
 .controls-wrapper {
@@ -116,6 +124,11 @@ main {
 }
 
 /* === Buttons === */
+button:disabled {
+    filter: brightness(80%);
+    cursor: auto;
+}
+
 .start-button {
     background-image: url(../img/Start.png);
     background-color: transparent;
@@ -123,6 +136,16 @@ main {
     background-size: 100% 100%;
     height: 100%;
     width: 15%;
+    outline: none;
+    cursor: pointer;
+}
+
+.start-button:hover:enabled {
+    filter: brightness(80%);
+}
+
+.start-button:active:enabled {
+    filter: brightness(60%);
 }
 
 .stop-button {
@@ -130,8 +153,18 @@ main {
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    height: 100%;
+    height: 100%;                                                                                           
     width: 15%;
+    outline: none;
+    cursor: pointer;
+}
+
+.stop-button:hover:enabled {
+    filter: brightness(80%);
+}
+
+.stop-button:active:enabled {
+    filter: brightness(60%);
 }
 
 .help-button{
@@ -139,11 +172,64 @@ main {
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 80%;
-    width: 3%;
+    height: 60px;
+    width: 60px;
     outline: none;
+    cursor: pointer;
 }
 
+.help-button:hover:enabled {
+    filter: brightness(80%);
+}
+
+.help-button:active:enabled {
+    filter: brightness(60%);
+}
+
+.settings-button {
+    background-image: url(../img/settings.png);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 75px;
+    width: 75px;
+    outline: none;
+    cursor: pointer;
+}
+
+.settings-button:hover:enabled {
+    transform:rotate(30deg)
+}
+
+.settings-button:active:enabled {
+    filter: brightness(60%);
+}
+
+/* === Volume Image === */
+#volume-image {
+    justify-self: center;
+    justify-self: flex-start;
+    padding-right: 20px;
+    width: 40px;
+}
+
+/* === Volume Slider === */
+#volume-slider {
+    grid-area: slider;
+    width: 50%;
+    justify-self: left;
+}
+#volume-grid-container {
+    position:absolute;
+    column-gap: 10px;
+    grid-template-areas:
+      'image slider';
+    height: 50px;
+    width: 90%;
+    bottom:20px;
+    grid-column-end:auto;
+    
+  }
 
 /* === Help Popup Window Styling === */
 .modal{

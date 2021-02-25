@@ -21,15 +21,29 @@ stopButton.addEventListener("click", function () {
   startButton.disabled = false; // Enable start button
 });
 
+// Volume Level Controls
+const volume_level_3 = 66;
+const volume_level_2 = 33;
+const volume_level_1 = 0;
+
+// Sound of finishing a pomodoro
+var pomoSound = document.getElementById("pomo-sound");
+var volumeImg = document.getElementById("volume-image");
+
 // help page button logics
 var modal = document.getElementById("myModal");
+var settingsModal = document.getElementById("settings-modal");
 var helpBtn = document.getElementById("help-button");
-var closeBtn = document.getElementsByClassName("close")[0];
+var settingsBtn = document.getElementById("settings-button");
+var closeBtn = document.getElementById("help-close");
+var settingsCloseBtn = document.getElementById("settings-close");
+var volumeSlider = document.getElementById("volume-slider");
 let shadow = document.getElementById("shadow");
 
 // Close popup and remove shadow
 function closePopup() {
   modal.classList.remove("modal-show");
+  settingsModal.classList.remove("modal-show");
   shadow.classList.remove("visible");
 }
 
@@ -44,3 +58,45 @@ closeBtn.onclick = function () {
   modal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
+
+// Toggle popup on settings button click
+settingsBtn.onclick = function () {
+  settingsModal.classList.toggle("modal-show");
+  shadow.classList.toggle("visible");
+};
+
+// Adjust volume level
+volumeSlider.onclick = function() {
+  let val = volumeSlider.value;
+  if( val > volume_level_3 ) {
+    volumeImg.src = "./img/volume-level-3.svg";
+  }
+  else if ( val > volume_level_2 ) {
+    volumeImg.src = "./img/volume-level-2.svg";
+  }
+  else if ( val > volume_level_1 ) {
+    volumeImg.src = "./img/volume-level-1.svg";
+  }
+  else {
+    volumeImg.src = "./img/volume-level-0.svg";
+  }
+  pomoSound.volume = volumeSlider.value/100;
+};
+
+// Toggle popup on close button click
+settingsCloseBtn.onclick = function () {
+  settingsModal.classList.toggle("modal-show");
+  shadow.classList.toggle("visible");
+};
+// listener for start button
+//      on "click"
+//          call function in controller
+//              function sets cycle to pomo (pomo started)
+//                  that function could call timer module with (time, running = 1)
+//
+// listener for stop button
+//      on "click"
+//          call function in controller
+//              function resets cycle
+//                  that function sets running = 0
+

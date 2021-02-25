@@ -19,9 +19,15 @@
   </head>
 
   <body>
+
+    <audio id="pomo-sound" src="./audio/party-horn.mp3"></audio>
+
     <header class="page-header" id="page-header">
       <h1 class="logo justify-right" id="logo">Spl/ice</h1>
-      <button class="help-button" id="help-button"></button>
+      <div class="top-right-controls-wrapper">
+        <button class="settings-button" id="settings-button"></button>
+        <button class="help-button" id="help-button"></button>
+      </div>
     </header>
 
     <main class="page-main">
@@ -45,7 +51,7 @@
       <div class="shadow" id="shadow" onclick="closePopup()"></div>
       <div id="myModal" class="modal">
         <div class="modal-content">
-          <span class="close">&times;</span>
+          <span id = "help-close" class="close">&times;</span>
           <p>
             <b>Spl/ice Pomodoro</b> is a Pomodoro Timer catered to students. Work with
             the timer and prevent yourself from freezing up when studying and
@@ -71,6 +77,20 @@
             <li>Stop work when the timer rings and make a note of your progress.</li>
             <li>Follow up every pomodoro with a short break and every four pomodoro with a long break.</li>
           </ul>
+        </div>
+      </div>
+      <div id="settings-modal" class="modal">
+        <div class="modal-content">
+          <span id = "settings-close" class="close">&times;</span>
+          <h3>Settings</h3>
+
+          <div id="volume-grid-container">
+            <img id="volume-image" src="./img/volume-level-3.svg"
+              alt="Max Volume">
+            <input id="volume-slider" name="volume-slider" type="range" min="0" max="100"
+              value="100">
+          </div>
+
         </div>
       </div>
     </main>
