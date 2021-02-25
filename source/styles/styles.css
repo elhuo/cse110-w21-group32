@@ -69,6 +69,10 @@ main {
 .timer-wrapper {
     width: 70vw;
     min-width: 70vw;
+<<<<<<< HEAD
+=======
+    overflow: auto;
+>>>>>>> dev
 }
 
 .tab-wrapper {
@@ -81,8 +85,13 @@ main {
 .tab {
     border: 2px solid;
     border-bottom: none;
+<<<<<<< HEAD
     padding: 2.5vh 1em 2.5vh 1em;
     flex: 1 1 0px;
+=======
+    padding: 1em;
+    flex: 0 1 0px;
+>>>>>>> dev
     text-align: center;
     border-radius: 1em 1em 0em 0em;
     font-size: 1em;
