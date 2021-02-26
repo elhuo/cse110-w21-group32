@@ -3,10 +3,11 @@ const timer = require("./timer");
 
 /** Jest Mocks for html **/
 document.body.innerHTML =
-    "<div id='countdown'></div>";
+    "<div id='countdown'></div>" +
+    "<div id='title'></div>";
 
 /** Testing set/getDuration before rest of tests **/
-test('setDuration test', () =>{
+test('setDuration test', () => {
     timer.setDuration(5);
     expect(timer.getDuration()).toBe(5);
     timer.setDuration(10);
@@ -14,7 +15,7 @@ test('setDuration test', () =>{
 });
 
 /** Testing startCountdown function **/
-test('startCountdown test', () =>{
+test('startCountdown test', () => {
     timer.startCountdown(10);
     expect(timer.getStart()).toBe(true);
     expect(document.getElementById("countdown").innerHTML).toBe("10:59");
@@ -28,7 +29,7 @@ test('startCountdown test', () =>{
 });
 
 /** Testing stopCountdown function **/
-test('stopCountdown test', () =>{
+test('stopCountdown test', () => {
     timer.startCountdown(10);
     timer.stopCountdown();
 
@@ -37,7 +38,7 @@ test('stopCountdown test', () =>{
 });
 
 /** Testing countdown fucntion **/
-test('countdown test', () =>{
+test('countdown test', () => {
     timer.startCountdown()
     //need to figure out how to test w/ time incrementing
 });
