@@ -25,12 +25,6 @@ body {
     }
 }
 
-@media only screen and (max-height: 600px) {
-    main {
-        height: 80vh;
-    }
-}
-
 /* === Header formatting === */
 .page-header {
     display: flex;
