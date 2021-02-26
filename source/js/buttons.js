@@ -157,3 +157,5 @@ settingsCloseBtn.onclick = function () {
   settingsModal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
+
+exports.closePopup = closePopup;
