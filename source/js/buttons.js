@@ -91,28 +91,28 @@ settingsBtn.onclick = function () {
  * Adjust volume level using a slider implemented in the settings page.
  * The image displayed for the volume changes depending on the volume.
  */
-pomoSound.volume = volumeSlider.value/100;
-volumeSlider.onclick = function() {
+pomoSound.volume = volumeSlider.value / 100;
+volumeSlider.onclick = function () {
   let val = volumeSlider.value;
-  if( val > volume_level_3 ) {
+  if (val > volume_level_3) {
     volumeImg.src = "./img/volume-level-3.svg";
   }
-  else if ( val > volume_level_2 ) {
+  else if (val > volume_level_2) {
     volumeImg.src = "./img/volume-level-2.svg";
   }
-  else if ( val > volume_level_1 ) {
+  else if (val > volume_level_1) {
     volumeImg.src = "./img/volume-level-1.svg";
   }
   else {
     volumeImg.src = "./img/volume-level-0.svg";
   }
-  pomoSound.volume = volumeSlider.value/100;
+  pomoSound.volume = volumeSlider.value / 100;
 };
 
 // Audio source select drop down menu
 const nameSrcMap = {
-  "party-horn": "./audio/party-horn.mp3", 
-  "air-horn": "./audio/air-horn.mp3" 
+  "party-horn": "./audio/party-horn.mp3",
+  "air-horn": "./audio/air-horn.mp3"
 }
 
 /**
@@ -121,8 +121,8 @@ const nameSrcMap = {
  * is selected by the user in the settings page.
  */
 var soundChoices = document.getElementById("volume-sound");
-document.addEventListener('DOMContentLoaded', function(){
-  document.querySelector('#volume-sound').onchange = function(){
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector('#volume-sound').onchange = function () {
     let soundSelected = soundChoices.value;
     let audioElem = document.getElementById("pomo-sound");
     audioElem.src = nameSrcMap[soundSelected];
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function(){
  * can pre-hear the volume and sound when they are adjusting them.
  */
 var playButton = document.getElementById("play-sound")
-playButton.onclick = function(){
+playButton.onclick = function () {
   document.getElementById("pomo-sound").play();
 }
 
@@ -158,3 +158,4 @@ settingsCloseBtn.onclick = function () {
 //              function resets cycle
 //                  that function sets running = 0
 
+exports.closePopup = closePopup;
