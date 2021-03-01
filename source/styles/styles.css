@@ -175,28 +175,21 @@ button:active:enabled {
 
 /* === Volume Image === */
 .volume-image {
-    justify-self: center;
-    justify-self: flex-start;
-    padding-right: 20px;
-    width: 40px;
+    padding-right: 1em;
+    width: 2em;
 }
 
 /* === Volume Slider === */
 .volume-slider {
-    grid-area: slider;
     width: 50%;
-    justify-self: left;
 }
+
 .volume-grid-container {
+    display: flex;
     position:absolute;
-    column-gap: 10px;
-    grid-template-areas:
-      'image slider';
-    height: 50px;
+    height: 3em;
     width: 90%;
-    bottom:20px;
-    grid-column-end:auto;
-    
+    bottom: 1em;
   }
 
 /* === Help Popup Window Styling === */
@@ -208,7 +201,7 @@ button:active:enabled {
     background-color: #b0e0E6;
     color: black;
     transition: all 0.2s;
-    border-radius: 5px;
+    border-radius: .5em;
     box-shadow: 5px 10px 20px 7px rgba(0,0,0,0.5);
 }
 
@@ -265,22 +258,25 @@ button:active:enabled {
 
 /* === Play sound formatting === */
 .play-sound{
-    padding: 15px 32px;
+    padding: 1em 2em;
     text-align: center;
-    font-size: 16px;
+    font-size: .7em;
     border: 1px solid black;
 }
 
-.play-sound:hover:enabled{
-    filter: brightness(80%);
+.play-sound:hover{
+    background-color: rgba(0,0,0,0.1)
 }
 
+.play-sound:active{
+    background-color: rgba(0,0,0,0.2)
+}
 select{
-    margin: 50px;
-    width: 150px;
-    padding: 5px 35px 5px 5px;
-    font-size: 16px;
+    margin: 2em;
+    width: 10em;
+    padding: 5px 1em 5px 5px;
+    font-size: .7em;
     border: 1px solid black;
-    height: 34px;
+    height: 2em;
     background-color: #b0e0E6;
 }
