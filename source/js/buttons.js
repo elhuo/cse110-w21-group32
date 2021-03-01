@@ -130,8 +130,8 @@ const nameSrcMap = {
  * @name chooseSound
  */
 var soundChoices = document.getElementById("volume-sound");
-document.addEventListener('DOMContentLoaded', function(){
-  document.querySelector('#volume-sound').onchange = function(){
+document.addEventListener("DOMContentLoaded", function(){
+  document.querySelector("#volume-sound").onchange = function(){
     let soundSelected = soundChoices.value;
     let audioElem = document.getElementById("pomo-sound");
     audioElem.src = nameSrcMap[soundSelected];
