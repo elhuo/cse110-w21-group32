@@ -158,6 +158,4 @@ settingsCloseBtn.onclick = function () {
   shadow.classList.toggle("visible");
 };
 
-/** 
 exports.closePopup = closePopup;
-*/

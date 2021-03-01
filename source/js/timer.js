@@ -92,7 +92,5 @@ function countdown() {
   }
 }
 
-/** 
 exports.startCountdown = startCountdown;
 exports.stopCountdown = stopCountdown;
-*/

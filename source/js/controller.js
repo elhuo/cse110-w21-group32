@@ -164,7 +164,6 @@ function getNumPomos() {
 
 /** export functions and variables for test file */
 
-/** 
 exports.setCycle = setCycle;
 exports.getCycle = getCycle;
 exports.setNumPomos = setNumPomos;
@@ -173,4 +172,3 @@ exports.startTimer = startTimer;
 exports.stopTimer = stopTimer;
 exports.changeCycles = changeCycles;
 exports.changeStyle = changeStyle;
-*/
