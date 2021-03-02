@@ -5,3 +5,4 @@
 
 3/1/2021  Styling Decisions
 - Double quotes, not single quotes
+- Use innerText, not innerHTML
