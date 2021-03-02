@@ -26,7 +26,7 @@ function startCountdown(mins) {
 
   if (duration < 10) { duration = "0" + duration; }
   // Display initial countdown time
-  document.getElementById("countdown").innerHTML = (duration) + ":" + "59";
+  document.getElementById("countdown").innerText = (duration) + ":" + "59";
   // Set starting time of the timer
   countDownStart = new Date().getTime();
 }
@@ -36,8 +36,8 @@ function startCountdown(mins) {
  */
 function stopCountdown() {
   start = false;    // Disables timer
-  document.getElementById("countdown").innerHTML = "00:00";   // Sets timer display to 00:00
-  document.getElementById("title").innerHTML = "Spl/ice";
+  document.getElementById("countdown").innerText = "00:00";   // Sets timer display to 00:00
+  document.getElementById("title").innerText = "Spl/ice";
 }
 
 
@@ -81,14 +81,14 @@ function countdown() {
   }
 
   // Update the display
-  document.getElementById("countdown").innerHTML = minutes + ":" + seconds;
+  document.getElementById("countdown").innerText = minutes + ":" + seconds;
 
   // Update the title
   if (minutes == "00"){
-    document.getElementById("title").innerHTML = "Spl/ice   " + seconds + "sec";
+    document.getElementById("title").innerText = "Spl/ice   " + seconds + "sec";
   }
   else if (seconds == "59"){
-    document.getElementById("title").innerHTML = "Spl/ice   " + (parseInt(minutes) + 1) + "min";
+    document.getElementById("title").innerText = "Spl/ice   " + (parseInt(minutes) + 1) + "min";
   }
 }
 
