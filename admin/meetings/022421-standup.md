@@ -91,3 +91,10 @@ Agenda:
 - Work
 
 ## Merging stuff
+- Merged everything to the dev branch
+- Cleaned up issues
+
+## Stretch Sprint
+- Added Ice Cube Timer
+- Added Remaining time in Tab menu
+- Distributed tasks
