@@ -23,9 +23,9 @@ var numPomos = 0;
 /** (25 - 1) minutes to pass in to startCountdown for pomodoro cycle. */
 var pomoTime = 24;
 /** (5 - 1) minutes to pass in to startCountdown for short break cycle. */
-const sBreakTime = 4;
+var sBreakTime = 4;
 /** (15 - 1) minutes to pass in to startCountdown for long break cycle. */
-const lBreakTime = 14;
+var lBreakTime = 14;
 
 /**
  * Function that is called when the start button is pressed.
@@ -57,6 +57,8 @@ function stopTimer() {
  * calls changeStyle to change the CSS to match the new cycle.
  */
 function changeCycles() {
+
+    pomoSound.play();
 
     /** If current cycle is pomo, increment numPomos. */
     if (cycle == 0) numPomos++;
