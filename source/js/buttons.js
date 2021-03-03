@@ -177,11 +177,11 @@ pomoTimeSet.addEventListener("change", function () {
 });
 
 shortTimeSet.addEventListener("change", function() {
-  sBreakTime = pomoTimeSet.value - 1;
+  sBreakTime = shortTimeSet.value - 1;
 });
 
 longTimeSet.addEventListener("change", function() {
-  lBreakTime = pomoTimeSet.value - 1;
+  lBreakTime = longTimeSet.value - 1;
 })
 
 
