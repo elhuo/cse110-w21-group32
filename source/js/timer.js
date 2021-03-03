@@ -16,9 +16,9 @@ setInterval(() => {
 }, 500);  // Will refresh every 500 ms: sometimes setInterval isn't exact and may skip a second
 
 /**
- * Starts the countdown
- * @param {int} mins - The duration for the timer to run for. 
+ * @description Starts the countdown
  * Remember to subtract 1 minute (if you want a 25 min timer, set to 24)
+ * @param {int} mins - The duration for the timer to run for. 
  */
 function startCountdown(mins) {
   start = true;     // Enables timer
@@ -32,7 +32,7 @@ function startCountdown(mins) {
 }
 
 /**
- * Ends the countdown
+ * @description Ends the countdown
  */
 function stopCountdown() {
   start = false;    // Disables timer
@@ -42,7 +42,7 @@ function stopCountdown() {
 
 
 /**
- * Updates the time left on the timer, by subtracting the time elapsed from the initial time
+ * @description Updates the time left on the timer, by subtracting the time elapsed from the initial time
  */
 function countdown() {
 

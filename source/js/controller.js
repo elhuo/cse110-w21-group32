@@ -11,26 +11,26 @@
  * cycle = 2: the timer is in the long break cycle (15 min)
  * cycle = 3: the timer is stopped
  */
-var cycle = 0;
+let cycle = 0;
 
 /**
  * Tracks the number of completed pomos to know when to long break.
  * numPomos < 4: the break cycle will be a short break
  * numPomos = 4: the break cycle will be a long break
  */
-var numPomos = 0;
+let numPomos = 0;
 
 /** (25 - 1) minutes to pass in to startCountdown for pomodoro cycle. */
-var pomoTime = 24;
+let pomoTime = 24;
 /** (5 - 1) minutes to pass in to startCountdown for short break cycle. */
 const sBreakTime = 4;
 /** (15 - 1) minutes to pass in to startCountdown for long break cycle. */
 const lBreakTime = 14;
 
 /**
- * Function that is called when the start button is pressed.
+ * @description Function that is called when the start button is pressed.
  * Handles setup for the controller before calling startCountdown in timer.js
- * to start the first pomodoro cycle.
+ * to start the first pomodoro cycle. Changes cycle to pomo cycle.
  */
 function startTimer() {
     cycle = 0;
@@ -40,9 +40,9 @@ function startTimer() {
 }
 
 /**
- * Function that is called when the stop button is pressed.
+ * @description Function that is called when the stop button is pressed.
  * Resets controller variables to default and resets the countdown by calling
- * stopCountdown in timer.js.
+ * stopCountdown in timer.js. Changes cycle to the stopped cycle.
  */
 function stopTimer() {
     cycle = 3;
@@ -52,7 +52,7 @@ function stopTimer() {
 }
 
 /**
- * Function that is called to handle the shift in pomodoro cycles when
+ * @description Function that is called to handle the shift in pomodoro cycles when
  * the countdown reaches 0. Handles each cycle case and then
  * calls changeStyle to change the CSS to match the new cycle.
  */
@@ -95,7 +95,7 @@ function changeCycles() {
 }
 
 /**
- * Function that changes the page's CSS according to the current cycle.
+ * @description Function that changes the page's CSS according to the current cycle.
  * Specifically, borders the text for the current cycle and changes page color.
  * Called at the end of the changeCycles function.
  */
@@ -137,7 +137,7 @@ function changeStyle() {
 }
 
 /**
- * Sets the current cycle
+ * @description Sets the current cycle
  * @param {int} cycle_ - The value to set for the current cycle. 
  */
 function setCycle(cycle_) {
@@ -145,7 +145,7 @@ function setCycle(cycle_) {
 }
 
 /**
- * Returns the current cycle
+ * @description Returns the current cycle
  * @returns {int} cycle - The current cycle. 
  */
 function getCycle() {
@@ -153,7 +153,7 @@ function getCycle() {
 }
 
 /**
- * Sets the current number of Pomos 
+ * @description Sets the current number of Pomos 
  * @param {int} numPomos_ - The value to set for the current number of Pomos. 
  */
 function setNumPomos(numPomos_) {
@@ -161,7 +161,7 @@ function setNumPomos(numPomos_) {
 }
 
 /**
- * Returns the current number of Pomos 
+ * @description Returns the current number of Pomos 
  * @returns {int} numPomos - The current number of Pomos. 
  */
 function getNumPomos() {
