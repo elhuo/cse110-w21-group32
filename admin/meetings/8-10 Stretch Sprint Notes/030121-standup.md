@@ -5,7 +5,7 @@ Location: Zoom
 
 ### Attendance:
 
-Elizabeth, Stephen, Eric, Wilson, Nathan, Jason, Elliot, Ellie, Zane
+Elizabeth, Stephen, Eric, Wilson, Nathan, Jason
 
 ### Unattendance:
 
@@ -79,3 +79,11 @@ Ellie, Zane, Elliot
 - Nothing
 > Any blockers?
 - Work and midtern (not at standup)
+
+### Elliot
+> What did you get done since last report?
+- Not much
+> What's planned for tomorrow?
+- N/a
+> Any blockers?
+- busy
