@@ -8,7 +8,7 @@
       content="A Pomodoro timer made by Team 32: Splice for CSE 110, a Software Engineering course at UC San Diego."
     />
 
-    <title>Spl/ice Pomodoro</title>
+    <title id="title">Spl/ice</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -19,9 +19,15 @@
   </head>
 
   <body>
+
+    <audio id="pomo-sound" src="./audio/party-horn.mp3"></audio>
+
     <header class="page-header" id="page-header">
       <h1 class="logo justify-right" id="logo">Spl/ice</h1>
-      <button class="help-button" id="help-button"></button>
+      <div class="top-right-controls-wrapper">
+        <button class="top-control-buttons fade-on-hover settings-button" id="settings-button"></button>
+        <button class="top-control-buttons help-button" id="help-button"></button>
+      </div>
     </header>
 
     <main class="page-main">
@@ -38,41 +44,61 @@
       </div>
 
       <div class="controls-wrapper" id="controls-wrapper">
-        <button class="controls-button start-button" id="start-button"></button>
-        <button class="controls-button stop-button" id="stop-button"></button>
+        <button class="control-buttons start-button" id="start-button"></button>
+        <button class="control-buttons stop-button" id="stop-button"></button>
       </div>
 
       <div class="shadow" id="shadow" onclick="closePopup()"></div>
       <div id="myModal" class="modal">
         <div class="modal-content">
-          <span class="close">&times;</span>
+          <span id = "help-close" class="close">&times;</span>
           <p>
-            Spl/ice Pomodoro is a pomodoro timer catered for students. Work with
+            <b>Spl/ice Pomodoro</b> is a Pomodoro Timer catered to students. Work with
             the timer and prevent yourself from freezing up when studying and
             working!
           </p>
           <h3>What is the Pomodoro Technique?</h3>
           <p>
-            The Pomodoro Technique increases work productivity by dividing work
-            into "pomodoros", units comprised of a 25 minutes of work and 5
-            minutes of break. After 4 "pomodoros", you get a longer 30 minute
-            break.
+            The creation of Francesco Cirillo, the Pomodoro Technique increases work
+            productivity by dividing work into "pomodoros" and encouraging frequent breaks. 
           </p>
           <h3>How To Properly Pomodoro</h3>
-          <p>
-            When the "pomo" tab is active, do everything in your power to remove
-            all distractions and focus on your work. You'll find that most
-            distractions can be put off until a break time. If you have to break
-            focus and do something else, press the "stop" button. The pomodoro
-            will not be completed.
-          </p>
-          <p>
-            After 25 minutes of work, stop what you're doing. Don't try to finish
-            something up, your time of work is done. Take a break. You deserve
-            it. Take your mind off of your work. Scroll through your phone, walk
-            around. This break time is essential for staying focused during each 
-            "pomo"
-          </p>
+
+          <ul style="margin-left:1em">
+            <li>Decide on the task to be done.</li>
+            <li>Set the pomodoro timer (default 25 minutes).</li>
+            <li>Work on the task until the timer goes off.</li>
+            
+            <ul style="margin-left:2em">
+              <li>Be sure to remove any distractions while you work!</li>
+              <li>If you finish early, feel free to use the time to plan or review your work.</li>
+            </ul>
+            
+            <li>Stop work when the timer rings and make a note of your progress.</li>
+            <li>Follow up every pomodoro with a short break and every four pomodoro with a long break.</li>
+          </ul>
+        </div>
+      </div>
+      <div id="settings-modal" class="modal">
+        <div class="modal-content">
+          <span id = "settings-close" class="close">&times;</span>
+          <h3>Settings</h3>
+            <div id="volume-sound-container">
+            <label>Choose your alert sound</label>
+            <select name="volume-sound" id="volume-sound">
+              <option value="party-horn">Party Horn</option>
+              <option value="air-horn">Air Horn</option>
+            </select>
+          </div>
+          
+          <div class="volume-grid-container" id="volume-grid-container">
+            <img class="volume-image" id="volume-image" src="./img/volume-level-3.svg"
+              alt="Max Volume">
+            <input class="volume-slider" id="volume-slider" name="volume-slider" type="range" min="0" max="100"
+              value="50">
+          </div>
+
+          <button class="play-sound" id="play-sound">Play Me!</button>
         </div>
       </div>
     </main>
