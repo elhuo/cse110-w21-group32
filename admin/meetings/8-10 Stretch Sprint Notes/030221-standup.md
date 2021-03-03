@@ -18,11 +18,18 @@ Stephen, Zane, Eric
 - Talk about anything we need to do for discussion tmrw
   - People going:
     - Zane
+    - Elliot
+    - Elizabeth
+    - Wilson
+    - Jason
+  
 
 
 ## Notes
 - Branch 53 for CSS stuff of the settings
 - Notification sound move from timer.js to controller.js
+- Task list priority is moved down
+  - Ask stephen his thoughts on this implementation and if he wants to work on it he can but otherwise, we will be pushing it off till all the other things are finished and then flesh this out if not the end of this sprint yet
   
 ### Elizabeth
 > What did you get done since last report?
