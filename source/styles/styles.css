@@ -196,30 +196,19 @@ button:active:enabled {
     display:flex;
     justify-content: space-between;
 }
-/* === Volume Image === */
-.volume-image {
-    padding-right: 1em;
-    width: 2em;
+
+/* === Universal formatting for popup close buttons === */
+.close {
+    position: absolute;
+    right: .5em;
+    top: .2em;
+    font-size: 2em;
 }
 
-/* === Volume Slider === */
-.volume-slider {
-   width:1000px;
-}
-
-.volume-grid-container {
-    margin-top: 10%;
-    display: flex;
-    justify-content: flex-start;
-    align-items:flex-end;
-    flex-direction: column;
-    height: 3em;
-    width: 90%;
-    bottom: 1em;    
-  }
-
-.volume-sound {
-    text-align: center;
+.close:hover, .close:focus{
+    color:#000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* === Help Popup Window Styling === */
@@ -250,6 +239,7 @@ button:active:enabled {
     font-size: 1.5em;
     word-wrap: break-word;
     line-height: 150%;
+    justify-content: center;
 }
 
 .modal-content p, h3 {
@@ -274,45 +264,48 @@ button:active:enabled {
     opacity: 1;
 }
 
-/* === Universal formatting for popup close buttons === */
-.close {
-    position: absolute;
-    right: .5em;
-    top: .2em;
-    font-size: 2em;
+/* ===  Formatting for the pomo durations === */
+.pomo-durations {
+    display:flex; 
+    justify-content: center;
+    margin-top: 5%;
+ }
+
+.duration-selectors {
+    flex: 1;
+    justify-content: center;
+    text-align: center;
 }
 
+/* === Volume Image === */
+.volume-image {
+    padding-right: 1em;
+    width: 2em;
+}
 
+/* === Volume Slider === */
+.volume-slider {
+   width:35vw;
+}
 
-.close:hover, .close:focus{
-    color:#000;
-    text-decoration: none;
-    cursor: pointer;
+.volume-grid-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.volume-sound {
+    text-align: center;
 }
 
 /* === Play sound formatting === */
 .play-sound{
-    padding: 1em 2em;
+    padding: 1em 1em;
     text-align: center;
     font-size: .7em;
     border: 1px solid black;
 }
-
-/* ===  Formatting for the pomo timer tabs === */
-.pomo-timer-tabs {
-   display:flex; 
-   justify-content: center;
-   margin-top: 5%;
-}
-.pomo-timer-tabs p {
-    display: table-row;
-}
-.pomo-timer-tabs label,
-.pomo-timer-tabs select,
-.pomo-timer-tabs option {
-    display: table-cell;
-}
-
 
 .play-sound:hover{
     background-color: rgba(0,0,0,0.1)
@@ -321,9 +314,10 @@ button:active:enabled {
 .play-sound:active{
     background-color: rgba(0,0,0,0.2)
 }
+
 select{
     margin: 2em;
-    width: 10em;
+    width: 20vw;
     padding: 5px 1em 5px 5px;
     font-size: .7em;
     border: 1px solid black;

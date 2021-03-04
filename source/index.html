@@ -84,54 +84,51 @@
           <span id = "settings-close" class="close">&times;</span>
           <h2>Settings</h2>
             
-              <div id="pomo-timer-tabs" class="pomo-timer-tabs"> 
-                    <p>
+              <div id="pomo-durations" class="pomo-durations"> 
+                    <div class="duration-selectors">
                       <label for="Pomo">Pomo</label>
                       <select name="Pomo" id="Pomo">
                         <option value="20">20:00</option>
                         <option value="25" selected>25:00</option>
                         <option value="30">30:00</option>
                       </select>
-                    </p>
+                    </div>
                 
-                    <p>
+                    <div class="duration-selectors">
                       <label for="Short Break">Short Break</label>
                       <select name="Short Break" id="Short Break">
                         <option value="3">3:00</option>
                         <option value="5" selected>5:00</option>
                         <option value="7">7:00</option>
                       </select>
-                    </p>
+                    </div>
                     
-                    <p>
+                    <div class="duration-selectors">
                       <label for="Long Break">Long Break</label>
                       <select name="Long Break" id="Long Break">
                         <option value="10">10:00</option>
                         <option value="15" selected>15:00</option>
                         <option value="20">20:00</option>
                       </select>
-                    </p>       
+                    </div>       
               </div>
-           
+          
           <div class="volume-grid-container" id="volume-grid-container">
-            <div id="volume-sound-container">
-              <h2>Notification Sound</h2>
-              <div class="volume-sound">
-                <select name="volume-sound" id="volume-sound">
-                  <option value="party-horn">Party Horn</option>
-                  <option value="air-horn">Air Horn</option>
+            <h3>Notification Sound</h2>
+            <div class="volume-sound">
+              <select name="volume-sound" id="volume-sound">
+                <option value="party-horn">Party Horn</option>
+                <option value="air-horn">Air Horn</option>
               </select>
-              </div>
+            </div>
+
             <div class="volume-container">
               <img class="volume-image" id="volume-image" src="./img/volume-level-3.svg" alt="Max Volume">
               <input class="volume-slider" id="volume-slider" name="volume-slider" type="range" min="0" max="100" value="50">
               <button class="play-sound" id="play-sound">Play Me!</button>
             </div>
-          
-            </div>
           </div>
 
-          
         </div>
       </div>
     </main>
