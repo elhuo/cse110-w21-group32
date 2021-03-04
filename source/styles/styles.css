@@ -100,7 +100,7 @@ main {
 }
 
 .pomo-count {
-    height: 4vh;
+    height: 2.5vmin;
     border-radius: 30%;
     padding: 0vw 0.3vw 0vw 0.3vw;
 }
