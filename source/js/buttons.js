@@ -103,24 +103,31 @@ pomoSound.volume = volumeSlider.value/100;
 volumeSlider.onclick = function() {
   let val = volumeSlider.value;
   if( val > volume_level_3 ) {
-    volumeImg.src = "./img/volume-level-3.svg";
+    volumeImg.src = "./media/img/volume-level-3.svg";
   }
   else if ( val > volume_level_2 ) {
-    volumeImg.src = "./img/volume-level-2.svg";
+    volumeImg.src = "./media/img/volume-level-2.svg";
   }
   else if ( val > volume_level_1 ) {
-    volumeImg.src = "./img/volume-level-1.svg";
+    volumeImg.src = "./media/img/volume-level-1.svg";
   }
   else {
-    volumeImg.src = "./img/volume-level-0.svg";
+    volumeImg.src = "./media/img/volume-level-0.svg";
   }
   pomoSound.volume = volumeSlider.value/100;
 };
 
 // Audio source select drop down menu
 const nameSrcMap = {
-  "party-horn": "./audio/party-horn.mp3", 
-  "air-horn": "./audio/air-horn.mp3" 
+  "party-horn": "./media/audio/party-horn.mp3", 
+  "air-horn": "./media/audio/air-horn.mp3",
+  "bottle-clank": "./media/audio/bottle-clank.mp3",
+  "glass-break": "./media/audio/glass-break.mp3",
+  "glass-ping": "./media/audio/glass-ping.mp3",
+  "glass-pour": "./media/audio/glass-pour.mp3",
+  "ice-cream-1": "./media/audio/ice-cream-1.mp3",
+  "ice-cream-2": "./media/audio/ice-cream-2.mp3",
+  "metal-ball-roll": "./media/audio/metal-ball-roll.mp3"
 }
 
 /** @function
