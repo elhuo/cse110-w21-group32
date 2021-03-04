@@ -11,11 +11,9 @@ html {
 /* === Universal page content formatting === */
 body {
     padding: 1em;
-    min-height: 90%;
     background-color: #0087bd;
     color: white;
     padding: 1em;
-    min-height: 90%;
     font-family: "OpenSans", sans-serif;
 }
 
@@ -30,6 +28,7 @@ short-break-color {
 long-break-color {
     background-color: #663399;
 }
+
 @media only screen and (max-height: 600px) {
     main {
         height: 80vh;
@@ -55,7 +54,6 @@ main {
     justify-content: center;
     flex-direction: column;
     height: 70vh;
-    min-height: 100%;
 }
 
 .tab-wrapper, .clock-wrapper {
@@ -223,9 +221,11 @@ button:active:enabled {
     border-radius: .5em;
     box-shadow: 5px 10px 20px 7px rgba(0,0,0,0.5);
 }
+
 .modal h2 {
     text-align: center;
 }
+
 .modal-show{
     visibility: visible;
     opacity: 1;
@@ -236,7 +236,7 @@ button:active:enabled {
     height: 70vh;
     width: 75vw;
     z-index: 100;
-    font-size: 1.5em;
+    font-size: 3vmin;
     word-wrap: break-word;
     line-height: 150%;
     justify-content: center;
@@ -303,7 +303,7 @@ button:active:enabled {
 .play-sound{
     padding: 1em 1em;
     text-align: center;
-    font-size: .7em;
+    font-size: 3vmin;
     border: 1px solid black;
 }
 
@@ -316,11 +316,10 @@ button:active:enabled {
 }
 
 select{
+    background-color: #b0e0E6;
+    font-size: 3vmin;
+    border: 1px solid black;
     margin: 2em;
     width: 20vw;
-    padding: 5px 1em 5px 5px;
-    font-size: .7em;
-    border: 1px solid black;
     height: 2em;
-    background-color: #b0e0E6;
 }
