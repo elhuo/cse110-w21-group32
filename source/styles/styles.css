@@ -146,11 +146,11 @@ button:active:enabled {
 }
 
 .help-button{
-    background-image: url(../media/img/help.png);
+    background-image: url(../img/help.png);
 }
 
 .settings-button {
-    background-image: url(../media/img/settings.png);
+    background-image: url(../img/settings.png);
 }
 
 .settings-button:hover:enabled {
@@ -166,11 +166,11 @@ button:active:enabled {
 }
 
 .start-button {
-    background-image: url(../media/img/Start.png);
+    background-image: url(../img/Start.png);
 }
 
 .stop-button {
-    background-image: url(../media/img/Stop.png);
+    background-image: url(../img/Stop.png);
 }
 
 /* === Volume Image === */
