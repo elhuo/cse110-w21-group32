@@ -119,10 +119,11 @@ volumeSlider.onclick = function() {
 
 // Audio source select drop down menu
 const nameSrcMap = {
+  "glass-pour": "./audio/glass-pour.mp3",
+
   "party-horn": "./audio/party-horn.mp3", 
   "air-horn": "./audio/air-horn.mp3",
-  
-  "glass-pour": "./audio/glass-pour.mp3",
+
   "bottle-clank": "./audio/bottle-clank.mp3",
   "glass-break": "./audio/glass-break.mp3",
   "glass-ping": "./audio/glass-ping.mp3",
