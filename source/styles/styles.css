@@ -236,7 +236,7 @@ button:active:enabled {
     height: 70vh;
     width: 75vw;
     z-index: 100;
-    font-size: 3vmin;
+    font-size: 3.5vmin;
     word-wrap: break-word;
     line-height: 150%;
     justify-content: center;
