@@ -205,17 +205,6 @@ button:active:enabled {
     cursor: pointer;
 }
 
-.volume-grid-container {
-    position:absolute;
-    column-gap: 10px;
-    grid-template-areas:
-      'image slider';
-    height: 50px;
-    width: 90%;
-    bottom:20px;
-    grid-column-end:auto;
-}
-
 /* === Help Popup Window Styling === */
 .modal{
     visibility: hidden;
@@ -229,8 +218,9 @@ button:active:enabled {
     box-shadow: 5px 10px 20px 7px rgba(0,0,0,0.5);
 }
 
-.modal h2 {
+.modal h2, h3 {
     text-align: center;
+    padding-top: 2.5vh;
 }
 
 .modal-show{
@@ -249,9 +239,9 @@ button:active:enabled {
     justify-content: center;
 }
 
-.modal-content p, h3 {
+/*.modal-content p, h3 {
     padding-bottom: .4em;
-}
+}*/
 
 .shadow {
     position: fixed;
@@ -276,7 +266,7 @@ button:active:enabled {
     display:flex; 
     justify-content: center;
     margin-top: 5%;
- }
+}
 
 .duration-selectors {
     flex: 1;
@@ -285,6 +275,13 @@ button:active:enabled {
 }
 
 /* === Volume Image === */
+.volume-grid-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
 .volume-image {
     padding-right: 1em;
     width: 2em;
@@ -293,13 +290,6 @@ button:active:enabled {
 /* === Volume Slider === */
 .volume-slider {
    width:35vw;
-}
-
-.volume-grid-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
 .volume-sound {
