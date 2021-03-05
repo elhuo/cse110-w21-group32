@@ -17,6 +17,17 @@ body {
     font-family: "OpenSans", sans-serif;
 }
 
+pomo-color {
+    background-color: #0087bd;
+}
+
+short-break-color {
+    background-color: #333399;
+}
+
+long-break-color {
+    background-color: #663399;
+}
 @media only screen and (max-height: 600px) {
     main {
         height: 80vh;
@@ -74,7 +85,7 @@ main {
 }
 
 .tab {
-    border: 2px solid;
+    border: medium solid;
     border-bottom: none;
     padding: 2vh 0.1vw 1.5vh 0.1vw;
     flex: 1 1 0px;
@@ -82,6 +93,15 @@ main {
     border-radius: 1vw 1vw 0px 0px;
     font-size: 1.75vmax;
     white-space: nowrap;
+}
+
+.tab-border {
+    border: medium solid;
+    border-bottom: none;
+}
+
+.tab-noborder {
+    border: none;
 }
 
 /* === Timer formatting === */
@@ -191,25 +211,19 @@ button:active:enabled {
 
 /* === Volume Image === */
 .volume-image {
-    justify-self: center;
-    justify-self: flex-start;
-    padding-right: 20px;
-    width: 40px;
+    padding-right: 1em;
+    width: 2em;
 }
 
 /* === Volume Slider === */
 .volume-slider {
-    grid-area: slider;
     width: 50%;
-    justify-self: left;
 }
 
 .volume-grid-container {
+    display: flex;
     position:absolute;
-    column-gap: 10px;
-    grid-template-areas:
-      'image slider';
-    height: 50px;
+    height: 3em;
     width: 90%;
     bottom:20px;
     grid-column-end:auto;
@@ -224,7 +238,7 @@ button:active:enabled {
     background-color: #b0e0E6;
     color: black;
     transition: all 0.2s;
-    border-radius: 5px;
+    border-radius: .5em;
     box-shadow: 5px 10px 20px 7px rgba(0,0,0,0.5);
 }
 
@@ -281,22 +295,25 @@ button:active:enabled {
 
 /* === Play sound formatting === */
 .play-sound{
-    padding: 15px 32px;
+    padding: 1em 2em;
     text-align: center;
-    font-size: 16px;
+    font-size: .7em;
     border: 1px solid black;
 }
 
-.play-sound:hover:enabled{
-    filter: brightness(80%);
+.play-sound:hover{
+    background-color: rgba(0,0,0,0.1)
 }
 
+.play-sound:active{
+    background-color: rgba(0,0,0,0.2)
+}
 select{
-    margin: 50px;
-    width: 150px;
-    padding: 5px 35px 5px 5px;
-    font-size: 16px;
+    margin: 2em;
+    width: 10em;
+    padding: 5px 1em 5px 5px;
+    font-size: .7em;
     border: 1px solid black;
-    height: 34px;
+    height: 2em;
     background-color: #b0e0E6;
 }

@@ -140,36 +140,30 @@ function changeStyle() {
     /** Change page style to fit pomo cycle. */
     if (cycle == 0) {
         document.body.style.backgroundColor = "#0087bd";
-        document.getElementById("pomo-tab").style.border = "medium solid";
-        document.getElementById("pomo-tab").style.borderBottom = "none";
-        document.getElementById("short-break-tab").style.border = "none";
-        document.getElementById("long-break-tab").style.border = "none";
+        document.getElementById("short-break-tab").classList.add("tab-noborder");
+        document.getElementById("long-break-tab").classList.add("tab-noborder");
+        document.getElementById("pomo-tab").classList.remove("tab-noborder");
     }
     /** Change page style to fit short break cycle. */
     if (cycle == 1) {
         document.body.style.backgroundColor = "#333399";
-        document.getElementById("pomo-tab").style.border = "none";
-        document.getElementById("short-break-tab").style.border = "medium solid";
-        document.getElementById("short-break-tab").style.borderBottom = "none";
-        document.getElementById("long-break-tab").style.border = "none";
+        document.getElementById("short-break-tab").classList.remove("tab-noborder");
+        document.getElementById("long-break-tab").classList.add("tab-noborder");
+        document.getElementById("pomo-tab").classList.add("tab-noborder");
     }
     /** Change page style to fit long break cycle. */
     if (cycle == 2) {
         document.body.style.backgroundColor = "#663399";
-        document.getElementById("pomo-tab").style.border = "none";
-        document.getElementById("short-break-tab").style.border = "none";
-        document.getElementById("long-break-tab").style.border = "medium solid";
-        document.getElementById("long-break-tab").style.borderBottom = "none";
+        document.getElementById("short-break-tab").classList.add("tab-noborder");
+        document.getElementById("long-break-tab").classList.remove("tab-noborder");
+        document.getElementById("pomo-tab").classList.add("tab-noborder");
     }
     /** Change page style to fit timer stopped. */
     if (cycle == 3) {
         document.body.style.backgroundColor = "#0087bd";
-        document.getElementById("pomo-tab").style.border = "medium solid";
-        document.getElementById("pomo-tab").style.borderBottom = "none";
-        document.getElementById("short-break-tab").style.border = "medium solid";
-        document.getElementById("short-break-tab").style.borderBottom = "none";
-        document.getElementById("long-break-tab").style.border = "medium solid";
-        document.getElementById("long-break-tab").style.borderBottom = "none";
+        document.getElementById("short-break-tab").classList.remove("tab-noborder");
+        document.getElementById("long-break-tab").classList.remove("tab-noborder");
+        document.getElementById("pomo-tab").classList.remove("tab-noborder");
     }
 }
 
@@ -205,7 +199,8 @@ function getNumPomos() {
     return numPomos;
 }
 
-/** export functions and varialbes for test file */
+/** export functions and variables for test file */
+
 exports.setCycle = setCycle;
 exports.getCycle = getCycle;
 exports.setNumPomos = setNumPomos;
