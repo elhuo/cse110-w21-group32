@@ -106,7 +106,7 @@ main {
 }
 
 .pomo-uncounted {
-    filter: brightness(80%);
+    filter: opacity(50%);
 }
 
 .pomo-counted {
@@ -134,7 +134,7 @@ main {
 
 /* === Button Styling === */
 button:disabled {
-    filter: brightness(80%);
+    filter: opacity(50%);
     cursor: auto;
 }
 
