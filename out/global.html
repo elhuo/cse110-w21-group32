@@ -290,7 +290,11 @@
 
 
 <div class="description">
-    Tracks the type of cycle that the timer is in.cycle = 0: the timer is in the pomo cycle (25 min)cycle = 1: the timer is in the short break cycle (5 min)cycle = 2: the timer is in the long break cycle (15 min)cycle = 3: the timer is stopped
+    Tracks the type of cycle that the timer is in.
+cycle = 0: the timer is in the pomo cycle (25 min)
+cycle = 1: the timer is in the short break cycle (5 min)
+cycle = 2: the timer is in the long break cycle (15 min)
+cycle = 3: the timer is stopped
 </div>
 
 
@@ -414,7 +418,9 @@
 
 
 <div class="description">
-    Tracks the number of completed pomos to know when to long break.numPomos < 4: the break cycle will be a short breaknumPomos = 4: the break cycle will be a long break
+    Tracks the number of completed pomos to know when to long break.
+numPomos < 4: the break cycle will be a short break
+numPomos = 4: the break cycle will be a long break
 </div>
 
 
@@ -903,6 +909,68 @@
 
 
         
+            
+<h4 class="name" id="timer"><span class="type-signature">(constant) </span>timer<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Loading the module we're testing
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="timer.test.js.html">timer.test.js</a>, <a href="timer.test.js.html#line2">line 2</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
     
 
     
@@ -922,7 +990,9 @@
 
 
 <div class="description">
-    Function that is called to handle the shift in pomodoro cycles whenthe countdown reaches 0. Handles each cycle case and thencalls changeStyle to change the CSS to match the new cycle.
+    Function that is called to handle the shift in pomodoro cycles when
+the countdown reaches 0. Handles each cycle case and then
+calls changeStyle to change the CSS to match the new cycle.
 </div>
 
 
@@ -1010,7 +1080,9 @@
 
 
 <div class="description">
-    Function that changes the page's CSS according to the current cycle.Specifically, borders the text for the current cycle and changes page color.Called at the end of the changeCycles function.
+    Function that changes the page's CSS according to the current cycle.
+Specifically, borders the text for the current cycle and changes page color.
+Called at the end of the changeCycles function.
 </div>
 
 
@@ -1098,7 +1170,9 @@
 
 
 <div class="description">
-    This function runs when the HTML content is finished loading.The function will choose the appropriate sound depending on which soundis selected by the user in the settings page.
+    This function runs when the HTML content is finished loading.
+The function will choose the appropriate sound depending on which sound
+is selected by the user in the settings page.
 </div>
 
 
@@ -1362,7 +1436,9 @@
 
 
 <div class="description">
-    When the start button is clicked, call the startTimer function in controllerto setup and start the first pomo cycle.While the timer is running, the start button cannot be clicked and the stop button can.
+    When the start button is clicked, call the startTimer function in controller
+to setup and start the first pomo cycle.
+While the timer is running, the start button cannot be clicked and the stop button can.
 </div>
 
 
@@ -1450,7 +1526,9 @@
 
 
 <div class="description">
-    When the stop button is clicked, call the stopTimer function in controllerto reset and stop the timer and cycles.While the timer is stopped, the stop button cannot be clicked and the start button can.
+    When the stop button is clicked, call the stopTimer function in controller
+to reset and stop the timer and cycles.
+While the timer is stopped, the stop button cannot be clicked and the start button can.
 </div>
 
 
@@ -1934,7 +2012,8 @@
 
 
 <div class="description">
-    Play button in the settings page that plays the alert sound so the usercan pre-hear the volume and sound when they are adjusting them.
+    Play button in the settings page that plays the alert sound so the user
+can pre-hear the volume and sound when they are adjusting them.
 </div>
 
 
@@ -2116,6 +2195,143 @@
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line143">line 143</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setDuration"><span class="type-signature"></span>setDuration<span class="signature">(duration_)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Sets the current duration
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>duration_</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The value to set for the duration.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line107">line 107</a>
     </li></ul></dd>
     
 
@@ -2384,7 +2600,8 @@
 
 
 <div class="description">
-    Adjust volume level using a slider implemented in the settings page.The image displayed for the volume changes depending on the volume.
+    Adjust volume level using a slider implemented in the settings page.
+The image displayed for the volume changes depending on the volume.
 </div>
 
 
@@ -2524,7 +2741,8 @@
 
             
 
-            <td class="description last">The duration for the timer to run for. Remember to subtract 1 minute (if you want a 25 min timer, set to 24)</td>
+            <td class="description last">The duration for the timer to run for. 
+Remember to subtract 1 minute (if you want a 25 min timer, set to 24)</td>
         </tr>
 
     
@@ -2609,7 +2827,9 @@
 
 
 <div class="description">
-    Function that is called when the start button is pressed.Handles setup for the controller before calling startCountdown in timer.jsto start the first pomodoro cycle.
+    Function that is called when the start button is pressed.
+Handles setup for the controller before calling startCountdown in timer.js
+to start the first pomodoro cycle.
 </div>
 
 
@@ -2785,7 +3005,9 @@
 
 
 <div class="description">
-    Function that is called when the stop button is pressed.Resets controller variables to default and resets the countdown by callingstopCountdown in timer.js.
+    Function that is called when the stop button is pressed.
+Resets controller variables to default and resets the countdown by calling
+stopCountdown in timer.js.
 </div>
 
 
@@ -2854,6 +3076,178 @@
 
 
 
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="sum"><span class="type-signature"></span>sum<span class="signature">(a, b)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Sums two numbers together
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">first number to be added</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">second number to be added</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="sum.js.html">sum.js</a>, <a href="sum.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - the sum
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -3051,13 +3445,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#button">button</a></li><li><a href="global.html#buttons">buttons</a></li><li><a href="global.html#changeCycles">changeCycles</a></li><li><a href="global.html#changeStyle">changeStyle</a></li><li><a href="global.html#chooseSound">chooseSound</a></li><li><a href="global.html#clickClose">clickClose</a></li><li><a href="global.html#clickHelp">clickHelp</a></li><li><a href="global.html#clickStart">clickStart</a></li><li><a href="global.html#clickStop">clickStop</a></li><li><a href="global.html#closePopup">closePopup</a></li><li><a href="global.html#controller">controller</a></li><li><a href="global.html#countdown">countdown</a></li><li><a href="global.html#cycle">cycle</a></li><li><a href="global.html#getCycle">getCycle</a></li><li><a href="global.html#getNumPomos">getNumPomos</a></li><li><a href="global.html#lBreakTime">lBreakTime</a></li><li><a href="global.html#numPomos">numPomos</a></li><li><a href="global.html#playAdjustSound">playAdjustSound</a></li><li><a href="global.html#pomoSound">pomoSound</a></li><li><a href="global.html#pomoTime">pomoTime</a></li><li><a href="global.html#sBreakTime">sBreakTime</a></li><li><a href="global.html#setCycle">setCycle</a></li><li><a href="global.html#setInterval">setInterval</a></li><li><a href="global.html#setNumPomos">setNumPomos</a></li><li><a href="global.html#slideVolume">slideVolume</a></li><li><a href="global.html#startButton">startButton</a></li><li><a href="global.html#startCountdown">startCountdown</a></li><li><a href="global.html#startTimer">startTimer</a></li><li><a href="global.html#stopButton">stopButton</a></li><li><a href="global.html#stopCountdown">stopCountdown</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#toggleClosePopup">toggleClosePopup</a></li><li><a href="global.html#toggleSettingsPopup">toggleSettingsPopup</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#button">button</a></li><li><a href="global.html#buttons">buttons</a></li><li><a href="global.html#changeCycles">changeCycles</a></li><li><a href="global.html#changeStyle">changeStyle</a></li><li><a href="global.html#chooseSound">chooseSound</a></li><li><a href="global.html#clickClose">clickClose</a></li><li><a href="global.html#clickHelp">clickHelp</a></li><li><a href="global.html#clickStart">clickStart</a></li><li><a href="global.html#clickStop">clickStop</a></li><li><a href="global.html#closePopup">closePopup</a></li><li><a href="global.html#controller">controller</a></li><li><a href="global.html#countdown">countdown</a></li><li><a href="global.html#cycle">cycle</a></li><li><a href="global.html#getCycle">getCycle</a></li><li><a href="global.html#getNumPomos">getNumPomos</a></li><li><a href="global.html#lBreakTime">lBreakTime</a></li><li><a href="global.html#numPomos">numPomos</a></li><li><a href="global.html#playAdjustSound">playAdjustSound</a></li><li><a href="global.html#pomoSound">pomoSound</a></li><li><a href="global.html#pomoTime">pomoTime</a></li><li><a href="global.html#sBreakTime">sBreakTime</a></li><li><a href="global.html#setCycle">setCycle</a></li><li><a href="global.html#setDuration">setDuration</a></li><li><a href="global.html#setInterval">setInterval</a></li><li><a href="global.html#setNumPomos">setNumPomos</a></li><li><a href="global.html#slideVolume">slideVolume</a></li><li><a href="global.html#startButton">startButton</a></li><li><a href="global.html#startCountdown">startCountdown</a></li><li><a href="global.html#startTimer">startTimer</a></li><li><a href="global.html#stopButton">stopButton</a></li><li><a href="global.html#stopCountdown">stopCountdown</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#sum">sum</a></li><li><a href="global.html#timer">timer</a></li><li><a href="global.html#toggleClosePopup">toggleClosePopup</a></li><li><a href="global.html#toggleSettingsPopup">toggleSettingsPopup</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Mar 05 2021 11:31:11 GMT-0800 (Pacific Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Mar 05 2021 23:58:40 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
