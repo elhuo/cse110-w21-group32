@@ -119,8 +119,19 @@ volumeSlider.onclick = function() {
 
 // Audio source select drop down menu
 const nameSrcMap = {
+  "glass-pour": "./audio/glass-pour.mp3",
+
   "party-horn": "./audio/party-horn.mp3", 
-  "air-horn": "./audio/air-horn.mp3" 
+  "air-horn": "./audio/air-horn.mp3",
+
+  "bottle-clank": "./audio/bottle-clank.mp3",
+  "glass-break": "./audio/glass-break.mp3",
+  "glass-ping": "./audio/glass-ping.mp3",
+  "wind-chimes-1": "./audio/wind-chimes-1.mp3",
+  "wind-chimes-2": "./audio/wind-chimes-2.mp3",
+  "wind-chimes-3": "./audio/wind-chimes-3.mp3",
+  "ice-cream-1": "./audio/ice-cream-1.mp3",
+  "ice-cream-2": "./audio/ice-cream-2.mp3"
 }
 
 /** @function
