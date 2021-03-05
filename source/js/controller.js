@@ -54,16 +54,13 @@ function startTimer() {
  * calls stopCountdown in timer.js. The timer stays in the current stage
  */
 function stopTimer() {
-    cycle = 3;
-    numPomos = 0;
-    changeStyle();
     stopCountdown();
 }
 
 /**
- * @description Function that is called when the user doesn't wish to go to next stage.
- * Resets controller variables to default and resets the countdown by calling
- * stopCountdown in timer.js. Changes cycle to the stopped cycle.
+ * @description Function is called to ask user whether to continue to next
+ * stage or not. If user decides to not coninue, the timer is set back to 
+ * initial stage.
  */
 
 function changeCyclesController(){
