@@ -57,8 +57,7 @@ function countdown() {
   if (minutes > duration) {
     start = false;
     pomoSound.play();
-    // Call stop function in controller
-    changeCycles();
+    changeCyclesController();
     return;
   }
 
