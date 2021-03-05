@@ -27,8 +27,6 @@ var sBreakTime = 4;
 /** (15 - 1) minutes to pass in to startCountdown for long break cycle. */
 var lBreakTime = 14;
 
-var pomoSound = document.getElementById("pomo-sound");
-
 /**
  * Function that is called when the start button is pressed.
  * Handles setup for the controller before calling startCountdown in timer.js
@@ -60,7 +58,7 @@ function stopTimer() {
  */
 function changeCycles() {
 
-    pomoSound.play();
+    document.getElementById("pomo-sound").play();
 
     /** If current cycle is pomo, increment numPomos. */
     if (cycle == 0) numPomos++;
