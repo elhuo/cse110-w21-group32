@@ -3,19 +3,22 @@
  * Specifically, it implements the start, stop, help, and settings buttons.
  */
 
-// Button is used to disable the buttons
+/** Button is used to disable the buttons */
 const button = document.querySelectorAll("button"); // 0 is help, 1 is start, 2 is stop
 
-// References to start and stop buttons
+/** Reference to start button */
 var startButton = document.getElementById("start-button");
+
+/** Reference to stop button */
 var stopButton = document.getElementById("stop-button");
 stopButton.disabled = true;     // Stop button disabled by default
 
 
-/**
- * When the start button is clicked, call the startTimer function in controller
+/** @function
+ * @description When the start button is clicked, call the startTimer function in controller
  * to setup and start the first pomo cycle.
  * While the timer is running, the start button cannot be clicked and the stop button can.
+ * @name clickStart
  */
 startButton.addEventListener("click", function () {
   startTimer(); // Call start function in controller
@@ -23,10 +26,11 @@ startButton.addEventListener("click", function () {
   stopButton.disabled = false;  // Enable stop button
 });
 
-/**
- * When the stop button is clicked, call the stopTimer function in controller
+/** @function
+ * @description When the stop button is clicked, call the stopTimer function in controller
  * to reset and stop the timer and cycles.
  * While the timer is stopped, the stop button cannot be clicked and the start button can.
+ * @name clickStop
  */
 stopButton.addEventListener("click", function () {
   stopTimer(); // Call stop function in controller
@@ -63,33 +67,37 @@ function closePopup() {
   shadow.classList.remove("visible");
 }
 
-/**
- * Toggle popup on help button click.
+/** @function
+ * @description Toggle popup on help button click.
+ * @name clickHelp
  */
 helpBtn.onclick = function () {
   modal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
 
-/**
- * Toggle popup on close button click.
+/** @function
+ * @description Toggle popup on close button click.
+ * @name clickClose
  */
 closeBtn.onclick = function () {
   modal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
 
-/**
- * Toggle popup on settings button click.
+/** @function
+ * @description Toggle popup on settings button click.
+ * @name toggleSettingsPopup
  */
 settingsBtn.onclick = function () {
   settingsModal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
 
-/**
- * Adjust volume level using a slider implemented in the settings page.
+/** @function
+ * @description Adjust volume level using a slider implemented in the settings page.
  * The image displayed for the volume changes depending on the volume.
+ * @name slideVolume
  */
 pomoSound.volume = volumeSlider.value / 100;
 volumeSlider.onclick = function () {
@@ -115,10 +123,11 @@ const nameSrcMap = {
   "air-horn": "./audio/air-horn.mp3"
 }
 
-/**
- * This function runs when the HTML content is finished loading.
+/** @function
+ * @description This function runs when the HTML content is finished loading.
  * The function will choose the appropriate sound depending on which sound
  * is selected by the user in the settings page.
+ * @name chooseSound
  */
 var soundChoices = document.getElementById("volume-sound");
 document.addEventListener('DOMContentLoaded', function () {
@@ -130,32 +139,25 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 })
 
-/**
- * Play button in the settings page that plays the alert sound so the user
+/** @function
+ * @description Play button in the settings page that plays the alert sound so the user
  * can pre-hear the volume and sound when they are adjusting them.
+ * @name playAdjustSound
  */
 var playButton = document.getElementById("play-sound")
 playButton.onclick = function () {
   document.getElementById("pomo-sound").play();
 }
 
-/**
- * Toggle popup on close button click.
+/** @function
+ * @description Toggle popup on close button click.
+ * @name toggleClosePopup
  */
 settingsCloseBtn.onclick = function () {
   settingsModal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
-// listener for start button
-//      on "click"
-//          call function in controller
-//              function sets cycle to pomo (pomo started)
-//                  that function could call timer module with (time, running = 1)
-//
-// listener for stop button
-//      on "click"
-//          call function in controller
-//              function resets cycle
-//                  that function sets running = 0
+
 
 exports.closePopup = closePopup;
+

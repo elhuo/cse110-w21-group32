@@ -2,9 +2,13 @@ let start = false                           // true - timer is on; false - timer
 let duration;                          // duration of timer cycle in minutes (needs to be converted later in ms somewhere below) ; default 25min
 var countDownStart = new Date().getTime();  // stores the starting time of the timer
 
+/** Sound played when timer hits 0 */
 var pomoSound = document.getElementById("pomo-sound");
 
-// Updates the html timer display when timer is enabled
+/** @function
+ * @description Updates the html timer display when timer is enabled
+ * @name setInterval
+ */
 setInterval(() => {
   if (start) {
     countdown();
