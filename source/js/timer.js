@@ -13,9 +13,9 @@ setInterval(() => {
 }, 500);  // Will refresh every 500 ms: sometimes setInterval isn't exact and may skip a second
 
 /**
- * Starts the countdown
- * @param {int} mins - The duration for the timer to run for. 
+ * @description Starts the countdown
  * Remember to subtract 1 minute (if you want a 25 min timer, set to 24)
+ * @param {int} mins - The duration for the timer to run for. 
  */
 function startCountdown(mins) {
   start = true;     // Enables timer
@@ -23,23 +23,23 @@ function startCountdown(mins) {
 
   if (duration < 10) { duration = "0" + duration; }
   // Display initial countdown time
-  document.getElementById("countdown").innerHTML = (duration) + ":" + "59";
+  document.getElementById("countdown").innerText = (duration) + ":" + "59";
   // Set starting time of the timer
   countDownStart = new Date().getTime();
 }
 
 /**
- * Ends the countdown
+ * @description Ends the countdown
  */
 function stopCountdown() {
   start = false;    // Disables timer
-  document.getElementById("countdown").innerHTML = "00:00";   // Sets timer display to 00:00
-  document.getElementById("title").innerHTML = "Spl/ice";
+  document.getElementById("countdown").innerText = "00:00";   // Sets timer display to 00:00
+  document.getElementById("title").innerText = "Spl/ice";
 }
 
 
 /**
- * Updates the time left on the timer, by subtracting the time elapsed from the initial time
+ * @description Updates the time left on the timer, by subtracting the time elapsed from the initial time
  */
 function countdown() {
 
@@ -78,14 +78,14 @@ function countdown() {
   }
 
   // Update the display
-  document.getElementById("countdown").innerHTML = minutes + ":" + seconds;
+  document.getElementById("countdown").innerText = minutes + ":" + seconds;
 
   // Update the title
   if (minutes == "00"){
-    document.getElementById("title").innerHTML = "Spl/ice   " + seconds + "sec";
+    document.getElementById("title").innerText = "Spl/ice   " + seconds + "sec";
   }
   else if (seconds == "59"){
-    document.getElementById("title").innerHTML = "Spl/ice   " + (parseInt(minutes) + 1) + "min";
+    document.getElementById("title").innerText = "Spl/ice   " + (parseInt(minutes) + 1) + "min";
   }
 }
 

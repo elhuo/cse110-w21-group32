@@ -32,7 +32,7 @@
  */
 
 /** Button is used to disable the buttons */
-const button = document.querySelectorAll("button"); // 0 is help, 1 is start, 2 is stop
+// const button = document.querySelectorAll("button"); // 0 is help, 1 is start, 2 is stop
 
 /** Reference to start button */
 var startButton = document.getElementById("start-button");
@@ -79,15 +79,15 @@ var volumeImg = document.getElementById("volume-image");
 // Help and settings page button logics
 var modal = document.getElementById("myModal");
 var settingsModal = document.getElementById("settings-modal");
-var helpBtn = document.getElementById("help-button");
-var settingsBtn = document.getElementById("settings-button");
-var closeBtn = document.getElementById("help-close");
-var settingsCloseBtn = document.getElementById("settings-close");
+var helpButton = document.getElementById("help-button");
+var settingsButton = document.getElementById("settings-button");
+var closeButton = document.getElementById("help-close");
+var settingsCloseButton = document.getElementById("settings-close");
 var volumeSlider = document.getElementById("volume-slider");
 let shadow = document.getElementById("shadow");
 
 /**
- * Close popup and remove shadow.
+ * @description Close popup and remove shadow.
  */
 function closePopup() {
   modal.classList.remove("modal-show");
@@ -99,7 +99,7 @@ function closePopup() {
  * @description Toggle popup on help button click.
  * @name clickHelp
  */
-helpBtn.onclick = function () {
+helpButton.onclick = function () {
   modal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
@@ -108,7 +108,7 @@ helpBtn.onclick = function () {
  * @description Toggle popup on close button click.
  * @name clickClose
  */
-closeBtn.onclick = function () {
+closeButton.onclick = function () {
   modal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
@@ -117,7 +117,7 @@ closeBtn.onclick = function () {
  * @description Toggle popup on settings button click.
  * @name toggleSettingsPopup
  */
-settingsBtn.onclick = function () {
+settingsButton.onclick = function () {
   settingsModal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
@@ -158,8 +158,8 @@ const nameSrcMap = {
  * @name chooseSound
  */
 var soundChoices = document.getElementById("volume-sound");
-document.addEventListener('DOMContentLoaded', function(){
-  document.querySelector('#volume-sound').onchange = function(){
+document.addEventListener("DOMContentLoaded", function(){
+  document.querySelector("#volume-sound").onchange = function(){
     let soundSelected = soundChoices.value;
     let audioElem = document.getElementById("pomo-sound");
     audioElem.src = nameSrcMap[soundSelected];
@@ -181,10 +181,13 @@ playButton.onclick = function(){
  * @description Toggle popup on close button click.
  * @name toggleClosePopup
  */
-settingsCloseBtn.onclick = function () {
+settingsCloseButton.onclick = function () {
   settingsModal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
-};</code></pre>
+};
+
+exports.closePopup = closePopup;
+</code></pre>
         </article>
     </section>
 
@@ -194,13 +197,13 @@ settingsCloseBtn.onclick = function () {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#button">button</a></li><li><a href="global.html#changeCycles">changeCycles</a></li><li><a href="global.html#changeStyle">changeStyle</a></li><li><a href="global.html#chooseSound">chooseSound</a></li><li><a href="global.html#clickClose">clickClose</a></li><li><a href="global.html#clickHelp">clickHelp</a></li><li><a href="global.html#clickStart">clickStart</a></li><li><a href="global.html#clickStop">clickStop</a></li><li><a href="global.html#closePopup">closePopup</a></li><li><a href="global.html#countdown">countdown</a></li><li><a href="global.html#cycle">cycle</a></li><li><a href="global.html#getCycle">getCycle</a></li><li><a href="global.html#getNumPomos">getNumPomos</a></li><li><a href="global.html#lBreakTime">lBreakTime</a></li><li><a href="global.html#numPomos">numPomos</a></li><li><a href="global.html#playAdjustSound">playAdjustSound</a></li><li><a href="global.html#pomoSound">pomoSound</a></li><li><a href="global.html#pomoTime">pomoTime</a></li><li><a href="global.html#sBreakTime">sBreakTime</a></li><li><a href="global.html#setCycle">setCycle</a></li><li><a href="global.html#setInterval">setInterval</a></li><li><a href="global.html#setNumPomos">setNumPomos</a></li><li><a href="global.html#slideVolume">slideVolume</a></li><li><a href="global.html#startButton">startButton</a></li><li><a href="global.html#startCountdown">startCountdown</a></li><li><a href="global.html#startTimer">startTimer</a></li><li><a href="global.html#stopButton">stopButton</a></li><li><a href="global.html#stopCountdown">stopCountdown</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#toggleClosePopup">toggleClosePopup</a></li><li><a href="global.html#toggleSettingsPopup">toggleSettingsPopup</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#changeCycles">changeCycles</a></li><li><a href="global.html#changeStyle">changeStyle</a></li><li><a href="global.html#chooseSound">chooseSound</a></li><li><a href="global.html#clickClose">clickClose</a></li><li><a href="global.html#clickHelp">clickHelp</a></li><li><a href="global.html#clickStart">clickStart</a></li><li><a href="global.html#clickStop">clickStop</a></li><li><a href="global.html#closePopup">closePopup</a></li><li><a href="global.html#countdown">countdown</a></li><li><a href="global.html#cycle">cycle</a></li><li><a href="global.html#getCycle">getCycle</a></li><li><a href="global.html#getNumPomos">getNumPomos</a></li><li><a href="global.html#lBreakTime">lBreakTime</a></li><li><a href="global.html#numPomos">numPomos</a></li><li><a href="global.html#playAdjustSound">playAdjustSound</a></li><li><a href="global.html#pomoSound">pomoSound</a></li><li><a href="global.html#pomoTime">pomoTime</a></li><li><a href="global.html#sBreakTime">sBreakTime</a></li><li><a href="global.html#setCycle">setCycle</a></li><li><a href="global.html#setInterval">setInterval</a></li><li><a href="global.html#setNumPomos">setNumPomos</a></li><li><a href="global.html#slideVolume">slideVolume</a></li><li><a href="global.html#startButton">startButton</a></li><li><a href="global.html#startCountdown">startCountdown</a></li><li><a href="global.html#startTimer">startTimer</a></li><li><a href="global.html#stopButton">stopButton</a></li><li><a href="global.html#stopCountdown">stopCountdown</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#toggleClosePopup">toggleClosePopup</a></li><li><a href="global.html#toggleSettingsPopup">toggleSettingsPopup</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Thu Feb 25 2021 16:07:01 GMT-0800 (Pacific Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Tue Mar 02 2021 20:49:17 GMT-0800 (Pacific Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
