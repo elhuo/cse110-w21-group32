@@ -43,7 +43,7 @@ test("startTimer test", () => {
 test("changeCycles short break test", () => {
     controller.setCycle(0);
     controller.setNumPomos(0);
-    
+
     controller.changeCycles();
     expect(controller.getCycle()).toBe(1);
     expect(controller.getNumPomos()).toBe(1);
@@ -131,7 +131,7 @@ test("changeCycles full cycle including long break test", () => {
     expect(document.getElementById("long-break-tab").style.border).toBe("");
 
     controller.stopTimer();
-    expect(controller.getCycle()).toBe(3);
+    expect(controller.getCycle()).toBe(2);
     expect(controller.getNumPomos()).toBe(0);
     expect(document.getElementById("pomo-tab").style.border).toBe("medium solid");
     expect(document.getElementById("short-break-tab").style.border).toBe("medium solid");
