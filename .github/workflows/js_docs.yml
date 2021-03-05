@@ -1,9 +1,11 @@
 name: JS Docs
 on: 
   push:
-    branches: [ main ]
+    branches: 
+      - '*'
   pull_request:
-    branches: [ main ]
+    branches: 
+      - '**'
     
   workflow_dispatch:
   
@@ -12,6 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install modules
+        run: npm install
+      - name: Run tests
+        run: npm run doc
       - name: Build
         uses: andstor/jsdoc-action@v1
         with:
