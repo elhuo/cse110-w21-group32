@@ -79,7 +79,7 @@ main {
     padding: 2vh 0.1vw 1.5vh 0.1vw;
     flex: 1 1 0px;
     text-align: center;
-    border-radius: 1em 1em 0em 0em;
+    border-radius: 1vw 1vw 0px 0px;
     font-size: 1.75vmax;
     white-space: nowrap;
 }
@@ -87,7 +87,7 @@ main {
 /* === Timer formatting === */
 .clock-wrapper {
     border-width: 1.25vmin;
-    border-radius: 0.75%;
+    border-radius: 5px;
     padding: 5vh;
 }
 
@@ -97,13 +97,13 @@ main {
 
 .controls-wrapper {
     display: flex;
-    justify-content: center;
-    margin-top: 4vh;
-    width: 25%;
-    height: 7vh;
+    align-items: flex-end;
     justify-content: space-between;
-    min-width: 20ch;
-    min-height: 5ch;
+    margin-top: 2.5vh;
+    width: 25%;
+    height: 10vh;
+    min-width: 150px;
+    min-height: 45px;
 }
 
 /* === Button Styling === */
@@ -134,8 +134,8 @@ button:active:enabled {
 .top-control-buttons {
     height: 7vh;
     width: 7vh;
-    min-height: 4ch;
-    min-width: 4ch;
+    min-height: 25px;
+    min-width: 25px;
 }
 
 .help-button{
@@ -154,8 +154,8 @@ button:active:enabled {
 .control-buttons {
     height: 7vh;
     width: 7vh;
-    min-height: 4ch;
-    min-width: 4ch;
+    min-height: 30px;
+    min-width: 30px;
 }
 
 .start-button {
@@ -180,6 +180,7 @@ button:active:enabled {
     width: 50%;
     justify-self: left;
 }
+
 .volume-grid-container {
     position:absolute;
     column-gap: 10px;
@@ -189,8 +190,7 @@ button:active:enabled {
     width: 90%;
     bottom:20px;
     grid-column-end:auto;
-    
-  }
+}
 
 /* === Help Popup Window Styling === */
 .modal{
