@@ -63,7 +63,7 @@ var pomoSound = document.getElementById("pomo-sound");
 var volumeImg = document.getElementById("volume-image");
 
 // Help and settings page button logics
-var modal = document.getElementById("myModal");
+var modal = document.getElementById("help-modal");
 var settingsModal = document.getElementById("settings-modal");
 var helpButton = document.getElementById("help-button");
 var settingsButton = document.getElementById("settings-button");

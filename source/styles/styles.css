@@ -68,7 +68,6 @@ main {
 .tab-wrapper, .clock-wrapper {
     border-style: solid;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
@@ -79,6 +78,7 @@ main {
 }
 
 .tab-wrapper {
+    flex-direction: row;
     width: 50%;
     margin: 0em auto;
     min-width: 18em;
@@ -107,6 +107,7 @@ main {
 
 /* === Timer formatting === */
 .clock-wrapper {
+    flex-direction:column;
     border-width: 1.25vmin;
     border-radius: 5px;
     padding: 5vh;
@@ -114,6 +115,28 @@ main {
 
 .countdown {
     font-size: 20vmin;
+}
+
+.pomo-counts {
+    flex: 0 0 100%;
+}
+
+.pomo-count {
+    height: 2.5vmin;
+    border-radius: 30%;
+    padding: 0vw 0.3vw 0vw 0.3vw;
+    filter: opacity(60%);
+}
+
+.pomo-counted {
+    filter: brightness(100%);
+}
+
+.top-right-controls-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 2em;
 }
 
 .controls-wrapper {
@@ -129,7 +152,7 @@ main {
 
 /* === Button Styling === */
 button:disabled {
-    filter: brightness(80%);
+    filter: opacity(60%);
     cursor: auto;
 }
 
@@ -144,11 +167,11 @@ button {
 }
 
 button:active:enabled {
-    filter: brightness(60%);
+    filter: opacity(60%);
 }
 
 .help-button:hover:enabled, .control-buttons:hover:enabled {
-    filter: brightness(80%);
+    filter: opacity(60%);
 }
 
 /*      === Top Control Buttons Specific Styling ===     */
@@ -186,6 +209,7 @@ button:active:enabled {
 .stop-button {
     background-image: url(../img/Stop.png);
 }
+
 .volume-container {
     display:flex;
     justify-content: space-between;
@@ -203,6 +227,26 @@ button:active:enabled {
     color:#000;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* === Volume Image === */
+.volume-image {
+    padding-right: 1em;
+    width: 2em;
+}
+
+/* === Volume Slider === */
+.volume-slider {
+    width: 50%;
+}
+
+.volume-grid-container {
+    display: flex;
+    position:absolute;
+    height: 3em;
+    width: 90%;
+    bottom:20px;
+    grid-column-end:auto;
 }
 
 /* === Help Popup Window Styling === */
@@ -312,6 +356,9 @@ button:active:enabled {
     background-color: rgba(0,0,0,0.2)
 }
 
+.play-sound:active{
+    background-color: rgba(0,0,0,0.2)
+}
 select{
     background-color: #b0e0E6;
     font-size: 3vmin;
@@ -319,4 +366,5 @@ select{
     margin: 2em;
     width: 20vw;
     height: 2em;
+    padding: 5px 1em 5px 5px;
 }
