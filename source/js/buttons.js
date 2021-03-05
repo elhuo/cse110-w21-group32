@@ -99,28 +99,28 @@ settingsBtn.onclick = function () {
  * The image displayed for the volume changes depending on the volume.
  * @name slideVolume
  */
-pomoSound.volume = volumeSlider.value/100;
-volumeSlider.onclick = function() {
+pomoSound.volume = volumeSlider.value / 100;
+volumeSlider.onclick = function () {
   let val = volumeSlider.value;
-  if( val > volume_level_3 ) {
+  if (val > volume_level_3) {
     volumeImg.src = "./img/volume-level-3.svg";
   }
-  else if ( val > volume_level_2 ) {
+  else if (val > volume_level_2) {
     volumeImg.src = "./img/volume-level-2.svg";
   }
-  else if ( val > volume_level_1 ) {
+  else if (val > volume_level_1) {
     volumeImg.src = "./img/volume-level-1.svg";
   }
   else {
     volumeImg.src = "./img/volume-level-0.svg";
   }
-  pomoSound.volume = volumeSlider.value/100;
+  pomoSound.volume = volumeSlider.value / 100;
 };
 
 // Audio source select drop down menu
 const nameSrcMap = {
-  "party-horn": "./audio/party-horn.mp3", 
-  "air-horn": "./audio/air-horn.mp3" 
+  "party-horn": "./audio/party-horn.mp3",
+  "air-horn": "./audio/air-horn.mp3"
 }
 
 /** @function
@@ -130,8 +130,8 @@ const nameSrcMap = {
  * @name chooseSound
  */
 var soundChoices = document.getElementById("volume-sound");
-document.addEventListener('DOMContentLoaded', function(){
-  document.querySelector('#volume-sound').onchange = function(){
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector('#volume-sound').onchange = function () {
     let soundSelected = soundChoices.value;
     let audioElem = document.getElementById("pomo-sound");
     audioElem.src = nameSrcMap[soundSelected];
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function(){
  * @name playAdjustSound
  */
 var playButton = document.getElementById("play-sound")
-playButton.onclick = function(){
+playButton.onclick = function () {
   document.getElementById("pomo-sound").play();
 }
 
@@ -158,4 +158,6 @@ settingsCloseBtn.onclick = function () {
   shadow.classList.toggle("visible");
 };
 
+
 exports.closePopup = closePopup;
+

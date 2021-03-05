@@ -84,13 +84,44 @@ function countdown() {
   document.getElementById("countdown").innerHTML = minutes + ":" + seconds;
 
   // Update the title
-  if (minutes == "00"){
+  if (minutes == "00") {
     document.getElementById("title").innerHTML = "Spl/ice   " + seconds + "sec";
   }
-  else if (seconds == "59"){
+  else if (seconds == "59") {
     document.getElementById("title").innerHTML = "Spl/ice   " + (parseInt(minutes) + 1) + "min";
   }
 }
 
+function getStart() {
+  return start;
+}
+
+function getDuration() {
+  return duration;
+}
+
+/**
+ * Sets the current duration
+ * @param {int} duration_ - The value to set for the duration. 
+ */
+function setDuration(duration_) {
+  duration = duration_;
+}
+
 exports.startCountdown = startCountdown;
 exports.stopCountdown = stopCountdown;
+exports.countdown = countdown;
+exports.getStart = getStart;
+exports.setDuration = setDuration;
+exports.getDuration = getDuration;
+// Main timer component:
+//    variable that keeps track of time elapsed
+//    Function that changes the static html page (to be in sync with the actual timer)
+//    reset function, input time in minutes to count down
+//    when timer is finished, call method in controller (tbd)
+
+
+
+// something something setInterval
+// https://www.w3schools.com/howto/howto_js_countdown.asp
+// https://www.w3schools.com/jsref/met_win_setinterval.asp
