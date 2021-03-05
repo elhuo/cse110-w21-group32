@@ -106,7 +106,7 @@ main {
 }
 
 .pomo-uncounted {
-    filter: opacity(50%);
+    filter: opacity(60%);
 }
 
 .pomo-counted {
@@ -134,7 +134,7 @@ main {
 
 /* === Button Styling === */
 button:disabled {
-    filter: opacity(50%);
+    filter: opacity(60%);
     cursor: auto;
 }
 
@@ -149,11 +149,11 @@ button {
 }
 
 button:active:enabled {
-    filter: brightness(60%);
+    filter: opacity(60%);
 }
 
 .help-button:hover:enabled, .control-buttons:hover:enabled {
-    filter: brightness(80%);
+    filter: opacity(60%);
 }
 
 /*      === Top Control Buttons Specific Styling ===     */
