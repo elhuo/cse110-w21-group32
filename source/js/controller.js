@@ -65,6 +65,8 @@ function stopTimer() {
 
 function changeCyclesController(){
     if (confirm("Do you wish to continue?")){
+        document.getElementById("stop-button").disabled = false; 
+        document.getElementById("start-button").disabled = true;
         changeCycles();
     }
     else{
