@@ -9,7 +9,6 @@
  * cycle = 0: the timer is in the pomo cycle (25 min)
  * cycle = 1: the timer is in the short break cycle (5 min)
  * cycle = 2: the timer is in the long break cycle (15 min)
- * cycle = 3: the timer is stopped
  */
 let cycle = 0;
 
