@@ -37,7 +37,7 @@ function startCountdown(mins) {
 function stopCountdown() {
   start = false;    // Disables timer
   document.getElementById("countdown").innerText = "00:00";   // Sets timer display to 00:00
-  document.getElementById("title").innerText = "Spl/ice";
+  document.getElementById("title").innerText = "Spl/ice Pomodoro";
 }
 
 
@@ -84,10 +84,10 @@ function countdown() {
 
   // Update the title
   if (minutes == "00"){
-    document.getElementById("title").innerText = "Spl/ice   " + seconds + "sec";
+    document.getElementById("title").innerText = seconds + " secs : Spl/ice Pomodoro";
   }
   else if (seconds == "59"){
-    document.getElementById("title").innerText = "Spl/ice   " + (parseInt(minutes) + 1) + "min";
+    document.getElementById("title").innerText = (parseInt(minutes) + 1) + " mins : Spl/ice Pomodoro";
   }
 }
 
