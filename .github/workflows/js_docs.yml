@@ -9,7 +9,7 @@ jobs:
     - name: Build
       uses: andstor/jsdoc-action@v1
       with:
-        source_dir: ./source/js
+        source_dir: ./source/js/buttons.js
         recurse: true
         output_dir: ./out
 
