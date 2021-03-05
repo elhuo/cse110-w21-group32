@@ -6,7 +6,7 @@ document.body.innerHTML =
     "<p id='pomo-tab'></p>" +
     "<p id='short-break-tab'></p>" +
     "<p id='long-break-tab'></p>" +
-    "<audio id='pomo-sound' src='./audio/party-horn.mp3'></audio>";
+    "<audio id='pomo-sound' src='./audio/glass-pour.mp3'></audio>";
     "<div id='pomo-count-1'></div>" +
     "<div id='pomo-count-2'></div>" +
     "<div id='pomo-count-3'></div>" +
