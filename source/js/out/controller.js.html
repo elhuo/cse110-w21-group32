@@ -39,26 +39,26 @@
  * cycle = 2: the timer is in the long break cycle (15 min)
  * cycle = 3: the timer is stopped
  */
-var cycle = 0;
+let cycle = 0;
 
 /**
  * Tracks the number of completed pomos to know when to long break.
  * numPomos &lt; 4: the break cycle will be a short break
  * numPomos = 4: the break cycle will be a long break
  */
-var numPomos = 0;
+let numPomos = 0;
 
 /** (25 - 1) minutes to pass in to startCountdown for pomodoro cycle. */
-var pomoTime = 24;
+let pomoTime = 24;
 /** (5 - 1) minutes to pass in to startCountdown for short break cycle. */
 const sBreakTime = 4;
 /** (15 - 1) minutes to pass in to startCountdown for long break cycle. */
 const lBreakTime = 14;
 
 /**
- * Function that is called when the start button is pressed.
+ * @description Function that is called when the start button is pressed.
  * Handles setup for the controller before calling startCountdown in timer.js
- * to start the first pomodoro cycle.
+ * to start the first pomodoro cycle. Changes cycle to pomo cycle.
  */
 function startTimer() {
     cycle = 0;
@@ -68,9 +68,9 @@ function startTimer() {
 }
 
 /**
- * Function that is called when the stop button is pressed.
+ * @description Function that is called when the stop button is pressed.
  * Resets controller variables to default and resets the countdown by calling
- * stopCountdown in timer.js.
+ * stopCountdown in timer.js. Changes cycle to the stopped cycle.
  */
 function stopTimer() {
     cycle = 3;
@@ -80,7 +80,7 @@ function stopTimer() {
 }
 
 /**
- * Function that is called to handle the shift in pomodoro cycles when
+ * @description Function that is called to handle the shift in pomodoro cycles when
  * the countdown reaches 0. Handles each cycle case and then
  * calls changeStyle to change the CSS to match the new cycle.
  */
@@ -123,7 +123,7 @@ function changeCycles() {
 }
 
 /**
- * Function that changes the page's CSS according to the current cycle.
+ * @description Function that changes the page's CSS according to the current cycle.
  * Specifically, borders the text for the current cycle and changes page color.
  * Called at the end of the changeCycles function.
  */
@@ -165,7 +165,7 @@ function changeStyle() {
 }
 
 /**
- * Sets the current cycle
+ * @description Sets the current cycle
  * @param {int} cycle_ - The value to set for the current cycle. 
  */
 function setCycle(cycle_) {
@@ -173,7 +173,7 @@ function setCycle(cycle_) {
 }
 
 /**
- * Returns the current cycle
+ * @description Returns the current cycle
  * @returns {int} cycle - The current cycle. 
  */
 function getCycle() {
@@ -181,7 +181,7 @@ function getCycle() {
 }
 
 /**
- * Sets the current number of Pomos 
+ * @description Sets the current number of Pomos 
  * @param {int} numPomos_ - The value to set for the current number of Pomos. 
  */
 function setNumPomos(numPomos_) {
@@ -189,7 +189,7 @@ function setNumPomos(numPomos_) {
 }
 
 /**
- * Returns the current number of Pomos 
+ * @description Returns the current number of Pomos 
  * @returns {int} numPomos - The current number of Pomos. 
  */
 function getNumPomos() {
@@ -214,13 +214,13 @@ exports.changeStyle = changeStyle;</code></pre>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#button">button</a></li><li><a href="global.html#changeCycles">changeCycles</a></li><li><a href="global.html#changeStyle">changeStyle</a></li><li><a href="global.html#chooseSound">chooseSound</a></li><li><a href="global.html#clickClose">clickClose</a></li><li><a href="global.html#clickHelp">clickHelp</a></li><li><a href="global.html#clickStart">clickStart</a></li><li><a href="global.html#clickStop">clickStop</a></li><li><a href="global.html#closePopup">closePopup</a></li><li><a href="global.html#countdown">countdown</a></li><li><a href="global.html#cycle">cycle</a></li><li><a href="global.html#getCycle">getCycle</a></li><li><a href="global.html#getNumPomos">getNumPomos</a></li><li><a href="global.html#lBreakTime">lBreakTime</a></li><li><a href="global.html#numPomos">numPomos</a></li><li><a href="global.html#playAdjustSound">playAdjustSound</a></li><li><a href="global.html#pomoSound">pomoSound</a></li><li><a href="global.html#pomoTime">pomoTime</a></li><li><a href="global.html#sBreakTime">sBreakTime</a></li><li><a href="global.html#setCycle">setCycle</a></li><li><a href="global.html#setInterval">setInterval</a></li><li><a href="global.html#setNumPomos">setNumPomos</a></li><li><a href="global.html#slideVolume">slideVolume</a></li><li><a href="global.html#startButton">startButton</a></li><li><a href="global.html#startCountdown">startCountdown</a></li><li><a href="global.html#startTimer">startTimer</a></li><li><a href="global.html#stopButton">stopButton</a></li><li><a href="global.html#stopCountdown">stopCountdown</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#toggleClosePopup">toggleClosePopup</a></li><li><a href="global.html#toggleSettingsPopup">toggleSettingsPopup</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#changeCycles">changeCycles</a></li><li><a href="global.html#changeStyle">changeStyle</a></li><li><a href="global.html#chooseSound">chooseSound</a></li><li><a href="global.html#clickClose">clickClose</a></li><li><a href="global.html#clickHelp">clickHelp</a></li><li><a href="global.html#clickStart">clickStart</a></li><li><a href="global.html#clickStop">clickStop</a></li><li><a href="global.html#closePopup">closePopup</a></li><li><a href="global.html#countdown">countdown</a></li><li><a href="global.html#cycle">cycle</a></li><li><a href="global.html#getCycle">getCycle</a></li><li><a href="global.html#getNumPomos">getNumPomos</a></li><li><a href="global.html#lBreakTime">lBreakTime</a></li><li><a href="global.html#numPomos">numPomos</a></li><li><a href="global.html#playAdjustSound">playAdjustSound</a></li><li><a href="global.html#pomoSound">pomoSound</a></li><li><a href="global.html#pomoTime">pomoTime</a></li><li><a href="global.html#sBreakTime">sBreakTime</a></li><li><a href="global.html#setCycle">setCycle</a></li><li><a href="global.html#setInterval">setInterval</a></li><li><a href="global.html#setNumPomos">setNumPomos</a></li><li><a href="global.html#slideVolume">slideVolume</a></li><li><a href="global.html#startButton">startButton</a></li><li><a href="global.html#startCountdown">startCountdown</a></li><li><a href="global.html#startTimer">startTimer</a></li><li><a href="global.html#stopButton">stopButton</a></li><li><a href="global.html#stopCountdown">stopCountdown</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#toggleClosePopup">toggleClosePopup</a></li><li><a href="global.html#toggleSettingsPopup">toggleSettingsPopup</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Thu Feb 25 2021 16:07:01 GMT-0800 (Pacific Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Tue Mar 02 2021 20:49:17 GMT-0800 (Pacific Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

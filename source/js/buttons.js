@@ -4,7 +4,7 @@
  */
 
 /** Button is used to disable the buttons */
-const button = document.querySelectorAll("button"); // 0 is help, 1 is start, 2 is stop
+// const button = document.querySelectorAll("button"); // 0 is help, 1 is start, 2 is stop
 
 /** Reference to start button */
 var startButton = document.getElementById("start-button");
@@ -51,15 +51,15 @@ var volumeImg = document.getElementById("volume-image");
 // Help and settings page button logics
 var modal = document.getElementById("help-modal");
 var settingsModal = document.getElementById("settings-modal");
-var helpBtn = document.getElementById("help-button");
-var settingsBtn = document.getElementById("settings-button");
-var closeBtn = document.getElementById("help-close");
-var settingsCloseBtn = document.getElementById("settings-close");
+var helpButton = document.getElementById("help-button");
+var settingsButton = document.getElementById("settings-button");
+var closeButton = document.getElementById("help-close");
+var settingsCloseButton = document.getElementById("settings-close");
 var volumeSlider = document.getElementById("volume-slider");
 let shadow = document.getElementById("shadow");
 
 /**
- * Close popup and remove shadow.
+ * @description Close popup and remove shadow.
  */
 function closePopup() {
   modal.classList.remove("modal-show");
@@ -71,7 +71,7 @@ function closePopup() {
  * @description Toggle popup on help button click.
  * @name clickHelp
  */
-helpBtn.onclick = function () {
+helpButton.onclick = function () {
   modal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
@@ -80,7 +80,7 @@ helpBtn.onclick = function () {
  * @description Toggle popup on close button click.
  * @name clickClose
  */
-closeBtn.onclick = function () {
+closeButton.onclick = function () {
   modal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
@@ -89,7 +89,7 @@ closeBtn.onclick = function () {
  * @description Toggle popup on settings button click.
  * @name toggleSettingsPopup
  */
-settingsBtn.onclick = function () {
+settingsButton.onclick = function () {
   settingsModal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
@@ -130,8 +130,8 @@ const nameSrcMap = {
  * @name chooseSound
  */
 var soundChoices = document.getElementById("volume-sound");
-document.addEventListener('DOMContentLoaded', function(){
-  document.querySelector('#volume-sound').onchange = function(){
+document.addEventListener("DOMContentLoaded", function(){
+  document.querySelector("#volume-sound").onchange = function(){
     let soundSelected = soundChoices.value;
     let audioElem = document.getElementById("pomo-sound");
     audioElem.src = nameSrcMap[soundSelected];
@@ -153,7 +153,7 @@ playButton.onclick = function(){
  * @description Toggle popup on close button click.
  * @name toggleClosePopup
  */
-settingsCloseBtn.onclick = function () {
+settingsCloseButton.onclick = function () {
   settingsModal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
