@@ -177,18 +177,22 @@ button:active:enabled {
 /* === Volume Slider === */
 .volume-slider {
     grid-area: slider;
-    width: 50%;
+    width: 100%;
     justify-self: left;
 }
 
 .volume-grid-container {
     position:absolute;
+    display: flex;
     column-gap: 10px;
     grid-template-areas:
       'image slider';
-    height: 50px;
-    width: 90%;
-    bottom:20px;
+    height: 2em;
+    width: 70%;
+    bottom: 1.5em;
+    left: 0;
+    right: 0;
+    margin: auto;
     grid-column-end:auto;
 }
 
@@ -203,6 +207,8 @@ button:active:enabled {
     transition: all 0.2s;
     border-radius: 5px;
     box-shadow: 5px 10px 20px 7px rgba(0,0,0,0.5);
+    top: 8vh;
+    bottom: 8vh;
 }
 
 .modal-show{
@@ -213,7 +219,7 @@ button:active:enabled {
 .modal-content{
     padding: 2em;
     height: 70vh;
-    width: 75vw;
+    width: 70vw;
     z-index: 100;
     font-size: 1.5em;
     word-wrap: break-word;
@@ -245,8 +251,8 @@ button:active:enabled {
 /* === Universal formatting for popup close buttons === */
 .close {
     position: absolute;
-    right: .5em;
-    top: .2em;
+    right: .4em;
+    top: .3em;
     font-size: 2em;
 }
 
@@ -261,19 +267,51 @@ button:active:enabled {
     padding: 15px 32px;
     text-align: center;
     font-size: 16px;
-    border: 1px solid black;
+    border: 2px solid white;
+    color: white;
+    border-radius: 8px;
+    background-color: #0087bd 
 }
 
 .play-sound:hover:enabled{
-    filter: brightness(80%);
+    background-color: #0087bd;
+    opacity: 60%;
+}
+
+.play-sound:active:enabled {
+    background-color: #0087bd;
+    opacity: 80%;
 }
 
 select{
-    margin: 50px;
-    width: 150px;
-    padding: 5px 35px 5px 5px;
-    font-size: 16px;
-    border: 1px solid black;
-    height: 34px;
+    margin-bottom: 1em;
+    width: 80%;
+    font-size: 1em;
+    border: 2px solid black;
+    border-radius: 8px;
+    height: 2em;
     background-color: #b0e0E6;
+}
+
+.alert-label {
+    font-size: 1em;
+    padding: 0;
+}
+
+/* === Time settings formatting === */
+.settings-label {
+    text-align: center;
+}
+
+.small-settings-label {
+    text-align: center;
+    font-weight: normal;
+    font-size: .8em;
+    margin-bottom: .4em;
+}
+.settings-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
 }
