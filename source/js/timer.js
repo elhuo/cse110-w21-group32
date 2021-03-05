@@ -37,7 +37,7 @@ function startCountdown(mins) {
 function stopCountdown() {
   start = false;    // Disables timer
   document.getElementById("countdown").innerText = "00:00";   // Sets timer display to 00:00
-  document.getElementById("title").innerText = "Spl/ice Pomodoro";
+  document.getElementById("title").innerText = "Spl/ice";
 }
 
 
