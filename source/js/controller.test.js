@@ -5,7 +5,11 @@ const controller = require("./controller");
 document.body.innerHTML =
     "<div id='pomo-tab'></div>" +
     "<div id='short-break-tab'></div>" +
-    "<div id='long-break-tab'></div>";
+    "<div id='long-break-tab'></div>" +
+    "<div id='pomo-count-1'></div>" +
+    "<div id='pomo-count-2'></div>" +
+    "<div id='pomo-count-3'></div>" +
+    "<div id='pomo-count-4'></div>";
 startCountdown = jest.fn();
 stopCountdown = jest.fn();
 

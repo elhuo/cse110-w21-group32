@@ -86,7 +86,11 @@ function changeCyclesController(){
 function changeCycles() {
 
     /** If current cycle is pomo, increment numPomos. */
-    if (cycle == 0) numPomos++;
+    if (cycle == 0) {
+        numPomos++;
+        document.getElementById('pomo-count-' + numPomos).classList.add('pomo-counted');
+        
+    }
 
     /** 
      * If current cycle is pomo and 4 pomos haven't occurred yet,
@@ -105,6 +109,7 @@ function changeCycles() {
         numPomos = 0;
         cycle = 2;
         startCountdown(lBreakTime);
+    
     }
 
     /** When short and long breaks end, return to pomo cycle. */
@@ -112,9 +117,14 @@ function changeCycles() {
         cycle = 0;
         startCountdown(pomoTime);
     }
+
     else if (cycle == 2) {
         cycle = 0;
         startCountdown(pomoTime);
+        document.getElementById('pomo-count-1').classList.remove('pomo-counted');
+        document.getElementById('pomo-count-2').classList.remove('pomo-counted');
+        document.getElementById('pomo-count-3').classList.remove('pomo-counted');
+        document.getElementById('pomo-count-4').classList.remove('pomo-counted');
     }
 
     /** Change page style according to new cycle. */
