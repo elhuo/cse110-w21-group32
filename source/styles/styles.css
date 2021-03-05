@@ -81,7 +81,6 @@ main {
     flex-direction: row;
     width: 50%;
     margin: 0em auto;
-    min-width: 18em;
     border-width: 0px;
 }
 
@@ -89,11 +88,12 @@ main {
     border: medium solid;
     border-bottom: none;
     padding: 2vh 0.1vw 1.5vh 0.1vw;
-    flex: 1 1 0px;
+    flex: 1;
     text-align: center;
-    border-radius: 1vw 1vw 0px 0px;
+    border-radius: 2vw 2vw 0px 0px;
     font-size: 1.75vmax;
     white-space: nowrap;
+    min-width: 7em;
 }
 
 .tab-border {
@@ -240,15 +240,6 @@ button:active:enabled {
     width: 50%;
 }
 
-.volume-grid-container {
-    display: flex;
-    position:absolute;
-    height: 3em;
-    width: 90%;
-    bottom:20px;
-    grid-column-end:auto;
-}
-
 /* === Help Popup Window Styling === */
 .modal{
     visibility: hidden;
@@ -307,7 +298,7 @@ button:active:enabled {
 
 /* ===  Formatting for the pomo durations === */
 .pomo-durations {
-    display:flex; 
+    display: flex; 
     justify-content: center;
     margin-top: 5%;
 }
