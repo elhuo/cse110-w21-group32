@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: buttons.test.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: buttons.test.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** Creating basic HTML DOM to test buttons */
+document.body.innerHTML =
+    "&lt;audio id='pomo-sound' src='./audio/party-horn.mp3'>&lt;/audio>" +
+
+    "&lt;button id='settings-button'>&lt;/button>" +
+    "&lt;button id='help-button'>&lt;/button>" +
+    "&lt;button id='start-button'>&lt;/button>" +
+    "&lt;button id='stop-button'>&lt;/button>" +
+    "&lt;button id='play-sound'>&lt;/button>" +
+    "&lt;button id='stop-button'>&lt;/button>" +
+
+    "&lt;img id='volume-image' src='./img/volume-level-3.svg'>" +
+
+    "&lt;div id='myModal'>" +
+    "&lt;span id='help-close'>&lt;/span>" +
+    "&lt;/div>" +
+    "&lt;div id='settings-modal'>" +
+    "&lt;span id='settings-close'>&lt;/span>" +
+    "&lt;select id='volume-sound'" +
+    "&lt;option value='party-horn'>&lt;/option>" +
+    "&lt;option value='air-horn'>&lt;/option>" +
+    "&lt;/select>" +
+    "&lt;/div>" +
+
+    "&lt;div id='shadow' onclick='closePopup()'>&lt;/div>" +
+
+    "&lt;input id='volume-slider' type='range' min='0' max ='100' value='50'>&lt;/input>";
+
+/** Creating jest function mocks */
+startTimer = jest.fn();
+stopTimer = jest.fn();
+
+/** Loading the module we're testing */
+const buttons = require("./buttons");
+
+/** Testing default attributes of buttons and modals */
+test("default buttons/modals attributes test", () => {
+    expect(document.getElementById("start-button").disabled).toBe(false);
+    expect(document.getElementById("stop-button").disabled).toBe(true);
+    expect(document.getElementById("myModal").classList.contains("modal-show")).toBe(false);
+    expect(document.getElementById("settings-modal").classList.contains("modal-show")).toBe(false);
+});
+
+/** Testing start-button click functionality */
+test("start-button click test", () => {
+    document.getElementById("start-button").click();
+    expect(document.getElementById("start-button").disabled).toBe(true);
+    expect(document.getElementById("stop-button").disabled).toBe(false);
+});
+
+/** Testing stop-button click functionality */
+test("stop-button click test", () => {
+    document.getElementById("stop-button").click();
+    expect(document.getElementById("start-button").disabled).toBe(false);
+    expect(document.getElementById("stop-button").disabled).toBe(true);
+});
+
+/** Testing closePopup() functionality */
+test("closePopup() test", () => {
+    document.getElementById("myModal").classList.add("modal-show");
+    document.getElementById("settings-modal").classList.add("modal-show");
+    buttons.closePopup();
+    expect(document.getElementById("myModal").classList.contains("modal-show")).toBe(false);
+    expect(document.getElementById("settings-modal").classList.contains("modal-show")).toBe(false);
+});
+
+/** Testing help-button functionality */
+test("help-button test", () => {
+    document.getElementById("help-button").click();
+    expect(document.getElementById("myModal").classList.contains("modal-show")).toBe(true);
+});
+
+/** Testing close-help-button functionality */
+test("close-help-button test", () => {
+    document.getElementById("myModal").classList.add("modal-show");
+    document.getElementById("help-close").click();
+    expect(document.getElementById("myModal").classList.contains("modal-show")).toBe(false);
+});
+
+/** Testing settings-button functionality */
+test("settings-button test", () => {
+    document.getElementById("settings-button").click();
+    expect(document.getElementById("settings-modal").classList.contains("modal-show")).toBe(true);
+});
+
+/** Testing close-help-button functionality */
+test("close-settings-button test", () => {
+    document.getElementById("settings-modal").classList.add("modal-show");
+    document.getElementById("settings-close").click();
+    expect(document.getElementById("settings-modal").classList.contains("modal-show")).toBe(false);
+});
+
+/** Testing volume slider functionality */
+test("volume slider test", () => {
+    // 10 volume test
+    document.getElementById("volume-slider").value = 10;
+    document.getElementById("volume-slider").click();
+    expect(document.getElementById("pomo-sound").volume).toBe(0.1);
+    expect(document.getElementById("volume-image").src.includes("/img/volume-level-0.svg")).toBe(false);
+    expect(document.getElementById("volume-image").src.includes("/img/volume-level-1.svg")).toBe(true);
+    expect(document.getElementById("volume-image").src.includes("/img/volume-level-3.svg")).toBe(false);
+
+    // 90 volume test
+    document.getElementById("volume-slider").value = 90;
+    document.getElementById("volume-slider").click();
+    expect(document.getElementById("pomo-sound").volume).toBe(0.9);
+    expect(document.getElementById("volume-image").src.includes("/img/volume-level-0.svg")).toBe(false);
+    expect(document.getElementById("volume-image").src.includes("/img/volume-level-1.svg")).toBe(false);
+    expect(document.getElementById("volume-image").src.includes("/img/volume-level-3.svg")).toBe(true);
+
+    // mute volume test
+    document.getElementById("volume-slider").value = 0;
+    document.getElementById("volume-slider").click();
+    expect(document.getElementById("pomo-sound").volume).toBe(0);
+    expect(document.getElementById("volume-image").src.includes("/img/volume-level-0.svg")).toBe(true);
+    expect(document.getElementById("volume-image").src.includes("/img/volume-level-1.svg")).toBe(false);
+    expect(document.getElementById("volume-image").src.includes("/img/volume-level-3.svg")).toBe(false);
+});
+
+/** Testing volume sound change */
+test("volume sound change test", () => {
+    document.getElementById("volume-sound").value = "party-horn";
+    document.getElementById("volume-sound").click();
+    expect(document.getElementById("pomo-sound").src.includes("/audio/party-horn.mp3")).toBe(true);
+    expect(document.getElementById("pomo-sound").src.includes("/audio/air-horn.mp3")).toBe(false);
+});
+
+/** Testing play sound button */
+test("play sound button test", () => {
+    document.getElementById("pomo-sound").play = jest.fn();
+    expect(document.getElementById("pomo-sound").play.mock.calls.length).toEqual(0);
+    document.getElementById("play-sound").click();
+    expect(document.getElementById("pomo-sound").play.mock.calls.length).toEqual(1);
+});
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#button">button</a></li><li><a href="global.html#buttons">buttons</a></li><li><a href="global.html#changeCycles">changeCycles</a></li><li><a href="global.html#changeStyle">changeStyle</a></li><li><a href="global.html#chooseSound">chooseSound</a></li><li><a href="global.html#clickClose">clickClose</a></li><li><a href="global.html#clickHelp">clickHelp</a></li><li><a href="global.html#clickStart">clickStart</a></li><li><a href="global.html#clickStop">clickStop</a></li><li><a href="global.html#closePopup">closePopup</a></li><li><a href="global.html#controller">controller</a></li><li><a href="global.html#countdown">countdown</a></li><li><a href="global.html#cycle">cycle</a></li><li><a href="global.html#getCycle">getCycle</a></li><li><a href="global.html#getNumPomos">getNumPomos</a></li><li><a href="global.html#lBreakTime">lBreakTime</a></li><li><a href="global.html#numPomos">numPomos</a></li><li><a href="global.html#playAdjustSound">playAdjustSound</a></li><li><a href="global.html#pomoSound">pomoSound</a></li><li><a href="global.html#pomoTime">pomoTime</a></li><li><a href="global.html#sBreakTime">sBreakTime</a></li><li><a href="global.html#setCycle">setCycle</a></li><li><a href="global.html#setInterval">setInterval</a></li><li><a href="global.html#setNumPomos">setNumPomos</a></li><li><a href="global.html#slideVolume">slideVolume</a></li><li><a href="global.html#startButton">startButton</a></li><li><a href="global.html#startCountdown">startCountdown</a></li><li><a href="global.html#startTimer">startTimer</a></li><li><a href="global.html#stopButton">stopButton</a></li><li><a href="global.html#stopCountdown">stopCountdown</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#toggleClosePopup">toggleClosePopup</a></li><li><a href="global.html#toggleSettingsPopup">toggleSettingsPopup</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Mar 05 2021 11:31:11 GMT-0800 (Pacific Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
