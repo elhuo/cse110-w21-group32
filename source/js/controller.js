@@ -33,16 +33,25 @@ const lBreakTime = 14;
  * to start the first pomodoro cycle. Changes cycle to pomo cycle.
  */
 function startTimer() {
-    cycle = 0;
-    numPomos = 0;
+    if (cycle == 0){
+        startCountdown(pomoTime);
+    }
+    else if (cycle == 1){
+        startCountdown(sBreakTime);
+    }
+    else if (cycle == 2){
+        startCountdown(lBreakTime);
+    }
+    else if (cycle == 3){
+        cycle = 0;
+        startCountdown(pomoTime);
+    }
     changeStyle();
-    startCountdown(pomoTime);
 }
 
 /**
  * @description Function that is called when the stop button is pressed.
- * Resets controller variables to default and resets the countdown by calling
- * stopCountdown in timer.js. Changes cycle to the stopped cycle.
+ * calls stopCountdown in timer.js. The timer stays in the current stage
  */
 function stopTimer() {
     cycle = 3;
@@ -51,6 +60,27 @@ function stopTimer() {
     stopCountdown();
 }
 
+/**
+ * @description Function that is called when the user doesn't wish to go to next stage.
+ * Resets controller variables to default and resets the countdown by calling
+ * stopCountdown in timer.js. Changes cycle to the stopped cycle.
+ */
+
+function changeCyclesController(){
+    if (confirm("Do you wish to continue?")){
+        document.getElementById("stop-button").disabled = false; 
+        document.getElementById("start-button").disabled = true;
+        changeCycles();
+    }
+    else{
+        cycle = 3;
+        numPomos = 0;
+        document.getElementById("stop-button").disabled = true;   // Disable stop button
+        document.getElementById("start-button").disabled = false;
+        stopCountdown();
+        changeStyle();
+    }
+}
 /**
  * @description Function that is called to handle the shift in pomodoro cycles when
  * the countdown reaches 0. Handles each cycle case and then
@@ -177,3 +207,4 @@ exports.startTimer = startTimer;
 exports.stopTimer = stopTimer;
 exports.changeCycles = changeCycles;
 exports.changeStyle = changeStyle;
+exports.changeCyclesController = changeCyclesController;
