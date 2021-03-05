@@ -3,9 +3,10 @@ const controller = require("./controller");
 
 /** Creating jest mocks (because loading module doesn't load dependencies) */
 document.body.innerHTML =
-    "<div id='pomo-tab'></div>" +
-    "<div id='short-break-tab'></div>" +
-    "<div id='long-break-tab'></div>";
+    "<p id='pomo-tab'></p>" +
+    "<p id='short-break-tab'></p>" +
+    "<p id='long-break-tab'></p>" +
+    "<audio id='pomo-sound' src='./audio/party-horn.mp3'></audio>";
 startCountdown = jest.fn();
 stopCountdown = jest.fn();
 
