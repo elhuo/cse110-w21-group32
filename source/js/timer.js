@@ -92,10 +92,10 @@ function countdown() {
 
   // Update the title
   if (minutes == "00"){
-    document.getElementById("title").innerText = seconds + " secs : Spl/ice Pomodoro";
+    document.getElementById("title").innerText = seconds + "s : Spl/ice Pomodoro";
   }
   else if (seconds == "59"){
-    document.getElementById("title").innerText = (parseInt(minutes) + 1) + " mins : Spl/ice Pomodoro";
+    document.getElementById("title").innerText = (parseInt(minutes)) + "m : Spl/ice Pomodoro";
   }
 }
 
