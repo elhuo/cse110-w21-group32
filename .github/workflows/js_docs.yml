@@ -1,15 +1,15 @@
 name: JS Docs
 on: push
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
     - name: Build
       uses: andstor/jsdoc-action@v1
       with:
-        source_dir: ./source/js/buttons.js
+        source_dir: ./js
         recurse: true
         output_dir: ./out
 
