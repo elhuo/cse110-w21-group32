@@ -12,10 +12,29 @@ document.body.innerHTML =
     "<img id='volume-image' src='./img/volume-level-3.svg'>" +
 
     "<div id='myModal'>" +
-    "<span id='help-close'></span>" +
+        "<span id='help-close'></span>" +
     "</div>" +
     "<div id='settings-modal'>" +
     "<span id='settings-close'></span>" +
+
+    "<select name='pomo-duration' id='pomo-duration'>" +
+        "<option value='20'>20:00</option>" +
+        "<option value='25' selected>25:00</option>" +
+        "<option value='30'>30:00</option>" +
+    "</select>" +
+    
+    "<select id='short-break-duration'" +
+        "<option value='3'>3:00</option>" +
+        "<option value='5' selected>5:00</option>" +
+        "<option value='7'>7:00</option>" +
+    "</select>" +
+
+    "<select id='long-break-duration'" +
+        "<option value='10'>10:00</option>" +
+        "<option value='15' selected>15:00</option>" +
+        "<option value='20'>20:00</option>" +
+    "</select>" +
+
     "<select id='volume-sound'" +
     "<option value='party-horn'></option>" +
     "<option value='air-horn'></option>" +

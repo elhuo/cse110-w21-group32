@@ -10,10 +10,10 @@ html {
 
 /* === Universal page content formatting === */
 body {
-    padding: 3vh;
-    min-height: 90%;
+    padding: 1em;
     background-color: #0087bd;
     color: white;
+    padding: 1em;
     font-family: "OpenSans", sans-serif;
 }
 
@@ -28,6 +28,7 @@ short-break-color {
 long-break-color {
     background-color: #663399;
 }
+
 @media only screen and (max-height: 600px) {
     main {
         height: 80vh;
@@ -209,6 +210,25 @@ button:active:enabled {
     background-image: url(../img/Stop.png);
 }
 
+.volume-container {
+    display:flex;
+    justify-content: space-between;
+}
+
+/* === Universal formatting for popup close buttons === */
+.close {
+    position: absolute;
+    right: .5em;
+    top: .2em;
+    font-size: 2em;
+}
+
+.close:hover, .close:focus{
+    color:#000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* === Volume Image === */
 .volume-image {
     padding-right: 1em;
@@ -242,6 +262,11 @@ button:active:enabled {
     box-shadow: 5px 10px 20px 7px rgba(0,0,0,0.5);
 }
 
+.modal h2, h3 {
+    text-align: center;
+    padding-top: 2.5vh;
+}
+
 .modal-show{
     visibility: visible;
     opacity: 1;
@@ -252,14 +277,15 @@ button:active:enabled {
     height: 70vh;
     width: 75vw;
     z-index: 100;
-    font-size: 1.5em;
+    font-size: 3.5vmin;
     word-wrap: break-word;
     line-height: 150%;
+    justify-content: center;
 }
 
-.modal-content p, h3 {
+/*.modal-content p, h3 {
     padding-bottom: .4em;
-}
+}*/
 
 .shadow {
     position: fixed;
@@ -279,25 +305,46 @@ button:active:enabled {
     opacity: 1;
 }
 
-/* === Universal formatting for popup close buttons === */
-.close {
-    position: absolute;
-    right: .5em;
-    top: .2em;
-    font-size: 2em;
+/* ===  Formatting for the pomo durations === */
+.pomo-durations {
+    display:flex; 
+    justify-content: center;
+    margin-top: 5%;
 }
 
-.close:hover, .close:focus{
-    color:#000;
-    text-decoration: none;
-    cursor: pointer;
+.duration-selectors {
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+}
+
+/* === Volume Image === */
+.volume-grid-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.volume-image {
+    padding-right: 1em;
+    width: 2em;
+}
+
+/* === Volume Slider === */
+.volume-slider {
+   width:35vw;
+}
+
+.volume-sound {
+    text-align: center;
 }
 
 /* === Play sound formatting === */
 .play-sound{
-    padding: 1em 2em;
+    padding: 1em 1em;
     text-align: center;
-    font-size: .7em;
+    font-size: 3vmin;
     border: 1px solid black;
 }
 
@@ -308,12 +355,16 @@ button:active:enabled {
 .play-sound:active{
     background-color: rgba(0,0,0,0.2)
 }
+
+.play-sound:active{
+    background-color: rgba(0,0,0,0.2)
+}
 select{
-    margin: 2em;
-    width: 10em;
-    padding: 5px 1em 5px 5px;
-    font-size: .7em;
-    border: 1px solid black;
-    height: 2em;
     background-color: #b0e0E6;
+    font-size: 3vmin;
+    border: 1px solid black;
+    margin: 2em;
+    width: 20vw;
+    height: 2em;
+    padding: 5px 1em 5px 5px;
 }

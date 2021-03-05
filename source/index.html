@@ -86,13 +86,44 @@
           </ul>
         </div>
       </div>
-      <div id="settings-modal" class="modal">
+      
+      <div id="settings-modal" class="modal" >
         <div class="modal-content">
           <span id = "settings-close" class="close">&times;</span>
-          <h3>Settings</h3>
-            <div id="volume-sound-container">
-            <label>Choose your alert sound</label>
-            <select name="volume-sound" id="volume-sound">
+          <h2>Settings</h2>
+            
+              <div id="pomo-durations" class="pomo-durations"> 
+                    <div class="duration-selectors">
+                      <label for="pomo-duration">Pomo</label>
+                      <select name="pomo-duration" id="pomo-duration">
+                        <option value="20">20:00</option>
+                        <option value="25" selected>25:00</option>
+                        <option value="30">30:00</option>
+                      </select>
+                    </div>
+                
+                    <div class="duration-selectors">
+                      <label for="short-break-duration">Short Break</label>
+                      <select name="short-break-duration" id="short-break-duration">
+                        <option value="3">3:00</option>
+                        <option value="5" selected>5:00</option>
+                        <option value="7">7:00</option>
+                      </select>
+                    </div>
+                    
+                    <div class="duration-selectors">
+                      <label for="long-break-duration">Long Break</label>
+                      <select name="long-break-duration" id="long-break-duration">
+                        <option value="10">10:00</option>
+                        <option value="15" selected>15:00</option>
+                        <option value="20">20:00</option>
+                      </select>
+                    </div>       
+              </div>
+          
+          <div class="volume-grid-container" id="volume-grid-container">
+            <h3>Notification Sound</h3>
+            <select name="volume-sound" class="volume-sound" id="volume-sound">
               <option value="glass-pour">Glass Pour</option>
 
               <option value="party-horn">Party Horn</option>
@@ -107,19 +138,19 @@
               <option value="ice-cream-1">Ice Cream Truck 1</option>
               <option value="ice-cream-2">Ice Cream Truck 2</option>
             </select>
-          </div>
-          
-          <div class="volume-grid-container" id="volume-grid-container">
-            <img class="volume-image" id="volume-image" src="./img/volume-level-2.svg"
-              alt="Max Volume">
-            <input class="volume-slider" id="volume-slider" name="volume-slider" type="range" min="0" max="100"
-              value="50">
+
+            <div class="volume-container">
+              <img class="volume-image" id="volume-image" src="./img/volume-level-3.svg" alt="Max Volume">
+              <input class="volume-slider" id="volume-slider" name="volume-slider" type="range" min="0" max="100" value="50">
+              <button class="play-sound" id="play-sound">Play Me!</button>
+            </div>
+            
           </div>
 
-          <button class="play-sound" id="play-sound">Play Me!</button>
         </div>
       </div>
     </main>
+    
     <script src="js/timer.js" type="text/javascript"></script>
     <script src="js/controller.js" type="text/javascript"></script>
     <script src="js/buttons.js" type="text/javascript"></script>

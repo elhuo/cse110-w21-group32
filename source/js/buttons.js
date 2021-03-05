@@ -14,6 +14,12 @@ var stopButton = document.getElementById("stop-button");
 stopButton.disabled = true;     // Stop button disabled by default
 
 
+
+var pomoTimeSet = document.getElementById("pomo-duration");
+var shortTimeSet = document.getElementById("short-break-duration");
+var longTimeSet = document.getElementById("long-break-duration");
+
+
 /** @function
  * @description When the start button is clicked, call the startTimer function in controller
  * to setup and start the first pomo cycle.
@@ -24,6 +30,10 @@ startButton.addEventListener("click", function () {
   startTimer(); // Call start function in controller
   startButton.disabled = true;  // Disable start button
   stopButton.disabled = false;  // Enable stop button
+
+  pomoTimeSet.disabled = true;  // Disable changing pomo time
+  shortTimeSet.disabled = true; // Disable changing short break time
+  longTimeSet.disabled = true;  // Disable changing long break time
 });
 
 /** @function
@@ -36,6 +46,10 @@ stopButton.addEventListener("click", function () {
   stopTimer(); // Call stop function in controller
   stopButton.disabled = true;   // Disable stop button
   startButton.disabled = false; // Enable start button
+
+  pomoTimeSet.disabled = false;  // Enable changing pomo time
+  shortTimeSet.disabled = false; // Enable changing short break time
+  longTimeSet.disabled = false;  // Enable changing long break time
 });
 
 // Volume Level Controls
@@ -168,5 +182,18 @@ settingsCloseButton.onclick = function () {
   settingsModal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
+
+pomoTimeSet.addEventListener("change", function () {
+  pomoTime = pomoTimeSet.value - 1;
+});
+
+shortTimeSet.addEventListener("change", function() {
+  sBreakTime = shortTimeSet.value - 1;
+});
+
+longTimeSet.addEventListener("change", function() {
+  lBreakTime = longTimeSet.value - 1;
+})
+
 
 exports.closePopup = closePopup;
