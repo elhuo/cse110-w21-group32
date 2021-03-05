@@ -1,12 +1,14 @@
-let start = false                           // true - timer is on; false - timer is off
+var start = false                           // true - timer is on; false - timer is off
 let duration;                          // duration of timer cycle in minutes (needs to be converted later in ms somewhere below) ; default 25min
 var countDownStart = new Date().getTime();  // stores the starting time of the timer
+
 
 /** Sound played when timer hits 0 */
 var pomoSound = document.getElementById("pomo-sound");
 
 /** Default timer countdown is 25 min */
 document.getElementById("countdown").innerText = "25" + ":" + "00";
+
 
 /** @function
  * @description Updates the html timer display when timer is enabled
@@ -61,8 +63,9 @@ function countdown() {
   // If timer is over
   if (minutes > duration) {
     start = false;
-    pomoSound.play();
-    changeCyclesController();
+    
+    // Call stop function in controller
+    changeCycles();
     return;
   }
 
@@ -89,10 +92,10 @@ function countdown() {
 
   // Update the title
   if (minutes == "00"){
-    document.getElementById("title").innerText = "Spl/ice   " + seconds + "sec";
+    document.getElementById("title").innerText = seconds + " secs : Spl/ice Pomodoro";
   }
   else if (seconds == "59"){
-    document.getElementById("title").innerText = "Spl/ice   " + (parseInt(minutes) + 1) + "min";
+    document.getElementById("title").innerText = (parseInt(minutes) + 1) + " mins : Spl/ice Pomodoro";
   }
 }
 

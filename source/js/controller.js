@@ -9,6 +9,7 @@
  * cycle = 0: the timer is in the pomo cycle (25 min)
  * cycle = 1: the timer is in the short break cycle (5 min)
  * cycle = 2: the timer is in the long break cycle (15 min)
+ * cycle = 3: the timer is stopped
  */
 let cycle = 0;
 
@@ -22,9 +23,9 @@ let numPomos = 0;
 /** (25 - 1) minutes to pass in to startCountdown for pomodoro cycle. */
 let pomoTime = 24;
 /** (5 - 1) minutes to pass in to startCountdown for short break cycle. */
-const sBreakTime = 4;
+var sBreakTime = 4;
 /** (15 - 1) minutes to pass in to startCountdown for long break cycle. */
-const lBreakTime = 14;
+var lBreakTime = 14;
 
 /**
  * @description Function that is called when the start button is pressed.
@@ -57,9 +58,9 @@ function stopTimer() {
 }
 
 /**
- * @description Function that is called when the user doesn't wish to go to next stage.
- * Resets controller variables to default and resets the countdown by calling
- * stopCountdown in timer.js. Changes cycle to the stopped cycle.
+ * @description Function is called to ask user whether to continue to next
+ * stage or not. If user decides to not coninue, the timer is set back to 
+ * initial stage.
  */
 
 function changeCyclesController(){
@@ -84,8 +85,14 @@ function changeCyclesController(){
  */
 function changeCycles() {
 
+    document.getElementById("pomo-sound").play();
+
     /** If current cycle is pomo, increment numPomos. */
-    if (cycle == 0) numPomos++;
+    if (cycle == 0) {
+        numPomos++;
+        document.getElementById('pomo-count-' + numPomos).classList.add('pomo-counted');
+        
+    }
 
     /** 
      * If current cycle is pomo and 4 pomos haven't occurred yet,
@@ -104,6 +111,7 @@ function changeCycles() {
         numPomos = 0;
         cycle = 2;
         startCountdown(lBreakTime);
+    
     }
 
     /** When short and long breaks end, return to pomo cycle. */
@@ -111,9 +119,14 @@ function changeCycles() {
         cycle = 0;
         startCountdown(pomoTime);
     }
+
     else if (cycle == 2) {
         cycle = 0;
         startCountdown(pomoTime);
+        document.getElementById('pomo-count-1').classList.remove('pomo-counted');
+        document.getElementById('pomo-count-2').classList.remove('pomo-counted');
+        document.getElementById('pomo-count-3').classList.remove('pomo-counted');
+        document.getElementById('pomo-count-4').classList.remove('pomo-counted');
     }
 
     /** Change page style according to new cycle. */
@@ -129,36 +142,30 @@ function changeStyle() {
     /** Change page style to fit pomo cycle. */
     if (cycle == 0) {
         document.body.style.backgroundColor = "#0087bd";
-        document.getElementById("pomo-tab").style.border = "medium solid";
-        document.getElementById("pomo-tab").style.borderBottom = "none";
-        document.getElementById("short-break-tab").style.border = "none";
-        document.getElementById("long-break-tab").style.border = "none";
+        document.getElementById("short-break-tab").classList.add("tab-noborder");
+        document.getElementById("long-break-tab").classList.add("tab-noborder");
+        document.getElementById("pomo-tab").classList.remove("tab-noborder");
     }
     /** Change page style to fit short break cycle. */
     if (cycle == 1) {
         document.body.style.backgroundColor = "#333399";
-        document.getElementById("pomo-tab").style.border = "none";
-        document.getElementById("short-break-tab").style.border = "medium solid";
-        document.getElementById("short-break-tab").style.borderBottom = "none";
-        document.getElementById("long-break-tab").style.border = "none";
+        document.getElementById("short-break-tab").classList.remove("tab-noborder");
+        document.getElementById("long-break-tab").classList.add("tab-noborder");
+        document.getElementById("pomo-tab").classList.add("tab-noborder");
     }
     /** Change page style to fit long break cycle. */
     if (cycle == 2) {
         document.body.style.backgroundColor = "#663399";
-        document.getElementById("pomo-tab").style.border = "none";
-        document.getElementById("short-break-tab").style.border = "none";
-        document.getElementById("long-break-tab").style.border = "medium solid";
-        document.getElementById("long-break-tab").style.borderBottom = "none";
+        document.getElementById("short-break-tab").classList.add("tab-noborder");
+        document.getElementById("long-break-tab").classList.remove("tab-noborder");
+        document.getElementById("pomo-tab").classList.add("tab-noborder");
     }
     /** Change page style to fit timer stopped. */
     if (cycle == 3) {
         document.body.style.backgroundColor = "#0087bd";
-        document.getElementById("pomo-tab").style.border = "medium solid";
-        document.getElementById("pomo-tab").style.borderBottom = "none";
-        document.getElementById("short-break-tab").style.border = "medium solid";
-        document.getElementById("short-break-tab").style.borderBottom = "none";
-        document.getElementById("long-break-tab").style.border = "medium solid";
-        document.getElementById("long-break-tab").style.borderBottom = "none";
+        document.getElementById("short-break-tab").classList.remove("tab-noborder");
+        document.getElementById("long-break-tab").classList.remove("tab-noborder");
+        document.getElementById("pomo-tab").classList.remove("tab-noborder");
     }
 }
 
@@ -194,7 +201,8 @@ function getNumPomos() {
     return numPomos;
 }
 
-/** export functions and varialbes for test file */
+/** export functions and variables for test file */
+
 exports.setCycle = setCycle;
 exports.getCycle = getCycle;
 exports.setNumPomos = setNumPomos;

@@ -14,6 +14,12 @@ var stopButton = document.getElementById("stop-button");
 stopButton.disabled = true;     // Stop button disabled by default
 
 
+
+var pomoTimeSet = document.getElementById("pomo-duration");
+var shortTimeSet = document.getElementById("short-break-duration");
+var longTimeSet = document.getElementById("long-break-duration");
+
+
 /** @function
  * @description When the start button is clicked, call the startTimer function in controller
  * to setup and start the first pomo cycle.
@@ -24,6 +30,10 @@ startButton.addEventListener("click", function () {
   startTimer(); // Call start function in controller
   startButton.disabled = true;  // Disable start button
   stopButton.disabled = false;  // Enable stop button
+
+  pomoTimeSet.disabled = true;  // Disable changing pomo time
+  shortTimeSet.disabled = true; // Disable changing short break time
+  longTimeSet.disabled = true;  // Disable changing long break time
 });
 
 /** @function
@@ -36,6 +46,10 @@ stopButton.addEventListener("click", function () {
   stopTimer(); // Call stop function in controller
   stopButton.disabled = true;   // Disable stop button
   startButton.disabled = false; // Enable start button
+
+  pomoTimeSet.disabled = false;  // Enable changing pomo time
+  shortTimeSet.disabled = false; // Enable changing short break time
+  longTimeSet.disabled = false;  // Enable changing long break time
 });
 
 // Volume Level Controls
@@ -49,7 +63,7 @@ var pomoSound = document.getElementById("pomo-sound");
 var volumeImg = document.getElementById("volume-image");
 
 // Help and settings page button logics
-var modal = document.getElementById("myModal");
+var modal = document.getElementById("help-modal");
 var settingsModal = document.getElementById("settings-modal");
 var helpButton = document.getElementById("help-button");
 var settingsButton = document.getElementById("settings-button");
@@ -119,8 +133,19 @@ volumeSlider.onclick = function() {
 
 // Audio source select drop down menu
 const nameSrcMap = {
+  "glass-pour": "./audio/glass-pour.mp3",
+
   "party-horn": "./audio/party-horn.mp3", 
-  "air-horn": "./audio/air-horn.mp3" 
+  "air-horn": "./audio/air-horn.mp3",
+
+  "bottle-clank": "./audio/bottle-clank.mp3",
+  "glass-break": "./audio/glass-break.mp3",
+  "glass-ping": "./audio/glass-ping.mp3",
+  "wind-chimes-1": "./audio/wind-chimes-1.mp3",
+  "wind-chimes-2": "./audio/wind-chimes-2.mp3",
+  "wind-chimes-3": "./audio/wind-chimes-3.mp3",
+  "ice-cream-1": "./audio/ice-cream-1.mp3",
+  "ice-cream-2": "./audio/ice-cream-2.mp3"
 }
 
 /** @function
@@ -157,5 +182,18 @@ settingsCloseButton.onclick = function () {
   settingsModal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
+
+pomoTimeSet.addEventListener("change", function () {
+  pomoTime = pomoTimeSet.value - 1;
+});
+
+shortTimeSet.addEventListener("change", function() {
+  sBreakTime = shortTimeSet.value - 1;
+});
+
+longTimeSet.addEventListener("change", function() {
+  lBreakTime = longTimeSet.value - 1;
+})
+
 
 exports.closePopup = closePopup;

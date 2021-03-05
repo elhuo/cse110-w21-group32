@@ -10,11 +10,23 @@ html {
 
 /* === Universal page content formatting === */
 body {
-    padding: 3vh;
-    min-height: 90%;
+    padding: 1em;
     background-color: #0087bd;
     color: white;
+    padding: 1em;
     font-family: "OpenSans", sans-serif;
+}
+
+pomo-color {
+    background-color: #0087bd;
+}
+
+short-break-color {
+    background-color: #333399;
+}
+
+long-break-color {
+    background-color: #663399;
 }
 
 @media only screen and (max-height: 600px) {
@@ -56,7 +68,6 @@ main {
 .tab-wrapper, .clock-wrapper {
     border-style: solid;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
@@ -67,6 +78,7 @@ main {
 }
 
 .tab-wrapper {
+    flex-direction: row;
     width: 50%;
     margin: 0em auto;
     min-width: 18em;
@@ -74,20 +86,30 @@ main {
 }
 
 .tab {
-    border: 2px solid;
+    border: medium solid;
     border-bottom: none;
     padding: 2vh 0.1vw 1.5vh 0.1vw;
     flex: 1 1 0px;
     text-align: center;
-    border-radius: 1em 1em 0em 0em;
+    border-radius: 1vw 1vw 0px 0px;
     font-size: 1.75vmax;
     white-space: nowrap;
 }
 
+.tab-border {
+    border: medium solid;
+    border-bottom: none;
+}
+
+.tab-noborder {
+    border: none;
+}
+
 /* === Timer formatting === */
 .clock-wrapper {
+    flex-direction:column;
     border-width: 1.25vmin;
-    border-radius: 0.75%;
+    border-radius: 5px;
     padding: 5vh;
 }
 
@@ -95,20 +117,42 @@ main {
     font-size: 20vmin;
 }
 
+.pomo-counts {
+    flex: 0 0 100%;
+}
+
+.pomo-count {
+    height: 2.5vmin;
+    border-radius: 30%;
+    padding: 0vw 0.3vw 0vw 0.3vw;
+    filter: opacity(60%);
+}
+
+.pomo-counted {
+    filter: brightness(100%);
+}
+
+.top-right-controls-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 2em;
+}
+
 .controls-wrapper {
     display: flex;
-    justify-content: center;
-    margin-top: 4vh;
-    width: 25%;
-    height: 7vh;
+    align-items: flex-end;
     justify-content: space-between;
-    min-width: 20ch;
-    min-height: 5ch;
+    margin-top: 2.5vh;
+    width: 25%;
+    height: 10vh;
+    min-width: 150px;
+    min-height: 45px;
 }
 
 /* === Button Styling === */
 button:disabled {
-    filter: brightness(80%);
+    filter: opacity(60%);
     cursor: auto;
 }
 
@@ -123,19 +167,19 @@ button {
 }
 
 button:active:enabled {
-    filter: brightness(60%);
+    filter: opacity(60%);
 }
 
 .help-button:hover:enabled, .control-buttons:hover:enabled {
-    filter: brightness(80%);
+    filter: opacity(60%);
 }
 
 /*      === Top Control Buttons Specific Styling ===     */
 .top-control-buttons {
     height: 7vh;
     width: 7vh;
-    min-height: 4ch;
-    min-width: 4ch;
+    min-height: 25px;
+    min-width: 25px;
 }
 
 .help-button{
@@ -154,8 +198,8 @@ button:active:enabled {
 .control-buttons {
     height: 7vh;
     width: 7vh;
-    min-height: 4ch;
-    min-width: 4ch;
+    min-height: 30px;
+    min-width: 30px;
 }
 
 .start-button {
@@ -166,31 +210,44 @@ button:active:enabled {
     background-image: url(../img/Stop.png);
 }
 
+.volume-container {
+    display:flex;
+    justify-content: space-between;
+}
+
+/* === Universal formatting for popup close buttons === */
+.close {
+    position: absolute;
+    right: .5em;
+    top: .2em;
+    font-size: 2em;
+}
+
+.close:hover, .close:focus{
+    color:#000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* === Volume Image === */
 .volume-image {
-    justify-self: center;
-    justify-self: flex-start;
-    padding-right: 20px;
-    width: 40px;
+    padding-right: 1em;
+    width: 2em;
 }
 
 /* === Volume Slider === */
 .volume-slider {
-    grid-area: slider;
     width: 50%;
-    justify-self: left;
 }
+
 .volume-grid-container {
+    display: flex;
     position:absolute;
-    column-gap: 10px;
-    grid-template-areas:
-      'image slider';
-    height: 50px;
+    height: 3em;
     width: 90%;
     bottom:20px;
     grid-column-end:auto;
-    
-  }
+}
 
 /* === Help Popup Window Styling === */
 .modal{
@@ -201,8 +258,13 @@ button:active:enabled {
     background-color: #b0e0E6;
     color: black;
     transition: all 0.2s;
-    border-radius: 5px;
+    border-radius: .5em;
     box-shadow: 5px 10px 20px 7px rgba(0,0,0,0.5);
+}
+
+.modal h2, h3 {
+    text-align: center;
+    padding-top: 2.5vh;
 }
 
 .modal-show{
@@ -215,14 +277,15 @@ button:active:enabled {
     height: 70vh;
     width: 75vw;
     z-index: 100;
-    font-size: 1.5em;
+    font-size: 3.5vmin;
     word-wrap: break-word;
     line-height: 150%;
+    justify-content: center;
 }
 
-.modal-content p, h3 {
+/*.modal-content p, h3 {
     padding-bottom: .4em;
-}
+}*/
 
 .shadow {
     position: fixed;
@@ -242,38 +305,66 @@ button:active:enabled {
     opacity: 1;
 }
 
-/* === Universal formatting for popup close buttons === */
-.close {
-    position: absolute;
-    right: .5em;
-    top: .2em;
-    font-size: 2em;
+/* ===  Formatting for the pomo durations === */
+.pomo-durations {
+    display:flex; 
+    justify-content: center;
+    margin-top: 5%;
 }
 
-.close:hover, .close:focus{
-    color:#000;
-    text-decoration: none;
-    cursor: pointer;
+.duration-selectors {
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+}
+
+/* === Volume Image === */
+.volume-grid-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.volume-image {
+    padding-right: 1em;
+    width: 2em;
+}
+
+/* === Volume Slider === */
+.volume-slider {
+   width:35vw;
+}
+
+.volume-sound {
+    text-align: center;
 }
 
 /* === Play sound formatting === */
 .play-sound{
-    padding: 15px 32px;
+    padding: 1em 1em;
     text-align: center;
-    font-size: 16px;
+    font-size: 3vmin;
     border: 1px solid black;
 }
 
-.play-sound:hover:enabled{
-    filter: brightness(80%);
+.play-sound:hover{
+    background-color: rgba(0,0,0,0.1)
 }
 
+.play-sound:active{
+    background-color: rgba(0,0,0,0.2)
+}
+
+.play-sound:active{
+    background-color: rgba(0,0,0,0.2)
+}
 select{
-    margin: 50px;
-    width: 150px;
-    padding: 5px 35px 5px 5px;
-    font-size: 16px;
-    border: 1px solid black;
-    height: 34px;
     background-color: #b0e0E6;
+    font-size: 3vmin;
+    border: 1px solid black;
+    margin: 2em;
+    width: 20vw;
+    height: 2em;
+    padding: 5px 1em 5px 5px;
 }
