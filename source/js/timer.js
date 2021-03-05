@@ -5,6 +5,9 @@ var countDownStart = new Date().getTime();  // stores the starting time of the t
 /** Sound played when timer hits 0 */
 var pomoSound = document.getElementById("pomo-sound");
 
+/** Default timer countdown is 25 min */
+document.getElementById("countdown").innerText = "25" + ":" + "00";
+
 /** @function
  * @description Updates the html timer display when timer is enabled
  * @name setInterval
@@ -36,7 +39,9 @@ function startCountdown(mins) {
  */
 function stopCountdown() {
   start = false;    // Disables timer
-  document.getElementById("countdown").innerText = "00:00";   // Sets timer display to 00:00
+  let stopTime = Number(duration)+1;
+  if (stopTime < 10) { stopTime = "0" + stopTime; }
+  document.getElementById("countdown").innerText = (stopTime) + ":" + "00";   // Sets timer display to 00:00
   document.getElementById("title").innerText = "Spl/ice Pomodoro";
 }
 
