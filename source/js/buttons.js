@@ -15,9 +15,9 @@ stopButton.disabled = true;     // Stop button disabled by default
 
 
 
-var pomoTimeSet = document.getElementById("Pomo");
-var shortTimeSet = document.getElementById("Short Break");
-var longTimeSet = document.getElementById("Long Break");
+var pomoTimeSet = document.getElementById("pomo-duration");
+var shortTimeSet = document.getElementById("short-break-duration");
+var longTimeSet = document.getElementById("long-break-duration");
 
 
 /** @function
