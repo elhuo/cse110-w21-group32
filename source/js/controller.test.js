@@ -43,7 +43,6 @@ test("startTimer test", () => {
 test("changeCycles short break test", () => {
     controller.setCycle(0);
     controller.setNumPomos(0);
-
     controller.changeCycles();
     expect(controller.getCycle()).toBe(1);
     expect(controller.getNumPomos()).toBe(1);
@@ -56,7 +55,6 @@ test("changeCycles short break test", () => {
 test("changeCycles short break test", () => {
     controller.setCycle(0);
     controller.setNumPomos(3);
-
     controller.changeCycles();
     expect(controller.getCycle()).toBe(2);
     expect(controller.getNumPomos()).toBe(0);
@@ -69,9 +67,8 @@ test("changeCycles short break test", () => {
 test("stopTimer test", () => {
     controller.setCycle(2);
     controller.setNumPomos(1);
-
     controller.stopTimer();
-    expect(controller.getCycle()).toBe(2);
+    expect(controller.getCycle()).toBe(3);
     expect(controller.getNumPomos()).toBe(0);
     expect(document.getElementById("pomo-tab").style.border).toBe("medium solid");
     expect(document.getElementById("short-break-tab").style.border).toBe("medium solid");
@@ -81,13 +78,10 @@ test("stopTimer test", () => {
 /** Testing changeStyle function */
 test("changeStyle test", () => {
     controller.setCycle(0);
-    controller.setNumPomos(0);
-
     controller.changeStyle();
     expect(document.getElementById("pomo-tab").style.border).toBe("medium solid");
     expect(document.getElementById("short-break-tab").style.border).toBe("");
     expect(document.getElementById("long-break-tab").style.border).toBe("");
-    
     controller.setCycle(2);
     controller.changeStyle();
     expect(document.getElementById("pomo-tab").style.border).toBe("");
@@ -97,9 +91,6 @@ test("changeStyle test", () => {
 
 /** Testing complete controller module functionality for full cycle including long break*/
 test("changeCycles full cycle including long break test", () => {
-    controller.setCycle(0);
-    controller.setNumPomos(0);
-
     controller.startTimer();
     controller.changeCycles(); // 1st pomo completed
     controller.changeCycles(); // short break completed
@@ -107,31 +98,26 @@ test("changeCycles full cycle including long break test", () => {
     controller.changeCycles(); // short break completed
     expect(controller.getCycle()).toBe(0);
     expect(controller.getNumPomos()).toBe(2);
-
     controller.changeCycles(); // 3rd pomo completed
     expect(controller.getCycle()).toBe(1);
     expect(controller.getNumPomos()).toBe(3);
-
     controller.changeCycles(); // short break completed
     expect(controller.getCycle()).toBe(0);
     expect(controller.getNumPomos()).toBe(3);
-
     controller.changeCycles(); // 4th pomo completed
     expect(controller.getCycle()).toBe(2);
     expect(controller.getNumPomos()).toBe(0);
     expect(document.getElementById("pomo-tab").style.border).toBe("");
     expect(document.getElementById("short-break-tab").style.border).toBe("");
     expect(document.getElementById("long-break-tab").style.border).toBe("medium solid");
-
     controller.changeCycles(); // long break completed
     expect(controller.getCycle()).toBe(0);
     expect(controller.getNumPomos()).toBe(0);
     expect(document.getElementById("pomo-tab").style.border).toBe("medium solid");
     expect(document.getElementById("short-break-tab").style.border).toBe("");
     expect(document.getElementById("long-break-tab").style.border).toBe("");
-
     controller.stopTimer();
-    expect(controller.getCycle()).toBe(2);
+    expect(controller.getCycle()).toBe(3);
     expect(controller.getNumPomos()).toBe(0);
     expect(document.getElementById("pomo-tab").style.border).toBe("medium solid");
     expect(document.getElementById("short-break-tab").style.border).toBe("medium solid");

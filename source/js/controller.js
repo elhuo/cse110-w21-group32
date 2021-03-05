@@ -9,6 +9,7 @@
  * cycle = 0: the timer is in the pomo cycle (25 min)
  * cycle = 1: the timer is in the short break cycle (5 min)
  * cycle = 2: the timer is in the long break cycle (15 min)
+ * cycle = 3: the timer is stopped
  */
 let cycle = 0;
 
@@ -32,18 +33,10 @@ const lBreakTime = 14;
  * to start the first pomodoro cycle. Changes cycle to pomo cycle.
  */
 function startTimer() {
-    if (cycle == 0){
-        startCountdown(pomoTime);
-    }
-    else if (cycle == 1){
-        startCountdown(sBreakTime);
-    }
-    else if (cycle == 2){
-        startCountdown(lBreakTime);
-    }
-    else{
-        startCountdown(pomoTime);
-    }
+    cycle = 0;
+    numPomos = 0;
+    changeStyle();
+    startCountdown(pomoTime);
 }
 
 /**
@@ -52,6 +45,9 @@ function startTimer() {
  * stopCountdown in timer.js. Changes cycle to the stopped cycle.
  */
 function stopTimer() {
+    cycle = 3;
+    numPomos = 0;
+    changeStyle();
     stopCountdown();
 }
 
