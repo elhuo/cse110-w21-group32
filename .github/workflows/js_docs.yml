@@ -1,16 +1,22 @@
 name: JS Docs
 on: 
   push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+  workflow_dispatch:
   
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Build
-      uses: andstor/jsdoc-action@v1
-      with:
-        recurse: true
-        output_dir: ./docs
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build
+        uses: andstor/jsdoc-action@v1
+        with:
+          source_dir: ./source
+          recurse: true
+          output_dir: ./docs
 
