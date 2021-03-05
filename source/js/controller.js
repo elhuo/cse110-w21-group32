@@ -33,10 +33,18 @@ const lBreakTime = 14;
  * to start the first pomodoro cycle. Changes cycle to pomo cycle.
  */
 function startTimer() {
-    cycle = 0;
-    numPomos = 0;
-    changeStyle();
-    startCountdown(pomoTime);
+    if (cycle == 0){
+        startCountdown(pomoTime);
+    }
+    else if (cycle == 1){
+        startCountdown(sBreakTime);
+    }
+    else if (cycle == 2){
+        startCountdown(lBreakTime);
+    }
+    else{
+        startCountdown(pomoTime);
+    }
 }
 
 /**
@@ -45,9 +53,6 @@ function startTimer() {
  * stopCountdown in timer.js. Changes cycle to the stopped cycle.
  */
 function stopTimer() {
-    cycle = 3;
-    numPomos = 0;
-    changeStyle();
     stopCountdown();
 }
 
