@@ -11,20 +11,20 @@
    <td>Help Button</td>
    <td>Displays popup when help button is pressed</td>
    <td>
-   - [x] Displays popup when button is pressed</td>
+   [x] Displays popup when button is pressed</td>
   </tr>
   <tr>
    <td>Close Button/Close Popup</td>
    <td>Closes popup when pressing the close button/clicking outside of the popup</td>
    <td>
-   - [x] Hides popup on clicking "Close" button/outside of the popup</td>
+   [x] Hides popup on clicking "Close" button/outside of the popup</td>
   </tr>
   <tr>
    <td>Popup description</td>
    <td>Provides overview of Pomodoro technique and explanation of how to use timer</td>
    <td>
-   - [x] Explanation of Pomodoro technique
-   - [ ] Explanation of how to use timer (arguably unnecessary?)</td>
+   [x] Explanation of Pomodoro technique
+   [ ] Explanation of how to use timer (arguably unnecessary?)</td>
   </tr>
 </table>
 
