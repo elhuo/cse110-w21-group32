@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: timer.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: timer.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>let start = false                           // true - timer is on; false - timer is off
+let duration;                          // duration of timer cycle in minutes (needs to be converted later in ms somewhere below) ; default 25min
+var countDownStart = new Date().getTime();  // stores the starting time of the timer
+
+/** Sound played when timer hits 0 */
+var pomoSound = document.getElementById("pomo-sound");
+
+/** @function
+ * @description Updates the html timer display when timer is enabled
+ * @name setInterval
+ */
+setInterval(() => {
+  if (start) {
+    countdown();
+  }
+}, 500);  // Will refresh every 500 ms: sometimes setInterval isn't exact and may skip a second
+
+/**
+ * Starts the countdown
+ * @param {int} mins - The duration for the timer to run for. 
+ * Remember to subtract 1 minute (if you want a 25 min timer, set to 24)
+ */
+function startCountdown(mins) {
+  start = true;     // Enables timer
+  duration = mins;  // Sets timer duration
+
+  if (duration &lt; 10) { duration = "0" + duration; }
+  // Display initial countdown time
+  document.getElementById("countdown").innerHTML = (duration) + ":" + "59";
+  // Set starting time of the timer
+  countDownStart = new Date().getTime();
+}
+
+/**
+ * Ends the countdown
+ */
+function stopCountdown() {
+  start = false;    // Disables timer
+  document.getElementById("countdown").innerHTML = "00:00";   // Sets timer display to 00:00
+  document.getElementById("title").innerHTML = "Spl/ice";
+}
+
+
+/**
+ * Updates the time left on the timer, by subtracting the time elapsed from the initial time
+ */
+function countdown() {
+
+  var d = new Date().getTime();          // Get current time
+  var timeElapsed = d - countDownStart;  // Calculate time elapsed from when countdown was started
+
+  // Calculate minutes and seconds from time elapsed
+  var minutes = Math.floor((timeElapsed % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((timeElapsed % (1000 * 60)) / 1000);
+
+  // If timer is over
+  if (minutes > duration) {
+    start = false;
+    pomoSound.play();
+    // Call stop function in controller
+    changeCycles();
+    return;
+  }
+
+  // If single digit seconds, pad with a 0
+  if (59 - seconds &lt;= 9) {
+    seconds = "0" + (59 - seconds);
+  }
+  // Otherwise, just convert to string without padding
+  else {
+    seconds = "" + (59 - seconds);
+  }
+
+  // If single digit minutes, pad with a 0
+  if (duration - minutes &lt; 10) {
+    minutes = "0" + (duration - minutes);
+  }
+  // Otherwise, just convert to string without padding
+  else {
+    minutes = "" + (duration - minutes);
+  }
+
+  // Update the display
+  document.getElementById("countdown").innerHTML = minutes + ":" + seconds;
+
+  // Update the title
+  if (minutes == "00") {
+    document.getElementById("title").innerHTML = "Spl/ice   " + seconds + "sec";
+  }
+  else if (seconds == "59") {
+    document.getElementById("title").innerHTML = "Spl/ice   " + (parseInt(minutes) + 1) + "min";
+  }
+}
+
+function getStart() {
+  return start;
+}
+
+function getDuration() {
+  return duration;
+}
+
+/**
+ * Sets the current duration
+ * @param {int} duration_ - The value to set for the duration. 
+ */
+function setDuration(duration_) {
+  duration = duration_;
+}
+
+exports.startCountdown = startCountdown;
+exports.stopCountdown = stopCountdown;
+exports.countdown = countdown;
+exports.getStart = getStart;
+exports.setDuration = setDuration;
+exports.getDuration = getDuration;
+// Main timer component:
+//    variable that keeps track of time elapsed
+//    Function that changes the static html page (to be in sync with the actual timer)
+//    reset function, input time in minutes to count down
+//    when timer is finished, call method in controller (tbd)
+
+
+
+// something something setInterval
+// https://www.w3schools.com/howto/howto_js_countdown.asp
+// https://www.w3schools.com/jsref/met_win_setinterval.asp
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#button">button</a></li><li><a href="global.html#buttons">buttons</a></li><li><a href="global.html#changeCycles">changeCycles</a></li><li><a href="global.html#changeStyle">changeStyle</a></li><li><a href="global.html#chooseSound">chooseSound</a></li><li><a href="global.html#clickClose">clickClose</a></li><li><a href="global.html#clickHelp">clickHelp</a></li><li><a href="global.html#clickStart">clickStart</a></li><li><a href="global.html#clickStop">clickStop</a></li><li><a href="global.html#closePopup">closePopup</a></li><li><a href="global.html#controller">controller</a></li><li><a href="global.html#countdown">countdown</a></li><li><a href="global.html#cycle">cycle</a></li><li><a href="global.html#getCycle">getCycle</a></li><li><a href="global.html#getNumPomos">getNumPomos</a></li><li><a href="global.html#lBreakTime">lBreakTime</a></li><li><a href="global.html#numPomos">numPomos</a></li><li><a href="global.html#playAdjustSound">playAdjustSound</a></li><li><a href="global.html#pomoSound">pomoSound</a></li><li><a href="global.html#pomoTime">pomoTime</a></li><li><a href="global.html#sBreakTime">sBreakTime</a></li><li><a href="global.html#setCycle">setCycle</a></li><li><a href="global.html#setDuration">setDuration</a></li><li><a href="global.html#setInterval">setInterval</a></li><li><a href="global.html#setNumPomos">setNumPomos</a></li><li><a href="global.html#slideVolume">slideVolume</a></li><li><a href="global.html#startButton">startButton</a></li><li><a href="global.html#startCountdown">startCountdown</a></li><li><a href="global.html#startTimer">startTimer</a></li><li><a href="global.html#stopButton">stopButton</a></li><li><a href="global.html#stopCountdown">stopCountdown</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#sum">sum</a></li><li><a href="global.html#timer">timer</a></li><li><a href="global.html#toggleClosePopup">toggleClosePopup</a></li><li><a href="global.html#toggleSettingsPopup">toggleSettingsPopup</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sat Mar 06 2021 03:55:12 GMT+0000 (Coordinated Universal Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

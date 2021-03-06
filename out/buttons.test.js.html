@@ -1,49 +1,58 @@
-/** Creating basic HTML DOM to test buttons */
-document.body.innerHTML =
-    "<audio id='pomo-sound' src='./audio/party-horn.mp3'></audio>" +
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: buttons.test.js</title>
 
-    "<button id='settings-button'></button>" +
-    "<button id='help-button'></button>" +
-    "<button id='start-button'></button>" +
-    "<button id='stop-button'></button>" +
-    "<button id='play-sound'></button>" +
-    "<button id='stop-button'></button>" +
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
 
-    "<img id='volume-image' src='./img/volume-level-3.svg'>" +
+<body>
 
-    "<div id='myModal'>" +
-        "<span id='help-close'></span>" +
-    "</div>" +
-    "<div id='settings-modal'>" +
-    "<span id='settings-close'></span>" +
+<div id="main">
 
-    "<select name='pomo-duration' id='pomo-duration'>" +
-        "<option value='20'>20:00</option>" +
-        "<option value='25' selected>25:00</option>" +
-        "<option value='30'>30:00</option>" +
-    "</select>" +
+    <h1 class="page-title">Source: buttons.test.js</h1>
+
     
-    "<select id='short-break-duration'" +
-        "<option value='3'>3:00</option>" +
-        "<option value='5' selected>5:00</option>" +
-        "<option value='7'>7:00</option>" +
-    "</select>" +
 
-    "<select id='long-break-duration'" +
-        "<option value='10'>10:00</option>" +
-        "<option value='15' selected>15:00</option>" +
-        "<option value='20'>20:00</option>" +
-    "</select>" +
 
-    "<select id='volume-sound'" +
-    "<option value='party-horn'></option>" +
-    "<option value='air-horn'></option>" +
-    "</select>" +
-    "</div>" +
 
-    "<div id='shadow' onclick='closePopup()'></div>" +
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** Creating basic HTML DOM to test buttons */
+document.body.innerHTML =
+    "&lt;audio id='pomo-sound' src='./audio/party-horn.mp3'>&lt;/audio>" +
 
-    "<input id='volume-slider' type='range' min='0' max ='100' value='50'></input>";
+    "&lt;button id='settings-button'>&lt;/button>" +
+    "&lt;button id='help-button'>&lt;/button>" +
+    "&lt;button id='start-button'>&lt;/button>" +
+    "&lt;button id='stop-button'>&lt;/button>" +
+    "&lt;button id='play-sound'>&lt;/button>" +
+    "&lt;button id='stop-button'>&lt;/button>" +
+
+    "&lt;img id='volume-image' src='./img/volume-level-3.svg'>" +
+
+    "&lt;div id='myModal'>" +
+    "&lt;span id='help-close'>&lt;/span>" +
+    "&lt;/div>" +
+    "&lt;div id='settings-modal'>" +
+    "&lt;span id='settings-close'>&lt;/span>" +
+    "&lt;select id='volume-sound'" +
+    "&lt;option value='party-horn'>&lt;/option>" +
+    "&lt;option value='air-horn'>&lt;/option>" +
+    "&lt;/select>" +
+    "&lt;/div>" +
+
+    "&lt;div id='shadow' onclick='closePopup()'>&lt;/div>" +
+
+    "&lt;input id='volume-slider' type='range' min='0' max ='100' value='50'>&lt;/input>";
 
 /** Creating jest function mocks */
 startTimer = jest.fn();
@@ -153,3 +162,26 @@ test("play sound button test", () => {
 
 });
 
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#button">button</a></li><li><a href="global.html#buttons">buttons</a></li><li><a href="global.html#changeCycles">changeCycles</a></li><li><a href="global.html#changeStyle">changeStyle</a></li><li><a href="global.html#chooseSound">chooseSound</a></li><li><a href="global.html#clickClose">clickClose</a></li><li><a href="global.html#clickHelp">clickHelp</a></li><li><a href="global.html#clickStart">clickStart</a></li><li><a href="global.html#clickStop">clickStop</a></li><li><a href="global.html#closePopup">closePopup</a></li><li><a href="global.html#controller">controller</a></li><li><a href="global.html#countdown">countdown</a></li><li><a href="global.html#cycle">cycle</a></li><li><a href="global.html#getCycle">getCycle</a></li><li><a href="global.html#getNumPomos">getNumPomos</a></li><li><a href="global.html#lBreakTime">lBreakTime</a></li><li><a href="global.html#numPomos">numPomos</a></li><li><a href="global.html#playAdjustSound">playAdjustSound</a></li><li><a href="global.html#pomoSound">pomoSound</a></li><li><a href="global.html#pomoTime">pomoTime</a></li><li><a href="global.html#sBreakTime">sBreakTime</a></li><li><a href="global.html#setCycle">setCycle</a></li><li><a href="global.html#setDuration">setDuration</a></li><li><a href="global.html#setInterval">setInterval</a></li><li><a href="global.html#setNumPomos">setNumPomos</a></li><li><a href="global.html#slideVolume">slideVolume</a></li><li><a href="global.html#startButton">startButton</a></li><li><a href="global.html#startCountdown">startCountdown</a></li><li><a href="global.html#startTimer">startTimer</a></li><li><a href="global.html#stopButton">stopButton</a></li><li><a href="global.html#stopCountdown">stopCountdown</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#sum">sum</a></li><li><a href="global.html#timer">timer</a></li><li><a href="global.html#toggleClosePopup">toggleClosePopup</a></li><li><a href="global.html#toggleSettingsPopup">toggleSettingsPopup</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sat Mar 06 2021 03:55:12 GMT+0000 (Coordinated Universal Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

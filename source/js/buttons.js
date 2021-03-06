@@ -116,7 +116,7 @@ volumeSlider.addEventListener('input', function(){
   pomoSound.volume = volumeSlider.value/100;
 
   let val = volumeSlider.value;
-  if( val > volume_level_3 ) {
+  if (val > volume_level_3) {
     volumeImg.src = "./img/volume-level-3.svg";
   
   } else if ( val > volume_level_2 ) {
@@ -195,5 +195,5 @@ longTimeSet.addEventListener("change", function() {
     document.getElementById("countdown").innerText = longTimeSet.value + ":" + "00";
 })
 
-
 exports.closePopup = closePopup;
+
