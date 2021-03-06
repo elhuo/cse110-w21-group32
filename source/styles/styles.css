@@ -10,11 +10,10 @@ html {
 
 /* === Universal page content formatting === */
 body {
-    padding: 1em;
     background-color: #0087bd;
     color: white;
-    padding: 1em;
     font-family: "OpenSans", sans-serif;
+    padding: 1em;
 }
 
 pomo-color {
@@ -202,11 +201,6 @@ button:active:enabled {
     background-image: url(../img/Stop.png);
 }
 
-.volume-container {
-    display:flex;
-    justify-content: space-between;
-}
-
 /* === Universal formatting for popup close buttons === */
 .close {
     position: absolute;
@@ -219,17 +213,6 @@ button:active:enabled {
     color:#000;
     text-decoration: none;
     cursor: pointer;
-}
-
-/* === Volume Image === */
-.volume-image {
-    padding-right: 1em;
-    width: 2em;
-}
-
-/* === Volume Slider === */
-.volume-slider {
-    width: 50%;
 }
 
 /* === Help Popup Window Styling === */
@@ -262,13 +245,12 @@ button:active:enabled {
     z-index: 100;
     font-size: 3.5vmin;
     word-wrap: break-word;
-    line-height: 150%;
     justify-content: center;
 }
 
-/*.modal-content p, h3 {
-    padding-bottom: .4em;
-}*/
+.help-modal-content {
+    line-height: 150%;
+}
 
 .shadow {
     position: fixed;
@@ -286,6 +268,21 @@ button:active:enabled {
 .visible {
     visibility: visible;
     opacity: 1;
+}
+
+/* === Volume Slider === */
+.volume-container {
+    display:flex;
+    justify-content: space-between;
+}
+
+.volume-image {
+    padding-right: 1em;
+    width: 2em;
+}
+
+.volume-slider {
+    width: 50%;
 }
 
 /* ===  Formatting for the pomo durations === */
