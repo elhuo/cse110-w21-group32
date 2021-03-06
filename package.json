@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "test": "jest", 
+        "test": "jest",
         "doc": "jsdoc source/ -r -d doc"
     },
     "devDependencies": {
