@@ -181,14 +181,20 @@ settingsCloseButton.onclick = function () {
 
 pomoTimeSet.addEventListener("change", function () {
   pomoTime = pomoTimeSet.value - 1;
+  if (cycle == 0)
+    document.getElementById("countdown").innerText = pomoTimeSet.value + ":" + "00";
 });
 
 shortTimeSet.addEventListener("change", function() {
   sBreakTime = shortTimeSet.value - 1;
+  if (cycle == 1)
+    document.getElementById("countdown").innerText = "0" + shortTimeSet.value + ":" + "00";
 });
 
 longTimeSet.addEventListener("change", function() {
   lBreakTime = longTimeSet.value - 1;
+  if (cycle == 2)
+    document.getElementById("countdown").innerText = longTimeSet.value + ":" + "00";
 })
 
 
