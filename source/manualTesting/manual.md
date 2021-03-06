@@ -41,6 +41,7 @@
    <td>Display Starting Pomo Duration</td>
    <td> 
    - [x] Pomo duration changes to match selected duration
+   
    - [x] Tab title reflects current stage
   </td>
   </tr>
