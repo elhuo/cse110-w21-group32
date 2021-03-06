@@ -85,24 +85,22 @@ main {
 }
 
 .tab {
-    border: medium solid;
-    border-bottom: none;
-    padding: 2vh 0.1vw 1.5vh 0.1vw;
     flex: 1;
-    text-align: center;
-    border-radius: 2vw 2vw 0px 0px;
-    font-size: 1.75vmax;
-    white-space: nowrap;
-    min-width: 7em;
-}
-
-.tab-border {
-    border: medium solid;
-    border-bottom: none;
-}
-
-.tab-noborder {
+    padding: 2vh 0.1vw 1.5vh 0.1vw;
     border: none;
+    color: #D3D3D3;
+    text-align: center;
+    font-size: 1.75vmax;
+    min-width: 7em;
+    white-space: nowrap;
+}
+
+.tab-active {
+    border: medium solid;
+    color: white;
+    border-radius: 2vw 2vw 0px 0px;
+    border-bottom: none;
+    font-weight: bold;
 }
 
 /* === Timer formatting === */
@@ -255,7 +253,7 @@ button:active:enabled {
 
 .modal h2, h3 {
     text-align: center;
-    padding-top: 2.5vh;
+    padding-top: 2vh;
 }
 
 .modal-show{
@@ -358,6 +356,7 @@ select{
     background-color: #b0e0E6;
     font-size: 3vmin;
     border: 1px solid black;
+    border-radius: 8px;
     margin: 2em;
     width: 20vw;
     height: 7.5vmin;

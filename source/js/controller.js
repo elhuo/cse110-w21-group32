@@ -142,30 +142,27 @@ function changeStyle() {
     /** Change page style to fit pomo cycle. */
     if (cycle == 0) {
         document.body.style.backgroundColor = "#0087bd";
-        document.getElementById("short-break-tab").classList.add("tab-noborder");
-        document.getElementById("long-break-tab").classList.add("tab-noborder");
-        document.getElementById("pomo-tab").classList.remove("tab-noborder");
+        document.getElementById("pomo-tab").classList.add("tab-active");
+        document.getElementById("short-break-tab").classList.remove("tab-active");
+        document.getElementById("long-break-tab").classList.remove("tab-active");
     }
     /** Change page style to fit short break cycle. */
     if (cycle == 1) {
         document.body.style.backgroundColor = "#333399";
-        document.getElementById("short-break-tab").classList.remove("tab-noborder");
-        document.getElementById("long-break-tab").classList.add("tab-noborder");
-        document.getElementById("pomo-tab").classList.add("tab-noborder");
+        document.getElementById("pomo-tab").classList.remove("tab-active");
+        document.getElementById("short-break-tab").classList.add("tab-active");
+        document.getElementById("long-break-tab").classList.remove("tab-active");
     }
     /** Change page style to fit long break cycle. */
     if (cycle == 2) {
         document.body.style.backgroundColor = "#663399";
-        document.getElementById("short-break-tab").classList.add("tab-noborder");
-        document.getElementById("long-break-tab").classList.remove("tab-noborder");
-        document.getElementById("pomo-tab").classList.add("tab-noborder");
+        document.getElementById("pomo-tab").classList.remove("tab-active");
+        document.getElementById("short-break-tab").classList.remove("tab-active");
+        document.getElementById("long-break-tab").classList.add("tab-active");
     }
     /** Change page style to fit timer stopped. */
     if (cycle == 3) {
         document.body.style.backgroundColor = "#0087bd";
-        document.getElementById("short-break-tab").classList.remove("tab-noborder");
-        document.getElementById("long-break-tab").classList.remove("tab-noborder");
-        document.getElementById("pomo-tab").classList.remove("tab-noborder");
     }
 }
 
