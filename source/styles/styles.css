@@ -98,7 +98,7 @@ main {
 .tab-active {
     border: medium solid;
     color: white;
-    border-radius: 2vw 2vw 0px 0px;
+    border-radius: 7.5vmin 7.5vmin 0px 0px;
     border-bottom: none;
     font-weight: bold;
 }
@@ -307,6 +307,35 @@ button:active:enabled {
     text-align: center;
 }
 
+select{
+    background-color: #b0e0E6;
+    font-size: 3vmin;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin: 2em;
+    width: 20vw;
+    height: 7.5vmin;
+    padding: 5px 1em 5px 5px;
+}
+
+@media only screen and (max-device-width: 600px) {
+    .pomo-durations {
+        display: flex; 
+        justify-content: left;
+        flex-direction: column;
+    }
+    
+    .duration-selectors {
+        flex: 1;
+        justify-content: left;
+        text-align: center;
+    }
+
+    select {
+        width: 55vw;
+    }
+}
+
 /* === Volume Image === */
 .volume-grid-container {
     display: flex;
@@ -350,15 +379,4 @@ button:active:enabled {
 .play-sound:active:enabled {
     background-color: #0087bd;
     opacity: 80%;
-}
-
-select{
-    background-color: #b0e0E6;
-    font-size: 3vmin;
-    border: 1px solid black;
-    border-radius: 8px;
-    margin: 2em;
-    width: 20vw;
-    height: 7.5vmin;
-    padding: 5px 1em 5px 5px;
 }
