@@ -114,22 +114,24 @@ settingsButton.onclick = function () {
  * @name slideVolume
  */
 pomoSound.volume = volumeSlider.value/100;
-volumeSlider.onclick = function() {
+
+volumeSlider.addEventListener('input', function(){
+  pomoSound.volume = volumeSlider.value/100;
+
   let val = volumeSlider.value;
   if( val > volume_level_3 ) {
     volumeImg.src = "./img/volume-level-3.svg";
-  }
-  else if ( val > volume_level_2 ) {
+  
+  } else if ( val > volume_level_2 ) {
     volumeImg.src = "./img/volume-level-2.svg";
-  }
-  else if ( val > volume_level_1 ) {
+  
+  } else if ( val > volume_level_1 ) {
     volumeImg.src = "./img/volume-level-1.svg";
-  }
-  else {
+  
+  } else {
     volumeImg.src = "./img/volume-level-0.svg";
   }
-  pomoSound.volume = volumeSlider.value/100;
-};
+});
 
 // Audio source select drop down menu
 const nameSrcMap = {
