@@ -13,12 +13,9 @@ var startButton = document.getElementById("start-button");
 var stopButton = document.getElementById("stop-button");
 stopButton.disabled = true;     // Stop button disabled by default
 
-
-
 var pomoTimeSet = document.getElementById("pomo-duration");
 var shortTimeSet = document.getElementById("short-break-duration");
 var longTimeSet = document.getElementById("long-break-duration");
-
 
 /** @function
  * @description When the start button is clicked, call the startTimer function in controller
@@ -156,9 +153,8 @@ var soundChoices = document.getElementById("volume-sound");
 document.addEventListener("DOMContentLoaded", function(){
   document.querySelector("#volume-sound").onchange = function(){
     let soundSelected = soundChoices.value;
-    let audioElem = document.getElementById("pomo-sound");
-    audioElem.src = nameSrcMap[soundSelected];
-    audioElem.play();
+    pomoSound.src = nameSrcMap[soundSelected];
+    pomoSound.play();
   }
 })
 
@@ -169,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function(){
  */
 var playButton = document.getElementById("play-sound")
 playButton.onclick = function(){
-  document.getElementById("pomo-sound").play();
+  pomoSound.play();
 }
 
 /** @function
