@@ -332,30 +332,34 @@ button:active:enabled {
 }
 
 /* === Play sound formatting === */
+
 .play-sound{
-    padding: 1em 1em;
+    margin-left: 1vw;
+    padding: 1vmin 1vmin;
     text-align: center;
     font-size: 3vmin;
-    border: 1px solid black;
+    border: 2px solid white;
+    color: white;
+    border-radius: 1vmin;
+    background-color: #0087bd 
 }
 
-.play-sound:hover{
-    background-color: rgba(0,0,0,0.1)
+.play-sound:hover:enabled{
+    background-color: #0087bd;
+    opacity: 60%;
 }
 
-.play-sound:active{
-    background-color: rgba(0,0,0,0.2)
+.play-sound:active:enabled {
+    background-color: #0087bd;
+    opacity: 80%;
 }
 
-.play-sound:active{
-    background-color: rgba(0,0,0,0.2)
-}
 select{
     background-color: #b0e0E6;
     font-size: 3vmin;
     border: 1px solid black;
     margin: 2em;
     width: 20vw;
-    height: 2em;
+    height: 7.5vmin;
     padding: 5px 1em 5px 5px;
 }
