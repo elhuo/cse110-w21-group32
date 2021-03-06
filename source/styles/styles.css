@@ -29,12 +29,6 @@ long-break-color {
     background-color: #663399;
 }
 
-@media only screen and (max-height: 600px) {
-    main {
-        height: 80vh;
-    }
-}
-
 /* === Header formatting === */
 .page-header {
     display: flex;
@@ -318,6 +312,7 @@ select{
     padding: 5px 1em 5px 5px;
 }
 
+/* === Mobile settings popup formatting === */
 @media only screen and (max-device-width: 600px) {
     .pomo-durations {
         display: flex; 
