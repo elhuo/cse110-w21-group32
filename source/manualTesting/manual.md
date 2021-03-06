@@ -106,12 +106,12 @@
   </td>
    <td>
     
-    - [x] Notification Sound
-    - [x] Changes to next stage (pomo#1->short break#1->pomo#2->short break#2->pomo#3->short break#3->pomo#4->long break#1->cycle again)
-    - [x] Tab outline is on next stage and text bolded for stage
-    - [x] Background color: Blue-pomo, Dark Purple-short break, Light Purple-long break
-    - [x] Timer of new stage should not automatically start
-    - [x] Counter should show the current pomo number (squares filled is count)
+   - [x] Notification Sound
+   - [x] Changes to next stage (pomo#1->short break#1->pomo#2->short break#2->pomo#3->short break#3->pomo#4->long break#1->cycle again)
+   - [x] Tab outline is on next stage and text bolded for stage
+   - [x] Background color: Blue-pomo, Dark Purple-short break, Light Purple-long break
+   - [x] Timer of new stage should not automatically start
+   - [x] Counter should show the current pomo number (squares filled is count)
    
    </td>
    
@@ -123,8 +123,8 @@
    </td>
    <td>
     
-    - [x] Go back to pomo stage
-    - [x] Counter resets to all squares not filled
+   - [x] Go back to pomo stage
+   - [x] Counter resets to all squares not filled
    
    </td>
   </tr>
