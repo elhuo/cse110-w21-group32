@@ -60,7 +60,7 @@ var pomoSound = document.getElementById("pomo-sound");
 var volumeImg = document.getElementById("volume-image");
 
 // Help and settings page button logics
-var modal = document.getElementById("help-modal");
+var helpModal = document.getElementById("help-modal");
 var settingsModal = document.getElementById("settings-modal");
 var helpButton = document.getElementById("help-button");
 var settingsButton = document.getElementById("settings-button");
@@ -73,7 +73,7 @@ let shadow = document.getElementById("shadow");
  * @description Close popup and remove shadow.
  */
 function closePopup() {
-  modal.classList.remove("modal-show");
+  helpModal.classList.remove("modal-show");
   settingsModal.classList.remove("modal-show");
   shadow.classList.remove("visible");
 }
@@ -83,7 +83,7 @@ function closePopup() {
  * @name clickHelp
  */
 helpButton.onclick = function () {
-  modal.classList.toggle("modal-show");
+  helpModal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
 
@@ -92,7 +92,7 @@ helpButton.onclick = function () {
  * @name clickClose
  */
 closeButton.onclick = function () {
-  modal.classList.toggle("modal-show");
+  helpModal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
 
