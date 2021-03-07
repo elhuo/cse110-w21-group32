@@ -23,7 +23,7 @@ test("set/getCycle test, required to pass for other unit tests to work properly"
     controller.setCycle(1);
     expect(controller.getCycle()).toBe(1);
     controller.setCycle(3);
-    expect(controller.getCycle()).toBe(3);
+    expect(controller.getCycle()).toBe(0);
     controller.setCycle(0);
     expect(controller.getCycle()).toBe(0);
 });
