@@ -89,11 +89,7 @@ function changeCycles() {
 
     /** If current cycle is pomo, increment numPomos. */
     if (cycle == 0) {
-        numPomos++;
-        if (numPomos % 4 != 0)
-            document.getElementById('pomo-count-' + (numPomos % 4)).classList.add('pomo-counted');
-        else
-            document.getElementById('pomo-count-' + 4).classList.add('pomo-counted');
+        setNumPomos(numPomos + 1);
     }
 
     /** 
@@ -195,6 +191,26 @@ function changeStyle() {
  */
 function setCycle(cycle_) {
     cycle = cycle_;
+
+    switch(cycle) {
+        case 0:
+            startCountdown(pomoTime);
+            stopCountdown();
+            break;
+        case 1:
+            startCountdown(sBreakTime);
+            stopCountdown();
+          break;
+        case 2:
+            startCountdown(lBreakTime);
+            stopCountdown();
+            break;
+        default:
+            reset();
+            return;
+    }
+
+    changeStyle();
 }
 
 /**
@@ -211,6 +227,25 @@ function getCycle() {
  */
 function setNumPomos(numPomos_) {
     numPomos = numPomos_;
+    changeStyle();
+    clearCubes();
+
+    let numCubes = 0;
+
+    if (numPomos > 0) {
+        switch(numPomos % 4) {
+            case 0:
+                numCubes = 4;
+                break;
+            default:
+                numCubes = numPomos % 4;
+                break;
+        }
+    }
+    
+    for (let i = 1; i <= numCubes; i++) {
+        document.getElementById('pomo-count-' + i).classList.add('pomo-counted');
+    }
 }
 
 /**
