@@ -6,11 +6,12 @@ document.body.innerHTML =
     "<p id='pomo-tab'></p>" +
     "<p id='short-break-tab'></p>" +
     "<p id='long-break-tab'></p>" +
-    "<audio id='pomo-sound' src='./audio/glass-pour.mp3'></audio>";
-    "<div id='pomo-count-1'></div>" +
-    "<div id='pomo-count-2'></div>" +
-    "<div id='pomo-count-3'></div>" +
-    "<div id='pomo-count-4'></div>";
+    "<p id='countdown'>25:00</p>" +
+    "<audio id='pomo-sound' src='./audio/glass-pour.mp3'></audio>" +
+    "<img id='pomo-count-1'></img>" +
+    "<img id='pomo-count-2'></img>" +
+    "<img id='pomo-count-3'></img>" +
+    "<img id='pomo-count-4'></img>";
 startCountdown = jest.fn();
 stopCountdown = jest.fn();
 
@@ -73,7 +74,7 @@ test("stopTimer test", () => {
     controller.setCycle(2);
     controller.setNumPomos(1);
     controller.stopTimer();
-    expect(controller.getCycle()).toBe(3);
+    expect(controller.getCycle()).toBe(2);
     expect(controller.getNumPomos()).toBe(0);
     expect(document.getElementById("pomo-tab").classList.contains("tab-active")).toBe(false);
     expect(document.getElementById("short-break-tab").classList.contains("tab-active")).toBe(false);
