@@ -201,6 +201,15 @@ button:active:enabled {
     background-image: url(../img/Stop.png);
 }
 
+.completed-pomos {
+    position: fixed;
+    right: 2.5vmin;
+    bottom: 2.5vmin;
+    width: 100%;
+    text-align: right;
+    font-size: 2.25vmax;
+}
+
 /* === Universal formatting for popup close buttons === */
 .close {
     position: absolute;
