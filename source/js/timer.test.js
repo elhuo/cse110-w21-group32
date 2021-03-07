@@ -20,14 +20,14 @@ test('setDuration test', () => {
 test('startCountdown test', () => {
     timer.startCountdown(10);
     expect(timer.getStart()).toBe(true);
-    expect(document.getElementById("countdown").innerHTML).toBe("10:59");
+    expect(document.getElementById("countdown").innerText).toBe("10:59");
 
     timer.stopCountdown();
     expect(timer.getStart()).toBe(false);
 
     timer.startCountdown(9);
     expect(timer.getStart()).toBe(true);
-    expect(document.getElementById("countdown").innerHTML).toBe("09:59");
+    expect(document.getElementById("countdown").innerText).toBe("09:59");
 });
 
 /** Testing stopCountdown function **/
@@ -36,10 +36,10 @@ test('stopCountdown test', () => {
     timer.stopCountdown();
 
     expect(timer.getStart()).toBe(false);
-    expect(document.getElementById("countdown").innerHTML).toBe("00:00");
+    expect(document.getElementById("countdown").innerText).toBe("00:00");
 });
 
-/** Testing countdown fucntion **/
+/** Testing countdown function **/
 test('countdown test', () => {
     timer.startCountdown()
     //need to figure out how to test w/ time incrementing
