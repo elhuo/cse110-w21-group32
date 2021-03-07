@@ -85,8 +85,6 @@ function changeCyclesController(){
  */
 function changeCycles() {
 
-    document.getElementById("pomo-sound").play();
-
     /** If current cycle is pomo, increment numPomos. */
     if (cycle == 0) {
         setNumPomos(numPomos + 1);
@@ -128,6 +126,8 @@ function changeCycles() {
 
     /** Change page style according to new cycle. */
     changeStyle();
+
+    document.getElementById("pomo-sound").play();
 }
 
 /**
@@ -148,6 +148,8 @@ function reset() {
     numPomos = 0;
     clearCubes();
     changeStyle();
+    startCountdown(pomoTime);
+    stopCountdown();
 }
 
 /**

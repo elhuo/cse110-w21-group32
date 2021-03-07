@@ -2,9 +2,11 @@
 const timer = require("./timer");
 
 /** Jest Mocks for html **/
+document.head.innerHTML =
+    "<title id='title'>Spl/ice Pomodoro</title>";
+    
 document.body.innerHTML =
-    "<title id='title'>Spl/ice Pomodoro</title>" +
-    "<p id='countdown'></p>";
+    "<p id='countdown'>25:00</p>";
 
 /** Testing set/getDuration before rest of tests **/
 test('setDuration test', () => {

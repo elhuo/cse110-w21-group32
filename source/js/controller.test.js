@@ -74,7 +74,7 @@ test("changeCycles short break test", () => {
     controller.setNumPomos(3);
     controller.changeCycles();
     expect(controller.getCycle()).toBe(2);
-    expect(controller.getNumPomos()).toBe(0);
+    expect(controller.getNumPomos()).toBe(4);
     expect(document.getElementById("pomo-tab").classList.contains("tab-active")).toBe(false);
     expect(document.getElementById("short-break-tab").classList.contains("tab-active")).toBe(false);
     expect(document.getElementById("long-break-tab").classList.contains("tab-active")).toBe(true);
