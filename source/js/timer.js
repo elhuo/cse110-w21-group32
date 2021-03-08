@@ -18,10 +18,9 @@ setInterval(() => {
  * @param {int} mins - The duration for the timer to run for. 
  */
 function startCountdown(mins) {
-  start = true;     // Enables timer
-  duration = mins;  // Sets timer duration
-
-  if (duration < 10) { duration = "0" + duration; }
+  start = true;                                   // Enables timer
+  duration = (mins).toString().padStart(2, "0");  // Sets timer duration
+  
   // Display initial countdown time
   document.getElementById("countdown").innerText = (duration) + ":" + "59";
   // Set starting time of the timer
@@ -33,18 +32,16 @@ function startCountdown(mins) {
  */
 function stopCountdown() {
   start = false;    // Disables timer
-  let stopTime = Number(duration)+1;
-  if (stopTime < 10) { stopTime = "0" + stopTime; }
+  let stopTime = (Number(duration)+1).toString().padStart(2, "0");
+
   document.getElementById("countdown").innerText = (stopTime) + ":" + "00";   // Sets timer display to 00:00
   document.getElementById("title").innerText = "Spl/ice Pomodoro";
 }
-
 
 /**
  * @description Updates the time left on the timer, by subtracting the time elapsed from the initial time
  */
 function countdown() {
-
   var d = new Date().getTime();          // Get current time
   var timeElapsed = d - countDownStart;  // Calculate time elapsed from when countdown was started
 
@@ -61,23 +58,9 @@ function countdown() {
     return;
   }
 
-  // If single digit seconds, pad with a 0
-  if (59 - seconds <= 9) {
-    seconds = "0" + (59 - seconds);
-  }
-  // Otherwise, just convert to string without padding
-  else {
-    seconds = "" + (59 - seconds);
-  }
-
-  // If single digit minutes, pad with a 0
-  if (duration - minutes < 10) {
-    minutes = "0" + (duration - minutes);
-  }
-  // Otherwise, just convert to string without padding
-  else {
-    minutes = "" + (duration - minutes);
-  }
+  // Pad second and minute strings for display
+  seconds = (59 - seconds).toString().padStart(2, "0");
+  minutes = (duration - minutes).toString().padStart(2, "0");
 
   // Update the display
   document.getElementById("countdown").innerText = minutes + ":" + seconds;
@@ -85,8 +68,8 @@ function countdown() {
   // Update the title
   if (minutes == "00"){
     document.getElementById("title").innerText = seconds + "s : Spl/ice Pomodoro";
-  }
-  else if (seconds == "59"){
+  
+  } else if (seconds == "59"){
     document.getElementById("title").innerText = (parseInt(minutes)) + "m : Spl/ice Pomodoro";
   }
 }
