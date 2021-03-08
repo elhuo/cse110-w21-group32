@@ -20,9 +20,7 @@ Unattendence:
 
 ![Current pomo square and numeric counter](../media/sprint-3-review/pomo-counter-and-ice-cubes.png)
 
-<img src="../media/sprint-3-review/settings-pc.png" alt="Desktop settings menu" height="250"/>
-
-<img src="../media/sprint-3-review/settings-mobile.png" alt="Mobile settings menu" height="250"/>
+<img src="../media/sprint-3-review/settings-pc.png" alt="Desktop settings menu" height="325"/> | <img src="../media/sprint-3-review/settings-mobile.png" alt="Mobile settings menu" height="325"/>
 
 ### Eric Pham
 
