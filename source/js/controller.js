@@ -1,7 +1,7 @@
 /**
  * controller.js is a javascript file that implements the cycle logic of
  * the pomodoro timer.
- * It contains four methods: startTimer, stopTimer, changeCycles, and changeStyle.
+ * It contains four main methods: startTimer, stopTimer, changeCyclesController, changeStyle, and reset
  */
 
 /** 
@@ -44,12 +44,15 @@ function startTimer() {
         case 0:
             startCountdown(pomoTime);
             break;
+
         case 1:
             startCountdown(sBreakTime);
-          break;
+            break;
+
         case 2:
             startCountdown(lBreakTime);
             break;
+            
         default:
             reset();
             return;
@@ -89,45 +92,39 @@ function changeCyclesController(){
  */
 function changeCycles() {
 
-    /** If current cycle is pomo, increment numPomos. */
-    if (cycle == 0) {
-        setNumPomos(numPomos + 1);
-    }
+    switch (cycle) {
+        /** If current cycle is pomo, increment numPomos and transition to break */
+        case 0:
+            setNumPomos(numPomos + 1);
 
-    /** 
-     * If current cycle is pomo and 4 pomos haven't occurred yet,
-     * set cycle to short break.
-     */
-    if (cycle == 0 && numPomos % 4 != 0) {
-        setCycle(1);
-    }
+            if (numPomos % 4 != 0)
+                setCycle(1);
 
-    /**
-     * If current cycle is pomo and 4 pomos have occurred,
-     * set cycle to long break and reset numPomos.
-     */
-    else if (cycle == 0 && numPomos % 4 == 0) {
-        setCycle(2);
-    }
+            else
+                setCycle(2);
 
-    /** When short and long breaks end, return to pomo cycle. */
-    else if (cycle == 1) {
-        setCycle(0);
-    }
-
-    else if (cycle == 2) {
-        setCycle(0);
-        clearCubes();
+            break;
         
-    /* Failstate: resets to 0 in case of unspecified numPomos or cycle state */
-    } else {
-        reset();
+        /** When short and long breaks end, return to pomo cycle. */
+        case 1:
+            setCycle(0);
+            break;
+        
+        /** Additionally clear "ice cube" counter at end of long break. */
+        case 2:
+            setCycle(0);
+            clearCubes();
+            break;
+
+        /** In the case of invalid cycle value, reset timer to default state. */
+        default:
+            reset();
     }
 }
 
 /**
  * @description Function that clears "ice cubes" that count the number of pomos (0-4)
-*/
+ */
 function clearCubes() {
     for (let i = 1; i <= 4; i++) {
         document.getElementById('pomo-count-' + i).classList.remove('pomo-counted');
@@ -136,7 +133,7 @@ function clearCubes() {
 
 /**
  * @description Function that clears pomo count, both "ice-cube" indicators and actual values.
-*/
+ */
 function reset() {
     setCycle(0);
     setNumPomos(0);
@@ -163,25 +160,23 @@ function reset() {
  */
  function setNumPomos(numPomos_) {
     numPomos = numPomos_;
-    changeStyle();
     clearCubes();
 
     let numCubes = 0;
 
     if (numPomos > 0) {
-        switch(numPomos % 4) {
-            case 0:
-                numCubes = 4;
-                break;
-            default:
-                numCubes = numPomos % 4;
-                break;
-        }
+        if (numPomos % 4 == 0)
+            numCubes = 4;
+        else
+            numCubes = numPomos % 4;
     }
     
     for (let i = 1; i <= numCubes; i++) {
         document.getElementById('pomo-count-' + i).classList.add('pomo-counted');
     }
+
+    /** Update the counter of number of completed pomos */
+    document.getElementById('completed-pomos').innerText = "Pomos: " + numPomos;
 }
 
 /**
@@ -213,13 +208,13 @@ function changeStyle() {
         /** Reset timer if set cycle is invalid */
         default:
             reset();
-            return;
+            break;
     }
-
-    /** Update the counter of number of completed pomos */
-    document.getElementById('completed-pomos').innerText = "Pomos: " + numPomos;
 }
 
+/**
+ * @description Helper function that clears all styling classes from tabs and the document body
+ * */
 function clearStyles() {
     pomoTab.classList.remove("tab-active");
     sBreakTab.classList.remove("tab-active");

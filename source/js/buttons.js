@@ -4,133 +4,26 @@
  */
 
 /** Reference to start button */
-let startButton = document.getElementById("start-button");
-
+const startButton = document.getElementById("start-button");
 /** Reference to stop button */
-let stopButton = document.getElementById("stop-button");
+const stopButton = document.getElementById("stop-button");
 stopButton.disabled = true;     // Stop button disabled by default
 
 /** The pomo time picked by the user (20, 25, 30) */
-let pomoTimeSet = document.getElementById("pomo-duration");
-
+const pomoTimeSelect = document.getElementById("pomo-duration");
 /** The short break time picked by the user (3, 5, 7) */
-let shortTimeSet = document.getElementById("short-break-duration");
-
+const shortTimeSelect = document.getElementById("short-break-duration");
 /** The long break time picked by the user (10, 15, 20) */
-let longTimeSet = document.getElementById("long-break-duration");
-
-/** @function
- * @description When the start button is clicked, call the startTimer function in controller
- * to setup and start the first pomo cycle.
- * While the timer is running, the start button cannot be clicked and the stop button can.
- * @name clickStart
- */
-startButton.addEventListener("click", function () {
-  startTimer(); // Call start function in controller
-  startButton.disabled = true;  // Disable start button
-  stopButton.disabled = false;  // Enable stop button
-
-  pomoTimeSet.disabled = true;  // Disable changing pomo time
-  shortTimeSet.disabled = true; // Disable changing short break time
-  longTimeSet.disabled = true;  // Disable changing long break time
-});
-
-/** @function
- * @description When the stop button is clicked, call the stopTimer function in controller
- * to reset and stop the timer and cycles.
- * While the timer is stopped, the stop button cannot be clicked and the start button can.
- * @name clickStop
- */
-stopButton.addEventListener("click", function () {
-  stopTimer(); // Call stop function in controller
-  stopButton.disabled = true;   // Disable stop button
-  startButton.disabled = false; // Enable start button
-
-  pomoTimeSet.disabled = false;  // Enable changing pomo time
-  shortTimeSet.disabled = false; // Enable changing short break time
-  longTimeSet.disabled = false;  // Enable changing long break time
-});
-
-// Volume Level Controls
-const volume_level_3 = 66;
-const volume_level_2 = 33;
-const volume_level_1 = 0;
-
-/** Sound of finishing a pomodoro */
-var pomoSound = document.getElementById("pomo-sound");
-/** Image that is displayed depending on volume level */
-var volumeImg = document.getElementById("volume-image");
+const longTimeSelect = document.getElementById("long-break-duration");
 
 // Help and settings page button logics
-var helpModal = document.getElementById("help-modal");
-var settingsModal = document.getElementById("settings-modal");
-var helpButton = document.getElementById("help-button");
-var settingsButton = document.getElementById("settings-button");
-var helpCloseButton = document.getElementById("help-close");
-var settingsCloseButton = document.getElementById("settings-close");
-var volumeSlider = document.getElementById("volume-slider");
-let shadow = document.getElementById("shadow");
-
-/**
- * @description Close popup and remove shadow.
- */
-function closePopup() {
-  helpModal.classList.remove("modal-show");
-  settingsModal.classList.remove("modal-show");
-  shadow.classList.remove("visible");
-}
-
-/** @function
- * @description Toggle popup on help button click.
- * @name clickHelp
- */
-helpButton.onclick = function () {
-  helpModal.classList.toggle("modal-show");
-  shadow.classList.toggle("visible");
-};
-
-/** @function
- * @description Toggle popup on close button click.
- * @name clickClose
- */
-helpCloseButton.onclick = function () {
-  helpModal.classList.toggle("modal-show");
-  shadow.classList.toggle("visible");
-};
-
-/** @function
- * @description Toggle popup on settings button click.
- * @name toggleSettingsPopup
- */
-settingsButton.onclick = function () {
-  settingsModal.classList.toggle("modal-show");
-  shadow.classList.toggle("visible");
-};
-
-/** @function
- * @description Adjust volume level using a slider implemented in the settings page.
- * The image displayed for the volume changes depending on the volume.
- * @name slideVolume
- */
-pomoSound.volume = volumeSlider.value/100;
-
-volumeSlider.addEventListener('input', function(){
-  pomoSound.volume = volumeSlider.value/100;
-
-  let val = volumeSlider.value;
-  if (val > volume_level_3) {
-    volumeImg.src = "./img/volume-level-3.svg";
-  
-  } else if ( val > volume_level_2 ) {
-    volumeImg.src = "./img/volume-level-2.svg";
-  
-  } else if ( val > volume_level_1 ) {
-    volumeImg.src = "./img/volume-level-1.svg";
-  
-  } else {
-    volumeImg.src = "./img/volume-level-0.svg";
-  }
-});
+const shadow = document.getElementById("shadow");
+const helpModal = document.getElementById("help-modal");
+const helpButton = document.getElementById("help-button");
+const helpCloseButton = document.getElementById("help-close");
+const settingsModal = document.getElementById("settings-modal");
+const settingsButton = document.getElementById("settings-button");
+const settingsCloseButton = document.getElementById("settings-close");
 
 /** Audio source select drop down menu */
 const nameSrcMap = {
@@ -145,16 +38,153 @@ const nameSrcMap = {
   "ice-cream-2"   : "./audio/ice-cream-2.mp3"
 }
 
+/** Volume Level Controls */
+const volumeLevels = [0, 33, 66];
+const volumeSlider = document.getElementById("volume-slider");
+
+/** Sound of finishing a pomodoro */
+const pomoSound = document.getElementById("pomo-sound");
+
+pomoSound.volume = volumeSlider.value/100;
+
+/** @function
+ * @description When the start button is clicked, call the startTimer function in controller
+ * to setup and start the first pomo cycle.
+ * While the timer is running, the start button cannot be clicked and the stop button can.
+ * @name clickStart
+ */
+startButton.addEventListener("click", function () {
+  startTimer(); // Call start function in controller
+  startButton.disabled = true;  // Disable start button
+  stopButton.disabled = false;  // Enable stop button
+
+  pomoTimeSelect.disabled = true;  // Disable changing pomo time
+  shortTimeSelect.disabled = true; // Disable changing short break time
+  longTimeSelect.disabled = true;  // Disable changing long break time
+});
+
+/** @function
+ * @description When the stop button is clicked, call the stopTimer function in controller
+ * to reset and stop the timer and cycles.
+ * While the timer is stopped, the stop button cannot be clicked and the start button can.
+ * @name clickStop
+ */
+stopButton.addEventListener("click", function () {
+  stopTimer(); // Call stop function in controller
+  stopButton.disabled = true;   // Disable stop button
+  startButton.disabled = false; // Enable start button
+
+  pomoTimeSelect.disabled = false;  // Enable changing pomo time
+  shortTimeSelect.disabled = false; // Enable changing short break time
+  longTimeSelect.disabled = false;  // Enable changing long break time
+});
+
+/**
+ * @description Close popup and remove shadow.
+ */
+function closePopup() {
+  helpModal.classList.remove("modal-show");
+  settingsModal.classList.remove("modal-show");
+  shadow.classList.remove("visible");
+};
+
+/** @function
+ * @description Toggle popup on help button click.
+ * @name clickHelp
+ */
+helpButton.onclick = function () {
+  helpModal.classList.toggle("modal-show");
+  shadow.classList.toggle("visible");
+};
+
+/** @function
+ * @description Close popup on close button click.
+ * @name clickClose
+ */
+helpCloseButton.addEventListener("click", closePopup);
+
+/** @function
+ * @description Toggle popup on settings button click.
+ * @name toggleSettingsPopup
+ */
+settingsButton.onclick = function () {
+  settingsModal.classList.toggle("modal-show");
+  shadow.classList.toggle("visible");
+};
+
+/** @function
+ * @description Close popup on close button click.
+ * @name clickClose
+ */
+settingsCloseButton.addEventListener("click", closePopup);
+
+/** @function
+ * @description Change pomo timer duration to selected time
+ * @name setPomoTime
+ */
+pomoTimeSelect.addEventListener("change", function () {
+  pomoTime = pomoTimeSelect.value - 1;
+  if (cycle == 0)
+    countdownDisplay.innerText = pomoTimeSelect.value + ":" + "00";
+});
+
+/** @function
+ * @description Change short break timer duration to selected time
+ * @name setShortTime
+ */
+shortTimeSelect.addEventListener("change", function() {
+  sBreakTime = shortTimeSelect.value - 1;
+  if (cycle == 1)
+    countdownDisplay.innerText = "0" + shortTimeSelect.value + ":" + "00";
+});
+
+/** @function
+ * @description Change long break timer duration to selected time
+ * @name setLongTime
+ */
+longTimeSelect.addEventListener("change", function() {
+  lBreakTime = longTimeSelect.value - 1;
+  if (cycle == 2)
+    countdownDisplay.innerText = longTimeSelect.value + ":" + "00";
+});
+
+/** @function
+ * @description Adjust volume level using a slider implemented in the settings page.
+ * The image displayed for the volume changes depending on the volume.
+ * @name slideVolume
+ */
+volumeSlider.addEventListener('input', function(){
+  /** Image that is displayed depending on volume level */
+  let volumeImg = document.getElementById("volume-image");
+
+  pomoSound.volume = volumeSlider.value/100;
+
+  let val = volumeSlider.value;
+  if (val > volumeLevels[2]) {
+    volumeImg.src = "./img/volume-level-3.svg";
+  
+  } else if ( val > volumeLevels[1] ) {
+    volumeImg.src = "./img/volume-level-2.svg";
+  
+  } else if ( val > volumeLevels[0] ) {
+    volumeImg.src = "./img/volume-level-1.svg";
+  
+  } else {
+    volumeImg.src = "./img/volume-level-0.svg";
+  }
+});
+
 /** @function
  * @description This function runs when the HTML content is finished loading.
  * The function will choose the appropriate sound depending on which sound
  * is selected by the user in the settings page.
  * @name chooseSound
  */
-var soundChoices = document.getElementById("volume-sound");
 document.addEventListener("DOMContentLoaded", function(){
-  document.querySelector("#volume-sound").onchange = function(){
-    let soundSelected = soundChoices.value;
+  document.querySelector("#sound-select").onchange = function(){
+    let soundSelect = document.getElementById("sound-select");
+
+    let soundSelected = soundSelect.value;
     pomoSound.src = nameSrcMap[soundSelected];
     pomoSound.play();
   }
@@ -165,48 +195,8 @@ document.addEventListener("DOMContentLoaded", function(){
  * can pre-hear the volume and sound when they are adjusting them.
  * @name playAdjustSound
  */
-var playButton = document.getElementById("play-sound")
-playButton.onclick = function(){
+ document.getElementById("play-sound").onclick = function(){
   pomoSound.play();
-}
-
-/** @function
- * @description Toggle popup on close button click.
- * @name toggleClosePopup
- */
-settingsCloseButton.onclick = function () {
-  settingsModal.classList.toggle("modal-show");
-  shadow.classList.toggle("visible");
 };
-
-/** @function
- * @description Change pomo timer duration to selected time
- * @name setPomoTime
- */
-pomoTimeSet.addEventListener("change", function () {
-  pomoTime = pomoTimeSet.value - 1;
-  if (cycle == 0)
-    document.getElementById("countdown").innerText = pomoTimeSet.value + ":" + "00";
-});
-
-/** @function
- * @description Change short break timer duration to selected time
- * @name setShortTime
- */
-shortTimeSet.addEventListener("change", function() {
-  sBreakTime = shortTimeSet.value - 1;
-  if (cycle == 1)
-    document.getElementById("countdown").innerText = "0" + shortTimeSet.value + ":" + "00";
-});
-
-/** @function
- * @description Change long break timer duration to selected time
- * @name setLongTime
- */
-longTimeSet.addEventListener("change", function() {
-  lBreakTime = longTimeSet.value - 1;
-  if (cycle == 2)
-    document.getElementById("countdown").innerText = longTimeSet.value + ":" + "00";
-})
 
 exports.closePopup = closePopup;
