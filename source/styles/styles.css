@@ -82,23 +82,27 @@ main {
     white-space: nowrap;
 }
 
-@media only screen and (max-device-width: 600px) {
-    .tab-wrapper {
-        width: 55vw;
-    }
-
-    .tab {
-        font-size: 3vw;
-        padding: 2vh 0.5vw 1.5vh 0.5vw;
-    }
-}
-
 .tab-active {
     border: medium solid;
     color: white;
     border-radius: 7.5vmin 7.5vmin 0px 0px;
     border-bottom: none;
     font-weight: bold;
+}
+
+@media only screen and (max-device-width: 600px) {
+    .tab-wrapper {
+        width: 30vw;
+    }
+
+    .tab {
+        font-size: 4.5vw;
+        display: none;
+    }
+
+    .tab-active {
+        display:block;
+    }
 }
 
 /* === Timer formatting === */
