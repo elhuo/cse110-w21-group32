@@ -18,9 +18,11 @@ const longTimeSelect = document.getElementById("long-break-duration");
 
 // Help and settings page button logics
 const shadow = document.getElementById("shadow");
+
 const helpModal = document.getElementById("help-modal");
 const helpButton = document.getElementById("help-button");
 const helpCloseButton = document.getElementById("help-close");
+
 const settingsModal = document.getElementById("settings-modal");
 const settingsButton = document.getElementById("settings-button");
 const settingsCloseButton = document.getElementById("settings-close");
@@ -39,7 +41,7 @@ const nameSrcMap = {
 }
 
 /** Volume Level Controls */
-const volumeLevels = [0, 33, 66];
+const volumeLevels = [0, 0, 33, 66];
 const volumeSlider = document.getElementById("volume-slider");
 
 /** Sound of finishing a pomodoro */
@@ -54,13 +56,7 @@ pomoSound.volume = volumeSlider.value/100;
  * @name clickStart
  */
 startButton.addEventListener("click", function () {
-  startTimer(); // Call start function in controller
-  startButton.disabled = true;  // Disable start button
-  stopButton.disabled = false;  // Enable stop button
-
-  pomoTimeSelect.disabled = true;  // Disable changing pomo time
-  shortTimeSelect.disabled = true; // Disable changing short break time
-  longTimeSelect.disabled = true;  // Disable changing long break time
+  startTimer();
 });
 
 /** @function
@@ -70,13 +66,7 @@ startButton.addEventListener("click", function () {
  * @name clickStop
  */
 stopButton.addEventListener("click", function () {
-  stopTimer(); // Call stop function in controller
-  stopButton.disabled = true;   // Disable stop button
-  startButton.disabled = false; // Enable start button
-
-  pomoTimeSelect.disabled = false;  // Enable changing pomo time
-  shortTimeSelect.disabled = false; // Enable changing short break time
-  longTimeSelect.disabled = false;  // Enable changing long break time
+  stopTimer();
 });
 
 /**
@@ -125,7 +115,7 @@ settingsCloseButton.addEventListener("click", closePopup);
 pomoTimeSelect.addEventListener("change", function () {
   pomoTime = pomoTimeSelect.value - 1;
   if (cycle == 0)
-    countdownDisplay.innerText = pomoTimeSelect.value + ":" + "00";
+    countdownDisplay.innerText = (pomoTimeSelect.value + ":" + "00").padStart(5, "0");
 });
 
 /** @function
@@ -135,7 +125,7 @@ pomoTimeSelect.addEventListener("change", function () {
 shortTimeSelect.addEventListener("change", function() {
   sBreakTime = shortTimeSelect.value - 1;
   if (cycle == 1)
-    countdownDisplay.innerText = "0" + shortTimeSelect.value + ":" + "00";
+    countdownDisplay.innerText = (shortTimeSelect.value + ":" + "00").padStart(5, "0");
 });
 
 /** @function
@@ -145,7 +135,7 @@ shortTimeSelect.addEventListener("change", function() {
 longTimeSelect.addEventListener("change", function() {
   lBreakTime = longTimeSelect.value - 1;
   if (cycle == 2)
-    countdownDisplay.innerText = longTimeSelect.value + ":" + "00";
+    countdownDisplay.innerText = (longTimeSelect.value + ":" + "00").padStart(5, "0");
 });
 
 /** @function
@@ -160,13 +150,13 @@ volumeSlider.addEventListener('input', function(){
   pomoSound.volume = volumeSlider.value/100;
 
   let val = volumeSlider.value;
-  if (val > volumeLevels[2]) {
+  if (val > volumeLevels[3]) {
     volumeImg.src = "./img/volume-level-3.svg";
   
-  } else if ( val > volumeLevels[1] ) {
+  } else if ( val > volumeLevels[2] ) {
     volumeImg.src = "./img/volume-level-2.svg";
   
-  } else if ( val > volumeLevels[0] ) {
+  } else if ( val > volumeLevels[1] ) {
     volumeImg.src = "./img/volume-level-1.svg";
   
   } else {

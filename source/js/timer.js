@@ -24,11 +24,11 @@ setInterval(() => {
  * @param {int} mins - The duration for the timer to run for. 
  */
 function startCountdown(mins) {
-  start = true;                                   // Enables timer
-  duration = (mins).toString().padStart(2, "0");  // Sets timer duration
+  start = true;     // Enables timer
+  duration = mins;  // Sets timer duration
   
   // Display initial countdown time
-  countdownDisplay.innerText = (duration) + ":" + "59";
+  countdownDisplay.innerText = ((duration) + ":" + "59").padStart(5, "0");
   // Set starting time of the timer
   countdownStart = new Date().getTime();
 }
@@ -38,10 +38,9 @@ function startCountdown(mins) {
  */
 function stopCountdown() {
   start = false;    // Disables timer
-  let stopTime = (Number(duration)+1).toString().padStart(2, "0");
 
   // Display total time of current stopped cycle
-  countdownDisplay.innerText = (stopTime) + ":" + "00";
+  countdownDisplay.innerText = ((duration + 1) + ":" + "00").padStart(5, "0");
   pageTitle.innerText = "Spl/ice Pomodoro";
 }
 

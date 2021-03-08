@@ -37,11 +37,11 @@ body {
     margin-right: auto;
 }
 
-.top-right-controls-wrapper {
+.popup-button-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    column-gap: 1.5vw;
+    column-gap: 2em;
 }
 
 /* === Main timer body formatting === */
@@ -136,14 +136,7 @@ main {
     filter: opacity(100%);
 }
 
-.top-right-controls-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    column-gap: 2em;
-}
-
-.controls-wrapper {
+.start-stop-wrapper {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -172,12 +165,12 @@ button:active:enabled {
     filter: opacity(60%);
 }
 
-.help-button:hover:enabled, .control-buttons:hover:enabled {
+.help-button:hover:enabled, .start-stop-buttons:hover:enabled {
     filter: opacity(60%);
 }
 
 /*      === Top Control Buttons Specific Styling ===     */
-.top-control-buttons {
+.popup-buttons {
     height: 7vh;
     width: 7vh;
     min-height: 25px;
@@ -197,7 +190,7 @@ button:active:enabled {
 }
 
 /*      === Stop Start Button Specific Styling ===       */
-.control-buttons {
+.start-stop-buttons {
     height: 7vh;
     width: 7vh;
     min-height: 25px;
@@ -222,16 +215,16 @@ button:active:enabled {
 }
 
 @media only screen and (max-device-width: 600px) {
-    .controls-wrapper {
+    .start-stop-wrapper {
         width: 40vw;
     }
     
-    .top-control-buttons {
+    .popup-buttons {
         height: 10vw;
         width: 10vw;
     }
 
-    .control-buttons {
+    .start-stop-buttons {
         height: 10vw;
         width: 10vw;
     }
@@ -326,7 +319,7 @@ button:active:enabled {
 }
 
 /* ===  Formatting for the pomo durations === */
-.pomo-durations {
+.timer-durations {
     display: flex; 
     justify-content: center;
     margin-top: 5%;
@@ -351,7 +344,7 @@ select{
 
 /* === Mobile settings popup formatting === */
 @media only screen and (max-device-width: 600px) {
-    .pomo-durations {
+    .timer-durations {
         display: flex; 
         justify-content: left;
         flex-direction: column;

@@ -22,26 +22,26 @@
 
     <audio id="pomo-sound" src="./audio/glass-pour.mp3"></audio>
 
-    <header class="page-header" id="page-header">
-      <h1 class="logo justify-right" id="logo">Spl/ice</h1>
-      <div class="top-right-controls-wrapper">
-        <button class="top-control-buttons fade-on-hover settings-button" id="settings-button"></button>
-        <button class="top-control-buttons help-button" id="help-button"></button>
+    <header class="page-header">
+      <h1 class="justify-right logo" id="logo">Spl/ice</h1>
+      <div class="popup-button-wrapper">
+        <button class="popup-buttons settings-button" id="settings-button"></button>
+        <button class="popup-buttons help-button" id="help-button"></button>
       </div>
     </header>
 
-    <main class="page-main">
-      <div class="timer-wrapper" id="timer-wrapper">
-        <div class="wrapper tab-wrapper" id="tab-wrapper">
+    <main>
+      <div class="timer-wrapper">
+        <div class="tab-wrapper">
           <p class="tab tab-active" id="pomo-tab">Pomo</p>
           <p class="tab" id="short-break-tab">Short Break</p>
           <p class="tab" id="long-break-tab">Long Break</p>
         </div>
 
-        <div class="wrapper clock-wrapper" id="clock-wrapper">
+        <div class="clock-wrapper">
           <p class="countdown" id="countdown">25:00</p>
 
-          <div class="pomo-counts" id="pomo-counts">
+          <div class="pomo-counts">
             <img class="pomo-count" id="pomo-count-1" src="./img/Stop.png">
             <img class="pomo-count" id="pomo-count-2" src="./img/Stop.png">
             <img class="pomo-count" id="pomo-count-3" src="./img/Stop.png">
@@ -50,9 +50,9 @@
         </div>
       </div>
 
-      <div class="controls-wrapper" id="controls-wrapper">
-        <button class="control-buttons start-button" id="start-button"></button>
-        <button class="control-buttons stop-button" id="stop-button"></button>
+      <div class="start-stop-wrapper">
+        <button class="start-stop-buttons start-button" id="start-button"></button>
+        <button class="start-stop-buttons stop-button" id="stop-button"></button>
       </div>
 
       <div class="footer">
@@ -60,9 +60,10 @@
       </div>
 
       <div class="shadow" id="shadow" onclick="closePopup()"></div>
-      <div id="help-modal" class="modal">
+
+      <div class="modal" id="help-modal">
         <div class="modal-content help-modal-content">
-          <span id = "help-close" class="close">&times;</span>
+          <span class="close" id="help-close">&times;</span>
           <p>
             <b>Spl/ice Pomodoro</b> is a Pomodoro Timer catered to students. Work with
             the timer and prevent yourself from freezing up when studying and
@@ -91,12 +92,12 @@
         </div>
       </div>
       
-      <div id="settings-modal" class="modal" >
+      <div class="modal" id="settings-modal">
         <div class="modal-content settings-modal-content">
-          <span id = "settings-close" class="close">&times;</span>
+          <span class="close" id="settings-close">&times;</span>
           <h2>Settings</h2>
             
-            <div id="pomo-durations" class="pomo-durations"> 
+            <div class="timer-durations"> 
               <div class="duration-selectors">
                 <label for="pomo-duration">Pomo</label>
                 <select name="pomo-duration" id="pomo-duration">
@@ -125,7 +126,7 @@
               </div>       
             </div>
           
-          <div class="volume-grid-container" id="volume-grid-container">
+          <div class="volume-grid-container">
             <h3>Notification Sound</h3>
             <select name="sound-select" class="sound-select" id="sound-select">
               <option value="glass-pour">Glass Pour</option>

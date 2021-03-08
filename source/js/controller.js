@@ -60,6 +60,10 @@ function startTimer() {
 
     startButton.disabled = true;  // Disable start button
     stopButton.disabled = false;  // Enable stop button
+
+    pomoTimeSelect.disabled = true;  // Disable changing pomo time
+    shortTimeSelect.disabled = true; // Disable changing short break time
+    longTimeSelect.disabled = true;  // Disable changing long break time
 }
 
 /**
@@ -71,6 +75,10 @@ function stopTimer() {
 
     startButton.disabled = false;   // Enable start button
     stopButton.disabled = true;     // Disable stop button
+
+    pomoTimeSelect.disabled = false;  // Enable changing pomo time
+    shortTimeSelect.disabled = false; // Enable changing short break time
+    longTimeSelect.disabled = false;  // Enable changing long break time
 }
 
 /**
