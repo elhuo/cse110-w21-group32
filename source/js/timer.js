@@ -54,7 +54,7 @@ function countdown() {
     start = false;
     
     // Call stop function in controller
-    changeCycles();
+    changeCyclesController();
     return;
   }
 
