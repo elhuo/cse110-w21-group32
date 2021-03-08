@@ -19,7 +19,9 @@ Unattendence:
 - Added Pomo count in bottom right corner during code review and overhauled code to function with said feature.
 - Combined Eric and my settings UI implementations to create a desktop and mobile version of the settings menu.
 
-![Current pomo square and numeric counter](../media/sprint-3-review/pomo-counter-and-ice-cubes.png)
+<img src="../media/sprint-3-review/pomo-counter-and-ice-cubes.png" alt="Current pomo square and numeric counter" height="325"/>
+
+<img src="../media/sprint-3-review/resize-example.gif" alt="Desktop settings menu" height="325"/>
 
 <img src="../media/sprint-3-review/settings-pc.png" alt="Desktop settings menu" height="325"/> | <img src="../media/sprint-3-review/settings-mobile.png" alt="Mobile settings menu" height="325"/>
 
@@ -30,7 +32,13 @@ Unattendence:
 ![One version of settings page with options all stacked vertically](../media/sprint-3-review/eric-settings.png)
 
 ### Jason Wong
+- Worked on JSDoc headers in javascript files
+- Updated comments in javascript files
+- Made some of the style changes suggested by Chad
+- Changed the timer so that it displays total time of the cycle when stopped
+- Kinda wish I did more honestly
 
+![Timer displays total time of cycle when stopped](../media/sprint-3-review/timer_stopped.png)
 
 ### Nathan Kim
 
