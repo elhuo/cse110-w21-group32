@@ -64,7 +64,7 @@ var helpModal = document.getElementById("help-modal");
 var settingsModal = document.getElementById("settings-modal");
 var helpButton = document.getElementById("help-button");
 var settingsButton = document.getElementById("settings-button");
-var closeButton = document.getElementById("help-close");
+var helpCloseButton = document.getElementById("help-close");
 var settingsCloseButton = document.getElementById("settings-close");
 var volumeSlider = document.getElementById("volume-slider");
 let shadow = document.getElementById("shadow");
@@ -91,7 +91,7 @@ helpButton.onclick = function () {
  * @description Toggle popup on close button click.
  * @name clickClose
  */
-closeButton.onclick = function () {
+helpCloseButton.onclick = function () {
   helpModal.classList.toggle("modal-show");
   shadow.classList.toggle("visible");
 };
@@ -196,4 +196,3 @@ longTimeSet.addEventListener("change", function() {
 })
 
 exports.closePopup = closePopup;
-

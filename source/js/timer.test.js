@@ -36,7 +36,7 @@ test('stopCountdown test', () => {
     timer.stopCountdown();
 
     expect(timer.getStart()).toBe(false);
-    expect(document.getElementById("countdown").innerText).toBe("00:00");
+    expect(document.getElementById("countdown").innerText).toBe("11:00");
 });
 
 /** Testing countdown function **/
