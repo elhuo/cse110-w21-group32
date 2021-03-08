@@ -64,19 +64,10 @@ function stopTimer() {
  */
 
 function changeCyclesController(){
-    if (confirm("Do you wish to continue?")){
-        document.getElementById("stop-button").disabled = false; 
-        document.getElementById("start-button").disabled = true;
-        changeCycles();
-    }
-    else{
-        cycle = 3;
-        numPomos = 0;
-        document.getElementById("stop-button").disabled = true;   // Disable stop button
-        document.getElementById("start-button").disabled = false;
-        stopCountdown();
-        changeStyle();
-    }
+    changeCycles();
+    stopCountdown();
+    document.getElementById("stop-button").disabled = true;   // Disable stop button
+    document.getElementById("start-button").disabled = false;
 }
 /**
  * @description Function that is called to handle the shift in pomodoro cycles when
@@ -128,6 +119,7 @@ function changeCycles() {
     /** Change page style according to new cycle. */
     changeStyle();
 
+    /** Sound is played because timer hit 0 */
     document.getElementById("pomo-sound").play();
 }
 
@@ -150,7 +142,7 @@ function reset() {
 
 /**
  * @description Function that changes the page's CSS according to the current cycle.
- * Specifically, borders the text for the current cycle and changes page color.
+ * Specifically, borders of the text for the current cycle and the page color.
  * Called at the end of the changeCycles function.
  */
 function changeStyle() {
@@ -182,6 +174,7 @@ function changeStyle() {
         document.getElementById("long-break-tab").classList.add("tab-active");
     }
 
+    /** Update the counter of number of completed pomos */
     document.getElementById('completed-pomos').innerText = "Pomos: " + numPomos;
 }
 

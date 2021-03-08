@@ -3,9 +3,6 @@
  * Specifically, it implements the start, stop, help, and settings buttons.
  */
 
-/** Button is used to disable the buttons */
-// const button = document.querySelectorAll("button"); // 0 is help, 1 is start, 2 is stop
-
 /** Reference to start button */
 var startButton = document.getElementById("start-button");
 
@@ -13,8 +10,13 @@ var startButton = document.getElementById("start-button");
 var stopButton = document.getElementById("stop-button");
 stopButton.disabled = true;     // Stop button disabled by default
 
+/** The pomo time picked by the user (20, 25, 30) */
 var pomoTimeSet = document.getElementById("pomo-duration");
+
+/** The short break time picked by the user (3, 5, 7) */
 var shortTimeSet = document.getElementById("short-break-duration");
+
+/** The long break time picked by the user (10, 15, 20) */
 var longTimeSet = document.getElementById("long-break-duration");
 
 /** @function
@@ -54,9 +56,9 @@ const volume_level_3 = 66;
 const volume_level_2 = 33;
 const volume_level_1 = 0;
 
-// Sound of finishing a pomodoro
+/** Sound of finishing a pomodoro */
 var pomoSound = document.getElementById("pomo-sound");
-// image that is displayed depending on volume level
+/** Image that is displayed depending on volume level */
 var volumeImg = document.getElementById("volume-image");
 
 // Help and settings page button logics
@@ -130,7 +132,7 @@ volumeSlider.addEventListener('input', function(){
   }
 });
 
-// Audio source select drop down menu
+/** Audio source select drop down menu */
 const nameSrcMap = {
   "glass-pour"    : "./audio/glass-pour.mp3",
   "bottle-clank"  : "./audio/bottle-clank.mp3",
@@ -177,18 +179,30 @@ settingsCloseButton.onclick = function () {
   shadow.classList.toggle("visible");
 };
 
+/** @function
+ * @description Change pomo timer duration to selected time
+ * @name setPomoTime
+ */
 pomoTimeSet.addEventListener("change", function () {
   pomoTime = pomoTimeSet.value - 1;
   if (cycle == 0)
     document.getElementById("countdown").innerText = pomoTimeSet.value + ":" + "00";
 });
 
+/** @function
+ * @description Change short break timer duration to selected time
+ * @name setShortTime
+ */
 shortTimeSet.addEventListener("change", function() {
   sBreakTime = shortTimeSet.value - 1;
   if (cycle == 1)
     document.getElementById("countdown").innerText = "0" + shortTimeSet.value + ":" + "00";
 });
 
+/** @function
+ * @description Change long break timer duration to selected time
+ * @name setLongTime
+ */
 longTimeSet.addEventListener("change", function() {
   lBreakTime = longTimeSet.value - 1;
   if (cycle == 2)
