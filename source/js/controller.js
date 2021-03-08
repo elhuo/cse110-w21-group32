@@ -27,26 +27,36 @@ var sBreakTime = 4;
 /** (15 - 1) minutes to pass in to startCountdown for long break cycle. */
 var lBreakTime = 14;
 
+/** True if timer should automatically start on transition. False by default. */
+var autoStart = false;
+
+let pomoTab = document.getElementById("pomo-tab");
+let sBreakTab = document.getElementById("short-break-tab");
+let lBreakTab = document.getElementById("long-break-tab");
+
 /**
  * @description Function that is called when the start button is pressed.
  * Handles setup for the controller before calling startCountdown in timer.js
  * to start the first pomodoro cycle. Changes cycle to pomo cycle.
  */
 function startTimer() {
-    if (cycle == 0){
-        startCountdown(pomoTime);
+    switch(cycle) {
+        case 0:
+            startCountdown(pomoTime);
+            break;
+        case 1:
+            startCountdown(sBreakTime);
+          break;
+        case 2:
+            startCountdown(lBreakTime);
+            break;
+        default:
+            reset();
+            return;
     }
-    else if (cycle == 1){
-        startCountdown(sBreakTime);
-    }
-    else if (cycle == 2){
-        startCountdown(lBreakTime);
-    }
-    else if (cycle == 3){
-        cycle = 0;
-        startCountdown(pomoTime);
-    }
-    changeStyle();
+
+    startButton.disabled = true;  // Disable start button
+    stopButton.disabled = false;  // Enable stop button
 }
 
 /**
@@ -55,6 +65,9 @@ function startTimer() {
  */
 function stopTimer() {
     stopCountdown();
+
+    startButton.disabled = false;   // Enable start button
+    stopButton.disabled = true;     // Disable stop button
 }
 
 /**
@@ -62,13 +75,13 @@ function stopTimer() {
  * stage or not. If user decides to not coninue, the timer is set back to 
  * initial stage.
  */
-
 function changeCyclesController(){
+    /** Sound is played because timer hit 0 */
+    pomoSound.play();
+
     changeCycles();
-    stopCountdown();
-    document.getElementById("stop-button").disabled = true;   // Disable stop button
-    document.getElementById("start-button").disabled = false;
 }
+
 /**
  * @description Function that is called to handle the shift in pomodoro cycles when
  * the countdown reaches 0. Handles each cycle case and then
@@ -86,8 +99,7 @@ function changeCycles() {
      * set cycle to short break.
      */
     if (cycle == 0 && numPomos % 4 != 0) {
-        cycle = 1;
-        startCountdown(sBreakTime);
+        setCycle(1);
     }
 
     /**
@@ -95,32 +107,22 @@ function changeCycles() {
      * set cycle to long break and reset numPomos.
      */
     else if (cycle == 0 && numPomos % 4 == 0) {
-        cycle = 2;
-        startCountdown(lBreakTime);
+        setCycle(2);
     }
 
     /** When short and long breaks end, return to pomo cycle. */
     else if (cycle == 1) {
-        cycle = 0;
-        startCountdown(pomoTime);
+        setCycle(0);
     }
 
     else if (cycle == 2) {
-        cycle = 0;
+        setCycle(0);
         clearCubes();
-
-        startCountdown(pomoTime);
-    
+        
     /* Failstate: resets to 0 in case of unspecified numPomos or cycle state */
     } else {
         reset();
     }
-
-    /** Change page style according to new cycle. */
-    changeStyle();
-
-    /** Sound is played because timer hit 0 */
-    document.getElementById("pomo-sound").play();
 }
 
 /**
@@ -141,84 +143,25 @@ function reset() {
 }
 
 /**
- * @description Function that changes the page's CSS according to the current cycle.
- * Specifically, borders of the text for the current cycle and the page color.
- * Called at the end of the changeCycles function.
- */
-function changeStyle() {
-    /** Change page style to fit pomo cycle. */
-    if (cycle == 0) {
-        document.body.classList.remove("short-break-color");
-        document.body.classList.remove("long-break-color");
-
-        document.getElementById("pomo-tab").classList.add("tab-active");
-        document.getElementById("short-break-tab").classList.remove("tab-active");
-        document.getElementById("long-break-tab").classList.remove("tab-active");
-    }
-    /** Change page style to fit short break cycle. */
-    if (cycle == 1) {
-        document.body.classList.add("short-break-color");
-        document.body.classList.remove("long-break-color");
-
-        document.getElementById("pomo-tab").classList.remove("tab-active");
-        document.getElementById("short-break-tab").classList.add("tab-active");
-        document.getElementById("long-break-tab").classList.remove("tab-active");
-    }
-    /** Change page style to fit long break cycle. */
-    if (cycle == 2) {
-        document.body.classList.remove("short-break-color");
-        document.body.classList.add("long-break-color");
-
-        document.getElementById("pomo-tab").classList.remove("tab-active");
-        document.getElementById("short-break-tab").classList.remove("tab-active");
-        document.getElementById("long-break-tab").classList.add("tab-active");
-    }
-
-    /** Update the counter of number of completed pomos */
-    document.getElementById('completed-pomos').innerText = "Pomos: " + numPomos;
-}
-
-/**
- * @description Sets the current cycle
+ * @description Sets the current cycle and changes style to match
  * @param {int} cycle_ - The value to set for the current cycle. 
  */
-function setCycle(cycle_) {
+ function setCycle(cycle_) {
     cycle = cycle_;
 
-    switch(cycle) {
-        case 0:
-            startCountdown(pomoTime);
-            stopCountdown();
-            break;
-        case 1:
-            startCountdown(sBreakTime);
-            stopCountdown();
-          break;
-        case 2:
-            startCountdown(lBreakTime);
-            stopCountdown();
-            break;
-        default:
-            reset();
-            return;
-    }
+    startTimer();
+    
+    if (autoStart == false)
+        stopTimer();
 
     changeStyle();
 }
 
 /**
- * @description Returns the current cycle
- * @returns {int} cycle - The current cycle. 
- */
-function getCycle() {
-    return cycle;
-}
-
-/**
- * @description Sets the current number of Pomos 
+ * @description Sets the current number of Pomos and fills in appropriate "ice cubes"
  * @param {int} numPomos_ - The value to set for the current number of Pomos. 
  */
-function setNumPomos(numPomos_) {
+ function setNumPomos(numPomos_) {
     numPomos = numPomos_;
     changeStyle();
     clearCubes();
@@ -239,6 +182,59 @@ function setNumPomos(numPomos_) {
     for (let i = 1; i <= numCubes; i++) {
         document.getElementById('pomo-count-' + i).classList.add('pomo-counted');
     }
+}
+
+/**
+ * @description Function that changes the page's CSS according to the current cycle.
+ * Specifically, borders of the text for the current cycle and the page color.
+ * Called at the end of the changeCycles function.
+ */
+function changeStyle() {
+    clearStyles();
+
+    switch (cycle) {
+        /** Change page style to fit pomo cycle. */
+        case 0:
+            pomoTab.classList.add("tab-active");
+            break;
+
+        /** Change page style to fit short break cycle. */
+        case 1:
+            document.body.classList.add("short-break-color");
+            sBreakTab.classList.add("tab-active");
+          break;
+
+        /** Change page style to fit long break cycle. */
+        case 2:
+            document.body.classList.add("long-break-color");
+            lBreakTab.classList.add("tab-active");
+            break;
+        
+        /** Reset timer if set cycle is invalid */
+        default:
+            reset();
+            return;
+    }
+
+    /** Update the counter of number of completed pomos */
+    document.getElementById('completed-pomos').innerText = "Pomos: " + numPomos;
+}
+
+function clearStyles() {
+    pomoTab.classList.remove("tab-active");
+    sBreakTab.classList.remove("tab-active");
+    lBreakTab.classList.remove("tab-active");
+
+    document.body.classList.remove("short-break-color");
+    document.body.classList.remove("long-break-color");
+}
+
+/**
+ * @description Returns the current cycle
+ * @returns {int} cycle - The current cycle. 
+ */
+function getCycle() {
+    return cycle;
 }
 
 /**

@@ -4,20 +4,20 @@
  */
 
 /** Reference to start button */
-var startButton = document.getElementById("start-button");
+let startButton = document.getElementById("start-button");
 
 /** Reference to stop button */
-var stopButton = document.getElementById("stop-button");
+let stopButton = document.getElementById("stop-button");
 stopButton.disabled = true;     // Stop button disabled by default
 
 /** The pomo time picked by the user (20, 25, 30) */
-var pomoTimeSet = document.getElementById("pomo-duration");
+let pomoTimeSet = document.getElementById("pomo-duration");
 
 /** The short break time picked by the user (3, 5, 7) */
-var shortTimeSet = document.getElementById("short-break-duration");
+let shortTimeSet = document.getElementById("short-break-duration");
 
 /** The long break time picked by the user (10, 15, 20) */
-var longTimeSet = document.getElementById("long-break-duration");
+let longTimeSet = document.getElementById("long-break-duration");
 
 /** @function
  * @description When the start button is clicked, call the startTimer function in controller

@@ -1,6 +1,12 @@
-var start = false                           // true - timer is on; false - timer is off
-let duration;                          // duration of timer cycle in minutes (needs to be converted later in ms somewhere below) ; default 25min
-var countDownStart = new Date().getTime();  // stores the starting time of the timer
+/** true - timer is on; false - timer is off */
+var start = false
+/** duration of timer cycle in minutes (needs to be converted later in ms somewhere below) ; default 25min */
+let duration;
+/** stores the starting time of the timer */
+var countdownStart = new Date().getTime();
+
+let pageTitle = document.getElementById("title");
+let countdownDisplay = document.getElementById("countdown");
 
 /** @function
  * @description Updates the html timer display when timer is enabled
@@ -22,9 +28,9 @@ function startCountdown(mins) {
   duration = (mins).toString().padStart(2, "0");  // Sets timer duration
   
   // Display initial countdown time
-  document.getElementById("countdown").innerText = (duration) + ":" + "59";
+  countdownDisplay.innerText = (duration) + ":" + "59";
   // Set starting time of the timer
-  countDownStart = new Date().getTime();
+  countdownStart = new Date().getTime();
 }
 
 /**
@@ -33,17 +39,18 @@ function startCountdown(mins) {
 function stopCountdown() {
   start = false;    // Disables timer
   let stopTime = (Number(duration)+1).toString().padStart(2, "0");
+
   // Display total time of current stopped cycle
-  document.getElementById("countdown").innerText = (stopTime) + ":" + "00";   // Sets timer display to 00:00
-  document.getElementById("title").innerText = "Spl/ice Pomodoro";
+  countdownDisplay.innerText = (stopTime) + ":" + "00";
+  pageTitle.innerText = "Spl/ice Pomodoro";
 }
 
 /**
  * @description Updates the time left on the timer, by subtracting the time elapsed from the initial time
  */
 function countdown() {
-  var d = new Date().getTime();          // Get current time
-  var timeElapsed = d - countDownStart;  // Calculate time elapsed from when countdown was started
+  // Calculate time elapsed from when countdown was started
+  var timeElapsed = new Date().getTime() - countdownStart;
 
   // Calculate minutes and seconds from time elapsed
   var minutes = Math.floor((timeElapsed % (1000 * 60 * 60)) / (1000 * 60));
@@ -63,14 +70,14 @@ function countdown() {
   minutes = (duration - minutes).toString().padStart(2, "0");
 
   // Update the display
-  document.getElementById("countdown").innerText = minutes + ":" + seconds;
+  countdownDisplay.innerText = minutes + ":" + seconds;
 
   // Update the title
   if (minutes == "00"){
-    document.getElementById("title").innerText = seconds + "s : Spl/ice Pomodoro";
+    pageTitle.innerText = seconds + "s : Spl/ice Pomodoro";
   
   } else if (seconds == "59"){
-    document.getElementById("title").innerText = (parseInt(minutes)) + "m : Spl/ice Pomodoro";
+    pageTitle.innerText = (parseInt(minutes)) + "m : Spl/ice Pomodoro";
   }
 }
 
