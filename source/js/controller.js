@@ -64,19 +64,10 @@ function stopTimer() {
  */
 
 function changeCyclesController(){
-    if (confirm("Do you wish to continue?")){
-        document.getElementById("stop-button").disabled = false; 
-        document.getElementById("start-button").disabled = true;
-        changeCycles();
-    }
-    else{
-        cycle = 3;
-        numPomos = 0;
-        document.getElementById("stop-button").disabled = true;   // Disable stop button
-        document.getElementById("start-button").disabled = false;
-        stopCountdown();
-        changeStyle();
-    }
+    changeCycles();
+    stopCountdown();
+    document.getElementById("stop-button").disabled = true;   // Disable stop button
+    document.getElementById("start-button").disabled = false;
 }
 /**
  * @description Function that is called to handle the shift in pomodoro cycles when
