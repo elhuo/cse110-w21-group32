@@ -29,7 +29,13 @@ Unattendence:
 ![One version of settings page with options all stacked vertically](../media/sprint-3-review/eric-settings.png)
 
 ### Jason Wong
+- Worked on JSDoc headers in javascript files
+- Updated comments in javascript files
+- Made some of the style changes suggested by Chad
+- Changed the timer so that it displays total time of the cycle when stopped
+- Kinda wish I did more honestly
 
+![Timer displays total time of cycle when stopped](../media/sprint-3-review/timer_stopped.png)
 
 ### Nathan Kim
 
