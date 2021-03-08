@@ -18,7 +18,9 @@ Unattendence:
 - Added Pomo count in bottom right corner during code review and overhauled code to function with said feature.
 - Combined Eric and my settings UI implementations to create a desktop and mobile version of the settings menu.
 
-![Current pomo square and numeric counter](../media/sprint-3-review/pomo-counter-and-ice-cubes.png)
+<img src="../media/sprint-3-review/pomo-counter-and-ice-cubes.png" alt="Current pomo square and numeric counter" height="325"/>
+
+<img src="../media/sprint-3-review/resize-example.gif" alt="Desktop settings menu" height="325"/>
 
 <img src="../media/sprint-3-review/settings-pc.png" alt="Desktop settings menu" height="325"/> | <img src="../media/sprint-3-review/settings-mobile.png" alt="Mobile settings menu" height="325"/>
 
