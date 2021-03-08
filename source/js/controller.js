@@ -116,8 +116,9 @@ function changeCycles() {
 
     else if (cycle == 2) {
         cycle = 0;
-        startCountdown(pomoTime);
         clearCubes();
+
+        startCountdown(pomoTime);
     
     /* Failstate: resets to 0 in case of unspecified numPomos or cycle state */
     } else {
@@ -131,7 +132,7 @@ function changeCycles() {
 }
 
 /**
- * @description Function that clears pomo count, both "ice-cube" indicators and actual value.
+ * @description Function that clears "ice cubes" that count the number of pomos (0-4)
 */
 function clearCubes() {
     document.getElementById('pomo-count-1').classList.remove('pomo-counted');
@@ -141,7 +142,7 @@ function clearCubes() {
 }
 
 /**
- * @description Function that clears pomo count, both "ice-cube" indicators and actual value.
+ * @description Function that clears pomo count, both "ice-cube" indicators and actual values.
 */
 function reset() {
     cycle = 0;
