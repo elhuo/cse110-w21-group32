@@ -55,7 +55,7 @@ function startTimer() {
 
     default:
       reset();
-    return;
+      return;
   }
 
   startButton.disabled = true;  // Disable start button
@@ -193,7 +193,7 @@ function setNumPomos(numPomos_) {
  * Called at the end of the changeCycles function.
  */
 function changeStyle() {
-clearStyles();
+  clearStyles();
 
   switch (cycle) {
     /** Change page style to fit pomo cycle. */
