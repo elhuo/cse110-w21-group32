@@ -68,7 +68,7 @@ Unattendence: N/A
 - Made audio play in changeCycles() rather than countdown()
 - Slightly adjusted button colors in CSS for non-selected / hover
 
-![Pomodoro Counter](../media/sprint-3-review/cycle-counter.png)
+![Pomodoro Counter](../media/sprint-3-review/cycle-counter.gif)
 
 ### Zane Calini
 - Set up cypress on project

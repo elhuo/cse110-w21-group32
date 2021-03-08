@@ -41,12 +41,16 @@ Unattendence:
 
 
 ### Wilson Low
-
+- Modified unit tests within CSS Modified unit tests within CSS 
+- Resolved issues with unit tests (timer.test.js, controller.test.js, buttons.test.js) to be consistent afterfter merges from feature branches to dev
 
 
 ### Elliot Kim
+- Programmed Javascript for for tadjustingsting functionaofy of drop-down menu in settings page
+- Programmed Javascript for for cycle progress indicators (the squares under the ti
+- mer)
 - 
 
 
-
+ (
 ### Zane Calini
