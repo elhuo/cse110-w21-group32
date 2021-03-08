@@ -91,6 +91,10 @@ main {
 }
 
 @media only screen and (max-device-width: 600px) {
+    .page-header {
+        font-size: 5vw;
+    }
+
     .tab-wrapper {
         width: 30vw;
     }
@@ -230,6 +234,10 @@ button:active:enabled {
     .control-buttons {
         height: 10vw;
         width: 10vw;
+    }
+
+    .completed-pomos {
+        font-size: 7vw;
     }
 }
 
