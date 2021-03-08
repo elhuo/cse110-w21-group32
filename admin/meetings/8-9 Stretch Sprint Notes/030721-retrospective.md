@@ -16,6 +16,7 @@ Overall, our team felt great about our progress and how our pomo is coming along
 ![Glad Section](admin/meetings/media/sprint-3-review/retrospective-teamwork.PNG)
 ![Sad Section](admin/meetings/media/sprint-3-review/retrospective-sad.PNG)
 ![Mad Section](admin/meetings/media/sprint-3-review/retrospective-mad.PNG)
+![Retrospective Graph Section](admin/meetings/media/sprint-3-review/retrospective-graphaverage.PNG)
 
 - The topic in Mad, Sad, Glad that we voted on most was that the Pomo looks good, which shows that
   we believe that we are making good progress on our project.
