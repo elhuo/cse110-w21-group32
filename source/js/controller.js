@@ -135,22 +135,17 @@ function changeCycles() {
  * @description Function that clears "ice cubes" that count the number of pomos (0-4)
 */
 function clearCubes() {
-    document.getElementById('pomo-count-1').classList.remove('pomo-counted');
-    document.getElementById('pomo-count-2').classList.remove('pomo-counted');
-    document.getElementById('pomo-count-3').classList.remove('pomo-counted');
-    document.getElementById('pomo-count-4').classList.remove('pomo-counted');
+    for (let i = 1; i <= 4; i++) {
+        document.getElementById('pomo-count-' + i).classList.remove('pomo-counted');
+    }
 }
 
 /**
  * @description Function that clears pomo count, both "ice-cube" indicators and actual values.
 */
 function reset() {
-    cycle = 0;
-    numPomos = 0;
-    clearCubes();
-    changeStyle();
-    startCountdown(pomoTime);
-    stopCountdown();
+    setCycle(0);
+    setNumPomos(0);
 }
 
 /**
@@ -161,28 +156,30 @@ function reset() {
 function changeStyle() {
     /** Change page style to fit pomo cycle. */
     if (cycle == 0) {
-        document.body.style.backgroundColor = "#0087bd";
+        document.body.classList.remove("short-break-color");
+        document.body.classList.remove("long-break-color");
+
         document.getElementById("pomo-tab").classList.add("tab-active");
         document.getElementById("short-break-tab").classList.remove("tab-active");
         document.getElementById("long-break-tab").classList.remove("tab-active");
     }
     /** Change page style to fit short break cycle. */
     if (cycle == 1) {
-        document.body.style.backgroundColor = "#333399";
+        document.body.classList.add("short-break-color");
+        document.body.classList.remove("long-break-color");
+
         document.getElementById("pomo-tab").classList.remove("tab-active");
         document.getElementById("short-break-tab").classList.add("tab-active");
         document.getElementById("long-break-tab").classList.remove("tab-active");
     }
     /** Change page style to fit long break cycle. */
     if (cycle == 2) {
-        document.body.style.backgroundColor = "#663399";
+        document.body.classList.remove("short-break-color");
+        document.body.classList.add("long-break-color");
+
         document.getElementById("pomo-tab").classList.remove("tab-active");
         document.getElementById("short-break-tab").classList.remove("tab-active");
         document.getElementById("long-break-tab").classList.add("tab-active");
-    }
-    /** Change page style to fit timer stopped. */
-    if (cycle == 3) {
-        document.body.style.backgroundColor = "#0087bd";
     }
 
     document.getElementById('completed-pomos').innerText = "Pomos: " + numPomos;
