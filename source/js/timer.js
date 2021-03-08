@@ -33,7 +33,7 @@ function startCountdown(mins) {
 function stopCountdown() {
   start = false;    // Disables timer
   let stopTime = (Number(duration)+1).toString().padStart(2, "0");
-
+  // Display total time of current stopped cycle
   document.getElementById("countdown").innerText = (stopTime) + ":" + "00";   // Sets timer display to 00:00
   document.getElementById("title").innerText = "Spl/ice Pomodoro";
 }
@@ -54,7 +54,7 @@ function countdown() {
     start = false;
     
     // Call stop function in controller
-    changeCycles();
+    changeCyclesController();
     return;
   }
 
@@ -74,10 +74,18 @@ function countdown() {
   }
 }
 
+/**
+ * Gets start, which is true when timer is running and false if not
+ * @returns {boolean} start
+ */
 function getStart() {
   return start;
 }
 
+/**
+ * Gets duration, the time of the current cycle
+ * @returns {number} duration
+ */
 function getDuration() {
   return duration;
 }
@@ -96,14 +104,3 @@ exports.countdown = countdown;
 exports.getStart = getStart;
 exports.setDuration = setDuration;
 exports.getDuration = getDuration;
-// Main timer component:
-//    variable that keeps track of time elapsed
-//    Function that changes the static html page (to be in sync with the actual timer)
-//    reset function, input time in minutes to count down
-//    when timer is finished, call method in controller (tbd)
-
-
-
-// something something setInterval
-// https://www.w3schools.com/howto/howto_js_countdown.asp
-// https://www.w3schools.com/jsref/met_win_setinterval.asp

@@ -119,6 +119,7 @@ function changeCycles() {
     /** Change page style according to new cycle. */
     changeStyle();
 
+    /** Sound is played because timer hit 0 */
     document.getElementById("pomo-sound").play();
 }
 
@@ -146,7 +147,7 @@ function reset() {
 
 /**
  * @description Function that changes the page's CSS according to the current cycle.
- * Specifically, borders the text for the current cycle and changes page color.
+ * Specifically, borders of the text for the current cycle and the page color.
  * Called at the end of the changeCycles function.
  */
 function changeStyle() {
@@ -176,6 +177,7 @@ function changeStyle() {
         document.body.style.backgroundColor = "#0087bd";
     }
 
+    /** Update the counter of number of completed pomos */
     document.getElementById('completed-pomos').innerText = "Pomos: " + numPomos;
 }
 
