@@ -4,7 +4,7 @@ const timer = require("./timer");
 /** Jest Mocks for html **/
 document.head.innerHTML =
     "<title id='title'>Spl/ice Pomodoro</title>";
-    
+
 document.body.innerHTML =
     "<p id='countdown'>25:00</p>";
 
@@ -41,6 +41,6 @@ test('stopCountdown test', () => {
 
 /** Testing countdown function **/
 test('countdown test', () => {
-    timer.startCountdown()
+    timer.startCountdown(10)
     //need to figure out how to test w/ time incrementing
 });

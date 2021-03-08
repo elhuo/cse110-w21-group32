@@ -15,6 +15,7 @@ document.body.innerHTML =
     "<p id='completed-pomos'>Pomos: 0</p>";
 startCountdown = jest.fn();
 stopCountdown = jest.fn();
+document.getElementById("pomo-sound").play = jest.fn();
 
 /** Testing set/getCycle functions, required to pass for other unit tests to work properly */
 test("set/getCycle test, required to pass for other unit tests to work properly", () => {
