@@ -2,9 +2,11 @@
 const timer = require("./timer");
 
 /** Jest Mocks for html **/
+document.head.innerHTML =
+    "<title id='title'>Spl/ice Pomodoro</title>";
+
 document.body.innerHTML =
-    "<div id='countdown'></div>" +
-    "<div id='title'></div>";
+    "<p id='countdown'>25:00</p>";
 
 /** Testing set/getDuration before rest of tests **/
 test('setDuration test', () => {
@@ -18,14 +20,14 @@ test('setDuration test', () => {
 test('startCountdown test', () => {
     timer.startCountdown(10);
     expect(timer.getStart()).toBe(true);
-    expect(document.getElementById("countdown").innerHTML).toBe("10:59");
+    expect(document.getElementById("countdown").innerText).toBe("10:59");
 
     timer.stopCountdown();
     expect(timer.getStart()).toBe(false);
 
     timer.startCountdown(9);
     expect(timer.getStart()).toBe(true);
-    expect(document.getElementById("countdown").innerHTML).toBe("09:59");
+    expect(document.getElementById("countdown").innerText).toBe("09:59");
 });
 
 /** Testing stopCountdown function **/
@@ -34,11 +36,11 @@ test('stopCountdown test', () => {
     timer.stopCountdown();
 
     expect(timer.getStart()).toBe(false);
-    expect(document.getElementById("countdown").innerHTML).toBe("00:00");
+    expect(document.getElementById("countdown").innerText).toBe("11:00");
 });
 
-/** Testing countdown fucntion **/
+/** Testing countdown function **/
 test('countdown test', () => {
-    timer.startCountdown()
+    timer.startCountdown(10)
     //need to figure out how to test w/ time incrementing
 });

@@ -1,14 +1,25 @@
 name: JS Docs
-on: push
+on: 
+  push:
+    branches: [ main ]
+    
+  workflow_dispatch:
+  
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Build
-      uses: andstor/jsdoc-action@v1
-      with:
-        source_dir: ./source
-        recurse: true
-        output_dir: ./out
+      - uses: actions/checkout@v2
+      
+      - name: Build
+        uses: andstor/jsdoc-action@v1.2.0
+        with:
+          source_dir: ./source
+          recurse: true
+          output_dir: ./out
+       
+      - uses: EndBug/add-and-commit@v7.0.0
+        with:
+           add: './out'
+           message: 'commit documentation'
+

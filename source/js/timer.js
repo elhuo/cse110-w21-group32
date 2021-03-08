@@ -1,10 +1,11 @@
-let start = false                           // true - timer is on; false - timer is off
+var start = false                           // true - timer is on; false - timer is off
 let duration;                          // duration of timer cycle in minutes (needs to be converted later in ms somewhere below) ; default 25min
 var countDownStart = new Date().getTime();  // stores the starting time of the timer
 
-var pomoSound = document.getElementById("pomo-sound");
-
-// Updates the html timer display when timer is enabled
+/** @function
+ * @description Updates the html timer display when timer is enabled
+ * @name setInterval
+ */
 setInterval(() => {
   if (start) {
     countdown();
@@ -12,36 +13,35 @@ setInterval(() => {
 }, 500);  // Will refresh every 500 ms: sometimes setInterval isn't exact and may skip a second
 
 /**
- * Starts the countdown
- * @param {int} mins - The duration for the timer to run for. 
+ * @description Starts the countdown
  * Remember to subtract 1 minute (if you want a 25 min timer, set to 24)
+ * @param {int} mins - The duration for the timer to run for. 
  */
 function startCountdown(mins) {
-  start = true;     // Enables timer
-  duration = mins;  // Sets timer duration
-
-  if (duration < 10) { duration = "0" + duration; }
+  start = true;                                   // Enables timer
+  duration = (mins).toString().padStart(2, "0");  // Sets timer duration
+  
   // Display initial countdown time
-  document.getElementById("countdown").innerHTML = (duration) + ":" + "59";
+  document.getElementById("countdown").innerText = (duration) + ":" + "59";
   // Set starting time of the timer
   countDownStart = new Date().getTime();
 }
 
 /**
- * Ends the countdown
+ * @description Ends the countdown
  */
 function stopCountdown() {
   start = false;    // Disables timer
-  document.getElementById("countdown").innerHTML = "00:00";   // Sets timer display to 00:00
-  document.getElementById("title").innerHTML = "Spl/ice";
+  let stopTime = (Number(duration)+1).toString().padStart(2, "0");
+  // Display total time of current stopped cycle
+  document.getElementById("countdown").innerText = (stopTime) + ":" + "00";   // Sets timer display to 00:00
+  document.getElementById("title").innerText = "Spl/ice Pomodoro";
 }
 
-
 /**
- * Updates the time left on the timer, by subtracting the time elapsed from the initial time
+ * @description Updates the time left on the timer, by subtracting the time elapsed from the initial time
  */
 function countdown() {
-
   var d = new Date().getTime();          // Get current time
   var timeElapsed = d - countDownStart;  // Calculate time elapsed from when countdown was started
 
@@ -52,46 +52,40 @@ function countdown() {
   // If timer is over
   if (minutes > duration) {
     start = false;
-    pomoSound.play();
+    
     // Call stop function in controller
-    changeCycles();
+    changeCyclesController();
     return;
   }
 
-  // If single digit seconds, pad with a 0
-  if (59 - seconds <= 9) {
-    seconds = "0" + (59 - seconds);
-  }
-  // Otherwise, just convert to string without padding
-  else {
-    seconds = "" + (59 - seconds);
-  }
-
-  // If single digit minutes, pad with a 0
-  if (duration - minutes < 10) {
-    minutes = "0" + (duration - minutes);
-  }
-  // Otherwise, just convert to string without padding
-  else {
-    minutes = "" + (duration - minutes);
-  }
+  // Pad second and minute strings for display
+  seconds = (59 - seconds).toString().padStart(2, "0");
+  minutes = (duration - minutes).toString().padStart(2, "0");
 
   // Update the display
-  document.getElementById("countdown").innerHTML = minutes + ":" + seconds;
+  document.getElementById("countdown").innerText = minutes + ":" + seconds;
 
   // Update the title
-  if (minutes == "00") {
-    document.getElementById("title").innerHTML = "Spl/ice   " + seconds + "sec";
-  }
-  else if (seconds == "59") {
-    document.getElementById("title").innerHTML = "Spl/ice   " + (parseInt(minutes) + 1) + "min";
+  if (minutes == "00"){
+    document.getElementById("title").innerText = seconds + "s : Spl/ice Pomodoro";
+  
+  } else if (seconds == "59"){
+    document.getElementById("title").innerText = (parseInt(minutes)) + "m : Spl/ice Pomodoro";
   }
 }
 
+/**
+ * Gets start, which is true when timer is running and false if not
+ * @returns {boolean} start
+ */
 function getStart() {
   return start;
 }
 
+/**
+ * Gets duration, the time of the current cycle
+ * @returns {number} duration
+ */
 function getDuration() {
   return duration;
 }
@@ -110,14 +104,3 @@ exports.countdown = countdown;
 exports.getStart = getStart;
 exports.setDuration = setDuration;
 exports.getDuration = getDuration;
-// Main timer component:
-//    variable that keeps track of time elapsed
-//    Function that changes the static html page (to be in sync with the actual timer)
-//    reset function, input time in minutes to count down
-//    when timer is finished, call method in controller (tbd)
-
-
-
-// something something setInterval
-// https://www.w3schools.com/howto/howto_js_countdown.asp
-// https://www.w3schools.com/jsref/met_win_setinterval.asp

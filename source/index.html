@@ -8,9 +8,9 @@
       content="A Pomodoro timer made by Team 32: Splice for CSE 110, a Software Engineering course at UC San Diego."
     />
 
-    <title id="title">Spl/ice</title>
+    <title id="title">Spl/ice Pomodoro</title>
     <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
@@ -20,7 +20,7 @@
 
   <body>
 
-    <audio id="pomo-sound" src="./audio/party-horn.mp3"></audio>
+    <audio id="pomo-sound" src="./audio/glass-pour.mp3"></audio>
 
     <header class="page-header" id="page-header">
       <h1 class="logo justify-right" id="logo">Spl/ice</h1>
@@ -33,13 +33,20 @@
     <main class="page-main">
       <div class="timer-wrapper" id="timer-wrapper">
         <div class="wrapper tab-wrapper" id="tab-wrapper">
-          <p class="tab" id="pomo-tab">Pomo</p>
+          <p class="tab tab-active" id="pomo-tab">Pomo</p>
           <p class="tab" id="short-break-tab">Short Break</p>
           <p class="tab" id="long-break-tab">Long Break</p>
         </div>
 
         <div class="wrapper clock-wrapper" id="clock-wrapper">
-          <p class="countdown" id="countdown">00:00</p>
+          <p class="countdown" id="countdown">25:00</p>
+
+          <div class="pomo-counts" id="pomo-counts">
+            <img class="pomo-count" id="pomo-count-1" src="./img/Stop.png">
+            <img class="pomo-count" id="pomo-count-2" src="./img/Stop.png">
+            <img class="pomo-count" id="pomo-count-3" src="./img/Stop.png">
+            <img class="pomo-count" id="pomo-count-4" src="./img/Stop.png">
+          </div>
         </div>
       </div>
 
@@ -48,9 +55,13 @@
         <button class="control-buttons stop-button" id="stop-button"></button>
       </div>
 
+      <div class="footer">
+        <p class="completed-pomos" id="completed-pomos">Pomos: 0</p>
+      </div>
+
       <div class="shadow" id="shadow" onclick="closePopup()"></div>
-      <div id="myModal" class="modal">
-        <div class="modal-content">
+      <div id="help-modal" class="modal">
+        <div class="modal-content help-modal-content">
           <span id = "help-close" class="close">&times;</span>
           <p>
             <b>Spl/ice Pomodoro</b> is a Pomodoro Timer catered to students. Work with
@@ -79,29 +90,67 @@
           </ul>
         </div>
       </div>
-      <div id="settings-modal" class="modal">
-        <div class="modal-content">
+      
+      <div id="settings-modal" class="modal" >
+        <div class="modal-content settings-modal-content">
           <span id = "settings-close" class="close">&times;</span>
-          <h3>Settings</h3>
-            <div id="volume-sound-container">
-            <label>Choose your alert sound</label>
-            <select name="volume-sound" id="volume-sound">
-              <option value="party-horn">Party Horn</option>
-              <option value="air-horn">Air Horn</option>
-            </select>
-          </div>
+          <h2>Settings</h2>
+            
+            <div id="pomo-durations" class="pomo-durations"> 
+              <div class="duration-selectors">
+                <label for="pomo-duration">Pomo</label>
+                <select name="pomo-duration" id="pomo-duration">
+                  <option value="20">20:00</option>
+                  <option value="25" selected>25:00</option>
+                  <option value="30">30:00</option>
+                </select>
+              </div>
+          
+              <div class="duration-selectors">
+                <label for="short-break-duration">Short Break</label>
+                <select name="short-break-duration" id="short-break-duration">
+                  <option value="3">3:00</option>
+                  <option value="5" selected>5:00</option>
+                  <option value="7">7:00</option>
+                </select>
+              </div>
+              
+              <div class="duration-selectors">
+                <label for="long-break-duration">Long Break</label>
+                <select name="long-break-duration" id="long-break-duration">
+                  <option value="10">10:00</option>
+                  <option value="15" selected>15:00</option>
+                  <option value="20">20:00</option>
+                </select>
+              </div>       
+            </div>
           
           <div class="volume-grid-container" id="volume-grid-container">
-            <img class="volume-image" id="volume-image" src="./img/volume-level-3.svg"
-              alt="Max Volume">
-            <input class="volume-slider" id="volume-slider" name="volume-slider" type="range" min="0" max="100"
-              value="50">
+            <h3>Notification Sound</h3>
+            <select name="volume-sound" class="volume-sound" id="volume-sound">
+              <option value="glass-pour">Glass Pour</option>
+              <option value="bottle-clank">Bottle Clank</option>
+              <option value="glass-break">Glass Break</option>
+              <option value="glass-ping">Glass Ping</option>
+              <option value="wind-chimes-1">Wind Chimes</option>
+              <option value="wind-chimes-2">Quiet Chimes</option>
+              <option value="wind-chimes-3">Ambient Chimes</option>
+              <option value="ice-cream-1">Ice Cream Truck 1</option>
+              <option value="ice-cream-2">Ice Cream Truck 2</option>
+            </select>
+
+            <div class="volume-container">
+              <img class="volume-image" id="volume-image" src="./img/volume-level-2.svg" alt="Volume Visual">
+              <input class="volume-slider" id="volume-slider" name="volume-slider" type="range" min="0" max="100" value="50">
+              <button class="play-sound" id="play-sound">Play Me!</button>
+            </div>
+            
           </div>
 
-          <button class="play-sound" id="play-sound">Play Me!</button>
         </div>
       </div>
     </main>
+    
     <script src="js/timer.js" type="text/javascript"></script>
     <script src="js/controller.js" type="text/javascript"></script>
     <script src="js/buttons.js" type="text/javascript"></script>
