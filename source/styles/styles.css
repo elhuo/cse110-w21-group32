@@ -41,7 +41,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    column-gap: 2em;
+    column-gap: 2.5vw;
 }
 
 /* === Main timer body formatting === */
@@ -74,12 +74,13 @@ main {
 
 .tab {
     flex: 1;
-    padding: 2vh 0.1vw 1.5vh 0.1vw;
-    border: none;
-    color: #D3D3D3;
     text-align: center;
+    padding: 2vh 0.1vw 1.5vh 0.1vw;
     font-size: 1.75vmax;
     white-space: nowrap;
+
+    border: none;
+    color: #D3D3D3;
 }
 
 .tab-active {
@@ -90,6 +91,7 @@ main {
     font-weight: bold;
 }
 
+/* Formatting for mobile view of tabs (displays only active tab) */
 @media only screen and (max-device-width: 600px) {
     .page-header {
         font-size: 5vw;
@@ -105,15 +107,15 @@ main {
     }
 
     .tab-active {
-        display:block;
+        display: block;
     }
 }
 
 /* === Timer formatting === */
 .clock-wrapper {
-    flex-direction:column;
+    flex-direction: column;
     border-width: 1.25vmin;
-    border-radius: 5px;
+    border-radius: 1vw;
     padding: 5vh;
 }
 
@@ -126,7 +128,7 @@ main {
 }
 
 .pomo-count {
-    height: 2.5vmin;
+    height: 3.5vmin;
     border-radius: 30%;
     padding: 0vw 0.3vw 0vw 0.3vw;
     filter: opacity(60%);
@@ -146,11 +148,6 @@ main {
 }
 
 /* === Button Styling === */
-button:disabled {
-    filter: opacity(60%);
-    cursor: auto;
-}
-
 button {
     background-color: transparent;
     background-repeat: no-repeat;
@@ -161,11 +158,16 @@ button {
     cursor: pointer;
 }
 
+button:disabled {
+  filter: opacity(60%);
+  cursor: auto;
+}
+
 button:active:enabled {
     filter: opacity(60%);
 }
 
-.help-button:hover:enabled, .start-stop-buttons:hover:enabled {
+.fade-on-hover:hover:enabled {
     filter: opacity(60%);
 }
 
@@ -237,9 +239,9 @@ button:active:enabled {
 /* === Universal formatting for popup close buttons === */
 .close {
     position: absolute;
-    right: .5em;
-    top: .2em;
-    font-size: 2em;
+    right: 5vmin;
+    top: 2vmin;
+    font-size: 7.5vmin;
 }
 
 .close:hover, .close:focus{
@@ -254,16 +256,13 @@ button:active:enabled {
     opacity: 0;
     position: fixed;
     overflow: auto;
+    transition: all 0.2s;
+
     background-color: #b0e0E6;
     color: black;
-    transition: all 0.2s;
-    border-radius: .5em;
+    border-radius: 2.5vmin;
+    
     box-shadow: 5px 10px 20px 7px rgba(0,0,0,0.5);
-}
-
-.modal h2, h3 {
-    text-align: center;
-    padding-top: 2vh;
 }
 
 .modal-show{
@@ -276,9 +275,15 @@ button:active:enabled {
     height: 70vh;
     width: 75vw;
     z-index: 100;
+
     font-size: 3.5vmin;
     word-wrap: break-word;
     justify-content: center;
+}
+
+.modal h2, h3 {
+  text-align: center;
+  padding-top: 2vh;
 }
 
 .help-modal-content {
@@ -301,6 +306,13 @@ button:active:enabled {
 .visible {
     visibility: visible;
     opacity: 1;
+}
+
+/* === Mobile help popup formatting === */
+@media only screen and (max-device-width: 600px) {
+    .help-modal-content {
+        font-size: 14px;
+    }
 }
 
 /* === Volume Slider === */
@@ -333,32 +345,13 @@ button:active:enabled {
 
 select{
     background-color: #b0e0E6;
-    font-size: 3vmin;
     border: 1px solid black;
     border-radius: 8px;
-    margin: 2em;
+    margin: 2vw;
+    padding: 5px 1em 5px 5px;
     width: 20vw;
     height: 7.5vmin;
-    padding: 5px 1em 5px 5px;
-}
-
-/* === Mobile settings popup formatting === */
-@media only screen and (max-device-width: 600px) {
-    .timer-durations {
-        display: flex; 
-        justify-content: left;
-        flex-direction: column;
-    }
-    
-    .duration-selectors {
-        flex: 1;
-        justify-content: left;
-        text-align: center;
-    }
-
-    select {
-        width: 55vw;
-    }
+    font-size: 3vmin;
 }
 
 /* === Volume Image === */
@@ -376,11 +369,41 @@ select{
 
 /* === Volume Slider === */
 .volume-slider {
-   width:35vw;
+    width:35vw;
 }
 
 .sound-select {
     text-align: center;
+    width: 25vw;
+}
+
+/* === Mobile settings popup formatting === */
+@media only screen and (max-device-width: 600px) {
+    .timer-durations {
+        display: flex; 
+        justify-content: left;
+        flex-direction: column;
+    }
+
+    .duration-selectors {
+        flex: 1;
+        justify-content: left;
+        text-align: center;
+    }
+
+    select {
+        margin: 1.5vh 0vw 2.5vh 0vw;
+        width: 65vw;
+    }
+
+    .sound-select {
+        text-align: center;
+        width: 65vw;
+    }
+
+    .volume-grid-container {
+        row-gap: 1.5vh;
+    }
 }
 
 /* === Play sound formatting === */
