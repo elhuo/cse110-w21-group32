@@ -45,7 +45,9 @@ Unattendence: N/A
 - Worked on customization of settings button features
 - Wrote html/css for user adjustments of longbreak,shortbreak, and pomo timers.
 - Worked with Elliot on the js for these timer duration settings.
+- This issue was 54 settings
 ![duration settings](../media/sprint-3-review/settings.PNG)
+
   
 ### Sicong Duan
 - Added HTML and JavaScript code to display the current time left in the web tab. It will display in minutes until it reaches 1 minute, then it will start counting down the seconds 

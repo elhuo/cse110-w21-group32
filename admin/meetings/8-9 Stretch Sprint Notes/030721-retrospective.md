@@ -7,7 +7,7 @@
 - Meaning: 3.9
 - Impact: 3.8
 - Engagement: 3.6
-![Average Results Section](admin/meetings/media/sprint-3-review/retrospective-average.PNG)
+![Retrospective Graph Section](admin/meetings/media/sprint-3-review/retrospective-graphaverage.PNG)
 
 Overall, our team felt great about our progress and how our pomo is coming along. I think our biggestt issue for this previous sprint was we couldn't keep up with who was doing what and we were a little burnt out because it's week 8 & 9 so hard to keep up with each other. But apart from that, our team felt great about everything else and our progress.
 
@@ -16,7 +16,6 @@ Overall, our team felt great about our progress and how our pomo is coming along
 ![Glad Section](admin/meetings/media/sprint-3-review/retrospective-teamwork.PNG)
 ![Sad Section](admin/meetings/media/sprint-3-review/retrospective-sad.PNG)
 ![Mad Section](admin/meetings/media/sprint-3-review/retrospective-mad.PNG)
-![Retrospective Graph Section](admin/meetings/media/sprint-3-review/retrospective-graphaverage.PNG)
 
 - The topic in Mad, Sad, Glad that we voted on most was that the Pomo looks good, which shows that
   we believe that we are making good progress on our project.
