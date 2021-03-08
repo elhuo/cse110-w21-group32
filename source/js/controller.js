@@ -40,30 +40,30 @@ let lBreakTab = document.getElementById("long-break-tab");
  * to start the first pomodoro cycle. Changes cycle to pomo cycle.
  */
 function startTimer() {
-    switch(cycle) {
-        case 0:
-            startCountdown(pomoTime);
-            break;
+  switch(cycle) {
+    case 0:
+      startCountdown(pomoTime);
+    break;
 
-        case 1:
-            startCountdown(sBreakTime);
-            break;
+    case 1:
+      startCountdown(sBreakTime);
+    break;
 
-        case 2:
-            startCountdown(lBreakTime);
-            break;
-            
-        default:
-            reset();
-            return;
-    }
+    case 2:
+      startCountdown(lBreakTime);
+    break;
 
-    startButton.disabled = true;  // Disable start button
-    stopButton.disabled = false;  // Enable stop button
+    default:
+      reset();
+    return;
+  }
 
-    pomoTimeSelect.disabled = true;  // Disable changing pomo time
-    shortTimeSelect.disabled = true; // Disable changing short break time
-    longTimeSelect.disabled = true;  // Disable changing long break time
+  startButton.disabled = true;  // Disable start button
+  stopButton.disabled = false;  // Enable stop button
+
+  pomoTimeSelect.disabled = true;  // Disable changing pomo time
+  shortTimeSelect.disabled = true; // Disable changing short break time
+  longTimeSelect.disabled = true;  // Disable changing long break time
 }
 
 /**
@@ -71,14 +71,14 @@ function startTimer() {
  * calls stopCountdown in timer.js. The timer stays in the current stage
  */
 function stopTimer() {
-    stopCountdown();
+  stopCountdown();
 
-    startButton.disabled = false;   // Enable start button
-    stopButton.disabled = true;     // Disable stop button
+  startButton.disabled = false;   // Enable start button
+  stopButton.disabled = true;     // Disable stop button
 
-    pomoTimeSelect.disabled = false;  // Enable changing pomo time
-    shortTimeSelect.disabled = false; // Enable changing short break time
-    longTimeSelect.disabled = false;  // Enable changing long break time
+  pomoTimeSelect.disabled = false;  // Enable changing pomo time
+  shortTimeSelect.disabled = false; // Enable changing short break time
+  longTimeSelect.disabled = false;  // Enable changing long break time
 }
 
 /**
@@ -87,10 +87,10 @@ function stopTimer() {
  * initial stage.
  */
 function changeCyclesController(){
-    /** Sound is played because timer hit 0 */
-    pomoSound.play();
+  /** Sound is played because timer hit 0 */
+  pomoSound.play();
 
-    changeCycles();
+  changeCycles();
 }
 
 /**
@@ -100,91 +100,91 @@ function changeCyclesController(){
  */
 function changeCycles() {
 
-    switch (cycle) {
-        /** If current cycle is pomo, increment numPomos and transition to break */
-        case 0:
-            setNumPomos(numPomos + 1);
+  switch (cycle) {
+    /** If current cycle is pomo, increment numPomos and transition to break */
+    case 0:
+      setNumPomos(numPomos + 1);
 
-            if (numPomos % 4 != 0)
-                setCycle(1);
+      if (numPomos % 4 != 0)
+        setCycle(1);
 
-            else
-                setCycle(2);
+      else
+        setCycle(2);
 
-            break;
-        
-        /** When short and long breaks end, return to pomo cycle. */
-        case 1:
-            setCycle(0);
-            break;
-        
-        /** Additionally clear "ice cube" counter at end of long break. */
-        case 2:
-            setCycle(0);
-            clearCubes();
-            break;
+      break;
 
-        /** In the case of invalid cycle value, reset timer to default state. */
-        default:
-            reset();
-    }
+    /** When short and long breaks end, return to pomo cycle. */
+    case 1:
+      setCycle(0);
+      break;
+
+    /** Additionally clear "ice cube" counter at end of long break. */
+    case 2:
+      setCycle(0);
+      clearCubes();
+      break;
+
+    /** In the case of invalid cycle value, reset timer to default state. */
+    default:
+      reset();
+  }
 }
 
 /**
  * @description Function that clears "ice cubes" that count the number of pomos (0-4)
  */
 function clearCubes() {
-    for (let i = 1; i <= 4; i++) {
-        document.getElementById('pomo-count-' + i).classList.remove('pomo-counted');
-    }
+  for (let i = 1; i <= 4; i++) {
+    document.getElementById('pomo-count-' + i).classList.remove('pomo-counted');
+  }
 }
 
 /**
  * @description Function that clears pomo count, both "ice-cube" indicators and actual values.
  */
 function reset() {
-    setCycle(0);
-    setNumPomos(0);
+  setCycle(0);
+  setNumPomos(0);
 }
 
 /**
  * @description Sets the current cycle and changes style to match
  * @param {int} cycle_ - The value to set for the current cycle. 
  */
- function setCycle(cycle_) {
-    cycle = cycle_;
+function setCycle(cycle_) {
+  cycle = cycle_;
 
-    startTimer();
-    
-    if (autoStart == false)
-        stopTimer();
+  startTimer();
 
-    changeStyle();
+  if (autoStart == false)
+    stopTimer();
+
+  changeStyle();
 }
 
 /**
  * @description Sets the current number of Pomos and fills in appropriate "ice cubes"
  * @param {int} numPomos_ - The value to set for the current number of Pomos. 
  */
- function setNumPomos(numPomos_) {
-    numPomos = numPomos_;
-    clearCubes();
+function setNumPomos(numPomos_) {
+  numPomos = numPomos_;
+  clearCubes();
 
-    let numCubes = 0;
+  let numCubes = 0;
 
-    if (numPomos > 0) {
-        if (numPomos % 4 == 0)
-            numCubes = 4;
-        else
-            numCubes = numPomos % 4;
-    }
-    
-    for (let i = 1; i <= numCubes; i++) {
-        document.getElementById('pomo-count-' + i).classList.add('pomo-counted');
-    }
+  if (numPomos > 0) {
+    if (numPomos % 4 == 0)
+      numCubes = 4;
+    else
+      numCubes = numPomos % 4;
+  }
 
-    /** Update the counter of number of completed pomos */
-    document.getElementById('completed-pomos').innerText = "Pomos: " + numPomos;
+  for (let i = 1; i <= numCubes; i++) {
+    document.getElementById('pomo-count-' + i).classList.add('pomo-counted');
+  }
+
+  /** Update the counter of number of completed pomos */
+  document.getElementById('completed-pomos').innerText = "Pomos: " + numPomos;
 }
 
 /**
@@ -193,43 +193,43 @@ function reset() {
  * Called at the end of the changeCycles function.
  */
 function changeStyle() {
-    clearStyles();
+clearStyles();
 
-    switch (cycle) {
-        /** Change page style to fit pomo cycle. */
-        case 0:
-            pomoTab.classList.add("tab-active");
-            break;
+  switch (cycle) {
+    /** Change page style to fit pomo cycle. */
+    case 0:
+      pomoTab.classList.add("tab-active");
+      break;
 
-        /** Change page style to fit short break cycle. */
-        case 1:
-            document.body.classList.add("short-break-color");
-            sBreakTab.classList.add("tab-active");
-          break;
+    /** Change page style to fit short break cycle. */
+    case 1:
+      document.body.classList.add("short-break-color");
+      sBreakTab.classList.add("tab-active");
+      break;
 
-        /** Change page style to fit long break cycle. */
-        case 2:
-            document.body.classList.add("long-break-color");
-            lBreakTab.classList.add("tab-active");
-            break;
-        
-        /** Reset timer if set cycle is invalid */
-        default:
-            reset();
-            break;
-    }
+    /** Change page style to fit long break cycle. */
+    case 2:
+      document.body.classList.add("long-break-color");
+      lBreakTab.classList.add("tab-active");
+      break;
+
+    /** Reset timer if set cycle is invalid */
+    default:
+      reset();
+      break;
+  }
 }
 
 /**
  * @description Helper function that clears all styling classes from tabs and the document body
  * */
 function clearStyles() {
-    pomoTab.classList.remove("tab-active");
-    sBreakTab.classList.remove("tab-active");
-    lBreakTab.classList.remove("tab-active");
+  pomoTab.classList.remove("tab-active");
+  sBreakTab.classList.remove("tab-active");
+  lBreakTab.classList.remove("tab-active");
 
-    document.body.classList.remove("short-break-color");
-    document.body.classList.remove("long-break-color");
+  document.body.classList.remove("short-break-color");
+  document.body.classList.remove("long-break-color");
 }
 
 /**
@@ -237,7 +237,7 @@ function clearStyles() {
  * @returns {int} cycle - The current cycle. 
  */
 function getCycle() {
-    return cycle;
+  return cycle;
 }
 
 /**
@@ -245,7 +245,7 @@ function getCycle() {
  * @returns {int} numPomos - The current number of Pomos. 
  */
 function getNumPomos() {
-    return numPomos;
+  return numPomos;
 }
 
 /** export functions and variables for test file */
