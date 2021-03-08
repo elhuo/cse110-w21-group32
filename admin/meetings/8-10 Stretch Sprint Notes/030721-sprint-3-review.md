@@ -23,7 +23,10 @@ Unattendence:
 <img src="../media/sprint-3-review/settings-pc.png" alt="Desktop settings menu" height="325"/> | <img src="../media/sprint-3-review/settings-mobile.png" alt="Mobile settings menu" height="325"/>
 
 ### Eric Pham
+- CSS Tweaking here and there to close some issues
+- Created a version of the settings UI that matches the design put forth in the planning documents
 
+![One version of settings page with options all stacked vertically](../media/sprint-3-review/eric-settings.png)
 
 ### Jason Wong
 
