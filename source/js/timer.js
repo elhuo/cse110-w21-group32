@@ -75,8 +75,8 @@ function countdown() {
   if (minutes == "00"){
     pageTitle.innerText = seconds + "s : Spl/ice Pomodoro";
   
-  } else if (seconds == "59"){
-    pageTitle.innerText = (parseInt(minutes)) + "m : Spl/ice Pomodoro";
+  } else {
+    pageTitle.innerText = minutes + "m : Spl/ice Pomodoro";
   }
 }
 

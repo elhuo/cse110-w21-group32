@@ -43,15 +43,15 @@ function startTimer() {
   switch(cycle) {
     case 0:
       startCountdown(pomoTime);
-    break;
+      break;
 
     case 1:
       startCountdown(sBreakTime);
-    break;
+      break;
 
     case 2:
       startCountdown(lBreakTime);
-    break;
+      break;
 
     default:
       reset();
@@ -124,6 +124,7 @@ function changeCycles() {
     case 2:
       setCycle(0);
       clearCubes();
+      stopTimer();
       break;
 
     /** In the case of invalid cycle value, reset timer to default state. */
