@@ -2,9 +2,6 @@
 
 # DISCLAIMER: We had to rename all files to fit the naming format. As a result, creation dates may not match the actual time of ADR creation.
 
-
-
-
  
 ### Best Practices
 
@@ -38,9 +35,6 @@
     - Use [] instead of new Array()
     - Use /()/ instead of new RegExp()
     - Use function (){} instead of new Function()
-    
-    
-    
 
 * File Structure
 ``` .
