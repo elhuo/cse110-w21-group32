@@ -2675,6 +2675,38 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Essential Features MVP - MVP Sprint 1
 * start button 
   ``` Begins the session. Button is disabled after clicked so that only the stop button may be pressed``` 
