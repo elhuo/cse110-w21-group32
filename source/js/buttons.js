@@ -57,7 +57,17 @@ pomoSound.volume = volumeSlider.value/100;
  */
 startButton.addEventListener("click", function () {
   startTimer();
+  disableStart();
 });
+
+function disableStart() {
+  startButton.disabled = true;  // Disable start button
+  stopButton.disabled = false;  // Enable stop button
+
+  pomoTimeSelect.disabled = true;  // Disable changing pomo time
+  shortTimeSelect.disabled = true; // Disable changing short break time
+  longTimeSelect.disabled = true;  // Disable changing long break time
+}
 
 /** @function
  * @description When the stop button is clicked, call the stopTimer function in controller
@@ -67,7 +77,17 @@ startButton.addEventListener("click", function () {
  */
 stopButton.addEventListener("click", function () {
   stopTimer();
+  enableStart();
 });
+
+function enableStart() {
+  startButton.disabled = false;   // Enable start button
+  stopButton.disabled = true;     // Disable stop button
+
+  pomoTimeSelect.disabled = false;  // Enable changing pomo time
+  shortTimeSelect.disabled = false; // Enable changing short break time
+  longTimeSelect.disabled = false;  // Enable changing long break time
+}
 
 /**
  * @description Close popup and remove shadow.
@@ -114,8 +134,10 @@ settingsCloseButton.addEventListener("click", closePopup);
  */
 pomoTimeSelect.addEventListener("change", function () {
   pomoTime = pomoTimeSelect.value - 1;
-  if (cycle == 0)
-    countdownDisplay.innerText = (pomoTimeSelect.value + ":" + "00").padStart(5, "0");
+  if (cycle == 0) {
+    startTimer();
+    stopTimer();
+  }
 });
 
 /** @function
@@ -124,8 +146,10 @@ pomoTimeSelect.addEventListener("change", function () {
  */
 shortTimeSelect.addEventListener("change", function() {
   sBreakTime = shortTimeSelect.value - 1;
-  if (cycle == 1)
-    countdownDisplay.innerText = (shortTimeSelect.value + ":" + "00").padStart(5, "0");
+  if (cycle == 1) {
+    startTimer();
+    stopTimer();
+  }
 });
 
 /** @function
@@ -134,8 +158,10 @@ shortTimeSelect.addEventListener("change", function() {
  */
 longTimeSelect.addEventListener("change", function() {
   lBreakTime = longTimeSelect.value - 1;
-  if (cycle == 2)
-    countdownDisplay.innerText = (longTimeSelect.value + ":" + "00").padStart(5, "0");
+  if (cycle == 2) {
+    startTimer();
+    stopTimer();
+  }
 });
 
 /** @function
