@@ -1,0 +1,24 @@
+# DISCLAIMER: We had to rename all files to fit the naming format. As a result, creation dates may not match the actual time of ADR creation.
+
+- features
+  - base features (mvp + addons)
+    - nonclickable tabs
+    - sound dropdown
+    - change timer dropdown
+    - volume slider
+    - help button
+    - base layout (based on another pomo timer)
+  - later features
+    - task list (voted out)
+    - counter squares plus the number counter
+    - tab now includes the mins of the timer
+    - play me and the functionality of when you choose a sound, it will automatically play it
+    - have only one tab highlighted instead
+- functionality
+  - timer resets to start time instead of 0:00
+  - manual start
+  - tabs not clickable
+- styling (CSS)
+- syntax (code writing standards)
+- pipeline decisions 
+  - branches

@@ -1,5 +1,6 @@
 # ADR
 
+# DISCLAIMER: We had to rename all files to fit the naming format. As a result, creation dates may not match the actual time of ADR creation.
 
 ## Essential Features MVP - MVP Sprint 1
 * start button 
