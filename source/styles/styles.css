@@ -80,7 +80,7 @@ main {
     white-space: nowrap;
 
     border: none;
-    color: #D3D3D3;
+    opacity: 60%;
 }
 
 .tab-active {
@@ -89,6 +89,7 @@ main {
     border-radius: 7.5vmin 7.5vmin 0px 0px;
     border-bottom: none;
     font-weight: bold;
+    opacity: 100%;
 }
 
 /* Formatting for mobile view of tabs (displays only active tab) */
@@ -207,14 +208,98 @@ button:active:enabled {
     background-image: url(../img/Stop.png);
 }
 
-.completed-pomos {
-    position: fixed;
-    right: 2.5vmin;
-    bottom: 2.5vmin;
-    width: 100%;
-    text-align: right;
-    font-size: 2.25vmax;
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
+
+.mode-wrapper {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 2.5vmin;
+  margin-left: 2.5vmin;
+  flex-direction: row;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.5vmin;
+  height: 2vmax;
+  width: 4vmax;
+  opacity: 80%;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.6vmax;
+  width: 1.6vmax;
+
+  left: 0.2vmax;
+  bottom: 0.2vmax;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #b0e0E6;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(2vmax);
+  -ms-transform: translateX(2vmax);
+  transform: translateX(2vmax);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.mode {
+  padding-left: 1vw;
+  padding-bottom: 0.05vh;
+  font-size: 2vmax;
+  opacity: 80%;
+}
+
+.completed-pomos {
+  position: fixed;
+  right: 2.5vmin;
+  bottom: 2.5vmin;
+  text-align: right;
+  font-size: 2vmax;
+}
+
 
 @media only screen and (max-device-width: 600px) {
     .start-stop-wrapper {
@@ -229,6 +314,30 @@ button:active:enabled {
     .start-stop-buttons {
         height: 10vw;
         width: 10vw;
+    }
+
+    /* The switch - the box around the slider */
+    .switch {
+        height: 6vw;
+        width: 12vw;
+    }
+
+    .slider:before {
+        height: 5.25vw;
+        width: 5.25vw;
+
+        left: 0.5vw;
+        bottom: 0.5vw;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(5.75vw);
+        -ms-transform: translateX(5.75vw);
+        transform: translateX(5.75vw);
+    }
+
+    .mode {
+        font-size: 7vw;
     }
 
     .completed-pomos {

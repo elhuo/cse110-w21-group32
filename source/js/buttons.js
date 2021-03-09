@@ -9,6 +9,9 @@ const startButton = document.getElementById("start-button");
 const stopButton = document.getElementById("stop-button");
 stopButton.disabled = true;     // Stop button disabled by default
 
+const modeSelect = document.getElementById("mode-select");
+let mode = 0;
+
 /** The pomo time picked by the user (20, 25, 30) */
 const pomoTimeSelect = document.getElementById("pomo-duration");
 /** The short break time picked by the user (3, 5, 7) */
@@ -88,6 +91,10 @@ function enableStart() {
   shortTimeSelect.disabled = false; // Enable changing short break time
   longTimeSelect.disabled = false;  // Enable changing long break time
 }
+
+modeSelect.addEventListener("click", function () {
+  toggleAutoStart();
+});
 
 /**
  * @description Close popup and remove shadow.

@@ -70,6 +70,19 @@ function stopTimer() {
   enableStart();
 }
 
+function toggleAutoStart() {
+  let modeLabel = document.getElementById("mode");
+  
+  if (autoStart) {
+    modeLabel.innerText = "Manual";
+    autoStart = false;
+
+  } else {
+    modeLabel.innerText = "Auto";
+    autoStart = true;
+  }
+}
+
 /**
  * @description Function is called to ask user whether to continue to next
  * stage or not. If user decides to not coninue, the timer is set back to 
