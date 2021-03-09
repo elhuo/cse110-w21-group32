@@ -29,8 +29,9 @@
    <td>
     
    - [x] Explanation of Pomodoro technique
-   - [ ] Explanation of how to use timer (arguably unnecessary?)</td>
-  
+   - [ ] Explanation of how to use timer (arguably unnecessary?)
+   
+   </td>
   </tr>
 </table>
 
@@ -186,7 +187,7 @@
    <td>
    
    - [x] All sounds play appropriately in preview and notification when stage changes
-   - [ ] Plays sound immediately when new notification sound is selected</td>
+   - [x] Plays sound immediately when new notification sound is selected</td>
   
   </tr>
   <tr>
@@ -204,7 +205,7 @@
    <td>
    
    - [x] Updates on release of the slider
-   - [ ] Updates as you drag the slider
+   - [x] Updates as you drag the slider
    
    </td>
   </tr>
