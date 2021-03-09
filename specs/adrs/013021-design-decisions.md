@@ -1,6 +1,15 @@
-# ADR
+  # DISCLAIMER: We had to rename all files to fit the naming format. As a result, creation dates may not match the actual time of ADR creation.
 
-# DISCLAIMER: We had to rename all files to fit the naming format. As a result, creation dates may not match the actual time of ADR creation.
+# [Design Decisions]
+
+* Status: [accepted]
+* Deciders: [whole team] 
+
+## Context and Problem Statement
+Not any problems but just recorded the reasons for the decisions of our features in out first sprint: planning stage.
+
+
+## Decision Outcome
 
 ## Essential Features MVP - MVP Sprint 1
 * start button 
