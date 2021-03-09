@@ -30,9 +30,9 @@ var lBreakTime = 14;
 /** True if timer should automatically start on transition. False by default. */
 var autoStart = false;
 
-let pomoTab = document.getElementById("pomo-tab");
-let sBreakTab = document.getElementById("short-break-tab");
-let lBreakTab = document.getElementById("long-break-tab");
+const pomoTab = document.getElementById("pomo-tab");
+const sBreakTab = document.getElementById("short-break-tab");
+const lBreakTab = document.getElementById("long-break-tab");
 
 /**
  * @description Function that is called when the start button is pressed.
@@ -57,7 +57,7 @@ function startTimer() {
       reset();
       return;
   }
-  
+
   disableStart();
 }
 
