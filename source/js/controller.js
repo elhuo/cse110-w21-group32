@@ -124,7 +124,7 @@ function changeCycles() {
     case 2:
       setCycle(0);
       clearCubes();
-      stopTimer();
+      // stopTimer();
       break;
 
     /** In the case of invalid cycle value, reset timer to default state. */
