@@ -5,11 +5,11 @@ Location: Zoom
 
 ### Attendance:
 
-Elizabeth, Jason, Nathan, Eric
+Elizabeth, Jason, Nathan, Eric, Wilson
 
 ### Unattendance:
 
-Ellie, Stephen, Elliot, Wilson, Zane
+Ellie, Stephen, Elliot, Zane
 
 ## Notes
   
