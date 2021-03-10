@@ -1,11 +1,14 @@
-
-
 # DISCLAIMER: We had to rename all files to fit the naming format. As a result, creation dates may not match the actual time of ADR creation.
+# [CSS and JS Best Practices Decisions]
 
+* Status: [accepted]
+* Deciders: [whole team] 
 
+## Context and Problem Statement
+Inconsistencies with writing the CSS and JS files so we came up with this bext practices adr document.
 
+## Decision Outcome
 
- 
 ### Best Practices
 
 * CSS Best Practices
