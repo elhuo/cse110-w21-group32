@@ -8,7 +8,7 @@
    <td>Actual Behavior</td>
   </tr>
   <tr>
-   <td>Help Button</td>
+   <td>Click Help Button</td>
    <td>Displays popup when help button is pressed</td>
    <td>
   
