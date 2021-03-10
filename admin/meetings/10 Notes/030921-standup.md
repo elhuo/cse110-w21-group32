@@ -1,85 +1,86 @@
-# Monday Night Zoom Standup
-Time: March 8, 2021 
+# Tuesday Night Zoom Standup
+Time: March 9, 2021 
 
 Location: Zoom
 
 ### Attendance:
 
-Elizabeth, Jason, Nathan, Eric, Wilson
+Elizabeth, Jason, Nathan,  Wilson, Ellie, Stephen, Elliot
 
 ### Unattendance:
-
-Ellie, Stephen, Elliot, Zane
+Eric, Zane
 
 ## Notes
   
 ### Elizabeth
 > What did you get done since last report?
-- Code cleanup
+- Reorganize ADRs
 > What's planned for tomorrow?
-- Code cleanup
+- Anything anyone needs help with
 > Blockers?
-- Math HW
+- n/a
 
 ### Ellie
 > What did you get done since last report?
-- Retro + Review +Manual Documentation + Update Interface Design 
+- Reorganize ADRs
 > What's planned for tomorrow?
-- Update ADR and clean up repo
+- Looking through the tests
 > Blockers?
-- Can't come to standup tn
+- n/a
 
 ### Jason
 > What did you get done since last report?
-- Not much
+- n/a
 > What's planned for tomorrow?
-- Look at issues
+- Look over function headers
 > Blockers?
-- Other classes to catch up on
+- other classes
 
 ### Stephen
 > What did you get done since last report?
-- Not much
+- n/a
 > What's planned for tomorrow?
-- Write test cases
+- Issues and tests
 > Blockers?
-- Work & classes
+- Classes and work
 
 ### Wilson
 > What did you get done since last report?
-- Not much
+- n/a
 > What's planned for tomorrow?
-- Maybe work on testing
+- Look over tests and update
 > Blockers?
-- Classes
+- Other classes
 
 ### Eric
 > What did you get done since last report?
-- Not much
+- 
 > What's planned for tomorrow?
-- Look at issues
+- 
 > Blockers?
-- Classes
+- 
 
 ### Nathan
 > What did you get done since last report?
-- Not much
+- n/a
 > What's planned for tomorrow?
-- Look at issues
+- Look over tests
 > Blockers?
-- Nothing
+- Assignments from other classes
 
 ### Zane
 > What did you get done since last report?
-- 
+- Not too much (just minor editing to cypress tests)
 > What's planned for tomorrow?
-- 
+- n/a
 > Any blockers?
-- 
+- work (won't be at standup but will be at discussion tomo morning)
+  
+
 ### Elliot
 > What did you get done since last report?
 - n/a
 > What's planned for tomorrow?
-- n/a
+- Update systems diagram and issues on github
 > Any blockers?
-- Work
+- CSE 101
