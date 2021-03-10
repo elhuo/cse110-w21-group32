@@ -76,7 +76,7 @@ main {
     flex: 1;
     text-align: center;
     padding: 2vh 0.1vw 1.5vh 0.1vw;
-    font-size: 1.75vmax;
+    font-size: 2.5vw;
     white-space: nowrap;
 
     border: none;
@@ -193,8 +193,8 @@ button:active:enabled {
 
 /*      === Stop Start Button Specific Styling ===       */
 .start-stop-buttons {
-    height: 7vh;
-    width: 7vh;
+    height: 7vmin;
+    width: 7vmin;
     min-height: 25px;
     min-width: 25px;
 }
@@ -213,7 +213,7 @@ button:active:enabled {
     bottom: 2.5vmin;
     width: 100%;
     text-align: right;
-    font-size: 2.25vmax;
+    font-size: 2.5vmax;
 }
 
 @media only screen and (max-device-width: 600px) {
@@ -233,6 +233,10 @@ button:active:enabled {
 
     .completed-pomos {
         font-size: 7vw;
+    }
+    
+    .footer {
+      font-size: 7vw;
     }
 }
 
@@ -312,6 +316,10 @@ button:active:enabled {
 @media only screen and (max-device-width: 600px) {
     .help-modal-content {
         font-size: 14px;
+    }
+    
+    label {
+      font-size: 16px;
     }
 }
 
