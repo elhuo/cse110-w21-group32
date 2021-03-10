@@ -52,3 +52,13 @@ Install VSCode extensions on every individual’s VSCode environment and run loc
 
 ![diagram](https://github.com/emmorris1100/cse110-w21-group32/blob/main/specs/sys_diagrams/Splice%20-%20CI_CD%20Pipeline.jpg)
 
+
+### Positive Consequences
+
+* Easy to make pull requests
+* Not a ton of commits
+* Easy to code review and merge pull requests
+
+### Negative Consequences
+* Haven't seen any negative consequences yet
+

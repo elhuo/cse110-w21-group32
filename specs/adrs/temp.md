@@ -13,11 +13,10 @@
     - counter squares plus the number counter
     - tab now includes the mins of the timer
     - play me and the functionality of when you choose a sound, it will automatically play it
-    - have only one tab highlighted instead
 - functionality
   - timer resets to start time instead of 0:00
   - manual start
-  - tabs not clickable
+  - tabs not clickable -> have only one tab highlighted instead
 - styling (CSS)
 - syntax (code writing standards)
 - pipeline decisions 
