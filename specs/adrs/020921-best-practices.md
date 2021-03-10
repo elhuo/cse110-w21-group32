@@ -41,9 +41,6 @@ Inconsistencies with writing the CSS and JS files so we came up with this bext p
     - Use [] instead of new Array()
     - Use /()/ instead of new RegExp()
     - Use function (){} instead of new Function()
-    
-    
-    
 
 * File Structure
 ``` .
