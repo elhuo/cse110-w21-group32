@@ -61,6 +61,9 @@ Not any problems but just recorded the reasons for the decisions of our features
   - Reason: customizing time amount per stage 
   
 ## Possible Add-ons
+  * Play me button in settings
+    - To let user play and test the volume and current sound of the notification sound they picked
+    - Also picking a sound will automatically play it one time 
   * Adding a user log-in database
     - Reason: Track user tasks and completed pomos; this ties in with the concept of gamification and the sense of accomplishment from completing pomos and being able to plan own time when seeing task list.
     
