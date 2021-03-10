@@ -29,3 +29,4 @@ Chosen option: "Relative dimensions (resizes with window)", because allows for g
 * If user makes window too small, may not be able to read page text
 * Sizing elements relative to each other instead of screen size may have strange behaviors.
 * Prevents users from zooming in if they are having a hard time reading the text, as is sized according to the window size instead of absolute units.
+  
