@@ -10,19 +10,18 @@ html {
 
 /* === Universal page content formatting === */
 body {
-    padding: 1em;
-    min-height: 90%;
     background-color: #0087bd;
     color: white;
-    padding: 1em;
-    min-height: 90%;
     font-family: "OpenSans", sans-serif;
+    padding: 1em;
 }
 
-@media only screen and (max-height: 600px) {
-    main {
-        height: 80vh;
-    }
+.short-break-color {
+    background-color: #333399;
+}
+
+.long-break-color {
+    background-color: #663399;
 }
 
 /* === Header formatting === */
@@ -30,11 +29,19 @@ body {
     display: flex;
     justify-content: flex-end;
     height: 7vh;
-    padding: 1em 2em;
+    padding: 2vh 2vw;
+    font-size: 3.5vmin;
 }
 
 .justify-right {
     margin-right: auto;
+}
+
+.popup-button-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 2.5vw;
 }
 
 /* === Main timer body formatting === */
@@ -44,81 +51,103 @@ main {
     justify-content: center;
     flex-direction: column;
     height: 70vh;
-    min-height: 100%;
+    padding: 5vh;
 }
 
 .tab-wrapper, .clock-wrapper {
     border-style: solid;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.bottom-margin {
-    margin-bottom: 1em;
-    padding: .5em;
-}
-
 .timer-wrapper {
     width: 70vw;
-    min-width: 70vw;
 }
 
 .tab-wrapper {
-    width: 50%;
+    flex-direction: row;
+    width: 50vw;
     margin: 0em auto;
-    min-width: 18em;
     border-width: 0px;
 }
 
 .tab {
-    border: 2px solid;
-    border-bottom: none;
-    padding: 2.5vh 1em 2.5vh 1em;
-    flex: 1 1 0px;
+    flex: 1;
     text-align: center;
-    border-radius: 1em 1em 0em 0em;
-    font-size: 1em;
+    padding: 2vh 0.1vw 1.5vh 0.1vw;
+    font-size: 2.5vw;
     white-space: nowrap;
+
+    border: none;
+    color: #D3D3D3;
+}
+
+.tab-active {
+    border: medium solid;
+    color: white;
+    border-radius: 7.5vmin 7.5vmin 0px 0px;
+    border-bottom: none;
+    font-weight: bold;
+}
+
+/* Formatting for mobile view of tabs (displays only active tab) */
+@media only screen and (max-device-width: 600px) {
+    .page-header {
+        font-size: 5vw;
+    }
+
+    .tab-wrapper {
+        width: 30vw;
+    }
+
+    .tab {
+        font-size: 4.5vw;
+        display: none;
+    }
+
+    .tab-active {
+        display: block;
+    }
 }
 
 /* === Timer formatting === */
 .clock-wrapper {
-    border-width: 8px;
-    border-radius: 2px;
-    padding: 5vh 0vh;
+    flex-direction: column;
+    border-width: 1.25vmin;
+    border-radius: 1vw;
+    padding: 5vh;
 }
 
 .countdown {
     font-size: 20vmin;
 }
 
-.top-right-controls-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    column-gap: 2em;
+.pomo-counts {
+    flex: 0 0 100%;
 }
 
-.controls-wrapper {
+.pomo-count {
+    height: 3.5vmin;
+    border-radius: 30%;
+    padding: 0vw 0.3vw 0vw 0.3vw;
+    filter: opacity(60%);
+}
+
+.pomo-counted {
+    filter: opacity(100%);
+}
+
+.start-stop-wrapper {
     display: flex;
-    position: unset;
-    justify-content: center;
-    margin-top: 4vh;
-    width: 25vw;
-    height: 7vh;
+    align-items: flex-end;
     justify-content: space-between;
-    min-width: 25ex;
-    min-height: 5ex;
+    margin-top: 2.5vh;
+    width: 25vw;
+    height: 10vh;
 }
 
 /* === Button Styling === */
-button:disabled {
-    filter: brightness(80%);
-    cursor: auto;
-}
-
 button {
     background-color: transparent;
     background-repeat: no-repeat;
@@ -129,20 +158,25 @@ button {
     cursor: pointer;
 }
 
-button:active:enabled {
-    filter: brightness(60%);
+button:disabled {
+  filter: opacity(60%);
+  cursor: auto;
 }
 
-.help-button:hover:enabled, .control-buttons:hover:enabled {
-    filter: brightness(80%);
+button:active:enabled {
+    filter: opacity(60%);
+}
+
+.fade-on-hover:hover:enabled {
+    filter: opacity(60%);
 }
 
 /*      === Top Control Buttons Specific Styling ===     */
-.top-control-buttons {
+.popup-buttons {
     height: 7vh;
     width: 7vh;
-    min-height: 5ex;
-    min-width: 5ex;
+    min-height: 25px;
+    min-width: 25px;
 }
 
 .help-button{
@@ -158,11 +192,11 @@ button:active:enabled {
 }
 
 /*      === Stop Start Button Specific Styling ===       */
-.control-buttons {
-    height: 7vh;
-    width: 7vh;
-    min-height: 5ex;
-    min-width: 5ex;
+.start-stop-buttons {
+    height: 7vmin;
+    width: 7vmin;
+    min-height: 25px;
+    min-width: 25px;
 }
 
 .start-button {
@@ -173,31 +207,52 @@ button:active:enabled {
     background-image: url(../img/Stop.png);
 }
 
-/* === Volume Image === */
-.volume-image {
-    justify-self: center;
-    justify-self: flex-start;
-    padding-right: 20px;
-    width: 40px;
+.completed-pomos {
+    position: fixed;
+    right: 2.5vmin;
+    bottom: 2.5vmin;
+    width: 100%;
+    text-align: right;
+    font-size: 2.5vmax;
 }
 
-/* === Volume Slider === */
-.volume-slider {
-    grid-area: slider;
-    width: 50%;
-    justify-self: left;
-}
-.volume-grid-container {
-    position:absolute;
-    column-gap: 10px;
-    grid-template-areas:
-      'image slider';
-    height: 50px;
-    width: 90%;
-    bottom:20px;
-    grid-column-end:auto;
+@media only screen and (max-device-width: 600px) {
+    .start-stop-wrapper {
+        width: 40vw;
+    }
     
-  }
+    .popup-buttons {
+        height: 10vw;
+        width: 10vw;
+    }
+
+    .start-stop-buttons {
+        height: 10vw;
+        width: 10vw;
+    }
+
+    .completed-pomos {
+        font-size: 7vw;
+    }
+    
+    .footer {
+      font-size: 7vw;
+    }
+}
+
+/* === Universal formatting for popup close buttons === */
+.close {
+    position: absolute;
+    right: 5vmin;
+    top: 2vmin;
+    font-size: 7.5vmin;
+}
+
+.close:hover, .close:focus{
+    color:#000;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 /* === Help Popup Window Styling === */
 .modal{
@@ -205,10 +260,12 @@ button:active:enabled {
     opacity: 0;
     position: fixed;
     overflow: auto;
+    transition: all 0.2s;
+
     background-color: #b0e0E6;
     color: black;
-    transition: all 0.2s;
-    border-radius: 5px;
+    border-radius: 2.5vmin;
+    
     box-shadow: 5px 10px 20px 7px rgba(0,0,0,0.5);
 }
 
@@ -222,13 +279,19 @@ button:active:enabled {
     height: 70vh;
     width: 75vw;
     z-index: 100;
-    font-size: 1.5em;
+
+    font-size: 3.5vmin;
     word-wrap: break-word;
-    line-height: 150%;
+    justify-content: center;
 }
 
-.modal-content p, h3 {
-    padding-bottom: .4em;
+.modal h2, h3 {
+  text-align: center;
+  padding-top: 2vh;
+}
+
+.help-modal-content {
+    line-height: 150%;
 }
 
 .shadow {
@@ -249,38 +312,127 @@ button:active:enabled {
     opacity: 1;
 }
 
-/* === Universal formatting for popup close buttons === */
-.close {
-    position: absolute;
-    right: .5em;
-    top: .2em;
-    font-size: 2em;
+/* === Mobile help popup formatting === */
+@media only screen and (max-device-width: 600px) {
+    .help-modal-content {
+        font-size: 14px;
+    }
+    
+    label {
+      font-size: 16px;
+    }
 }
 
-.close:hover, .close:focus{
-    color:#000;
-    text-decoration: none;
-    cursor: pointer;
+/* === Volume Slider === */
+.volume-container {
+    display:flex;
+    justify-content: space-between;
 }
 
-/* === Play sound formatting === */
-.play-sound{
-    padding: 15px 32px;
+.volume-image {
+    padding-right: 1em;
+    width: 2em;
+}
+
+.volume-slider {
+    width: 50%;
+}
+
+/* ===  Formatting for the pomo durations === */
+.timer-durations {
+    display: flex; 
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.duration-selectors {
+    flex: 1;
+    justify-content: center;
     text-align: center;
-    font-size: 16px;
-    border: 1px solid black;
-}
-
-.play-sound:hover:enabled{
-    filter: brightness(80%);
 }
 
 select{
-    margin: 50px;
-    width: 150px;
-    padding: 5px 35px 5px 5px;
-    font-size: 16px;
-    border: 1px solid black;
-    height: 34px;
     background-color: #b0e0E6;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin: 2vw;
+    padding: 5px 1em 5px 5px;
+    width: 20vw;
+    height: 7.5vmin;
+    font-size: 3vmin;
+}
+
+/* === Volume Image === */
+.volume-grid-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.volume-image {
+    padding-right: 1em;
+    width: 2em;
+}
+
+/* === Volume Slider === */
+.volume-slider {
+    width:35vw;
+}
+
+.sound-select {
+    text-align: center;
+    width: 25vw;
+}
+
+/* === Mobile settings popup formatting === */
+@media only screen and (max-device-width: 600px) {
+    .timer-durations {
+        display: flex; 
+        justify-content: left;
+        flex-direction: column;
+    }
+
+    .duration-selectors {
+        flex: 1;
+        justify-content: left;
+        text-align: center;
+    }
+
+    select {
+        margin: 1.5vh 0vw 2.5vh 0vw;
+        width: 65vw;
+    }
+
+    .sound-select {
+        text-align: center;
+        width: 65vw;
+    }
+
+    .volume-grid-container {
+        row-gap: 1.5vh;
+    }
+}
+
+/* === Play sound formatting === */
+
+.play-sound{
+    margin-left: 1vw;
+    padding: 1vmin 1vmin;
+    text-align: center;
+    font-size: 3vmin;
+    border: 2px solid white;
+    color: white;
+    border-radius: 1vmin;
+    background-color: #0087bd 
+}
+
+.play-sound:hover:enabled{
+    background-color: #0087bd;
+    opacity: 60%;
+}
+
+.play-sound:active:enabled {
+    background-color: #0087bd;
+    opacity: 80%;
 }
