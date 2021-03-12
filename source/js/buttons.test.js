@@ -1,4 +1,4 @@
-/** Creating basic HTML DOM to test buttons */
+/** HTML jest mocks */
 document.body.innerHTML =
     "<audio id='pomo-sound' src='./audio/party-horn.mp3'></audio>" +
 
@@ -35,9 +35,10 @@ document.body.innerHTML =
     "<option value='20'>20:00</option>" +
     "</select>" +
 
-    "<select id='volume-sound'" +
-    "<option value='party-horn'></option>" +
-    "<option value='air-horn'></option>" +
+    "<select id='sound-select'" +
+    "<option value='glass-pour'>Glass Pour</option>" +
+    "<option value='bottle-clank'>Bottle Clank</option>" +
+    "<option value='ice-cream-1'>Ice Cream Truck 1</option>" +
     "</select>" +
 
     "<img id='volume-image' src='./img/volume-level-2.svg' alt='Volume Visual'>" +
@@ -49,7 +50,7 @@ document.body.innerHTML =
 
     "<input id='volume-slider' type='range' min='0' max ='100' value='50'></input>";
 
-/** Creating jest function mocks */
+/** Outside functions jest mocks */
 startTimer = jest.fn();
 stopTimer = jest.fn();
 
@@ -140,20 +141,28 @@ test("volume slider test", () => {
     expect(document.getElementById("volume-image").src.includes("/img/volume-level-3.svg")).toBe(false);
 });
 
-/** Testing volume sound change */
-test("volume sound change test", () => {
-    document.getElementById("volume-sound").value = "party-horn";
-    document.getElementById("volume-sound").click();
-    expect(document.getElementById("pomo-sound").src.includes("/audio/party-horn.mp3")).toBe(true);
-    expect(document.getElementById("pomo-sound").src.includes("/audio/air-horn.mp3")).toBe(false);
-});
-
 /** Testing play sound button */
 test("play sound button test", () => {
     document.getElementById("pomo-sound").play = jest.fn();
     expect(document.getElementById("pomo-sound").play.mock.calls.length).toEqual(0);
     document.getElementById("play-sound").click();
     expect(document.getElementById("pomo-sound").play.mock.calls.length).toEqual(1);
-
 });
 
+/** Testing disableStart function */
+test("disableStart function test", () => {
+    document.getElementById("start-button").disabled = false;
+    document.getElementById("stop-button").disabled = true;
+    buttons.disableStart();
+    expect(document.getElementById("start-button").disabled).toBe(true);
+    expect(document.getElementById("stop-button").disabled).toBe(false);
+});
+
+/** Testing enableStart function */
+test("enableStart function test", () => {
+    document.getElementById("start-button").disabled = true;
+    document.getElementById("stop-button").disabled = false;
+    buttons.enableStart();
+    expect(document.getElementById("start-button").disabled).toBe(false);
+    expect(document.getElementById("stop-button").disabled).toBe(true);
+});

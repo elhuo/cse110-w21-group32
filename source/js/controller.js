@@ -40,18 +40,18 @@ const lBreakTab = document.getElementById("long-break-tab");
  * currently in and disables the start button after it is pressed.
  */
 function startTimer() {
-  switch(cycle) {
+  switch (cycle) {
     case 0:
       startCountdown(pomoTime);
-    break;
+      break;
 
     case 1:
       startCountdown(sBreakTime);
-    break;
+      break;
 
     case 2:
       startCountdown(lBreakTime);
-    break;
+      break;
 
     default:
       reset();
@@ -116,7 +116,7 @@ function changeCycles() {
  */
 function clearCubes() {
   for (let i = 1; i <= 4; i++) {
-    document.getElementById('pomo-count-' + i).classList.remove('pomo-counted');
+    document.getElementById("pomo-count-" + i).classList.remove("pomo-counted");
   }
 }
 
@@ -163,7 +163,7 @@ function setNumPomos(numPomos_) {
 
   /** Updates the ice cube pomo counter */
   for (let i = 1; i <= numCubes; i++) {
-    document.getElementById('pomo-count-' + i).classList.add('pomo-counted');
+    document.getElementById("pomo-count-" + i).classList.add("pomo-counted");
   }
 
   /** Update the counter of number of completed pomos */
@@ -243,5 +243,6 @@ exports.startTimer = startTimer;
 exports.stopTimer = stopTimer;
 exports.changeCycles = changeCycles;
 exports.changeStyle = changeStyle;
-exports.changeCyclesController = changeCyclesController;
 exports.reset = reset;
+exports.clearCubes = clearCubes;
+exports.clearStyles = clearStyles;

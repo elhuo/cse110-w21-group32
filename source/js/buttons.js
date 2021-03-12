@@ -28,15 +28,15 @@ const settingsCloseButton = document.getElementById("settings-close");
 
 /** Audio source select drop down menu */
 const nameSrcMap = {
-  "glass-pour"    : "./audio/glass-pour.mp3",
-  "bottle-clank"  : "./audio/bottle-clank.mp3",
-  "glass-break"   : "./audio/glass-break.mp3",
-  "glass-ping"    : "./audio/glass-ping.mp3",
-  "wind-chimes-1" : "./audio/wind-chimes-1.mp3",
-  "wind-chimes-2" : "./audio/wind-chimes-2.mp3",
-  "wind-chimes-3" : "./audio/wind-chimes-3.mp3",
-  "ice-cream-1"   : "./audio/ice-cream-1.mp3",
-  "ice-cream-2"   : "./audio/ice-cream-2.mp3"
+  "glass-pour": "./audio/glass-pour.mp3",
+  "bottle-clank": "./audio/bottle-clank.mp3",
+  "glass-break": "./audio/glass-break.mp3",
+  "glass-ping": "./audio/glass-ping.mp3",
+  "wind-chimes-1": "./audio/wind-chimes-1.mp3",
+  "wind-chimes-2": "./audio/wind-chimes-2.mp3",
+  "wind-chimes-3": "./audio/wind-chimes-3.mp3",
+  "ice-cream-1": "./audio/ice-cream-1.mp3",
+  "ice-cream-2": "./audio/ice-cream-2.mp3"
 }
 
 /** Volume Level Controls */
@@ -47,7 +47,7 @@ const volumeSlider = document.getElementById("volume-slider");
 const pomoSound = document.getElementById("pomo-sound");
 
 /** Set volume of the pomoSound based on the volume slider */
-pomoSound.volume = volumeSlider.value/100;
+pomoSound.volume = volumeSlider.value / 100;
 
 /** @function
  * @description When the start button is clicked, call the startTimer function in controller
@@ -152,7 +152,7 @@ pomoTimeSelect.addEventListener("change", function () {
  * @description Change short break timer duration to selected time.
  * @name setShortTime
  */
-shortTimeSelect.addEventListener("change", function() {
+shortTimeSelect.addEventListener("change", function () {
   sBreakTime = shortTimeSelect.value - 1;
   if (cycle == 1) {
     startTimer();
@@ -164,7 +164,7 @@ shortTimeSelect.addEventListener("change", function() {
  * @description Change long break timer duration to selected time.
  * @name setLongTime
  */
-longTimeSelect.addEventListener("change", function() {
+longTimeSelect.addEventListener("change", function () {
   lBreakTime = longTimeSelect.value - 1;
   if (cycle == 2) {
     startTimer();
@@ -177,28 +177,28 @@ longTimeSelect.addEventListener("change", function() {
  * The image displayed for the volume changes depending on the volume.
  * @name slideVolume
  */
-volumeSlider.addEventListener('input', function(){
+volumeSlider.addEventListener('input', function () {
   /** Image that is displayed depending on volume level */
   let volumeImg = document.getElementById("volume-image");
 
-  pomoSound.volume = volumeSlider.value/100;
+  pomoSound.volume = volumeSlider.value / 100;
 
   let val = volumeSlider.value;
   /** High volume */
   if (val > volumeLevels[3]) {
     volumeImg.src = "./img/volume-level-3.svg";
-  
-  } 
+
+  }
   /** Medium volume */
-  else if ( val > volumeLevels[2] ) {
+  else if (val > volumeLevels[2]) {
     volumeImg.src = "./img/volume-level-2.svg";
-  
-  } 
+
+  }
   /** Low volume */
-  else if ( val > volumeLevels[1] ) {
+  else if (val > volumeLevels[1]) {
     volumeImg.src = "./img/volume-level-1.svg";
-  
-  } 
+
+  }
   /** No volume */
   else {
     volumeImg.src = "./img/volume-level-0.svg";
@@ -211,8 +211,8 @@ volumeSlider.addEventListener('input', function(){
  * is selected by the user in the settings page.
  * @name chooseSound
  */
-document.addEventListener("DOMContentLoaded", function(){
-  document.querySelector("#sound-select").onchange = function(){
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector("#sound-select").onchange = function () {
     let soundSelect = document.getElementById("sound-select");
 
     let soundSelected = soundSelect.value;
@@ -226,10 +226,12 @@ document.addEventListener("DOMContentLoaded", function(){
  * can pre-hear the volume and sound when they are adjusting them.
  * @name playAdjustSound
  */
- document.getElementById("play-sound").onclick = function(){
+document.getElementById("play-sound").onclick = function () {
   pomoSound.play();
 };
 
 /** export function for test file */
 
 exports.closePopup = closePopup;
+exports.disableStart = disableStart;
+exports.enableStart = enableStart;
