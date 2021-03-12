@@ -1,4 +1,4 @@
-# MVP Sprint Retrospective Summary
+# Sprint 3 Retrospective Summary
 
 ## Average Results for Team Radar:
 - Clarity: 4.1
