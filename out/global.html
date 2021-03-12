@@ -98,13 +98,13 @@
 
         
             
-<h4 class="name" id="button"><span class="type-signature">(constant) </span>button<span class="type-signature"></span></h4>
+<h4 class="name" id="autoStart"><span class="type-signature"></span>autoStart<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    Button is used to disable the buttons
+    True if timer should automatically start on transition. False by default.
 </div>
 
 
@@ -142,7 +142,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line7">line 7</a>
+        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line30">line 30</a>
     </li></ul></dd>
     
 
@@ -204,7 +204,69 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buttons.test.js.html">buttons.test.js</a>, <a href="buttons.test.js.html#line34">line 34</a>
+        <a href="buttons.test.js.html">buttons.test.js</a>, <a href="buttons.test.js.html#line58">line 58</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="closePopup"><span class="type-signature"></span>closePopup<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    export function for test file
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line235">line 235</a>
     </li></ul></dd>
     
 
@@ -266,7 +328,131 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controller.test.js.html">controller.test.js</a>, <a href="controller.test.js.html#line2">line 2</a>
+        <a href="controller.test.js.html">controller.test.js</a>, <a href="controller.test.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="countdownDisplay"><span class="type-signature"></span>countdownDisplay<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Time displayed by the countdown timer
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="countdownStart"><span class="type-signature"></span>countdownStart<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    stores the starting time of the timer
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line10">line 10</a>
     </li></ul></dd>
     
 
@@ -332,7 +518,7 @@ cycle = 3: the timer is stopped
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line14">line 14</a>
+        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line13">line 13</a>
     </li></ul></dd>
     
 
@@ -350,7 +536,69 @@ cycle = 3: the timer is stopped
 
         
             
-<h4 class="name" id="lBreakTime"><span class="type-signature">(constant) </span>lBreakTime<span class="type-signature"></span></h4>
+<h4 class="name" id="duration"><span class="type-signature"></span>duration<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    duration of timer cycle in minutes (needs to be converted later in ms somewhere below) ; default 25min
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="lBreakTime"><span class="type-signature"></span>lBreakTime<span class="type-signature"></span></h4>
 
 
 
@@ -394,7 +642,131 @@ cycle = 3: the timer is stopped
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line28">line 28</a>
+        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line27">line 27</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="longTimeSelect"><span class="type-signature">(constant) </span>longTimeSelect<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The long break time picked by the user (10, 15, 20)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="nameSrcMap"><span class="type-signature">(constant) </span>nameSrcMap<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Audio source select drop down menu
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line30">line 30</a>
     </li></ul></dd>
     
 
@@ -458,7 +830,7 @@ numPomos = 4: the break cycle will be a long break
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line21">line 21</a>
+        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line20">line 20</a>
     </li></ul></dd>
     
 
@@ -476,13 +848,13 @@ numPomos = 4: the break cycle will be a long break
 
         
             
-<h4 class="name" id="pomoSound"><span class="type-signature"></span>pomoSound<span class="type-signature"></span></h4>
+<h4 class="name" id="pageTitle"><span class="type-signature"></span>pageTitle<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    Sound played when timer hits 0
+    Text displayed in page tab
 </div>
 
 
@@ -520,7 +892,131 @@ numPomos = 4: the break cycle will be a long break
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line6">line 6</a>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="pomoSound"><span class="type-signature">(constant) </span>pomoSound<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Sound of finishing a pomodoro
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line47">line 47</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="pomoSound"><span class="type-signature"></span>pomoSound<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Outside functions jest mocks
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controller.test.js.html">controller.test.js</a>, <a href="controller.test.js.html#line15">line 15</a>
     </li></ul></dd>
     
 
@@ -582,7 +1078,7 @@ numPomos = 4: the break cycle will be a long break
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line24">line 24</a>
+        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line23">line 23</a>
     </li></ul></dd>
     
 
@@ -600,7 +1096,69 @@ numPomos = 4: the break cycle will be a long break
 
         
             
-<h4 class="name" id="sBreakTime"><span class="type-signature">(constant) </span>sBreakTime<span class="type-signature"></span></h4>
+<h4 class="name" id="pomoTimeSelect"><span class="type-signature">(constant) </span>pomoTimeSelect<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The pomo time picked by the user (20, 25, 30)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="sBreakTime"><span class="type-signature"></span>sBreakTime<span class="type-signature"></span></h4>
 
 
 
@@ -644,7 +1202,7 @@ numPomos = 4: the break cycle will be a long break
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line26">line 26</a>
+        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line25">line 25</a>
     </li></ul></dd>
     
 
@@ -668,7 +1226,7 @@ numPomos = 4: the break cycle will be a long break
 
 
 <div class="description">
-    export functions and varialbes for test file
+    export functions and variables for test file
 </div>
 
 
@@ -706,7 +1264,7 @@ numPomos = 4: the break cycle will be a long break
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line172">line 172</a>
+        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line238">line 238</a>
     </li></ul></dd>
     
 
@@ -724,7 +1282,131 @@ numPomos = 4: the break cycle will be a long break
 
         
             
-<h4 class="name" id="startButton"><span class="type-signature"></span>startButton<span class="type-signature"></span></h4>
+<h4 class="name" id="shortTimeSelect"><span class="type-signature">(constant) </span>shortTimeSelect<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The short break time picked by the user (3, 5, 7)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="start"><span class="type-signature"></span>start<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    true - timer is on; false - timer is off
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line6">line 6</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="startButton"><span class="type-signature">(constant) </span>startButton<span class="type-signature"></span></h4>
 
 
 
@@ -768,7 +1450,7 @@ numPomos = 4: the break cycle will be a long break
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line10">line 10</a>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line6">line 6</a>
     </li></ul></dd>
     
 
@@ -792,7 +1474,7 @@ numPomos = 4: the break cycle will be a long break
 
 
 <div class="description">
-    Creating jest function mocks
+    Outside functions jest mocks
 </div>
 
 
@@ -830,7 +1512,7 @@ numPomos = 4: the break cycle will be a long break
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buttons.test.js.html">buttons.test.js</a>, <a href="buttons.test.js.html#line30">line 30</a>
+        <a href="buttons.test.js.html">buttons.test.js</a>, <a href="buttons.test.js.html#line54">line 54</a>
     </li></ul></dd>
     
 
@@ -848,7 +1530,7 @@ numPomos = 4: the break cycle will be a long break
 
         
             
-<h4 class="name" id="stopButton"><span class="type-signature"></span>stopButton<span class="type-signature"></span></h4>
+<h4 class="name" id="stopButton"><span class="type-signature">(constant) </span>stopButton<span class="type-signature"></span></h4>
 
 
 
@@ -892,7 +1574,7 @@ numPomos = 4: the break cycle will be a long break
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line13">line 13</a>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line8">line 8</a>
     </li></ul></dd>
     
 
@@ -954,7 +1636,69 @@ numPomos = 4: the break cycle will be a long break
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="timer.test.js.html">timer.test.js</a>, <a href="timer.test.js.html#line2">line 2</a>
+        <a href="timer.test.js.html">timer.test.js</a>, <a href="timer.test.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="volumeLevels"><span class="type-signature">(constant) </span>volumeLevels<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Volume Level Controls
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line43">line 43</a>
     </li></ul></dd>
     
 
@@ -991,8 +1735,8 @@ numPomos = 4: the break cycle will be a long break
 
 <div class="description">
     Function that is called to handle the shift in pomodoro cycles when
-the countdown reaches 0. Handles each cycle case and then
-calls changeStyle to change the CSS to match the new cycle.
+the countdown reaches 0. Calls setCycle to set up the next cycle depending on what
+cycle the timer is currently on. Also plays a sound to signify the end of current cycle.
 </div>
 
 
@@ -1036,7 +1780,7 @@ calls changeStyle to change the CSS to match the new cycle.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line59">line 59</a>
+        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line78">line 78</a>
     </li></ul></dd>
     
 
@@ -1081,7 +1825,7 @@ calls changeStyle to change the CSS to match the new cycle.
 
 <div class="description">
     Function that changes the page's CSS according to the current cycle.
-Specifically, borders the text for the current cycle and changes page color.
+Specifically, borders of the text for the current cycle and the page color.
 Called at the end of the changeCycles function.
 </div>
 
@@ -1126,7 +1870,7 @@ Called at the end of the changeCycles function.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line102">line 102</a>
+        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line178">line 178</a>
     </li></ul></dd>
     
 
@@ -1216,7 +1960,7 @@ is selected by the user in the settings page.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line126">line 126</a>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line208">line 208</a>
     </li></ul></dd>
     
 
@@ -1252,7 +1996,7 @@ is selected by the user in the settings page.
     
 
     
-    <h4 class="name" id="clickClose"><span class="type-signature"></span>clickClose<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="clearCubes"><span class="type-signature"></span>clearCubes<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -1260,7 +2004,7 @@ is selected by the user in the settings page.
 
 
 <div class="description">
-    Toggle popup on close button click.
+    Function that clears "ice cubes" that count the number of pomos (0-4).
 </div>
 
 
@@ -1304,7 +2048,271 @@ is selected by the user in the settings page.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line79">line 79</a>
+        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line117">line 117</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="clearStyles"><span class="type-signature"></span>clearStyles<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Helper function that clears all styling classes from tabs and the document body
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line209">line 209</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="clickClose"><span class="type-signature"></span>clickClose<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Close popup on close button click.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line118">line 118</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="clickClose"><span class="type-signature"></span>clickClose<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Close popup on close button click.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line133">line 133</a>
     </li></ul></dd>
     
 
@@ -1392,7 +2400,7 @@ is selected by the user in the settings page.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line70">line 70</a>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line109">line 109</a>
     </li></ul></dd>
     
 
@@ -1482,7 +2490,7 @@ While the timer is running, the start button cannot be clicked and the stop butt
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line17">line 17</a>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line52">line 52</a>
     </li></ul></dd>
     
 
@@ -1572,7 +2580,7 @@ While the timer is stopped, the stop button cannot be clicked and the start butt
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line29">line 29</a>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line76">line 76</a>
     </li></ul></dd>
     
 
@@ -1660,7 +2668,7 @@ While the timer is stopped, the stop button cannot be clicked and the start butt
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line64">line 64</a>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line103">line 103</a>
     </li></ul></dd>
     
 
@@ -1704,7 +2712,7 @@ While the timer is stopped, the stop button cannot be clicked and the start butt
 
 
 <div class="description">
-    Updates the time left on the timer, by subtracting the time elapsed from the initial time
+    Updates the time left on the timer, by subtracting the time elapsed from the initial time.
 </div>
 
 
@@ -1748,7 +2756,7 @@ While the timer is stopped, the stop button cannot be clicked and the start butt
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line47">line 47</a>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line57">line 57</a>
     </li></ul></dd>
     
 
@@ -1784,7 +2792,7 @@ While the timer is stopped, the stop button cannot be clicked and the start butt
     
 
     
-    <h4 class="name" id="getCycle"><span class="type-signature"></span>getCycle<span class="signature">()</span><span class="type-signature"> &rarr; {int}</span></h4>
+    <h4 class="name" id="disableStart"><span class="type-signature"></span>disableStart<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -1792,7 +2800,8 @@ While the timer is stopped, the stop button cannot be clicked and the start butt
 
 
 <div class="description">
-    Returns the current cycle
+    Disables the start button, enables the stop button, and disables the
+ability to change cycle times in settings.
 </div>
 
 
@@ -1836,7 +2845,185 @@ While the timer is stopped, the stop button cannot be clicked and the start butt
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line151">line 151</a>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line67">line 67</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="enableStart"><span class="type-signature"></span>enableStart<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Enables the start button, disables the stop button, and enables the
+ability to change cycle times in settings.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line91">line 91</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getCycle"><span class="type-signature"></span>getCycle<span class="signature">()</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Returns the current cycle.
+Used for testing purposes.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line223">line 223</a>
     </li></ul></dd>
     
 
@@ -1876,7 +3063,7 @@ While the timer is stopped, the stop button cannot be clicked and the start butt
     </dt>
     <dd>
         
-<span class="param-type">int</span>
+<span class="param-type">number</span>
 
 
     </dd>
@@ -1894,7 +3081,7 @@ While the timer is stopped, the stop button cannot be clicked and the start butt
     
 
     
-    <h4 class="name" id="getNumPomos"><span class="type-signature"></span>getNumPomos<span class="signature">()</span><span class="type-signature"> &rarr; {int}</span></h4>
+    <h4 class="name" id="getDuration"><span class="type-signature"></span>getDuration<span class="signature">()</span><span class="type-signature"> &rarr; {number}</span></h4>
     
 
     
@@ -1902,7 +3089,8 @@ While the timer is stopped, the stop button cannot be clicked and the start butt
 
 
 <div class="description">
-    Returns the current number of Pomos
+    Gets duration, the time of the current cycle.
+Used for testing purposes.
 </div>
 
 
@@ -1946,7 +3134,118 @@ While the timer is stopped, the stop button cannot be clicked and the start butt
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line167">line 167</a>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line104">line 104</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - The duration of the timer.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getNumPomos"><span class="type-signature"></span>getNumPomos<span class="signature">()</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Returns the current number of Pomos.
+Used for testing purposes.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line232">line 232</a>
     </li></ul></dd>
     
 
@@ -1986,7 +3285,118 @@ While the timer is stopped, the stop button cannot be clicked and the start butt
     </dt>
     <dd>
         
-<span class="param-type">int</span>
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getStart"><span class="type-signature"></span>getStart<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Gets start, which is true when timer is running and false if not.
+Used for testing purposes.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line95">line 95</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - The value of start.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -2057,7 +3467,95 @@ can pre-hear the volume and sound when they are adjusting them.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line142">line 142</a>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line224">line 224</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="reset"><span class="type-signature"></span>reset<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Function that clears pomo count, both "ice-cube" indicators and actual values.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line126">line 126</a>
     </li></ul></dd>
     
 
@@ -2101,7 +3599,7 @@ can pre-hear the volume and sound when they are adjusting them.
 
 
 <div class="description">
-    Sets the current cycle
+    Sets the current cycle and changes style to match
 </div>
 
 
@@ -2143,7 +3641,7 @@ can pre-hear the volume and sound when they are adjusting them.
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">number</span>
 
 
             
@@ -2194,7 +3692,7 @@ can pre-hear the volume and sound when they are adjusting them.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line143">line 143</a>
+        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line135">line 135</a>
     </li></ul></dd>
     
 
@@ -2238,7 +3736,8 @@ can pre-hear the volume and sound when they are adjusting them.
 
 
 <div class="description">
-    Sets the current duration
+    Sets the current duration.
+Used for testing purposes.
 </div>
 
 
@@ -2280,7 +3779,7 @@ can pre-hear the volume and sound when they are adjusting them.
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">number</span>
 
 
             
@@ -2331,7 +3830,7 @@ can pre-hear the volume and sound when they are adjusting them.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line107">line 107</a>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line113">line 113</a>
     </li></ul></dd>
     
 
@@ -2375,7 +3874,7 @@ can pre-hear the volume and sound when they are adjusting them.
 
 
 <div class="description">
-    Updates the html timer display when timer is enabled
+    Updates the html timer display when timer is enabled.
 </div>
 
 
@@ -2419,7 +3918,95 @@ can pre-hear the volume and sound when they are adjusting them.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line8">line 8</a>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setLongTime"><span class="type-signature"></span>setLongTime<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Change long break timer duration to selected time.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line163">line 163</a>
     </li></ul></dd>
     
 
@@ -2463,7 +4050,7 @@ can pre-hear the volume and sound when they are adjusting them.
 
 
 <div class="description">
-    Sets the current number of Pomos
+    Sets the current number of Pomos and fills in appropriate "ice cubes"
 </div>
 
 
@@ -2556,7 +4143,183 @@ can pre-hear the volume and sound when they are adjusting them.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line159">line 159</a>
+        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line150">line 150</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setPomoTime"><span class="type-signature"></span>setPomoTime<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Change pomo timer duration to selected time.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line139">line 139</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setShortTime"><span class="type-signature"></span>setShortTime<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Change short break timer duration to selected time.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line151">line 151</a>
     </li></ul></dd>
     
 
@@ -2645,7 +4408,7 @@ The image displayed for the volume changes depending on the volume.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line97">line 97</a>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line175">line 175</a>
     </li></ul></dd>
     
 
@@ -2689,7 +4452,8 @@ The image displayed for the volume changes depending on the volume.
 
 
 <div class="description">
-    Starts the countdown
+    Starts the countdown.
+Remember to subtract 1 minute (if you want a 25 min timer, set to 24).
 </div>
 
 
@@ -2741,8 +4505,7 @@ The image displayed for the volume changes depending on the volume.
 
             
 
-            <td class="description last">The duration for the timer to run for. 
-Remember to subtract 1 minute (if you want a 25 min timer, set to 24)</td>
+            <td class="description last">The duration for the timer to run for.</td>
         </tr>
 
     
@@ -2783,7 +4546,7 @@ Remember to subtract 1 minute (if you want a 25 min timer, set to 24)</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line23">line 23</a>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line33">line 33</a>
     </li></ul></dd>
     
 
@@ -2828,8 +4591,8 @@ Remember to subtract 1 minute (if you want a 25 min timer, set to 24)</td>
 
 <div class="description">
     Function that is called when the start button is pressed.
-Handles setup for the controller before calling startCountdown in timer.js
-to start the first pomodoro cycle.
+Calls startCountdown in timer.js depending on which cycle the timer is
+currently in and disables the start button after it is pressed.
 </div>
 
 
@@ -2873,7 +4636,7 @@ to start the first pomodoro cycle.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line35">line 35</a>
+        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line42">line 42</a>
     </li></ul></dd>
     
 
@@ -2917,7 +4680,7 @@ to start the first pomodoro cycle.
 
 
 <div class="description">
-    Ends the countdown
+    Stops the countdown and resets the time for the current cycle.
 </div>
 
 
@@ -2961,7 +4724,7 @@ to start the first pomodoro cycle.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line37">line 37</a>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line46">line 46</a>
     </li></ul></dd>
     
 
@@ -3006,8 +4769,7 @@ to start the first pomodoro cycle.
 
 <div class="description">
     Function that is called when the stop button is pressed.
-Resets controller variables to default and resets the countdown by calling
-stopCountdown in timer.js.
+Calls stopCountdown in timer.js, which resets the current cycle.
 </div>
 
 
@@ -3051,267 +4813,7 @@ stopCountdown in timer.js.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line47">line 47</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="sum"><span class="type-signature"></span>sum<span class="signature">(a, b)</span><span class="type-signature"> &rarr; {number}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Sums two numbers together
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>a</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">first number to be added</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>b</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">second number to be added</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="sum.js.html">sum.js</a>, <a href="sum.js.html#line7">line 7</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - the sum
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="toggleClosePopup"><span class="type-signature"></span>toggleClosePopup<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Toggle popup on close button click.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line152">line 152</a>
+        <a href="controller.js.html">controller.js</a>, <a href="controller.js.html#line68">line 68</a>
     </li></ul></dd>
     
 
@@ -3399,7 +4901,7 @@ stopCountdown in timer.js.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line88">line 88</a>
+        <a href="buttons.js.html">buttons.js</a>, <a href="buttons.js.html#line124">line 124</a>
     </li></ul></dd>
     
 
@@ -3445,13 +4947,13 @@ stopCountdown in timer.js.
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#button">button</a></li><li><a href="global.html#buttons">buttons</a></li><li><a href="global.html#changeCycles">changeCycles</a></li><li><a href="global.html#changeStyle">changeStyle</a></li><li><a href="global.html#chooseSound">chooseSound</a></li><li><a href="global.html#clickClose">clickClose</a></li><li><a href="global.html#clickHelp">clickHelp</a></li><li><a href="global.html#clickStart">clickStart</a></li><li><a href="global.html#clickStop">clickStop</a></li><li><a href="global.html#closePopup">closePopup</a></li><li><a href="global.html#controller">controller</a></li><li><a href="global.html#countdown">countdown</a></li><li><a href="global.html#cycle">cycle</a></li><li><a href="global.html#getCycle">getCycle</a></li><li><a href="global.html#getNumPomos">getNumPomos</a></li><li><a href="global.html#lBreakTime">lBreakTime</a></li><li><a href="global.html#numPomos">numPomos</a></li><li><a href="global.html#playAdjustSound">playAdjustSound</a></li><li><a href="global.html#pomoSound">pomoSound</a></li><li><a href="global.html#pomoTime">pomoTime</a></li><li><a href="global.html#sBreakTime">sBreakTime</a></li><li><a href="global.html#setCycle">setCycle</a></li><li><a href="global.html#setDuration">setDuration</a></li><li><a href="global.html#setInterval">setInterval</a></li><li><a href="global.html#setNumPomos">setNumPomos</a></li><li><a href="global.html#slideVolume">slideVolume</a></li><li><a href="global.html#startButton">startButton</a></li><li><a href="global.html#startCountdown">startCountdown</a></li><li><a href="global.html#startTimer">startTimer</a></li><li><a href="global.html#stopButton">stopButton</a></li><li><a href="global.html#stopCountdown">stopCountdown</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#sum">sum</a></li><li><a href="global.html#timer">timer</a></li><li><a href="global.html#toggleClosePopup">toggleClosePopup</a></li><li><a href="global.html#toggleSettingsPopup">toggleSettingsPopup</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#autoStart">autoStart</a></li><li><a href="global.html#buttons">buttons</a></li><li><a href="global.html#changeCycles">changeCycles</a></li><li><a href="global.html#changeStyle">changeStyle</a></li><li><a href="global.html#chooseSound">chooseSound</a></li><li><a href="global.html#clearCubes">clearCubes</a></li><li><a href="global.html#clearStyles">clearStyles</a></li><li><a href="global.html#clickClose">clickClose</a></li><li><a href="global.html#clickHelp">clickHelp</a></li><li><a href="global.html#clickStart">clickStart</a></li><li><a href="global.html#clickStop">clickStop</a></li><li><a href="global.html#closePopup">closePopup</a></li><li><a href="global.html#controller">controller</a></li><li><a href="global.html#countdown">countdown</a></li><li><a href="global.html#countdownDisplay">countdownDisplay</a></li><li><a href="global.html#countdownStart">countdownStart</a></li><li><a href="global.html#cycle">cycle</a></li><li><a href="global.html#disableStart">disableStart</a></li><li><a href="global.html#duration">duration</a></li><li><a href="global.html#enableStart">enableStart</a></li><li><a href="global.html#getCycle">getCycle</a></li><li><a href="global.html#getDuration">getDuration</a></li><li><a href="global.html#getNumPomos">getNumPomos</a></li><li><a href="global.html#getStart">getStart</a></li><li><a href="global.html#lBreakTime">lBreakTime</a></li><li><a href="global.html#longTimeSelect">longTimeSelect</a></li><li><a href="global.html#nameSrcMap">nameSrcMap</a></li><li><a href="global.html#numPomos">numPomos</a></li><li><a href="global.html#pageTitle">pageTitle</a></li><li><a href="global.html#playAdjustSound">playAdjustSound</a></li><li><a href="global.html#pomoSound">pomoSound</a></li><li><a href="global.html#pomoTime">pomoTime</a></li><li><a href="global.html#pomoTimeSelect">pomoTimeSelect</a></li><li><a href="global.html#reset">reset</a></li><li><a href="global.html#sBreakTime">sBreakTime</a></li><li><a href="global.html#setCycle">setCycle</a></li><li><a href="global.html#setDuration">setDuration</a></li><li><a href="global.html#setInterval">setInterval</a></li><li><a href="global.html#setLongTime">setLongTime</a></li><li><a href="global.html#setNumPomos">setNumPomos</a></li><li><a href="global.html#setPomoTime">setPomoTime</a></li><li><a href="global.html#setShortTime">setShortTime</a></li><li><a href="global.html#shortTimeSelect">shortTimeSelect</a></li><li><a href="global.html#slideVolume">slideVolume</a></li><li><a href="global.html#start">start</a></li><li><a href="global.html#startButton">startButton</a></li><li><a href="global.html#startCountdown">startCountdown</a></li><li><a href="global.html#startTimer">startTimer</a></li><li><a href="global.html#stopButton">stopButton</a></li><li><a href="global.html#stopCountdown">stopCountdown</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#timer">timer</a></li><li><a href="global.html#toggleSettingsPopup">toggleSettingsPopup</a></li><li><a href="global.html#volumeLevels">volumeLevels</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Mar 12 2021 22:37:08 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Mar 12 2021 22:47:21 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>

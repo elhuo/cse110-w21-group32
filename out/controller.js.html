@@ -29,7 +29,6 @@
             <pre class="prettyprint source linenums"><code>/**
  * controller.js is a javascript file that implements the cycle logic of
  * the pomodoro timer.
- * It contains four methods: startTimer, stopTimer, changeCycles, and changeStyle.
  */
 
 /** 
@@ -39,164 +38,231 @@
  * cycle = 2: the timer is in the long break cycle (15 min)
  * cycle = 3: the timer is stopped
  */
-var cycle = 0;
+let cycle = 0;
 
 /**
  * Tracks the number of completed pomos to know when to long break.
  * numPomos &lt; 4: the break cycle will be a short break
  * numPomos = 4: the break cycle will be a long break
  */
-var numPomos = 0;
+let numPomos = 0;
 
 /** (25 - 1) minutes to pass in to startCountdown for pomodoro cycle. */
-var pomoTime = 24;
+let pomoTime = 24;
 /** (5 - 1) minutes to pass in to startCountdown for short break cycle. */
-const sBreakTime = 4;
+var sBreakTime = 4;
 /** (15 - 1) minutes to pass in to startCountdown for long break cycle. */
-const lBreakTime = 14;
+var lBreakTime = 14;
+
+/** True if timer should automatically start on transition. False by default. */
+var autoStart = false;
+
+// Constants used to reference each of the cycle tabs
+const pomoTab = document.getElementById("pomo-tab");
+const sBreakTab = document.getElementById("short-break-tab");
+const lBreakTab = document.getElementById("long-break-tab");
 
 /**
- * Function that is called when the start button is pressed.
- * Handles setup for the controller before calling startCountdown in timer.js
- * to start the first pomodoro cycle.
+ * @description Function that is called when the start button is pressed.
+ * Calls startCountdown in timer.js depending on which cycle the timer is
+ * currently in and disables the start button after it is pressed.
  */
 function startTimer() {
-    cycle = 0;
-    numPomos = 0;
-    changeStyle();
-    startCountdown(pomoTime);
+  switch (cycle) {
+    case 0:
+      startCountdown(pomoTime);
+      break;
+
+    case 1:
+      startCountdown(sBreakTime);
+      break;
+
+    case 2:
+      startCountdown(lBreakTime);
+      break;
+
+    default:
+      reset();
+      return;
+  }
+
+  disableStart();
 }
 
 /**
- * Function that is called when the stop button is pressed.
- * Resets controller variables to default and resets the countdown by calling
- * stopCountdown in timer.js.
+ * @description Function that is called when the stop button is pressed.
+ * Calls stopCountdown in timer.js, which resets the current cycle.
  */
 function stopTimer() {
-    cycle = 3;
-    numPomos = 0;
-    changeStyle();
-    stopCountdown();
+  stopCountdown();
+  enableStart();
 }
 
 /**
- * Function that is called to handle the shift in pomodoro cycles when
- * the countdown reaches 0. Handles each cycle case and then
- * calls changeStyle to change the CSS to match the new cycle.
+ * @description Function that is called to handle the shift in pomodoro cycles when
+ * the countdown reaches 0. Calls setCycle to set up the next cycle depending on what
+ * cycle the timer is currently on. Also plays a sound to signify the end of current cycle.
  */
 function changeCycles() {
+  pomoSound.play();
+  switch (cycle) {
+    /** If current cycle is pomo, increment numPomos and transition to break */
+    case 0:
+      setNumPomos(numPomos + 1);
 
-    /** If current cycle is pomo, increment numPomos. */
-    if (cycle == 0) numPomos++;
+      /** If numPomos is not divisible by 4, go to short break */
+      if (numPomos % 4 != 0)
+        setCycle(1);
+      /** else, go to long break */
+      else
+        setCycle(2);
+
+      break;
+
+    /** When short break ends, return to pomo cycle. */
+    case 1:
+      setCycle(0);
+      break;
 
     /** 
-     * If current cycle is pomo and 4 pomos haven't occurred yet,
-     * set cycle to short break.
+     * When long break ends, return to pomo cycle.
+     * Additionally clear "ice cube" counter at end of long break.
      */
-    if (cycle == 0 &amp;&amp; numPomos &lt; 4) {
-        cycle = 1;
-        startCountdown(sBreakTime);
-    }
+    case 2:
+      setCycle(0);
+      clearCubes();
+      break;
 
-    /**
-     * If current cycle is pomo and 4 pomos have occurred,
-     * set cycle to long break and reset numPomos.
-     */
-    else if (cycle == 0 &amp;&amp; numPomos == 4) {
-        numPomos = 0;
-        cycle = 2;
-        startCountdown(lBreakTime);
-    }
-
-    /** When short and long breaks end, return to pomo cycle. */
-    else if (cycle == 1) {
-        cycle = 0;
-        startCountdown(pomoTime);
-    }
-    else if (cycle == 2) {
-        cycle = 0;
-        startCountdown(pomoTime);
-    }
-
-    /** Change page style according to new cycle. */
-    changeStyle();
+    /** In the case of invalid cycle value, reset timer to default state. */
+    default:
+      reset();
+  }
 }
 
 /**
- * Function that changes the page's CSS according to the current cycle.
- * Specifically, borders the text for the current cycle and changes page color.
- * Called at the end of the changeCycles function.
+ * @description Function that clears "ice cubes" that count the number of pomos (0-4).
  */
-function changeStyle() {
-    /** Change page style to fit pomo cycle. */
-    if (cycle == 0) {
-        document.body.style.backgroundColor = "#0087bd";
-        document.getElementById("pomo-tab").style.border = "medium solid";
-        document.getElementById("pomo-tab").style.borderBottom = "none";
-        document.getElementById("short-break-tab").style.border = "none";
-        document.getElementById("long-break-tab").style.border = "none";
-    }
-    /** Change page style to fit short break cycle. */
-    if (cycle == 1) {
-        document.body.style.backgroundColor = "#333399";
-        document.getElementById("pomo-tab").style.border = "none";
-        document.getElementById("short-break-tab").style.border = "medium solid";
-        document.getElementById("short-break-tab").style.borderBottom = "none";
-        document.getElementById("long-break-tab").style.border = "none";
-    }
-    /** Change page style to fit long break cycle. */
-    if (cycle == 2) {
-        document.body.style.backgroundColor = "#663399";
-        document.getElementById("pomo-tab").style.border = "none";
-        document.getElementById("short-break-tab").style.border = "none";
-        document.getElementById("long-break-tab").style.border = "medium solid";
-        document.getElementById("long-break-tab").style.borderBottom = "none";
-    }
-    /** Change page style to fit timer stopped. */
-    if (cycle == 3) {
-        document.body.style.backgroundColor = "#0087bd";
-        document.getElementById("pomo-tab").style.border = "medium solid";
-        document.getElementById("pomo-tab").style.borderBottom = "none";
-        document.getElementById("short-break-tab").style.border = "medium solid";
-        document.getElementById("short-break-tab").style.borderBottom = "none";
-        document.getElementById("long-break-tab").style.border = "medium solid";
-        document.getElementById("long-break-tab").style.borderBottom = "none";
-    }
+function clearCubes() {
+  for (let i = 1; i &lt;= 4; i++) {
+    document.getElementById("pomo-count-" + i).classList.remove("pomo-counted");
+  }
 }
 
 /**
- * Sets the current cycle
- * @param {int} cycle_ - The value to set for the current cycle. 
+ * @description Function that clears pomo count, both "ice-cube" indicators and actual values.
+ */
+function reset() {
+  setCycle(0);
+  setNumPomos(0);
+}
+
+/**
+ * @description Sets the current cycle and changes style to match
+ * @param {number} cycle_ - The value to set for the current cycle. 
  */
 function setCycle(cycle_) {
-    cycle = cycle_;
+  cycle = cycle_;
+
+  startTimer();
+
+  if (autoStart == false)
+    stopTimer();
+
+  changeStyle();
 }
 
 /**
- * Returns the current cycle
- * @returns {int} cycle - The current cycle. 
- */
-function getCycle() {
-    return cycle;
-}
-
-/**
- * Sets the current number of Pomos 
+ * @description Sets the current number of Pomos and fills in appropriate "ice cubes"
  * @param {int} numPomos_ - The value to set for the current number of Pomos. 
  */
 function setNumPomos(numPomos_) {
-    numPomos = numPomos_;
+  numPomos = numPomos_;
+  clearCubes();
+
+  let numCubes = 0;
+
+  /** Determines the number of cubes displayed by the pomo counter */
+  if (numPomos > 0) {
+    if (numPomos % 4 == 0)
+      numCubes = 4;
+    else
+      numCubes = numPomos % 4;
+  }
+
+  /** Updates the ice cube pomo counter */
+  for (let i = 1; i &lt;= numCubes; i++) {
+    document.getElementById("pomo-count-" + i).classList.add("pomo-counted");
+  }
+
+  /** Update the counter of number of completed pomos */
+  document.getElementById('completed-pomos').innerText = "Pomos: " + numPomos;
 }
 
 /**
- * Returns the current number of Pomos 
- * @returns {int} numPomos - The current number of Pomos. 
+ * @description Function that changes the page's CSS according to the current cycle.
+ * Specifically, borders of the text for the current cycle and the page color.
+ * Called at the end of the changeCycles function.
  */
-function getNumPomos() {
-    return numPomos;
+function changeStyle() {
+  clearStyles();
+
+  switch (cycle) {
+    /** Change page style to fit pomo cycle. */
+    case 0:
+      pomoTab.classList.add("tab-active");
+      break;
+
+    /** Change page style to fit short break cycle. */
+    case 1:
+      document.body.classList.add("short-break-color");
+      sBreakTab.classList.add("tab-active");
+      break;
+
+    /** Change page style to fit long break cycle. */
+    case 2:
+      document.body.classList.add("long-break-color");
+      lBreakTab.classList.add("tab-active");
+      break;
+
+    /** Reset timer if set cycle is invalid */
+    default:
+      reset();
+      break;
+  }
 }
 
-/** export functions and varialbes for test file */
+/**
+ * @description Helper function that clears all styling classes from tabs and the document body
+ * */
+function clearStyles() {
+  pomoTab.classList.remove("tab-active");
+  sBreakTab.classList.remove("tab-active");
+  lBreakTab.classList.remove("tab-active");
+
+  document.body.classList.remove("short-break-color");
+  document.body.classList.remove("long-break-color");
+}
+
+/**
+ * @description Returns the current cycle.
+ * Used for testing purposes.
+ * @returns {number} cycle - The current cycle. 
+ */
+function getCycle() {
+  return cycle;
+}
+
+/**
+ * @description Returns the current number of Pomos.
+ * Used for testing purposes.
+ * @returns {number} numPomos - The current number of Pomos. 
+ */
+function getNumPomos() {
+  return numPomos;
+}
+
+/** export functions and variables for test file */
+
 exports.setCycle = setCycle;
 exports.getCycle = getCycle;
 exports.setNumPomos = setNumPomos;
@@ -205,7 +271,9 @@ exports.startTimer = startTimer;
 exports.stopTimer = stopTimer;
 exports.changeCycles = changeCycles;
 exports.changeStyle = changeStyle;
-</code></pre>
+exports.reset = reset;
+exports.clearCubes = clearCubes;
+exports.clearStyles = clearStyles;</code></pre>
         </article>
     </section>
 
@@ -215,13 +283,13 @@ exports.changeStyle = changeStyle;
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#button">button</a></li><li><a href="global.html#buttons">buttons</a></li><li><a href="global.html#changeCycles">changeCycles</a></li><li><a href="global.html#changeStyle">changeStyle</a></li><li><a href="global.html#chooseSound">chooseSound</a></li><li><a href="global.html#clickClose">clickClose</a></li><li><a href="global.html#clickHelp">clickHelp</a></li><li><a href="global.html#clickStart">clickStart</a></li><li><a href="global.html#clickStop">clickStop</a></li><li><a href="global.html#closePopup">closePopup</a></li><li><a href="global.html#controller">controller</a></li><li><a href="global.html#countdown">countdown</a></li><li><a href="global.html#cycle">cycle</a></li><li><a href="global.html#getCycle">getCycle</a></li><li><a href="global.html#getNumPomos">getNumPomos</a></li><li><a href="global.html#lBreakTime">lBreakTime</a></li><li><a href="global.html#numPomos">numPomos</a></li><li><a href="global.html#playAdjustSound">playAdjustSound</a></li><li><a href="global.html#pomoSound">pomoSound</a></li><li><a href="global.html#pomoTime">pomoTime</a></li><li><a href="global.html#sBreakTime">sBreakTime</a></li><li><a href="global.html#setCycle">setCycle</a></li><li><a href="global.html#setDuration">setDuration</a></li><li><a href="global.html#setInterval">setInterval</a></li><li><a href="global.html#setNumPomos">setNumPomos</a></li><li><a href="global.html#slideVolume">slideVolume</a></li><li><a href="global.html#startButton">startButton</a></li><li><a href="global.html#startCountdown">startCountdown</a></li><li><a href="global.html#startTimer">startTimer</a></li><li><a href="global.html#stopButton">stopButton</a></li><li><a href="global.html#stopCountdown">stopCountdown</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#sum">sum</a></li><li><a href="global.html#timer">timer</a></li><li><a href="global.html#toggleClosePopup">toggleClosePopup</a></li><li><a href="global.html#toggleSettingsPopup">toggleSettingsPopup</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#autoStart">autoStart</a></li><li><a href="global.html#buttons">buttons</a></li><li><a href="global.html#changeCycles">changeCycles</a></li><li><a href="global.html#changeStyle">changeStyle</a></li><li><a href="global.html#chooseSound">chooseSound</a></li><li><a href="global.html#clearCubes">clearCubes</a></li><li><a href="global.html#clearStyles">clearStyles</a></li><li><a href="global.html#clickClose">clickClose</a></li><li><a href="global.html#clickHelp">clickHelp</a></li><li><a href="global.html#clickStart">clickStart</a></li><li><a href="global.html#clickStop">clickStop</a></li><li><a href="global.html#closePopup">closePopup</a></li><li><a href="global.html#controller">controller</a></li><li><a href="global.html#countdown">countdown</a></li><li><a href="global.html#countdownDisplay">countdownDisplay</a></li><li><a href="global.html#countdownStart">countdownStart</a></li><li><a href="global.html#cycle">cycle</a></li><li><a href="global.html#disableStart">disableStart</a></li><li><a href="global.html#duration">duration</a></li><li><a href="global.html#enableStart">enableStart</a></li><li><a href="global.html#getCycle">getCycle</a></li><li><a href="global.html#getDuration">getDuration</a></li><li><a href="global.html#getNumPomos">getNumPomos</a></li><li><a href="global.html#getStart">getStart</a></li><li><a href="global.html#lBreakTime">lBreakTime</a></li><li><a href="global.html#longTimeSelect">longTimeSelect</a></li><li><a href="global.html#nameSrcMap">nameSrcMap</a></li><li><a href="global.html#numPomos">numPomos</a></li><li><a href="global.html#pageTitle">pageTitle</a></li><li><a href="global.html#playAdjustSound">playAdjustSound</a></li><li><a href="global.html#pomoSound">pomoSound</a></li><li><a href="global.html#pomoTime">pomoTime</a></li><li><a href="global.html#pomoTimeSelect">pomoTimeSelect</a></li><li><a href="global.html#reset">reset</a></li><li><a href="global.html#sBreakTime">sBreakTime</a></li><li><a href="global.html#setCycle">setCycle</a></li><li><a href="global.html#setDuration">setDuration</a></li><li><a href="global.html#setInterval">setInterval</a></li><li><a href="global.html#setLongTime">setLongTime</a></li><li><a href="global.html#setNumPomos">setNumPomos</a></li><li><a href="global.html#setPomoTime">setPomoTime</a></li><li><a href="global.html#setShortTime">setShortTime</a></li><li><a href="global.html#shortTimeSelect">shortTimeSelect</a></li><li><a href="global.html#slideVolume">slideVolume</a></li><li><a href="global.html#start">start</a></li><li><a href="global.html#startButton">startButton</a></li><li><a href="global.html#startCountdown">startCountdown</a></li><li><a href="global.html#startTimer">startTimer</a></li><li><a href="global.html#stopButton">stopButton</a></li><li><a href="global.html#stopCountdown">stopCountdown</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#timer">timer</a></li><li><a href="global.html#toggleSettingsPopup">toggleSettingsPopup</a></li><li><a href="global.html#volumeLevels">volumeLevels</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Mar 12 2021 22:37:08 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Mar 12 2021 22:47:21 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>

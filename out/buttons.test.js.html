@@ -26,35 +26,59 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/** Creating basic HTML DOM to test buttons */
+            <pre class="prettyprint source linenums"><code>/** HTML jest mocks */
 document.body.innerHTML =
     "&lt;audio id='pomo-sound' src='./audio/party-horn.mp3'>&lt;/audio>" +
 
     "&lt;button id='settings-button'>&lt;/button>" +
     "&lt;button id='help-button'>&lt;/button>" +
+
     "&lt;button id='start-button'>&lt;/button>" +
-    "&lt;button id='stop-button'>&lt;/button>" +
-    "&lt;button id='play-sound'>&lt;/button>" +
     "&lt;button id='stop-button'>&lt;/button>" +
 
     "&lt;img id='volume-image' src='./img/volume-level-3.svg'>" +
 
-    "&lt;div id='myModal'>" +
+    "&lt;div id='help-modal'>" +
     "&lt;span id='help-close'>&lt;/span>" +
     "&lt;/div>" +
+
     "&lt;div id='settings-modal'>" +
     "&lt;span id='settings-close'>&lt;/span>" +
-    "&lt;select id='volume-sound'" +
-    "&lt;option value='party-horn'>&lt;/option>" +
-    "&lt;option value='air-horn'>&lt;/option>" +
+
+    "&lt;select name='pomo-duration' id='pomo-duration'>" +
+    "&lt;option value='20'>20:00&lt;/option>" +
+    "&lt;option value='25' selected>25:00&lt;/option>" +
+    "&lt;option value='30'>30:00&lt;/option>" +
     "&lt;/select>" +
+
+    "&lt;select id='short-break-duration'" +
+    "&lt;option value='3'>3:00&lt;/option>" +
+    "&lt;option value='5' selected>5:00&lt;/option>" +
+    "&lt;option value='7'>7:00&lt;/option>" +
+    "&lt;/select>" +
+
+    "&lt;select id='long-break-duration'" +
+    "&lt;option value='10'>10:00&lt;/option>" +
+    "&lt;option value='15' selected>15:00&lt;/option>" +
+    "&lt;option value='20'>20:00&lt;/option>" +
+    "&lt;/select>" +
+
+    "&lt;select id='sound-select'" +
+    "&lt;option value='glass-pour'>Glass Pour&lt;/option>" +
+    "&lt;option value='bottle-clank'>Bottle Clank&lt;/option>" +
+    "&lt;option value='ice-cream-1'>Ice Cream Truck 1&lt;/option>" +
+    "&lt;/select>" +
+
+    "&lt;img id='volume-image' src='./img/volume-level-2.svg' alt='Volume Visual'>" +
+    "&lt;input id='volume-slider' name='volume-slider' type='range' min='0' max='100' value='50'>" +
+    "&lt;button id='play-sound'>&lt;/button>" +
     "&lt;/div>" +
 
     "&lt;div id='shadow' onclick='closePopup()'>&lt;/div>" +
 
     "&lt;input id='volume-slider' type='range' min='0' max ='100' value='50'>&lt;/input>";
 
-/** Creating jest function mocks */
+/** Outside functions jest mocks */
 startTimer = jest.fn();
 stopTimer = jest.fn();
 
@@ -65,7 +89,7 @@ const buttons = require("./buttons");
 test("default buttons/modals attributes test", () => {
     expect(document.getElementById("start-button").disabled).toBe(false);
     expect(document.getElementById("stop-button").disabled).toBe(true);
-    expect(document.getElementById("myModal").classList.contains("modal-show")).toBe(false);
+    expect(document.getElementById("help-modal").classList.contains("modal-show")).toBe(false);
     expect(document.getElementById("settings-modal").classList.contains("modal-show")).toBe(false);
 });
 
@@ -85,24 +109,24 @@ test("stop-button click test", () => {
 
 /** Testing closePopup() functionality */
 test("closePopup() test", () => {
-    document.getElementById("myModal").classList.add("modal-show");
+    document.getElementById("help-modal").classList.add("modal-show");
     document.getElementById("settings-modal").classList.add("modal-show");
     buttons.closePopup();
-    expect(document.getElementById("myModal").classList.contains("modal-show")).toBe(false);
+    expect(document.getElementById("help-modal").classList.contains("modal-show")).toBe(false);
     expect(document.getElementById("settings-modal").classList.contains("modal-show")).toBe(false);
 });
 
 /** Testing help-button functionality */
 test("help-button test", () => {
     document.getElementById("help-button").click();
-    expect(document.getElementById("myModal").classList.contains("modal-show")).toBe(true);
+    expect(document.getElementById("help-modal").classList.contains("modal-show")).toBe(true);
 });
 
 /** Testing close-help-button functionality */
 test("close-help-button test", () => {
-    document.getElementById("myModal").classList.add("modal-show");
+    document.getElementById("help-modal").classList.add("modal-show");
     document.getElementById("help-close").click();
-    expect(document.getElementById("myModal").classList.contains("modal-show")).toBe(false);
+    expect(document.getElementById("help-modal").classList.contains("modal-show")).toBe(false);
 });
 
 /** Testing settings-button functionality */
@@ -122,7 +146,7 @@ test("close-settings-button test", () => {
 test("volume slider test", () => {
     // 10 volume test
     document.getElementById("volume-slider").value = 10;
-    document.getElementById("volume-slider").click();
+    document.getElementById("volume-slider").dispatchEvent(new Event("input"));
     expect(document.getElementById("pomo-sound").volume).toBe(0.1);
     expect(document.getElementById("volume-image").src.includes("/img/volume-level-0.svg")).toBe(false);
     expect(document.getElementById("volume-image").src.includes("/img/volume-level-1.svg")).toBe(true);
@@ -130,7 +154,7 @@ test("volume slider test", () => {
 
     // 90 volume test
     document.getElementById("volume-slider").value = 90;
-    document.getElementById("volume-slider").click();
+    document.getElementById("volume-slider").dispatchEvent(new Event("input"));
     expect(document.getElementById("pomo-sound").volume).toBe(0.9);
     expect(document.getElementById("volume-image").src.includes("/img/volume-level-0.svg")).toBe(false);
     expect(document.getElementById("volume-image").src.includes("/img/volume-level-1.svg")).toBe(false);
@@ -138,19 +162,11 @@ test("volume slider test", () => {
 
     // mute volume test
     document.getElementById("volume-slider").value = 0;
-    document.getElementById("volume-slider").click();
+    document.getElementById("volume-slider").dispatchEvent(new Event("input"));
     expect(document.getElementById("pomo-sound").volume).toBe(0);
     expect(document.getElementById("volume-image").src.includes("/img/volume-level-0.svg")).toBe(true);
     expect(document.getElementById("volume-image").src.includes("/img/volume-level-1.svg")).toBe(false);
     expect(document.getElementById("volume-image").src.includes("/img/volume-level-3.svg")).toBe(false);
-});
-
-/** Testing volume sound change */
-test("volume sound change test", () => {
-    document.getElementById("volume-sound").value = "party-horn";
-    document.getElementById("volume-sound").click();
-    expect(document.getElementById("pomo-sound").src.includes("/audio/party-horn.mp3")).toBe(true);
-    expect(document.getElementById("pomo-sound").src.includes("/audio/air-horn.mp3")).toBe(false);
 });
 
 /** Testing play sound button */
@@ -159,10 +175,25 @@ test("play sound button test", () => {
     expect(document.getElementById("pomo-sound").play.mock.calls.length).toEqual(0);
     document.getElementById("play-sound").click();
     expect(document.getElementById("pomo-sound").play.mock.calls.length).toEqual(1);
-
 });
 
-</code></pre>
+/** Testing disableStart function */
+test("disableStart function test", () => {
+    document.getElementById("start-button").disabled = false;
+    document.getElementById("stop-button").disabled = true;
+    buttons.disableStart();
+    expect(document.getElementById("start-button").disabled).toBe(true);
+    expect(document.getElementById("stop-button").disabled).toBe(false);
+});
+
+/** Testing enableStart function */
+test("enableStart function test", () => {
+    document.getElementById("start-button").disabled = true;
+    document.getElementById("stop-button").disabled = false;
+    buttons.enableStart();
+    expect(document.getElementById("start-button").disabled).toBe(false);
+    expect(document.getElementById("stop-button").disabled).toBe(true);
+});</code></pre>
         </article>
     </section>
 
@@ -172,13 +203,13 @@ test("play sound button test", () => {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#button">button</a></li><li><a href="global.html#buttons">buttons</a></li><li><a href="global.html#changeCycles">changeCycles</a></li><li><a href="global.html#changeStyle">changeStyle</a></li><li><a href="global.html#chooseSound">chooseSound</a></li><li><a href="global.html#clickClose">clickClose</a></li><li><a href="global.html#clickHelp">clickHelp</a></li><li><a href="global.html#clickStart">clickStart</a></li><li><a href="global.html#clickStop">clickStop</a></li><li><a href="global.html#closePopup">closePopup</a></li><li><a href="global.html#controller">controller</a></li><li><a href="global.html#countdown">countdown</a></li><li><a href="global.html#cycle">cycle</a></li><li><a href="global.html#getCycle">getCycle</a></li><li><a href="global.html#getNumPomos">getNumPomos</a></li><li><a href="global.html#lBreakTime">lBreakTime</a></li><li><a href="global.html#numPomos">numPomos</a></li><li><a href="global.html#playAdjustSound">playAdjustSound</a></li><li><a href="global.html#pomoSound">pomoSound</a></li><li><a href="global.html#pomoTime">pomoTime</a></li><li><a href="global.html#sBreakTime">sBreakTime</a></li><li><a href="global.html#setCycle">setCycle</a></li><li><a href="global.html#setDuration">setDuration</a></li><li><a href="global.html#setInterval">setInterval</a></li><li><a href="global.html#setNumPomos">setNumPomos</a></li><li><a href="global.html#slideVolume">slideVolume</a></li><li><a href="global.html#startButton">startButton</a></li><li><a href="global.html#startCountdown">startCountdown</a></li><li><a href="global.html#startTimer">startTimer</a></li><li><a href="global.html#stopButton">stopButton</a></li><li><a href="global.html#stopCountdown">stopCountdown</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#sum">sum</a></li><li><a href="global.html#timer">timer</a></li><li><a href="global.html#toggleClosePopup">toggleClosePopup</a></li><li><a href="global.html#toggleSettingsPopup">toggleSettingsPopup</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#autoStart">autoStart</a></li><li><a href="global.html#buttons">buttons</a></li><li><a href="global.html#changeCycles">changeCycles</a></li><li><a href="global.html#changeStyle">changeStyle</a></li><li><a href="global.html#chooseSound">chooseSound</a></li><li><a href="global.html#clearCubes">clearCubes</a></li><li><a href="global.html#clearStyles">clearStyles</a></li><li><a href="global.html#clickClose">clickClose</a></li><li><a href="global.html#clickHelp">clickHelp</a></li><li><a href="global.html#clickStart">clickStart</a></li><li><a href="global.html#clickStop">clickStop</a></li><li><a href="global.html#closePopup">closePopup</a></li><li><a href="global.html#controller">controller</a></li><li><a href="global.html#countdown">countdown</a></li><li><a href="global.html#countdownDisplay">countdownDisplay</a></li><li><a href="global.html#countdownStart">countdownStart</a></li><li><a href="global.html#cycle">cycle</a></li><li><a href="global.html#disableStart">disableStart</a></li><li><a href="global.html#duration">duration</a></li><li><a href="global.html#enableStart">enableStart</a></li><li><a href="global.html#getCycle">getCycle</a></li><li><a href="global.html#getDuration">getDuration</a></li><li><a href="global.html#getNumPomos">getNumPomos</a></li><li><a href="global.html#getStart">getStart</a></li><li><a href="global.html#lBreakTime">lBreakTime</a></li><li><a href="global.html#longTimeSelect">longTimeSelect</a></li><li><a href="global.html#nameSrcMap">nameSrcMap</a></li><li><a href="global.html#numPomos">numPomos</a></li><li><a href="global.html#pageTitle">pageTitle</a></li><li><a href="global.html#playAdjustSound">playAdjustSound</a></li><li><a href="global.html#pomoSound">pomoSound</a></li><li><a href="global.html#pomoTime">pomoTime</a></li><li><a href="global.html#pomoTimeSelect">pomoTimeSelect</a></li><li><a href="global.html#reset">reset</a></li><li><a href="global.html#sBreakTime">sBreakTime</a></li><li><a href="global.html#setCycle">setCycle</a></li><li><a href="global.html#setDuration">setDuration</a></li><li><a href="global.html#setInterval">setInterval</a></li><li><a href="global.html#setLongTime">setLongTime</a></li><li><a href="global.html#setNumPomos">setNumPomos</a></li><li><a href="global.html#setPomoTime">setPomoTime</a></li><li><a href="global.html#setShortTime">setShortTime</a></li><li><a href="global.html#shortTimeSelect">shortTimeSelect</a></li><li><a href="global.html#slideVolume">slideVolume</a></li><li><a href="global.html#start">start</a></li><li><a href="global.html#startButton">startButton</a></li><li><a href="global.html#startCountdown">startCountdown</a></li><li><a href="global.html#startTimer">startTimer</a></li><li><a href="global.html#stopButton">stopButton</a></li><li><a href="global.html#stopCountdown">stopCountdown</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#timer">timer</a></li><li><a href="global.html#toggleSettingsPopup">toggleSettingsPopup</a></li><li><a href="global.html#volumeLevels">volumeLevels</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Mar 12 2021 22:37:08 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Mar 12 2021 22:47:21 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
