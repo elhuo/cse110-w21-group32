@@ -1,6 +1,5 @@
 /**
  * buttons.js is a javascript file that implements the button logic of the pomodoro timer.
- * Specifically, it implements the start, stop, help, and settings buttons.
  */
 
 /** Reference to start button */
@@ -47,6 +46,7 @@ const volumeSlider = document.getElementById("volume-slider");
 /** Sound of finishing a pomodoro */
 const pomoSound = document.getElementById("pomo-sound");
 
+/** Set volume of the pomoSound based on the volume slider */
 pomoSound.volume = volumeSlider.value/100;
 
 /** @function
@@ -60,6 +60,10 @@ startButton.addEventListener("click", function () {
   disableStart();
 });
 
+/** 
+ * @description Disables the start button, enables the stop button, and disables the
+ * ability to change cycle times in settings.
+ */
 function disableStart() {
   startButton.disabled = true;  // Disable start button
   stopButton.disabled = false;  // Enable stop button
@@ -80,6 +84,10 @@ stopButton.addEventListener("click", function () {
   enableStart();
 });
 
+/** 
+ * @description Enables the start button, disables the stop button, and enables the
+ * ability to change cycle times in settings.
+ */
 function enableStart() {
   startButton.disabled = false;   // Enable start button
   stopButton.disabled = true;     // Disable stop button
@@ -129,7 +137,7 @@ settingsButton.onclick = function () {
 settingsCloseButton.addEventListener("click", closePopup);
 
 /** @function
- * @description Change pomo timer duration to selected time
+ * @description Change pomo timer duration to selected time.
  * @name setPomoTime
  */
 pomoTimeSelect.addEventListener("change", function () {
@@ -141,7 +149,7 @@ pomoTimeSelect.addEventListener("change", function () {
 });
 
 /** @function
- * @description Change short break timer duration to selected time
+ * @description Change short break timer duration to selected time.
  * @name setShortTime
  */
 shortTimeSelect.addEventListener("change", function() {
@@ -153,7 +161,7 @@ shortTimeSelect.addEventListener("change", function() {
 });
 
 /** @function
- * @description Change long break timer duration to selected time
+ * @description Change long break timer duration to selected time.
  * @name setLongTime
  */
 longTimeSelect.addEventListener("change", function() {
@@ -176,16 +184,23 @@ volumeSlider.addEventListener('input', function(){
   pomoSound.volume = volumeSlider.value/100;
 
   let val = volumeSlider.value;
+  /** High volume */
   if (val > volumeLevels[3]) {
     volumeImg.src = "./img/volume-level-3.svg";
   
-  } else if ( val > volumeLevels[2] ) {
+  } 
+  /** Medium volume */
+  else if ( val > volumeLevels[2] ) {
     volumeImg.src = "./img/volume-level-2.svg";
   
-  } else if ( val > volumeLevels[1] ) {
+  } 
+  /** Low volume */
+  else if ( val > volumeLevels[1] ) {
     volumeImg.src = "./img/volume-level-1.svg";
   
-  } else {
+  } 
+  /** No volume */
+  else {
     volumeImg.src = "./img/volume-level-0.svg";
   }
 });
@@ -214,5 +229,7 @@ document.addEventListener("DOMContentLoaded", function(){
  document.getElementById("play-sound").onclick = function(){
   pomoSound.play();
 };
+
+/** export function for test file */
 
 exports.closePopup = closePopup;

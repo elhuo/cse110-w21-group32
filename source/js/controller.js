@@ -1,7 +1,6 @@
 /**
  * controller.js is a javascript file that implements the cycle logic of
  * the pomodoro timer.
- * It contains four main methods: startTimer, stopTimer, changeCyclesController, changeStyle, and reset
  */
 
 /** 
@@ -30,14 +29,15 @@ var lBreakTime = 14;
 /** True if timer should automatically start on transition. False by default. */
 var autoStart = false;
 
+// Constants used to reference each of the cycle tabs
 const pomoTab = document.getElementById("pomo-tab");
 const sBreakTab = document.getElementById("short-break-tab");
 const lBreakTab = document.getElementById("long-break-tab");
 
 /**
  * @description Function that is called when the start button is pressed.
- * Handles setup for the controller before calling startCountdown in timer.js
- * to start the first pomodoro cycle. Changes cycle to pomo cycle.
+ * Calls startCountdown in timer.js depending on which cycle the timer is
+ * currently in and disables the start button after it is pressed.
  */
 function startTimer() {
   switch(cycle) {
@@ -63,7 +63,7 @@ function startTimer() {
 
 /**
  * @description Function that is called when the stop button is pressed.
- * calls stopCountdown in timer.js. The timer stays in the current stage
+ * Calls stopCountdown in timer.js, which resets the current cycle.
  */
 function stopTimer() {
   stopCountdown();
@@ -71,43 +71,35 @@ function stopTimer() {
 }
 
 /**
- * @description Function is called to ask user whether to continue to next
- * stage or not. If user decides to not coninue, the timer is set back to 
- * initial stage.
- */
-function changeCyclesController(){
-  /** Sound is played because timer hit 0 */
-  pomoSound.play();
-
-  changeCycles();
-}
-
-/**
  * @description Function that is called to handle the shift in pomodoro cycles when
- * the countdown reaches 0. Handles each cycle case and then
- * calls changeStyle to change the CSS to match the new cycle.
+ * the countdown reaches 0. Calls setCycle to set up the next cycle depending on what
+ * cycle the timer is currently on. Also plays a sound to signify the end of current cycle.
  */
 function changeCycles() {
-
+  pomoSound.play();
   switch (cycle) {
     /** If current cycle is pomo, increment numPomos and transition to break */
     case 0:
       setNumPomos(numPomos + 1);
 
+      /** If numPomos is not divisible by 4, go to short break */
       if (numPomos % 4 != 0)
         setCycle(1);
-
+      /** else, go to long break */
       else
         setCycle(2);
 
       break;
 
-    /** When short and long breaks end, return to pomo cycle. */
+    /** When short break ends, return to pomo cycle. */
     case 1:
       setCycle(0);
       break;
 
-    /** Additionally clear "ice cube" counter at end of long break. */
+    /** 
+     * When long break ends, return to pomo cycle.
+     * Additionally clear "ice cube" counter at end of long break.
+     */
     case 2:
       setCycle(0);
       clearCubes();
@@ -120,7 +112,7 @@ function changeCycles() {
 }
 
 /**
- * @description Function that clears "ice cubes" that count the number of pomos (0-4)
+ * @description Function that clears "ice cubes" that count the number of pomos (0-4).
  */
 function clearCubes() {
   for (let i = 1; i <= 4; i++) {
@@ -138,7 +130,7 @@ function reset() {
 
 /**
  * @description Sets the current cycle and changes style to match
- * @param {int} cycle_ - The value to set for the current cycle. 
+ * @param {number} cycle_ - The value to set for the current cycle. 
  */
 function setCycle(cycle_) {
   cycle = cycle_;
@@ -161,6 +153,7 @@ function setNumPomos(numPomos_) {
 
   let numCubes = 0;
 
+  /** Determines the number of cubes displayed by the pomo counter */
   if (numPomos > 0) {
     if (numPomos % 4 == 0)
       numCubes = 4;
@@ -168,6 +161,7 @@ function setNumPomos(numPomos_) {
       numCubes = numPomos % 4;
   }
 
+  /** Updates the ice cube pomo counter */
   for (let i = 1; i <= numCubes; i++) {
     document.getElementById('pomo-count-' + i).classList.add('pomo-counted');
   }
@@ -222,16 +216,18 @@ function clearStyles() {
 }
 
 /**
- * @description Returns the current cycle
- * @returns {int} cycle - The current cycle. 
+ * @description Returns the current cycle.
+ * Used for testing purposes.
+ * @returns {number} cycle - The current cycle. 
  */
 function getCycle() {
   return cycle;
 }
 
 /**
- * @description Returns the current number of Pomos 
- * @returns {int} numPomos - The current number of Pomos. 
+ * @description Returns the current number of Pomos.
+ * Used for testing purposes.
+ * @returns {number} numPomos - The current number of Pomos. 
  */
 function getNumPomos() {
   return numPomos;
