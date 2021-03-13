@@ -3,6 +3,9 @@ document.body.innerHTML =
     "<title id='title'>Spl/ice Pomodoro</title>" +
     "<p id='countdown'>25:00</p>";
 
+/** Mocking time intervals */
+jest.useFakeTimers();
+
 /** Loading the module we're testing */
 const timer = require("./timer");
 
@@ -44,7 +47,42 @@ test("stopCountdown test", () => {
 
 /** Testing countdown function */
 test("countdown test", () => {
-    timer.startCountdown(10)
-    timer.countdown()
-    expect(document.getElementById("title").innerText).toBe("10m : Spl/ice Pomodoro");
+    /** Mocking date to test time, first 2 used for initial countdown, third for after 11 minutes */
+    spyOn(Date.prototype, 'getTime').and.returnValues(0, 0, 1000 * 60 * 8.5, 1000 * 60 * 9.5, 1000 * 60 * 11)
+
+    /** Mocking changeCycles function */
+    changeCycles = jest.fn();
+
+    /** Countdown initial test with 10 minute timer */
+    timer.startCountdown(9);
+    timer.countdown();
+    expect(document.getElementById("title").innerText).toBe("09m : Spl/ice Pomodoro");
+    expect(changeCycles.mock.calls.length).toEqual(0);
+    expect(timer.getStart()).toBe(true);
+    /** Countdown 8.5 minutes test */
+    timer.countdown();
+    expect(document.getElementById("title").innerText).toBe("01m : Spl/ice Pomodoro");
+    expect(changeCycles.mock.calls.length).toEqual(0);
+    /** Countdown 9.5 minutes test */
+    timer.countdown();
+    expect(document.getElementById("title").innerText).toBe("29s : Spl/ice Pomodoro");
+    expect(changeCycles.mock.calls.length).toEqual(0);
+    /** Countdown 11 minutes test */
+    timer.countdown();
+    expect(changeCycles.mock.calls.length).toEqual(1);
+    expect(timer.getStart()).toBe(false);
+});
+
+/** Testing setInterval functionality */
+test("setInterval test", () => {
+    /** Timer is off test after 500ms, indirectly checks that timer.countdown is not called */
+    timer.stopCountdown();
+    jest.runOnlyPendingTimers();
+    expect(document.getElementById("title").innerText).toBe("Spl/ice Pomodoro");
+
+    /** Timer is on test after 500ms, indirectly checks that timer.countdown is called */
+    timer.startCountdown(5)
+    expect(document.getElementById("title").innerText).toBe("Spl/ice Pomodoro");
+    jest.runOnlyPendingTimers();
+    expect(document.getElementById("title").innerText).toBe("05m : Spl/ice Pomodoro");
 });

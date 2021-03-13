@@ -230,8 +230,7 @@ document.getElementById("play-sound").onclick = function () {
   pomoSound.play();
 };
 
-/** export function for test file */
-
+/** Export function for test file */
 exports.closePopup = closePopup;
 exports.disableStart = disableStart;
 exports.enableStart = enableStart;

@@ -33,7 +33,7 @@ setInterval(() => {
 function startCountdown(mins) {
   start = true;     // Enables timer
   duration = mins;  // Sets timer duration
-  
+
   /** Display initial countdown time */
   countdownDisplay.innerText = ((duration) + ":" + "59").padStart(5, "0");
   /** Set starting time of the timer */
@@ -65,7 +65,7 @@ function countdown() {
   /** If timer is over */
   if (minutes > duration) {
     start = false;
-    
+
     /** Call changeCycles function in controller */
     changeCycles();
     return;
@@ -79,9 +79,9 @@ function countdown() {
   countdownDisplay.innerText = minutes + ":" + seconds;
 
   /** Update the title */
-  if (minutes == "00"){
+  if (minutes == "00") {
     pageTitle.innerText = seconds + "s : Spl/ice Pomodoro";
-  
+
   } else {
     pageTitle.innerText = minutes + "m : Spl/ice Pomodoro";
   }
@@ -114,6 +114,7 @@ function setDuration(duration_) {
   duration = duration_;
 }
 
+/** Export functions for test file */
 exports.startCountdown = startCountdown;
 exports.stopCountdown = stopCountdown;
 exports.countdown = countdown;

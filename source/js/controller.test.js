@@ -22,8 +22,8 @@ enableStart = jest.fn();
 /** Loading the module we're testing */
 const controller = require("./controller");
 
-/** Testing set/getCycle functions, required to pass for other unit tests to work properly */
-test("set/getCycle test, required to pass for other unit tests to work properly", () => {
+/** Testing set/getCycle basic functionality, required to pass for other unit tests to work properly */
+test("basic set/getCycle test, required to pass for other unit tests to work properly", () => {
     controller.setCycle(1);
     expect(controller.getCycle()).toBe(1);
     controller.setCycle(3);
@@ -133,6 +133,18 @@ test("clearStyles test", () => {
     controller.clearStyles();
     expect(document.getElementById("pomo-tab").classList.contains("tab-active")).toBe(false);
     expect(document.getElementById("short-break-tab").classList.contains("tab-active")).toBe(false);
+});
+
+/** Testing invalid cycle */
+test("invalid cycle test", () => {
+    controller.reset();
+
+    /** Test invalid cycle for changeStyle function */
+    controller.setCycle(5);
+    expect(document.getElementById("pomo-tab").classList.contains("tab-active")).toBe(true);
+    expect(document.getElementById("short-break-tab").classList.contains("tab-active")).toBe(false);
+    expect(document.getElementById("long-break-tab").classList.contains("tab-active")).toBe(false);
+    expect(controller.getCycle()).toBe(0);
 });
 
 /** Testing complete controller module functionality for full cycle including long break*/
