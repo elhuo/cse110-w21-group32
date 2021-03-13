@@ -27,7 +27,7 @@ https://emmorris1100.github.io/cse110-w21-group32/source/index.html
     ├── brainstorm
     ├── interface
     ├── pitch
-    ├── sys_diamgrams
+    ├── sys_diagrams
     └── users
         └── personas
 ```
