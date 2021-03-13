@@ -233,8 +233,7 @@ function getNumPomos() {
   return numPomos;
 }
 
-/** export functions and variables for test file */
-
+/** Export functions for test file */
 exports.setCycle = setCycle;
 exports.getCycle = getCycle;
 exports.setNumPomos = setNumPomos;
