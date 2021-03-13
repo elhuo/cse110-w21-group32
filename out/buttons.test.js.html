@@ -150,6 +150,16 @@ test("volume slider test", () => {
     expect(document.getElementById("pomo-sound").volume).toBe(0.1);
     expect(document.getElementById("volume-image").src.includes("/img/volume-level-0.svg")).toBe(false);
     expect(document.getElementById("volume-image").src.includes("/img/volume-level-1.svg")).toBe(true);
+    expect(document.getElementById("volume-image").src.includes("/img/volume-level-2.svg")).toBe(false);
+    expect(document.getElementById("volume-image").src.includes("/img/volume-level-3.svg")).toBe(false);
+
+    // 50 volume test
+    document.getElementById("volume-slider").value = 50;
+    document.getElementById("volume-slider").dispatchEvent(new Event("input"));
+    expect(document.getElementById("pomo-sound").volume).toBe(0.5);
+    expect(document.getElementById("volume-image").src.includes("/img/volume-level-0.svg")).toBe(false);
+    expect(document.getElementById("volume-image").src.includes("/img/volume-level-1.svg")).toBe(false);
+    expect(document.getElementById("volume-image").src.includes("/img/volume-level-2.svg")).toBe(true);
     expect(document.getElementById("volume-image").src.includes("/img/volume-level-3.svg")).toBe(false);
 
     // 90 volume test
@@ -158,7 +168,9 @@ test("volume slider test", () => {
     expect(document.getElementById("pomo-sound").volume).toBe(0.9);
     expect(document.getElementById("volume-image").src.includes("/img/volume-level-0.svg")).toBe(false);
     expect(document.getElementById("volume-image").src.includes("/img/volume-level-1.svg")).toBe(false);
+    expect(document.getElementById("volume-image").src.includes("/img/volume-level-2.svg")).toBe(false);
     expect(document.getElementById("volume-image").src.includes("/img/volume-level-3.svg")).toBe(true);
+
 
     // mute volume test
     document.getElementById("volume-slider").value = 0;
@@ -166,6 +178,7 @@ test("volume slider test", () => {
     expect(document.getElementById("pomo-sound").volume).toBe(0);
     expect(document.getElementById("volume-image").src.includes("/img/volume-level-0.svg")).toBe(true);
     expect(document.getElementById("volume-image").src.includes("/img/volume-level-1.svg")).toBe(false);
+    expect(document.getElementById("volume-image").src.includes("/img/volume-level-2.svg")).toBe(false);
     expect(document.getElementById("volume-image").src.includes("/img/volume-level-3.svg")).toBe(false);
 });
 
@@ -193,7 +206,66 @@ test("enableStart function test", () => {
     buttons.enableStart();
     expect(document.getElementById("start-button").disabled).toBe(false);
     expect(document.getElementById("stop-button").disabled).toBe(true);
-});</code></pre>
+});
+
+/** Testing pomo timer reset when changing durations during pomo timer cycle */
+test("pomo timer duration change test for timer reset", () => {
+    /** Clear mock calls count to facilitate testing */
+    jest.clearAllMocks();
+
+    /** Testing that timer for short break does not reset when changing pomo duration */
+    cycle = 1;
+    document.getElementById("pomo-duration").dispatchEvent(new Event("change"));
+    expect(startTimer.mock.calls.length).toBe(0);
+    expect(stopTimer.mock.calls.length).toBe(0);
+
+    /** Testing that timer for pomo resets when changing pomo duration */
+    cycle = 0;
+    document.getElementById("pomo-duration").dispatchEvent(new Event("change"));
+    expect(startTimer.mock.calls.length).toBe(1);
+    expect(stopTimer.mock.calls.length).toBe(1);
+});
+
+/** Testing short break timer reset when changing durations during short break timer cycle */
+test("short break timer duration change test for timer reset", () => {
+    /** Clear mock calls count to facilitate testing */
+    jest.clearAllMocks();
+
+    /** Testing that timer for pomo does not reset when changing short break duration */
+    cycle = 0;
+    document.getElementById("short-break-duration").dispatchEvent(new Event("change"));
+    expect(startTimer.mock.calls.length).toBe(0);
+    expect(stopTimer.mock.calls.length).toBe(0);
+
+    /** Testing that timer for short break resets when changing short break duration */
+    cycle = 1;
+    document.getElementById("short-break-duration").dispatchEvent(new Event("change"));
+    expect(startTimer.mock.calls.length).toBe(1);
+    expect(stopTimer.mock.calls.length).toBe(1);
+});
+
+/** Testing long break timer reset when changing durations during long break timer cycle */
+test("long break timer duration change test for timer reset", () => {
+    /** Clear mock calls count to facilitate testing */
+    jest.clearAllMocks();
+
+    /** Testing that timer for pomo does not reset when changing long break duration */
+    cycle = 0;
+    document.getElementById("long-break-duration").dispatchEvent(new Event("change"));
+    expect(startTimer.mock.calls.length).toBe(0);
+    expect(stopTimer.mock.calls.length).toBe(0);
+
+    /** Testing that timer for long break resets when changing long break duration */
+    cycle = 2;
+    document.getElementById("long-break-duration").dispatchEvent(new Event("change"));
+    expect(startTimer.mock.calls.length).toBe(1);
+    expect(stopTimer.mock.calls.length).toBe(1);
+});
+
+/**
+ * Note: unable to trigger document.querySelector("#sound-select").onchange, so can't unit test through jest
+ * Compensated through manual testing of changing sound option
+ */</code></pre>
         </article>
     </section>
 
@@ -209,7 +281,7 @@ test("enableStart function test", () => {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sat Mar 13 2021 08:41:11 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sat Mar 13 2021 18:20:27 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
