@@ -52,4 +52,4 @@ Features:
 - Counter
   - Four square counters marking which pomo you are on
   - Button right cumulative pomo counter
-- Windows tab shows timen remaining
+- Windows tab shows time remaining
