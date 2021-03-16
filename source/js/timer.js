@@ -28,7 +28,7 @@ setInterval(() => {
 /**
  * @description Starts the countdown.
  * Remember to subtract 1 minute (if you want a 25 min timer, set to 24).
- * @param {int} mins - The duration for the timer to run for. 
+ * @param {number} mins - The duration for the timer to run for. 
  */
 function startCountdown(mins) {
   start = true;     // Enables timer
