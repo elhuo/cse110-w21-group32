@@ -71,11 +71,11 @@ Ellie, Stephen, Elliot, Zane
 
 ### Zane
 > What did you get done since last report?
-- 
+- Not too much
 > What's planned for tomorrow?
-- 
+- looking over how to do cypress code coverage
 > Any blockers?
-- 
+- work
 ### Elliot
 > What did you get done since last report?
 - n/a
