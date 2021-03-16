@@ -145,7 +145,7 @@ function setCycle(cycle_) {
 
 /**
  * @description Sets the current number of Pomos and fills in appropriate "ice cubes"
- * @param {int} numPomos_ - The value to set for the current number of Pomos. 
+ * @param {number} numPomos_ - The value to set for the current number of Pomos. 
  */
 function setNumPomos(numPomos_) {
   numPomos = numPomos_;
