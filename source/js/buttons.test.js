@@ -2,7 +2,7 @@
 document.body.innerHTML =
     "<audio id='pomo-sound' src='./audio/party-horn.mp3'></audio>" +
 
-    "<button id='settings-button'></button>" +
+    "<button id='settings-button'></button>" + 
     "<button id='help-button'></button>" +
 
     "<button id='start-button'></button>" +
