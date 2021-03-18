@@ -20,7 +20,7 @@ describe('Home Page Tests', ()=>{
         cy.get('#stop-button').click()
         cy.get('#stop-button').should('have.attr', 'disabled')
         cy.get('#start-button').should('not.have.attr', 'disabled')
-
+ 
         cy.get('#countdown').should('have.text', '25:00')
     })
 
