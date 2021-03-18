@@ -3,7 +3,7 @@ Time: January 15, 2021 2:00 PM
 
 Location: Zoom
 
-### Attendance:
+### Attendance: 
 
 Elizabeth Morris, Ellie Huo, Jason Wong, Sicong Duan, Wilson Low, Elliot Kim, Eric Pham, Nathan Kim, Zane Calini
 
