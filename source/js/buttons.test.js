@@ -160,7 +160,6 @@ test("play sound button test", () => {
     expect(document.getElementById("pomo-sound").play.mock.calls.length).toEqual(0);
     document.getElementById("play-sound").click();
     expect(document.getElementById("pomo-sound").play.mock.calls.length).toEqual(1);
-    expect(false).toEqual(true);
 });
 
 /** Testing disableStart function */
